@@ -8893,7 +8893,7 @@ header.sticky .left-sidebar-nav .navbar-nav .nav-link {
 .show-search-popup .search-form-wrapper {
   opacity: 1;
   visibility: visible;
-  cursor: url(../images/mfg-close.png), auto;
+  cursor: url(assets\images\mfg-close.svg), auto;
 }
 .show-search-popup .search-form-wrapper .search-form {
   height: 50%;
