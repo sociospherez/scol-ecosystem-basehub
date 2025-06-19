@@ -1,0 +1,39 @@
+@include respond-to('tablet') {
+    .down-section {
+        bottom: 35px;
+    }
+}
+@include respond-to('phone-landscape') {
+    .page-title-extra-large {
+        h1 {
+            font-size: 36px;
+            line-height: 44px;
+        }
+    }
+    .page-title-extra-small {
+        h2 {
+            font-size: 36px;
+            line-height: 44px;
+        }
+    }
+    .page-title-large {
+        h1 {
+            font-size: 36px;
+            line-height: 44px;
+        }
+    }
+}
+@include respond-to('phone-portrait') {
+    .breadcrumb {
+        ul {
+            li {
+                &:after {
+                    padding: 0 6px 0 8px;
+                }
+            }
+        }
+    }
+    .down-section {
+        bottom: 20px;
+    }
+}

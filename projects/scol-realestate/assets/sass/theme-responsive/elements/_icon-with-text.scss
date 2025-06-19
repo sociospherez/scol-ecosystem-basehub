@@ -1,0 +1,39 @@
+@include respond-to('laptop') {
+    .feature-box {
+        &:hover {
+            .content-slide-up {
+                &.content-scale {
+                    .feature-box-overlay {
+                        @include prefix(transform, scale(1), webkit);
+                    }
+                }
+            }
+        }
+    }
+    .icon-with-text-style-05 {
+        .feature-box {
+            overflow: hidden;
+            .content-slide-up {
+                width: 100%;
+            }
+        }
+    }
+}
+@include respond-to('phone-landscape') {
+    .feature-box {
+        &.feature-box-left-icon, &.feature-box-left-icon-middle {
+            .feature-box-icon {
+                margin-right:20px;  
+            }
+        }
+        &:hover {
+            .content-slide-up {
+                &.content-scale {
+                    .feature-box-overlay {
+                        @include prefix(transform, scale(1), webkit);
+                    }
+                }
+            }
+        }
+    }
+}

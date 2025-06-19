@@ -12,6 +12,7 @@
         "button-name": "off"
       }
     ],
-    "disown-opener": "off"
+    "disown-opener": "off",
+    "axe/aria": "off"
   }
 }

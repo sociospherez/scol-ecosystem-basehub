@@ -1,0 +1,79 @@
+@include respond-to('laptop') {
+    .sliding-box {
+        .sliding-box-item {
+            width: 33.33% !important;
+            margin-left: 0;
+            margin-right: 0;
+            padding: 0 15px;
+            box-shadow: none;
+            .sliding-box-content {
+                width: 100% !important;
+                left: 0 !important;
+                position: relative;
+                height: auto;
+            }
+            &.active {
+                .sliding-box-content {
+                    border-radius: 0;
+                }
+                .sliding-box-img {
+                    border-radius: 0;
+                }
+            }
+        }
+        .sliding-box-img {
+            width: 100% !important;
+            border-radius: 0 !important;
+        }
+    }
+    .sliding-box-style-01 {
+        .sliding-box-item {
+            .sliding-box-content {
+                &:after {
+                    top: 0;
+                    opacity: 1;
+                    right: 50%;
+                    margin-top: -23px;
+                    border: solid transparent; 
+                    border-bottom-color: var(--white);
+                    border-width: 12px;
+                    margin-right: -10px;
+                }
+            }
+        }
+    }
+    .sliding-box-style-02 {
+        .sliding-box-item {
+            &.active {
+                .content-hover {
+                    animation: fade 0s;
+                }
+            }
+        }
+    }
+}
+@include respond-to('tablet') {
+    .sliding-box {
+        justify-content: center;
+        .sliding-box-item {
+            width: 50% !important;
+        }
+    }
+}
+@include respond-to('phone-landscape') {
+    .sliding-box {  
+        .sliding-box-item {
+            width: 100% !important;
+            padding:0;
+        }
+    }
+    .sliding-box-style-03 {
+        .number {
+            bottom: -22px;
+        }
+        .sliding-box-item {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+    }
+}

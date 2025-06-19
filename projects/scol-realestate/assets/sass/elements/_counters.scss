@@ -1,0 +1,80 @@
+/* Counter style 03 */ 
+.counter-style-03 {
+    .feature-box {
+        i{
+            @include prefix(transition, 0.4s, webkit);
+        }
+        &:hover {
+            i{
+                @include prefix(transform, translateY(-7px), webkit);
+            }
+        } 
+    }
+}
+
+/* Counter style 04 */ 
+.counter-style-04 {
+    .vertical-counter {
+        &:after {
+            content: attr(data-text);
+            display: inline-block;
+            margin-left: 3px;
+            word-break: normal;
+        }
+    }
+}
+
+/* Counter style 06 */ 
+.counter-style-06 {
+    .feature-box-content {
+        .counter-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            @include prefix(transform, translate(-50%, -50%), webkit);
+        }
+        &:after {
+            content: '';
+            display: block;
+            height: 40%;
+            right:0;
+            top:50%;
+            width: 1px;
+            position: absolute;
+            @include prefix(transform, translateY(-50%), webkit);
+            background-color: var(--extra-medium-gray);
+        } 
+    }
+    .feature-box {
+        &:last-child {
+            .feature-box-content {
+               &:after {
+                    display:none;
+               } 
+           }
+        }
+    }
+}
+
+/* Counter style 07 */ 
+.counter-style-07 {
+    .vertical-counter-number {
+        z-index: 1;
+    }
+}
+
+/* Vertical counter */ 
+.vertical-counter-number {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    ul {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        will-change: transform;
+        @include prefix(transform, translateY(0), webkit);
+    }
+}
