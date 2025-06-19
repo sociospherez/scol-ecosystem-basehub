@@ -1,0 +1,27 @@
+@include respond-to('tablet') {
+    .social-icon-style-06 {
+        ul {
+            li {
+                a {
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+}
+@include respond-to('phone-landscape') {
+    .elements-social {
+        ul {
+            li { 
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+@include respond-to('phone-portrait') {
+    .large-icon, .medium-icon, .extra-large-icon {
+        li {
+            margin: 0 6px; 
+        }
+    }
+}

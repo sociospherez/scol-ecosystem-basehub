@@ -1,0 +1,47 @@
+@include respond-to('phone-landscape') {
+    .accordion-style-04 {
+        .accordion-item {
+            .accordion-header {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+            .accordion-body {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+        }    
+    }
+    .accordion-style-02 {
+        .accordion-item {
+            .accordion-body {
+                padding-bottom: 25px;
+            }
+        }
+    }
+    .accordion-style-05 {
+        .accordion-item {
+            padding: 20px 35px 22px 55px;
+            .number {
+                top: 17px;
+            }
+        }
+    }
+}
+@include respond-to('phone-portrait') {
+    .accordion-style-05 {
+        .accordion-item {
+            padding: 18px 20px 20px 55px;
+            .number {
+                top: 15px;
+            }
+            .accordion-body {
+                padding-right: 25px;
+            }
+        }
+    }
+    .accordion-style-06 {
+        .accordion-item {
+            padding: 15px 70px 15px 30px;
+        }
+    }
+}

@@ -1,0 +1,348 @@
+@include respond-to('desktop') {
+    .grid {
+        &.xxl-grid-6col {
+            li { 
+                width: 16.67%; 
+                &.grid-item-double { 
+                    width: 33.33%; 
+                }
+            }
+        }
+        &.xxl-grid-5col {
+            li { 
+                width: 20%; 
+                &.grid-item-double { 
+                    width: 40%; 
+                }
+            }
+        }
+        &.xxl-grid-4col {
+            li { 
+                width: 25%;
+                &.grid-item-double {
+                    width: 50%;
+                }
+            }
+        }
+        &.xxl-grid-3col {
+            li {
+                width: 33.33%;
+                &.grid-item-double {
+                    width: 66.67%;
+                }
+            }
+        }
+        &.xxl-grid-2col {
+            li {
+                width: 50%;
+                &.grid-item-double {
+                    width: 100%;
+                }
+            }
+        }
+        &.xxl-grid-1col {
+            li {
+                width: 100%;
+                &.grid-item-double {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+@include respond-to('mini-desktop') {
+    .grid {
+        &.xl-grid-6col {
+            li { 
+                width: 16.67%; 
+                &.grid-item-double { 
+                    width: 33.33%; 
+                }
+            }
+        }
+        &.xl-grid-5col {
+            li { 
+                width: 20%; 
+                &.grid-item-double { 
+                    width: 40%; 
+                }
+            }
+        }
+        &.xl-grid-4col {
+            li { 
+                width: 25%;
+                &.grid-item-double {
+                    width: 50%;
+                }
+            }
+        }
+        &.xl-grid-3col {
+            li {
+                width: 33.33%;
+                &.grid-item-double {
+                    width: 66.67%;
+                }
+            }
+        }
+        &.xl-grid-2col {
+            li {
+                width: 50%;
+                &.grid-item-double {
+                    width: 100%;
+                }
+            }
+        }
+        &.xl-grid-1col {
+            li {
+                width: 100%;
+                &.grid-item-double {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+@include respond-to('laptop') {
+    .grid {
+        &.lg-grid-6col {
+            li { 
+                width: 16.67%; 
+                &.grid-item-double { 
+                    width: 33.33%; 
+                }
+            }
+        }
+        &.lg-grid-5col {
+            li { 
+                width: 20%; 
+                &.grid-item-double { 
+                    width: 40%; 
+                }
+            }
+        }
+        &.lg-grid-4col {
+            li { 
+                width: 25%;
+                &.grid-item-double {
+                    width: 50%;
+                }
+            }
+        }
+        &.lg-grid-3col {
+            li {
+                width: 33.33%;
+                &.grid-item-double {
+                    width: 66.67%;
+                }
+            }
+        }
+        &.lg-grid-2col {
+            li {
+                width: 50%;
+                &.grid-item-double {
+                    width: 100%;
+                }
+            }
+        }
+        &.lg-grid-1col {
+            li {
+                width: 100%;
+                &.grid-item-double {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+@include respond-to('tablet') {
+    .grid {
+        &.md-grid-6col {
+            li { 
+                width: 16.67%; 
+                &.grid-item-double { 
+                    width: 33.33%; 
+                }
+            }
+        }
+        &.md-grid-5col {
+            li { 
+                width: 20%; 
+                &.grid-item-double { 
+                    width: 40%; 
+                }
+            }
+        }
+        &.md-grid-4col {
+            li { 
+                width: 25%;
+                &.grid-item-double {
+                    width: 50%;
+                }
+            }
+        }
+        &.md-grid-3col {
+            li {
+                width: 33.33%;
+                &.grid-item-double {
+                    width: 66.67%;
+                }
+            }
+        }
+        &.md-grid-2col {
+            li {
+                width: 50%;
+                &.grid-item-double {
+                    width: 100%;
+                }
+            }
+        }
+        &.md-grid-1col {
+            li {
+                width: 100%;
+                &.grid-item-double {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+@include respond-to('phone-landscape') {
+    .grid {
+        &.sm-grid-6col {
+            li { 
+                width: 16.67%; 
+                &.grid-item-double { 
+                    width: 33.33%; 
+                }
+            }
+        }
+        &.sm-grid-5col {
+            li { 
+                width: 20%; 
+                &.grid-item-double { 
+                    width: 40%; 
+                }
+            }
+        }
+        &.sm-grid-4col {
+            li { 
+                width: 25%;
+                &.grid-item-double {
+                    width: 50%;
+                }
+            }
+        }
+        &.sm-grid-3col {
+            li {
+                width: 33.33%;
+                &.grid-item-double {
+                    width: 66.67%;
+                }
+            }
+        }
+        &.sm-grid-2col {
+            li {
+                width: 50%;
+                &.grid-item-double {
+                    width: 100%;
+                }
+            }
+        }
+        &.sm-grid-1col {
+            li {
+                width: 100%;
+                &.grid-item-double {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .grid {
+        &.gutter-small {
+            margin: 0 -7px;
+        }
+        &.gutter-small {
+            li {
+                padding:7px 7px;
+            }
+        }
+        &.gutter-extra-large {
+            li {
+                padding:15px;
+            }
+        }
+        &.gutter-extra-large {
+            margin:0 -15px; 
+        }
+        &.gutter-double-extra-large {
+            li {
+                padding: 15px;
+            }
+        }
+        &.gutter-medium {
+            margin: 0 -7px;
+        }
+        &.gutter-medium {
+            li {
+                padding: 7px 7px;
+            }
+        }
+        &.gutter-large {
+            margin: 0 -10px;
+        }
+        &.gutter-large {
+            li {
+                padding: 10px 10px;
+            }
+        }
+    }
+}
+@include respond-to('phone-portrait') {
+    .grid {
+        &.xs-grid-6col {
+            li { 
+                width: 16.67%; 
+                &.grid-item-double { 
+                    width: 33.33%; 
+                }
+            }
+        }
+        &.xs-grid-5col {
+            li { 
+                width: 20%; 
+                &.grid-item-double { 
+                    width: 40%; 
+                }
+            }
+        }
+        &.xs-grid-4col {
+            li { 
+                width: 25%;
+                &.grid-item-double {
+                    width: 50%;
+                }
+            }
+        }
+        &.xs-grid-3col {
+            li {
+                width: 33.33%;
+                &.grid-item-double {
+                    width: 66.67%;
+                }
+            }
+        }
+        &.xs-grid-2col {
+            li {
+                width: 50%;
+                &.grid-item-double {
+                    width: 100%;
+                }
+            }
+        }
+        &.xs-grid-1col {
+            li {
+                width: 100%;
+            }
+        }
+    }
+}

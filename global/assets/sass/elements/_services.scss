@@ -1,0 +1,127 @@
+/* Services box style 01 */ 
+.services-box-style-01 {  
+    .icon-box {
+        opacity: 0;
+        margin-top: 15px;
+    }
+    .box-image {
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+    }
+    .box-overlay {
+        z-index: 1;
+        @include prefix(transition, all 500ms cubic-bezier(0.61, 1, 0.88, 1), webkit);
+    } 
+    &:hover {
+        img{
+            @include prefix(transform, scale(1.1), webkit);
+            @include prefix(transition, all 500ms cubic-bezier(61, 10, 88, 10), webkit);
+        }
+        .icon-box {
+            opacity: 1;
+            margin-top: 0;
+        }
+        .box-overlay {
+            opacity: 0.8;
+        }
+    }
+}
+
+/* Services box style 02 */ 
+.services-box-style-02 { 
+    .box-overlay {
+        z-index: 1;
+        @include prefix(transition, all 450ms ease-in-out, webkit);
+    }
+    &.hover-box {
+        &:hover { 
+            .box-overlay {
+                opacity: 1; 
+            }
+        }
+    } 
+}
+
+/* Services box style 05 */  
+.services-box-style-05 {
+    img {
+        @include prefix(transition, 0.3s, webkit);
+        width: 100%;
+    }
+    figure {
+        position: relative;
+        figcaption {
+            position: absolute;
+            top: 0;
+            a {
+                display: inline-block;
+                color: var(--dark-gray);
+            }
+            .content-box {
+                margin-bottom: -80px;
+            }
+        }
+        &:hover {
+            figcaption {
+                .btn-link {
+                    color: var(--white);
+                    border-color: var(--white);
+                }
+                .box-title {
+                    color: var(--white);
+                }
+                .box-overlay {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+
+/* Services box style 06 */ 
+.services-box-style-06 {
+    .services-text {
+        &:after{
+            content: "\f309";
+            display: inline-block;
+            font-family: bootstrap-icons;
+            vertical-align: middle;
+            margin: -2px 2px 0;
+            font-size: 22px;
+            color: var(--medium-gray);
+            opacity: .7;
+        }
+    }
+    &:hover {
+        img{
+            @include prefix(transform, scale(1.1), webkit);
+            @include prefix(transition, all 500ms cubic-bezier(61, 10, 88, 10), webkit);
+        }
+    }
+}
+
+/* Services box style 07 */ 
+.services-box-style-07 {
+    .btn-hover {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        height: 100%;
+        @include prefix(transition, all 0.3s linear, webkit);
+    }
+    .text-down {
+        @include prefix(transition, all 0.3s linear, webkit);
+    }
+    &:hover {
+        .btn-hover {
+            top: 0;
+        }
+        .text-down {  
+            @include prefix(transform, translateY(20px), webkit); 
+        }
+    }
+}

@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+/* variable */
+:root {
+    /* --base-color: #18bcc7; */
+    --base-color: #3d7373;
+    --alt-font: 'Manrope', sans-serif;
+    --primary-font: 'Manrope', sans-serif;
+    --dark-gray: #303334b1;
+    --red: #f45959;
+    --medium-light-gray:#b4b4b4;
+    --medium-gray:#848587;
+
+
+/* box layout */
+.box-layout {
+    padding: 0 0%;
+}
+
+.bg-light-turquoise-blue {
+  /* background-color: #edf9fa; */
+  background-color: #65bfbf;
+}
+.bg-light-sea-green-transparent {
+  /* background-color: rgba(22, 193, 204,0.8); */
+  background-color: rgba(74, 140, 140,0.8);
+}
+.bg-light-sea-green-transparent-light {
+  background-color: rgba(22, 193, 204,0.15);
+}
+/* border color */
+.border-color-transparent-dark-gray {
+  border-color: rgba(39, 47, 48, 0.1) !important;
+}
+.border-color-red {
+  border-color: var(--red) !important;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 25px;
+}
+/* btn */
+.btn {
+  text-transform: inherit;
+  font-weight: 600;
+  letter-spacing: 0px;
+  background-color: rgba(74, 140, 140,0.8);
+  border-radius: 5px;
+  border: 1px;
+}
+.btn.btn-extra-large {
+  font-size: 18px;
+}
+.btn.btn-large {
+  font-size:17px;
+}
+.btn.btn-medium {
+  font-size: 16px;
+}
+.btn.btn-small {
+  font-size: 15px;
+}
+.btn.btn-very-small {
+  font-size: 14px;
+}
+.btn.btn-dark-gray:hover,
+.btn.btn-dark-gray:active,
+.btn.btn-transparent-light-gray:hover,
+.btn.btn-transparent-light-gray:active,
+.btn.btn-box-shadow.btn-base-color:hover,
+.btn.btn-box-shadow.btn-base-color:active{
+  background-color: var(--base-color);
+  border-color: var(--base-color);
+  color: var(--white);
+}
+.btn.btn-base-color:hover {
+  background-color: #65bfbf;
+  border-color: var(--dark-gray);
+  color: var(--white);
+}
+/* page title */
+.page-title-extra-large h2 {
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+/* social media icon */
+.social-icon-style-02 .small-icon li {
+  margin: 0;
+}
+/* outside box right */
+.outside-box-right-2 {
+  margin-right: -2vw;
+}
+
+/* Smooth scroll for anchor links */
+    html { scroll-behavior: smooth; }
+    /* Reset default body margins and set font */
+    body {font-family: Manrope, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
+
+
+    /* Hero Section: full viewport height, centered content */
+    .hero {
+      position: relative;          /* parent for overlay and videos */
+      height: 100vh;                /* 90% of viewport height */
+      overflow: hidden;            /* hide overflow from videos */
+      display: flex;               /* center hero content */
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.765);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+
+    /* Videos fill container and apply blur + dim effect */
+    .hero video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;   /* cover entire area */
+      object-fit: cover;           /* maintain aspect ratio */
+      filter: blur(6px) brightness(0.3); /* gloss + dim */
+      pointer-events: none;        /* disable interactions */
+      z-index: 3;
+    }
+
+    /* Dark overlay to improve text readability */
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+
+      text-shadow: rgba(204, 218, 239,0.8);;
+      z-index: 1;                  /* behind the text */
+    }
+
+    /* Hero content sits above overlay */
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      animation: fadeInUp 1s ease-out; /* slide and fade in */
+    }
+
+    /* Keyframes for fadeInUp animation */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Navbar link hover color transition */
+    nav .nav-link { transition: color 0.3s; }
+    nav .nav-link:hover { color: transparent; }
+
+    /* Primary button scale on hover */
+    .btn-primary { transition: transform 0.3s; }
+    .btn-primary:hover { transform: scale(1.05); }
+
+    /* Sticky social bar styling */
+    .social-bar {
+      position: fixed;
+      top: 50%; right: 20px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1030;               /* above other elements */
+
+    }
+    .social-bar a {
+      color: #65bfbf;
+      display: flex;
+      align-items: center; justify-content: center;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+
+
+      /* box-shadow: 0 4px 6px rgba(74, 140, 140,0.8); */
+      transition: all 0.3s ease;
+    }
+    .social-bar a:hover {
+      /* background: transparent; */
+
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transform:  scale(1.1);
+    }
+    /* Back-to-top button hidden by default */
+    #backToTop {
+      position: fixed;
+      bottom: 20px; right: 20px;
+      display: none;
+      width: 30px; height: 30px;
+      /* display: flex; align-items: center; justify-content: center; */
+      border-radius: 50%;
+      transition: background 0.3s, transform 0.3s;
+      background-image: url('scroller.gif'); /* Update the path to your GIF */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      border: none;
+      cursor: pointer;
+      z-index: 100;
+    }
+    #backToTop:hover {
+      transform: scale(1.1);
+    }
+    /* Simple card shadows for reviews */
+    .review-card { box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .review-card:hover { transform: translateY(-5px); }
+
+    /* Parallax Container */
+.parallax-container {
+  /* background-image: url(''); Replace with your hero banner image */
+  height: 100vh !important;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute; /* Needed for absolute positioning of overlay images */
+  transition: transform 1.5s ease-in-out;
+}
+
+/* Style for overlay images */
+.overlay-image {
+  position: absolute;
+  max-width: 150px; /* Control the size as needed */
+  transition: transform 0.5s ease; /* Optional: animation effect on hover */
+}
+
+/* Positioning adjustments for each overlay image */
+.overlay-image-1 {
+  top: 20%; /* Adjust positioning as needed */
+  left: 10%;
+}
+
+.overlay-image-2 {
+  top: 40%;
+  left: 30%;
+}
+
+.overlay-image-3 {
+  top: 60%;
+  left: 70%;
+}
+
+.overlay-image-4 {
+  top: 80%;
+  left: 50%;
+}
+
+/* Optional Overlay to Darken Image for Better Text Visibility */
+.parallax-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Darkens the background image slightly */
+  z-index: 0;
+}
+
+/* Ensures Text is Above the Background */
+.hero-text {
+  z-index: 1;
+}
+
+.image-background {
+  position: relative;
+  height: 500px; /* Adjust the height as needed */
+  background-image: url('/img/abstract-background-1061100_1920.jpg');
+  background-size: cover;
+  background-position: center;
+  /* background: rgba(255, 255, 255, 0.6); Adjust the color and opacity for the fade */
+}
+
+.image-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5); /* Adjust the color and opacity for the fade */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image1 {
+  /* The image used */
+  background-image: url("/img/Wavy_Bus-03.jpg");
+
+  /* Add the blur effect */
+  -webkit-filter: blur(8px);
+  filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text1 {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-image: url('scrollpur.gif'); /* Update the path to your GIF */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: move;
+  z-index: 100;
+  display: none; /* Initially hidden */
+}
+
+.back-to-top.show {
+  display: block; /* Show when scrolling */
+  border-radius: 50%;
+}
+
+/* Additional styles for animations and transitions */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+}

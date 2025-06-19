@@ -1,0 +1,89 @@
+/* Subcribe style 01 */
+.newsletter-style-01 {
+    input {
+        border-radius: 4px;
+        padding-right: 160px;
+        &.is-invalid {
+           padding-right: 160px; 
+        }
+    }
+    .btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        border-radius: 0 4px 4px 0;
+        i{
+            top: 1px;
+        }
+    }
+}
+
+/* Subcribe style 02 */
+.newsletter-style-02 {
+    input {
+        border-radius: 4px;
+        padding-right: 60px !important; 
+    }
+    .btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        border-radius: 0 4px 4px 0;
+        padding: 10px 25px 9px 25px;
+        display: inline-block;
+        i {
+            margin-left: 0;
+            top: inherit;
+        }
+        &:active {
+            border-color: transparent;
+        }
+    }
+}
+
+/* Subcribe style 03 */
+.newsletter-style-03 {
+    input {
+        padding-right: 165px !important;
+        padding-left: 30px !important;
+    }
+    .btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-radius: 0 100px 100px 0;
+        height: 100%;
+        padding: 12px 35px 12px 30px;
+        &:active {
+            border-color: transparent;
+        }
+    }
+}
+
+/* Subcribe style 04 */
+.newsletter-style-04 {
+    input {
+        padding-left: 0;
+        padding-right: 40px;
+        border-radius: 0;
+    }
+    .btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        padding: 0;
+        border: none;
+        i {
+            margin-left: 0;
+        }
+    }
+}
+
+.newsletter-style-01, .newsletter-style-02, .newsletter-style-03, .newsletter-style-04 {
+    .form-control, .form-control.is-invalid, .was-validated .form-control:invalid { 
+        background-image: inherit; 
+    }
+}

@@ -1,0 +1,52 @@
+@include respond-to('tablet') {
+    .pricing-table-style-01, .pricing-table-style-02 {
+        &.popular-item {
+            margin-top: 0;
+        } 
+    }
+    .pricing-table-style-02 {
+        .popular-item {
+            left: 0;
+            width: 100%;
+        }
+    }
+}
+@include respond-to('phone-portrait') {
+    .pricing-table-style-04 { 
+        .accordion-item {
+            padding-left: 30px;
+            padding-right: 30px;
+            &.active-accordion {
+                padding-left: 35px;
+                padding-right: 35px;
+            }
+        } 
+    }
+    .pricing-table-style-08 {
+        .nav-tabs {
+            > li {
+                &.nav-item {
+                    > a {
+                        &.nav-link {
+                            .tab-nav-text {
+                                margin: 0 12px;
+                            }
+                        }
+                    }
+                }
+            }        
+        }
+    }
+    .pricing-table-style-12 {
+        li {
+            display: block;
+            &:hover {
+                -webkit-transform: translateX(0px);
+                transform: translateX(0px);
+            }
+            img {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

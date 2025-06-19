@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>London living - Its about to get sunny</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    .carousel-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+  </style>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="bg-gradient-to-b from-[#F7F4F0] via-white to-white text-gray-800  overflow-x-hidden relative bg-animated">
+  <!-- Sticky CTA Bar -->
+  <div class="fixed top-0 w-full bg-white border-b shadow z-50 flex items-center justify-between px-6 py-3">
+    <div class="font-bold text-[#1C2B39] image-branding">
+
+      <img src="assets/images/512XSCOL_logo.png" alt="We are different , We truely innovate!">
+
+    </div>
+    <div><button class="bg-[#1C2B39] text-[#E8D2B0] px-4 py-2 rounded-full glow-on-hover ring-1 ring-[#E8D2B0] font-semibold">Book a Viewing</button></div>
+  </div>
+
+  <!-- Twickenham Square Hero Banner -->
+  <section class="relative h-screen pt-16 bg-cover bg-center text-white" style="background-image: url('assets/images/TS_19.png');">
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div id="twickenhamSlides" class="relative w-full max-w-xl px-6">
+        <!-- Slide 1 -->
+        <div class="carousel-slide transition-opacity duration-1000 opacity-100 bg-black bg-opacity-60 flex items-center justify-center">
+          <div class="text-center p-8 rounded">
+            <h2 class="text-5xl font-bold mb-4 text-[#E8D2B0] drop-shadow-lg">Twickenham Square</h2>
+            <p class="text-xl">Where life naturally reconnects</p>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-slide transition-opacity duration-1000 opacity-0" style="background-image: url('assets/images/TS_11.png'); background-size: cover; background-position: center;">
+          <div class="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-md flex flex-col justify-center items-center p-10 rounded-xl shadow-2xl"> bg-opacity-60 backdrop-blur-md flex flex-col justify-center items-center p-10 rounded-xl shadow-2xl">
+            <h2 class="text-4xl font-extrabold mb-8 flex items-center justify-center gap-4 text-cyan-200">
+              <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M13 5v6h6M5 10v10h14V10'/></svg>
+              Overview
+            </h2>
+            <ul class="text-xl space-y-6 font-medium text-white">
+              <li class="flex items-center gap-2">
+                <svg xmlns='http://www.w3.org/2000/svg' class='h-8 w-8 text-cyan-300 animate-bounce' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 10h16M4 14h16M4 18h16'/></svg>
+                <span><strong>Units:</strong> 1,2,3-bed apartments; 3-4 bed townhouses</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg xmlns='http://www.w3.org/2000/svg' class='h-7 w-7 text-amber-300 animate-pulse' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8c1.657 0 3-1.343 3-3S13.657 2 12 2s-3 1.343-3 3 1.343 3 3 3zm0 2c-3.313 0-6 2.686-6 6v3h12v-3c0-3.314-2.687-6-6-6z'/></svg>
+                <span><strong>Price Range:</strong> From £465,000</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5 text-white' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8c1.657 0 3-1.343 3-3S13.657 2 12 2s-3 1.343-3 3 1.343 3 3 3zm0 2c-3.313 0-6 2.686-6 6v3h12v-3c0-3.314-2.687-6-6-6z'/></svg>
+                <span><strong>Service Charge:</strong> From £3.65 psf</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-slide transition-opacity duration-1000 opacity-0" style="background-image: url('assets/images/TS_12.png'); background-size: cover; background-position: center;">
+          <div class="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-md flex flex-col justify-center items-center p-10 rounded-xl shadow-2xl">
+          <div class="text-center p-8 rounded">
+            <h2 class="text-3xl font-bold mb-6 text-[#E8D2B0] drop-shadow-lg">Lifestyle</h2>
+            <ul class="text-sm text-left space-y-2">
+              <li><strong>Amenities:</strong> Landscaped garden, cycle storage, parking options</li>
+              <li><strong>Transport:</strong> Twickenham Station (9m walk), Richmond (4m train)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Controls -->
+    <div class="absolute inset-y-1/2 left-4 z-50 flex items-center">
+  <button onclick="prevSlide('twickenham')" class="bg-[#1C2B39] text-[#E8D2B0] rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all gold-ring">
+    &#10094;
+  </button>
+</div>
+    <div class="absolute inset-y-1/2 right-4 z-50 flex items-center">
+  <button onclick="nextSlide('twickenham')" class="bg-white bg-opacity-30 hover:bg-[#E8D2B0] text-[#1C2B39] hover:text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all">
+    &#10095;
+  </button>
+</div>
+
+    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-40">
+      <span onclick="goSlide('twickenham',0)" class="twickenham-dot w-3 h-3 bg-[#E8D2B0] bg-opacity-30 rounded-full transition duration-300 ease-in-out"></span>
+      <span onclick="goSlide('twickenham',1)" class="twickenham-dot w-3 h-3 bg-white bg-opacity-50 rounded-full"></span>
+      <span onclick="goSlide('twickenham',2)" class="twickenham-dot w-3 h-3 bg-white bg-opacity-50 rounded-full"></span>
+    </div>
+  </section>
+
+<!-- Neighbourhood Highlights Section -->
+<section class="py-16 px-6 bg-white animate-fade-in">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6 text-[#1C2B39]">Neighbourhood Highlights</h2>
+    <p class="mb-10 text-gray-600 text-lg max-w-2xl mx-auto">More than just homes — Twickenham Square is a community. Discover the vibrant local scene, family-friendly spaces, and cultural gems just steps away.</p>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-[#F7F4F0] p-6 rounded-xl shadow hover:shadow-md transition">
+        <img src="assets/icons/family.png" class="mx-auto mb-4"/>
+        <h3 class="text-xl font-semibold text-[#E8D2B0] mb-2">Family Friendly</h3>
+        <p class="text-gray-600">Nearby parks, schools, and cafés make this a haven for families to thrive and grow.</p>
+      </div>
+      <div class="bg-[#F7F4F0] p-6 rounded-xl shadow hover:shadow-md transition">
+        <img src="assets/icons/restaurant.png" class="mx-auto mb-4"/>
+        <h3 class="text-xl font-semibold text-[#E8D2B0] mb-2">Social Buzz</h3>
+        <p class="text-gray-600">From riverside brunches to artisan shops, the area is alive with culture and connection.</p>
+      </div>
+      <div class="bg-[#F7F4F0] p-6 rounded-xl shadow hover:shadow-md transition">
+        <img src="assets/icons/tree.png" class="mx-auto mb-4"/>
+        <h3 class="text-xl font-semibold text-[#E8D2B0] mb-2">Nature Access</h3>
+        <p class="text-gray-600">Walk or cycle to leafy Richmond Park and reconnect with nature every day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Booking Form Section -->
+<section class="py-16 px-6 bg-gradient-to-br from-[#F7F4F0] to-white animate-fade-in">
+  <div class="max-w-2xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6 text-[#E8D2B0]">Book a Viewing</h2>
+    <p class="mb-8 text-gray-700">Register your interest and our team will be in touch to schedule your personal tour.</p>
+    <form class="space-y-6 text-left">
+      <input type="text" placeholder="Full Name" class="w-full p-4 border border-gray-300 rounded-md" required>
+      <input type="email" placeholder="Email Address" class="w-full p-4 border border-gray-300 rounded-md" required>
+      <input type="tel" placeholder="Phone Number" class="w-full p-4 border border-gray-300 rounded-md" required>
+      <textarea placeholder="Message (Optional)" rows="4" class="w-full p-4 border border-gray-300 rounded-md"></textarea>
+      <button type="submit" class="w-full py-3 bg-[#1C2B39] text-[#E8D2B0] font-semibold rounded-md glow-on-hover hover:bg-[#2e3d50] transition">Submit</button>
+    </form>
+  </div>
+</section>
+
+<!-- Gallery & Map Twickenham -->
+  <section class="px-6 max-w-6xl mx-auto py-12 animate-fade-in">
+    <h2 class="text-2xl font-bold text-center mb-6">Gallery & Location</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <img src="assets/images/TS_27.png" alt="Twickenham gallery" class="w-full rounded shadow hover:scale-105 transition glow-on-hover" />
+      <iframe class="w-full h-64 rounded" src="https://maps.google.com/maps?q=Twickenham&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+  </section>
+
+  <!-- Carousel Script -->
+  <script>
+    function prevSlide(id) {
+      const slides = document.querySelectorAll(`#${id}Slides .carousel-slide`);
+      const dots = document.querySelectorAll(`.${id}-dot`);
+      let current = [...slides].findIndex(s => s.style.opacity === '1');
+      const next = (current - 1 + slides.length) % slides.length;
+      updateSlides(slides, dots, next);
+    }
+    function nextSlide(id) {
+      const slides = document.querySelectorAll(`#${id}Slides .carousel-slide`);
+      const dots = document.querySelectorAll(`.${id}-dot`);
+      let current = [...slides].findIndex(s => s.style.opacity === '1');
+      const next = (current + 1) % slides.length;
+      updateSlides(slides, dots, next);
+    }
+    function goSlide(id, i) {
+      const slides = document.querySelectorAll(`#${id}Slides .carousel-slide`);
+      const dots = document.querySelectorAll(`.${id}-dot`);
+      updateSlides(slides, dots, i);
+    }
+    function updateSlides(slides, dots, index) {
+      slides.forEach((s, i) => s.style.opacity = i === index ? '1' : '0');
+      dots.forEach((d, i) => {
+        d.classList.toggle('bg-opacity-50', i !== index);
+        d.classList.toggle('bg-amber-400', i === index);
+      });
+    }
+    // Auto-rotate
+    setInterval(() => nextSlide('twickenham'), 6000);
+  </script>
+</body>
+</html>
