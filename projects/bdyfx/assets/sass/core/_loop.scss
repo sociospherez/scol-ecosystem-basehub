@@ -1,0 +1,99 @@
+/* ===================================
+    09. Loop - Padding, margin, position, font weight, min height, opacity and z-index
+====================================== */ 
+/* Padding and margin */
+$sides: (t: top, e: right, b: bottom, s: left);
+$properties: (p: padding, m: margin);
+
+@each $index, $property in $properties {
+    $spacing: 5;
+    @while $spacing <= 70 {
+        .#{$index}-#{$spacing+'px'}{#{$property}:unquote(#{$spacing})+'px !important';}
+        $spacing: $spacing + 5;
+    }
+    $spacing: 1;
+    @while $spacing <= 30 {
+        .#{$index}-#{$spacing}{#{$property}:unquote(#{$spacing})+'% !important';} 
+        $spacing: $spacing + 1;
+    }
+    @each $side-index, $side in $sides {
+        $spacing: 5;
+        @while $spacing <= 70 {
+            .#{$index}#{$side-index}-#{$spacing+'px'}{#{$property}-#{$side}:unquote(#{$spacing})+'px !important';}
+            $spacing: $spacing + 5;
+        }
+        $spacing: 1;
+        @while $spacing <= 30 {
+            .#{$index}#{$side-index}-#{$spacing}{#{$property}-#{$side}:unquote(#{$spacing})+'% !important';}
+            $spacing: $spacing + 1;
+        }
+    }
+}
+
+/* Position */ 
+$types: (top, right, bottom, left);
+@each $type in $types {
+    $spacing: 0;
+    @while $spacing <= 150 {
+        .#{$type}-#{$spacing+'px'} {#{$type}: unquote(#{$spacing})+'px';}
+        @if $spacing < 30 {
+            $spacing: $spacing + 1;
+        } @else {
+            $spacing: $spacing + 10;
+        }
+    }
+}
+
+@each $type in $types {
+    $spacing: 0;
+    @while $spacing <= 150 {
+        .#{$type}-#{'minus-'+$spacing+'px'} {#{$type}: unquote(#{'-'+$spacing})+'px';}
+        @if $spacing < 30 {
+            $spacing: $spacing + 1;
+        } @else {
+            $spacing: $spacing + 10;
+        }
+    }
+}
+
+/* Font weight */
+$font-weight: 100;
+@while $font-weight < 1000 {
+    .fw-#{$font-weight} {
+        font-weight: unquote(#{$font-weight})!important;
+    }
+    $font-weight: $font-weight + 100;
+}
+
+/* Min height */
+$min-height: 100;
+@while $min-height < 1000 {
+    .min-h-#{$min-height+'px'} {
+        min-height: unquote(#{$min-height}px)!important;
+    }
+    $min-height: $min-height + 50;
+}
+
+/* Opacity */
+$opacity: 0;
+@while $opacity < 10 {
+    .opacity-#{$opacity} {
+        opacity: unquote(#{'.'+$opacity});
+    }
+    $opacity: $opacity + 1;
+}
+
+/* Z-index */
+$z-index: 0;
+@while $z-index < 10 {
+    .z-index-#{$z-index} {
+        z-index: unquote(#{$z-index});
+    }
+    $z-index: $z-index + 1;
+}
+.z-index-minus-1 {
+    z-index: -1;
+}
+.z-index-minus-2 {
+    z-index: -2;
+}

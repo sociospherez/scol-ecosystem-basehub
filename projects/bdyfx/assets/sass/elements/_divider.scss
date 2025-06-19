@@ -1,0 +1,77 @@
+/* Divider style 01 */ 
+.divider-style-01 {
+    .divider-shadow {
+        &:after, &:before {
+            flex: 1 1 auto;
+            -webkit-box-flex:1 1 auto;
+            -ms-flex:1 1 auto; 
+            content: "";
+            height: 10px;
+            margin-top: 7px;
+            box-shadow: 0 6px 10px -10px #8c8b8b inset;
+        }
+    }
+    .divider-border {      
+        &:after, &:before {
+            flex: 1 1 auto;
+            -webkit-box-flex:1 1 auto;
+            -ms-flex:1 1 auto; 
+            content: "";
+            height: 10px;
+            margin-top: 7px;
+            border-top: 1px solid #E4E4E4;
+        }
+    }
+}
+
+/* Divider style 02 */ 
+.divider-style-02 {
+    .divider-dot {
+        position: relative;
+        span {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            margin: -10px 0 0 -13px;
+            width: 25px;
+            height: 25px;
+            box-shadow: inset 0 0 0 6px white;
+        }
+        &:after {
+            top: 0;
+            content: "";
+            height: 100%;
+            width: 1px;
+            flex: 1 1 auto;
+            -webkit-box-flex:1 1 1px;
+            -ms-flex:1 1 1px; 
+            border-left: 1px solid #E4E4E4;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+    } 
+}
+
+/* Divider style 03 */ 
+.divider-style-03 {
+    &.divider-style-03-01 {
+        border-top: 1px solid;
+        width: 100%;
+    }
+    &.divider-style-03-02 {
+        border-top: 1px dashed;
+    }
+    &.divider-style-03-03 {
+        border-top: 4px double;
+    }
+    &.divider-style-03-04 {
+        border-top: 2px dashed;
+    }
+    &.divider-style-03-05 {
+        border-top: 2px dotted;
+    }
+}

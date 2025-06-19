@@ -1,0 +1,157 @@
+/* Testimonial style 01 */
+.testimonials-style-01 {
+    .testimonial-arrow {
+        &:after {
+            content: '';
+            top: 100%;
+            left: 50px;
+            height: 0;
+            width: 0;
+            z-index: 9;
+            margin-left: -14px;
+            position: absolute;
+            pointer-events: none;
+            border: solid transparent;
+            border-width: 14px;
+            border-top-color: var(--white);
+        }
+    }
+    .author-detail {
+        img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+}
+
+/* Testimonial style 04 */
+.testimonials-style-04 { 
+    &.swiper-horizontal-3d {
+        &.swiper { 
+            margin-left: auto; 
+            margin-right: auto; 
+            position: relative; 
+            overflow: hidden; 
+            z-index: 1; 
+        }
+        .swiper-wrapper { 
+            position: relative;
+            width: 100%; 
+            height: 100%; 
+            z-index: 1;  
+            display: flex; 
+            transition-property: transform; 
+            transition-property: transform, -webkit-transform; 
+            box-sizing: content-box; 
+        }
+        &.swiper-pagination-bottom {
+            .swiper-wrapper { 
+                margin-bottom: 0; 
+            }
+        }
+        .swiper-slide { 
+            filter: grayscale(100%);  
+            opacity: 0; 
+            -webkit-flex-shrink: 0; 
+            -ms-flex: 0 0 auto; 
+            -ms-flex-negative: 0; 
+            flex-shrink: 0; 
+            width: 100%; 
+            height: 100%; 
+            position: relative;
+            &.swiper-slide-prev, &.swiper-slide-next {
+                opacity: .7
+            }
+            &.swiper-slide-active {
+                opacity: 1;
+                filter: grayscale(0);
+                box-shadow: 0 0 60px rgba(0,0,0,.17);
+                .slider-image {
+                    &:hover {
+                        .preview-icon { 
+                            opacity: 1; 
+                            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; 
+                            z-index: 1; 
+                        }
+                    }
+                }
+            }
+            img { 
+                opacity: 0; 
+            }
+        }
+        &.swiper { 
+            width: 100%; 
+            padding-bottom: 60px; 
+        }
+        &.swiper-3d {
+            .swiper-slide-shadow-left, .swiper-slide-shadow-right {
+                background-image: none;
+            }
+        }
+        .swiper-slide-active {
+            img { 
+                opacity: 1;
+            }
+        }
+    }
+}
+
+/* Testimonial style 05 */
+.testimonials-style-05 {
+    .testimonials-bubble { 
+        position: relative; 
+        border: 1px solid; 
+        @include prefix(transition, 0.2s, webkit); 
+        &:after, &:before {
+            top: 100%; 
+            left: 50px; 
+            border: solid transparent; 
+            content: " "; 
+            height: 0; 
+            width: 0; 
+            position: absolute; 
+            pointer-events: none;
+        }
+        &:after {
+            border-color: rgba(255, 255, 255, 0); 
+            border-top-color: var(--white); 
+            border-width: 15px 15px 0 0; 
+            margin-left: 1px;
+        }
+        &:before {
+            border-color: rgba(237, 237, 237, 0); 
+            border-top-color: var(--extra-medium-gray); 
+            border-width: 18px 18px 0 0;
+        }
+    }
+}
+
+/* Testimonial style 12 */
+.testimonials-style-12 { 
+    .swiper-button-next-nav {
+        right: -8px;
+        &:hover{
+            opacity: 1;
+        }
+    }
+    .swiper-button-previous-nav {
+        left: -8px;
+        &:hover{
+            opacity: 1;
+        }
+    }
+}
+
+/* Testimonial style 13  */
+.testimonials-style-13 {
+    .swiper-slide {
+        opacity: 0.1;
+        &.swiper-slide-active {
+            opacity: 1;
+        }
+        &.swiper-slide-next {
+            opacity: 0.4;
+        }
+    } 
+}

@@ -1,0 +1,45 @@
+/* Parallax background */
+[data-parallax-background-ratio] {
+    position: relative !important;
+    background-size: cover !important;
+    overflow: hidden;
+    background-attachment: fixed !important;
+    transition-duration: 0s;
+    -webkit-transition-duration: 0s;
+}
+
+/* Video icon effect  */ 
+.video-icon-effect {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: var(--white);
+    &:before {
+        position: absolute;
+        content: '';
+        animation: border-transform 7s linear infinite alternate forwards;
+        background-color: var(--white);
+        width: 100px;
+        height: 100px;
+        top: -15px;
+        left: -15px;
+        opacity: 0.2;
+    }
+}
+@-webkit-keyframes border-transform{
+    0%,100% { border-radius: 36% 64% 59% 41% / 40% 45% 55% 60% ; }
+    24% { border-radius: 37% 63% 60% 40% / 46% 52% 48% 54% ; } 
+    32% { border-radius: 40% 60% 54% 46% / 52% 56% 44% 48% ; }  
+    42% { border-radius: 52% 48% 62% 38% / 54% 54% 46% 46% ; } 
+    56% { border-radius: 60% 40% 65% 35% / 54% 50% 50% 46% ; } 
+    70% { border-radius: 44% 56% 43% 57% / 42% 50% 50% 58% ; }
+}
+@keyframes border-transform{
+    0%,100% { border-radius: 36% 64% 59% 41% / 40% 45% 55% 60% ; }
+    24% { border-radius: 37% 63% 60% 40% / 46% 52% 48% 54% ; } 
+    32% { border-radius: 40% 60% 54% 46% / 52% 56% 44% 48% ; }  
+    42% { border-radius: 52% 48% 62% 38% / 54% 54% 46% 46% ; } 
+    56% { border-radius: 60% 40% 65% 35% / 54% 50% 50% 46% ; } 
+    70% { border-radius: 44% 56% 43% 57% / 42% 50% 50% 58% ; } 
+}

@@ -1,0 +1,53 @@
+@include respond-to('tablet') {
+    .countdown-style-02 {
+        .countdown-box {
+            width: 145px;
+        }
+    }
+    .countdown-style-04 {
+        .countdown-box {
+            width: 150px;
+        }
+    }
+}
+@include respond-to('phone-landscape') {
+    .countdown-style-01 {
+        .countdown {
+            width: 100%; 
+        }
+        .counter-container {
+            display: block;
+            width: 100%;
+            .countdown-box {
+                margin: 5% 5%;
+                width: 40%;
+                float: left;
+            }
+        }
+    }
+    .countdown-style-02, .countdown-style-04 {
+        .countdown-box {
+            width: 50%;
+            margin:0 0 30px;
+            span {
+                position: relative;
+                top: 0;
+            }
+            &:before {
+                transform: none;
+                top: 15px;
+            }
+            &:nth-child(2) {
+                &:before { 
+                    display: none; 
+                }
+            }
+        }
+    }
+    .countdown-style-03 {
+        .countdown-box {
+            width: 50%;
+            margin: 0 0 30px;
+        }
+    }
+}

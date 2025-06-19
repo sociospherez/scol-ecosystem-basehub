@@ -1,0 +1,279 @@
+/* Rotate box */
+.rotate-box {
+    will-change: transform;
+    min-height: 250px; 
+    @include prefix(perspective, 1000, webkit);
+    @include prefix(transform-style, preserve-3d, webkit);
+    p {
+        color: rgba(255,255,255,.7);
+    }
+    .front-side, .back-side {
+        position: absolute;
+        top: 0;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        @include prefix(transition, transform 0.60s cubic-bezier(.5,.3,.3,1), webkit);
+    }
+    .rotate-content-front, .rotate-content-back {
+        position: relative;
+        top: 50%; 
+        @include prefix(transform-style, preserve-3d, webkit);
+        @include prefix(transition, transform 0.60s cubic-bezier(.5,.3,.3,1), webkit);
+    }
+    &.to-left, &.to-right {
+        .front-side {
+            z-index: 1;
+            @include prefix(transform, rotateY(0deg), webkit); 
+            @include prefix(transform-style, preserve-3d, webkit);
+        }
+        .rotate-content-front {
+            @include prefix(transform, translateY(-50%) translateX(0px) scale(1), webkit);
+        }
+        &:hover {
+            .back-side {
+                @include prefix(transform, rotateY(0deg), webkit);
+                @include prefix(transform-style, preserve-3d, webkit);
+            }            
+            .rotate-content-back {
+                @include prefix(transform, translateY(-50%) translateX(0px) translateZ(0px) scale(1), webkit);
+                @include prefix(transform-style, preserve-3d, webkit);
+            }
+        }
+    }
+    &.to-left {
+        .back-side {
+            @include prefix(transform, rotateY(180deg), webkit);
+            @include prefix(transform-style, preserve-3d, webkit);
+            z-index: 1;
+        }
+        .rotate-content-back {
+            @include prefix(transform, translateY(-50%) translateX(400px) translateZ(60px) scale(.88), webkit);
+        }
+        &:hover {
+            .front-side {
+                @include prefix(transform, rotateY(-180deg), webkit);
+                @include prefix(transform-style, preserve-3d, webkit);
+            }
+            .rotate-content-front {
+                @include prefix(transform, translateY(-50%) translateX(-400px) scale(.88), webkit);
+                @include prefix(transform-style, preserve-3d, webkit);
+            }
+        }
+    }
+    &.to-right {
+        .back-side {
+            @include prefix(transform, rotateY(-180deg), webkit);
+            @include prefix(transform-style, preserve-3d, webkit);
+            z-index: 1;
+        }
+        .rotate-content-back {
+            @include prefix(transform, translateY(-50%) translateX(-400px) translateZ(60px) scale(.88), webkit);
+        }
+        &:hover {
+            .front-side {
+                @include prefix(transform, rotateY(180deg), webkit);
+                @include prefix(transform-style, preserve-3d, webkit);
+            }
+            .rotate-content-front {
+                @include prefix(transform, translateY(-50%) translateX(400px) scale(.88), webkit);
+                @include prefix(transform-style, preserve-3d, webkit);
+            }
+        }
+    }
+    &.to-top, &.to-bottom {
+        .front-side {
+            @include prefix(transform, rotateX(0deg), webkit);
+            @include prefix(transform-style, preserve-3d, webkit);
+        }
+        .rotate-content-front {
+            @include prefix(transform, translateY(-50%) translateX(0px) scale(1), webkit);
+        }
+        &:hover {
+            .back-side {
+                @include prefix(transform, rotateX(0deg), webkit);
+                @include prefix(transform-style, preserve-3d, webkit);
+                z-index: 1;
+            }
+            .rotate-content-front {
+                @include prefix(transform, translateY(-50%) translateY(400px) scale(.88), webkit);
+                @include prefix(transform-style, preserve-3d, webkit);
+            }            
+            .rotate-content-back {
+                @include prefix(transform, translateY(-50%) translateY(0px) translateZ(0px) scale(1), webkit);
+                @include prefix(transform-style, preserve-3d, webkit);
+            }
+        }
+    }
+    &.to-top {
+        .back-side {
+            @include prefix(transform, rotateX(180deg), webkit);
+            @include prefix(transform-style, preserve-3d, webkit);
+            z-index: 1;
+        }
+        .rotate-content-back {
+            @include prefix(transform, translateY(-50%) translateY(-400px) translateZ(60px) scale(.88), webkit);
+        }
+        &:hover {
+            .front-side {
+                @include prefix(transform, rotateX(-180deg), webkit);
+                @include prefix(transform-style, preserve-3d, webkit);
+            }
+        }
+    }
+    &.to-bottom {
+        .back-side {
+            @include prefix(transform, rotateX(-180deg), webkit);
+            @include prefix(transform-style, preserve-3d, webkit);
+            z-index: 1;
+        }
+        .rotate-content-back {
+            @include prefix(transform, translateY(-50%) translateY(400px) translateZ(60px) scale(.88), webkit);
+        }
+        &:hover {
+            .front-side {
+                @include prefix(transform, rotateX(180deg), webkit);
+                @include prefix(transform-style, preserve-3d, webkit);
+            }            
+        }
+    }
+}
+.to-top { 
+    animation: toTop 0.3s linear forwards;
+}
+.to-right { 
+    animation: toRight 0.3s linear forwards; 
+}
+.to-bottom { 
+    animation: toBottom 0.3s linear forwards;
+}
+.to-left { 
+    animation: toLeft 0.3s linear forwards; 
+}
+
+/* Rotate box style 01 */ 
+.rotate-box-style-01 {
+    * {
+        will-change: transform;
+    }
+    .rm-rotate-box {
+        position: relative;
+    }
+    .flipper {
+        position: relative;
+        &:hover {
+            .front { 
+                @include prefix(transform, rotateY(-180deg), webkit); 
+            }
+            .back { 
+               @include prefix(transform, rotateY(0deg), webkit);  
+            }
+        }
+        &.to-right {
+            .front { 
+                @include prefix(transform, rotateY(0deg), webkit);   
+            }
+            .back { 
+                @include prefix(transform, rotateY(-180deg), webkit);  
+            }
+            &:hover {
+                .front { 
+                    @include prefix(transform, rotateY(180deg), webkit);   
+                }
+                .back { 
+                    @include prefix(transform, rotateY(0deg), webkit);    
+                } 
+            } 
+        }
+        &.to-top {
+            .front {  
+                @include prefix(transform, rotateX(0deg), webkit); 
+            }
+            .back { 
+                 @include prefix(transform, rotateX(-180deg), webkit);   
+            }
+            &:hover {
+                .front { 
+                     @include prefix(transform, rotateX(180deg), webkit);  
+                }
+                .back { 
+                     @include prefix(transform, rotateX(0deg), webkit);  
+                } 
+            } 
+        }
+        &.to-bottom {
+            .front { 
+                 @include prefix(transform, rotateX(0deg), webkit);   
+            }
+            .back { 
+                 @include prefix(transform, rotateX(180deg), webkit); 
+            }
+            &:hover {
+                .front { 
+                    @include prefix(transform, rotateX(-180deg), webkit);  
+                }
+                .back { 
+                     @include prefix(transform, rotateX(0deg), webkit);  
+                } 
+            } 
+        }
+    }  
+    .thumb-wrap { 
+        perspective: 1000px;
+    }
+    .content-wrap { 
+        position: absolute; 
+        width: 100%; 
+        display: block; 
+        transform-style: preserve-3d;  
+        perspective: inherit; 
+        backface-visibility: hidden; 
+        -webkit-backface-visibility: hidden; 
+        z-index: 2; 
+        bottom: 55px; 
+        left: 0; 
+        transform: translate3d(0, 0, 0) scale(1);  
+    }
+    .front {
+        @include prefix(transform, rotateY(0deg), webkit);
+        background-size: cover; 
+        z-index: 1;
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        perspective: inherit;
+        transition: transform 0.8s cubic-bezier(0.5, 0.2, 0.2, 0.8);
+    }
+    .back { 
+        @include prefix(transform, rotateY(180deg), webkit); 
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden; 
+        perspective: inherit;
+        transition: transform 0.8s cubic-bezier(0.5, 0.2, 0.2, 0.8);
+        .content-wrap {
+            top: 50%;
+            bottom: inherit;
+            left: 0;
+            transform: translate3d(0, -50%, 0) scale(1); 
+        }
+        .box-overlay {
+            visibility: visible;
+            opacity: 1;
+        }
+    }  
+}
+
+/* Rotate box style 02 */ 
+.rotate-box-style-02 { 
+    .rotate-box {
+        min-height: 350px;
+    }
+}
