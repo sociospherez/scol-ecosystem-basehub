@@ -1,0 +1,99 @@
+/*!
+    Carto - Interactive portfolio
+    Created by ThemeZaa
+!*/
+
+#stickyImgContainer {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #131319;
+
+    canvas {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .slides {
+        box-sizing: border-box;
+        position: absolute;
+        top: 50%;
+        padding: 0 10vw;
+        width: 100%;
+        max-width: 100%;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .slide {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 33vh;
+        color: #fff;
+        transform: translateY(-50%);
+        transition: transform 1300ms cubic-bezier(0.2, 1, 0.3, 1), opacity 500ms cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    .slide-meta {
+        margin: 0;
+        font-size: 1.35rem;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .slide-meta,
+    .slide-more {
+        opacity: 0;
+        transition: opacity 900ms cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    .show-meta .slide-meta,
+    .show-meta .slide-more {
+        opacity: 1;
+        transition: opacity 1500ms 300ms cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    .slide-title {
+        margin: 0;
+        text-indent: -0.5vw;
+        transition: color 500ms cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    .prev,
+    .next {
+        opacity: 0;
+
+        .slide-title {
+            opacity: .2;
+        }
+    }
+
+    .prev {
+        transform: translateY(-85%);
+    }
+
+    .next {
+        transform: translateY(-15%);
+    }
+
+    .scrolling>.slide {
+        transform: translateY(-50%);
+        opacity: 1;
+    }
+}

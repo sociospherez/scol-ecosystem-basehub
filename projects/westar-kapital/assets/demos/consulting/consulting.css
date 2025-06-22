@@ -1,0 +1,116 @@
+/* ===================================
+    Crafto - Consulting
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* variable */
+:root {     
+    --base-color: #dd6531;
+    --dark-gray: #292d36;
+    --medium-gray: #808291;
+    --primary-font: 'Kumbh Sans', sans-serif;
+    --alt-font: 'Kumbh Sans', sans-serif;
+}
+/* reset */
+body {
+    font-size: 17px;
+    line-height: 30px; 
+}
+a {
+    color: #808291;
+}
+/* bg gradient color */
+.bg-gradient-black-dark-orange {
+    background-image: linear-gradient(to right top, #353332, #312b28, #15110f, #4a3229, #5a2611);
+}
+.bg-gradient-dark-orange-transparent { 
+    background-image: linear-gradient(to right top, rgba(212, 110, 66,.8), rgba(197, 105, 66,.8), rgba(184, 101, 66,.8), rgba(158, 93, 67,.8), rgba(111, 80, 70,.8));
+}
+/* header */
+.header-icon .icon > a {
+    font-size: 20px;
+}
+.navbar .navbar-nav .nav-link {
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: .5px;
+}
+.navbar .navbar-nav .dropdown .dropdown-menu a {
+    font-size: 16px;
+    line-height: 28px;
+}
+.push-menu {
+    width: 400px;
+}
+header .navbar-brand img {
+    max-height: 35px;
+}
+.navbar .navbar-nav .simple-dropdown .dropdown-menu {
+    border-radius: 5px;
+}
+.navbar .navbar-nav .simple-dropdown .dropdown-menu li a {
+    padding: 9px 0 11px;
+    border-bottom: 1px solid var(--light-medium-gray);
+}
+.navbar .navbar-nav .simple-dropdown .dropdown-menu li:first-child a {
+    padding-top: 0;
+}
+.navbar .navbar-nav .simple-dropdown .dropdown-menu li:last-child a {
+    border: 0;
+    padding-bottom: 0;
+}
+.push-menu .close-menu {
+    right: 30px;
+    top: 30px;
+}
+/* typography */
+h1 {
+    line-height: 4.5rem;
+}
+/* subcribe style 02 */
+.newsletter-style-02 .btn {
+    padding: 7px 18px 9px 18px;
+}
+/* footer */
+footer .input-small, footer .textarea-small {
+    font-size: 15px;
+    padding-left: 20px;
+}
+footer .footer-logo img {
+    max-height: 35px;
+}
+/* page title */
+.page-title-extra-small h1 {
+    font-size: 22px;
+    line-height: 32px;
+}
+/* subcribe style 02 */
+.newsletter-style-02 input {
+    padding-right: 65px;
+}
+/* media query responsive */
+@media (max-width: 1199px) {
+    .newsletter-style-02 input {
+        padding-left: 15px;
+    }
+}
+@media (max-width: 991px) {
+    .navbar .navbar-nav .simple-dropdown .dropdown-menu {
+        margin-top: 15px;
+    }
+}
+@media (max-width: 767px) {
+    .page-title-extra-small h1 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .process-step-style-02 .progress-step-separator {
+        display: block;
+    }
+}
+@media (max-width: 575px) {
+    .process-step-style-02 .progress-step-separator {
+        display: none;
+    }
+}

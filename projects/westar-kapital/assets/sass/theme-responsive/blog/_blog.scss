@@ -1,0 +1,117 @@
+@include respond-to('desktop') {
+    .blog-simple {
+        figure {
+            figcaption {
+                .hover-text {
+                    display: block !important;
+                    height: auto !important;
+                    margin-bottom: -50px !important;
+                    @include prefix(transition, 0.3s, webkit);
+                }
+            }
+            &:hover {
+                figcaption {
+                    .hover-text {
+                        margin-bottom: 0 !important;
+                    } 
+                }
+            }
+        }
+    }
+    .blog-modern {
+        figure {
+            .post-content-wrapper {
+                .post-content {
+                    .hover-text {
+                        display: block !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@include respond-to('tablet') {
+    .blog-date {
+        .feature-box {
+            .feature-box-icon {
+                margin-right: 35px !important; 
+            }
+        }
+    }
+}
+@include respond-to('phone-landscape') {
+    .blog-standard {
+        .entry-meta {
+            span {
+                margin-right: 20px; 
+            }
+        }
+    }
+    .blog-comment {
+        li {
+            padding-bottom: 50px;
+            ul {
+                &.child-comment {
+                    li {
+                        margin-top: 45px;
+                    }
+                }
+            }
+        }
+    }
+}
+@include respond-to('phone-portrait') {
+    .blog-date {
+        .feature-box {
+            .feature-box-icon {
+                margin-right: 25px !important; 
+            }
+        }
+    }
+    .blog-date {
+        .feature-box {
+            .post-date {
+                min-width: 65px;
+                padding: 15px 0; 
+            }
+        }
+    }
+    .blog-standard {
+        .entry-meta {
+            span {
+                display: block; 
+            }
+        }
+        .blog-details {
+            .entry-meta {
+                span {
+                    display: inline-block; 
+                }
+            }
+        }
+    }
+    .blog-modern {
+        figure {
+            .post-content-wrapper {
+                width: 90%; 
+            }
+        }
+    }
+    .blog-comment {
+        li {
+            ul {
+                &.child-comment {
+                    margin-left: 20px;
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+    .pagination-style-01 {
+        .page-item {
+            .page-link {
+                margin: 0 5px;
+            }
+        }
+    }
+}

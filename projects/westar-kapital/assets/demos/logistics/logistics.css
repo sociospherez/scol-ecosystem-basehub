@@ -1,0 +1,154 @@
+/* ===================================
+    Crafto - Logistics 
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+/* variable */
+:root {      
+    --alt-font: "Urbanist", sans-serif;
+    --primary-font: "Urbanist", sans-serif;
+    --base-color: #ffc700;
+    --dark-gray: #141414;
+    --medium-gray: #707070;
+    --aluminium-grey: rgba(255, 255, 255, 0.4);
+}
+/* reset */
+body{
+    font-size: 18px;
+    line-height: 30px;
+}
+a:hover{
+    color: var(--dark-gray);
+}
+/* header */
+.navbar .navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: 600;
+}
+.navbar .navbar-nav .dropdown.open .dropdown-menu {
+    background-color: var(--dark-gray);
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li a {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--white);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+header .navbar-brand img {
+    max-height: 30px;
+}
+.header-top-bar div>a {
+    color: var(--light-gray);
+}
+.header-top-bar div>a:hover {
+    color: var(--white);
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li a i {
+    font-size: 30px;
+}
+.navbar .navbar-nav .dropdown .dropdown-menu a i {
+    width: 35px;
+}
+header .btn.btn-box-shadow.btn-base-color,
+.btn.btn-base-color {
+    color: var(--dark-gray);
+}
+header .btn.btn-box-shadow.btn-base-color:hover,
+.btn.btn-box-shadow.btn-base-color:hover {
+    color: var(--dark-gray);
+}
+header .btn.btn-small {
+    font-size: 15px; 
+    padding: 10px 18px;
+}
+/* btn */
+.btn.btn-hover-animation-switch.btn-link {
+    padding-top: 0;
+}
+.btn { 
+    text-transform: inherit;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+.btn.btn-extra-large {
+    font-size: 18px;
+    padding: 16px 32px;
+}
+.btn.btn-large {
+    font-size: 17px;
+    padding: 14px 28px;
+}
+.btn.btn-medium {
+    font-size: 16px; 
+    padding: 12px 24px;
+}
+.btn.btn-small {
+    font-size: 15px;
+}
+.btn.btn-very-small {
+    font-size: 14px; 
+    padding: 9px 20px;
+}
+
+/* counter style */
+.counter-style-04 .vertical-counter:after {
+    color: var(--base-color);
+}
+.review-star-icon i {
+    color: var(--base-color);
+}
+
+/* footer style */
+footer ul li {
+    margin-bottom: 1px;
+}
+footer p {
+    line-height: 28px;
+}
+/* page title */
+.page-title-double-large h1 {
+    font-size: 4.375rem;
+    line-height: 4.688rem;
+}
+.page-title-double-large h2 {
+    font-size: 16px;
+    line-height: 28px;
+}
+
+/* top bottom left right class */
+.right-12 {
+    right: 12%;
+}
+
+.bg-jungle-green {
+    background-color: #2ebb79;
+}
+/* Outside box */
+.outside-box-top-205px {
+    margin-top: -205px;
+}
+/* Transparent background color */
+.bg-gradient-gray-light-dark-transparent {
+    background-image: linear-gradient(to top, #f7f7f7 0%, transparent 100%);
+}
+@media (max-width: 1399px) {
+    .xl-h-180px {
+        height: 180px;
+    }
+    .xl-w-180px {
+        width: 180px;
+    }
+}
+@media (max-width: 1199px) {
+    .outside-box-top-200px {
+        margin-top: -150px;
+    }
+}
+@media (max-width: 991px) {
+    .outside-box-top-200px {
+        margin-top: 0;
+    }
+    .navbar .navbar-nav .dropdown.open .dropdown-menu {
+        padding-bottom: 15px;
+    }
+}

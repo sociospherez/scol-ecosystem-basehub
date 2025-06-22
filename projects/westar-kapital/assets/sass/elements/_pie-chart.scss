@@ -1,0 +1,13 @@
+/* Pie chart style 01 */ 
+.pie-chart-style-01 {
+    position: relative;
+    display: inline-block;
+    .percent {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 50%;
+        @include prefix(transform, translateY(-50%), webkit);
+    }
+}

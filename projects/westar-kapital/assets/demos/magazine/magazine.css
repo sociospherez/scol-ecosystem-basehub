@@ -1,0 +1,176 @@
+/* ===================================
+    Crafto - Magazine
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+/* variable */
+:root {     
+    --base-color: #f7775e;
+    --alt-font: 'Plus Jakarta Sans', serif; 
+    --primary-font: 'Plus Jakarta Sans', sans-serif;
+    --very-light-gray: #f9f5f3;
+    --medium-gray: #828282;
+}
+.top-55 {
+    top: 55%;
+}
+section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+/* bg transparent */
+.bg-gradient-bottom-dark-transparent {
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,0.90) 80%);
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%,rgba(0,0,0,0.90) 80%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 50%,rgba(0,0,0,0.90) 80%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a8000000',GradientType=0 );
+}
+.bg-gradient-bottom-very-light-gray { 
+    background-image:linear-gradient(to top, #ffffff, #ffffff, #ffffff, #ffffff, #f9f5f3);
+}
+.bg-gradient-black-green {
+    background-image: linear-gradient(to right top, #1f2021, #1b1d1c, #1b1d1c, #222523, #333c37);
+}
+.bg-nero {
+    background-color: #1c1c1c;
+}
+/* btn */
+.btn {
+    letter-spacing: normal;
+    font-family: var(--primary-font);
+}
+.categories-btn {
+    font-size: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 18px;
+}
+.btn.btn-link {
+    padding: 0 0 2px;
+}
+/* video icon */
+.video-icon-medium .video-icon {
+    font-size: 15px;
+}
+/* contact form */
+.terms-condition .box {
+    padding-left: 25px;
+}
+.terms-condition .box:before { 
+    width: 15px;
+    height: 15px;
+    background-color: var(--white);
+    border: 1px solid #e4e4e4;
+    top: 0;
+    left: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+.terms-condition .box:after {
+    left: 5px;
+    top: 3px;
+    width: 5px;
+    height: 8px;
+}
+/* box layout */
+.box-layout {
+    padding: 0 60px;
+}
+/* header */
+header .navbar-brand img {
+    max-height: 35px;
+}
+.navbar .navbar-nav .nav-link {
+    font-weight: 800;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+.header-push-button {
+    padding-left: 0;
+    padding-right: 20px;
+}
+.push-menu {
+    left: -100%;
+}
+.show-menu .push-menu {
+    left: 0;
+}
+.menu-item-list li {
+    border-bottom: 1px solid var(--extra-medium-gray);
+}
+.menu-item-list li:last-child {
+    border-bottom: none;
+}
+.menu-item-list .nav-link {
+    color: var(--dark-gray);
+    font-size: 32px;
+    padding: 13px 0;
+}
+.menu-item-list .nav-link:hover{
+    color: var(--dark-gray);
+    padding: 13px 10px;
+}
+.push-menu .close-menu {
+    right: 30px;
+    top: 30px;
+}
+/* page title */
+.page-title-extra-large h1 {
+    font-size: 4.375rem;
+    line-height: 4.375rem;
+}
+.social-icon-style-10 .default-color a {
+    color: var(--dark-gray) !important;
+}
+/* newsletter style 04 */
+.newsletter-style-04 input { 
+    padding-right: 100px !important; 
+}
+/* footer */
+footer .btn.alt-font, header .btn.alt-font {
+    font-family: var(--alt-font);
+}
+footer .newsletter-style-02 input {
+    padding-right: 130px;
+}
+footer .elements-social.social-icon-style-02 li {
+    margin: 0 30px 0 0;
+}
+@media (max-width: 1600px){
+    section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+}
+@media (max-width: 1199px){
+    .navbar .navbar-nav .nav-link {
+        font-size: 13px;
+    }
+    .box-layout {
+        padding: 0 50px;
+    }
+}
+@media (max-width: 991px){
+    section {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+    .box-layout {
+        padding: 0 30px;
+    } 
+}
+@media (max-width: 767px){
+    section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .box-layout {
+        padding: 0 15px;
+    }
+    .interactive-banner-style-09 img {
+        height: 350px;
+        width: 100%;
+        object-fit: cover;
+        background-position: center center;
+    }
+}

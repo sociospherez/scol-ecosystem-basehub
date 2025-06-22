@@ -1,0 +1,189 @@
+/* Google map */
+#map {
+    height:  550px;
+}
+.arrow_box {
+    width:  22px;
+    height:  22px;
+    border-radius: 100%;
+    -webkit-border-top-left-radius: 100%;
+    -webkit-border-top-right-radius: 100%;
+    -webkit-border-bottom-right-radius: 100%;
+    -webkit-border-bottom-left-radius: 100%;
+    position: relative;
+    opacity: .8;  
+    cursor: pointer;
+    span {
+        width: 100%;
+        height: 100%;
+        border: 1px solid;
+        opacity: 0.2;
+        display: inline-block;
+        border-radius: 100%;
+        -webkit-border-top-left-radius: 100%;
+        -webkit-border-top-right-radius: 100%;
+        -webkit-border-bottom-right-radius: 100%;
+        -webkit-border-bottom-left-radius: 100%; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        &:first-child {
+            animation: markerWave 1.5s .45s cubic-bezier(.4,0,.2,1) infinite forwards;
+            -webkit-animation: markerWave 1.5s .45s cubic-bezier(.4,0,.2,1) infinite forwards;
+            +span {
+                animation: markerWave 1.5s .45s cubic-bezier(0,0,.2,1) infinite forwards;
+                -webkit-animation: markerWave 1.5s .45s cubic-bezier(0,0,.2,1) infinite forwards;
+            }
+        }
+        &:last-child {
+            opacity: 0.1;
+        }
+    }
+
+    // map marker style 02
+    &.marker02 {
+        width:  18px;
+        height:  18px;
+        span {
+            border: 0;
+        }
+        &:after {
+            content: "";
+            width: 45px;
+            height: 62px;
+            background: url("../images/marker02.png") left center no-repeat;
+            background-size: cover;
+            position: absolute;
+            left: -15px;
+            top: -58px;
+            float: left;
+        }
+    }
+
+    // map marker style 03
+    &.marker03 {
+        width:  16px;
+        height:  16px;
+        @include prefix(transform, rotateX(-0deg), webkit);
+        span {
+            background-color: transparent !important;
+        }
+    }
+
+}
+@keyframes markerWave{
+    0% { 
+        transform:scale(1);
+        opacity:.8
+    }
+    20% {
+        opacity:.8
+    }
+    100% {
+        transform:scale(5.5);
+        opacity:0
+    }
+}
+@-webkit-keyframes markerWave{
+    0% { 
+        -webkit-transform:scale(1);
+        opacity:.8
+    }
+    20% {
+        opacity:.8
+    }
+    100% {
+        -webkit-transform:scale(5.5);
+        opacity:0
+    }
+}
+.infowindow {
+    color: var(--dark-gray);
+    font-weight: 400;
+    line-height: 26px;
+    font-size: 15px;
+    letter-spacing: -.5px;
+    padding: 25px 25px 25px 25px !important;
+    text-align: center;
+    .mb-3 {
+        margin-bottom: 5px !important;
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: -.25px;
+    }
+    p {
+        color: var(--medium-gray);
+        font-size: 15px;
+        margin-bottom: 5px;
+        letter-spacing: -.25px;
+        line-height: 24px;
+    }
+    :last-child {
+        margin-bottom: 0;
+    }
+}
+.gm-style {
+    .gm-style-iw-c {
+        padding: 0 !important;
+        border-radius: 0;
+        max-width: 230px !important;
+        @include box-shadow(0 20px 60px rgba(0,0,0,.08));
+    }
+    .gm-style-iw-d {
+        overflow: auto !important;
+    }
+    .gm-style-iw-t::after{
+        background: var(--dark-gray);
+        @include box-shadow(0 20px 60px rgba(0,0,0,.08));
+    }
+}
+.gm-ui-hover-effect {
+    opacity: .8;
+    top: -2px !important;
+    right: 2px !important;
+    width: 25px !important;
+    display: none !important;
+    height: 25px !important;
+    img {
+        width: 17px !important;
+        height: 17px !important;
+        margin: 6px !important;
+    }
+}
+.google-maps-link {
+    text-align: center;
+    a {
+        font-size: 12px;
+        font-weight: 400;
+        display: block;
+        background-color: var(--dark-gray);
+        color: var(--white);
+        padding: 15px;
+        letter-spacing: .5px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+.gmnoprint .gm-style-mtc,
+.gmnoprint .gm-svpc {
+    display:none;
+}
+.gm-style a[title] {
+    display: none !important;
+}
+.gmnoprint .gm-style-cc,
+.gmnoprint.gm-style-cc,
+.gm-style-cc,
+.gmnoscreen {
+    display: none !important;
+}
+.gm-style .gm-style-iw-tc::after {
+    background: var(--dark-gray);
+}
+@media screen {
+    .gm-style .gmnoscreen,
+    .gmnoscreen {
+        display:none;
+    }
+} 

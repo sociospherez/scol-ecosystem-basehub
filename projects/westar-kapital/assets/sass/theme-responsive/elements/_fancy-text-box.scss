@@ -1,0 +1,5 @@
+@include respond-to('phone-portrait') {
+    .fancy-text-box-style-01 {
+        border-right: 0 solid;
+    } 
+}

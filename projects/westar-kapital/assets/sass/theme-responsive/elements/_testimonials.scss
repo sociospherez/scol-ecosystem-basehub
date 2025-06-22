@@ -1,0 +1,58 @@
+@include respond-to('phone-landscape') {
+    .swiper-horizontal-3d {
+        .swiper-slide {
+            &.swiper-slide-active {
+                box-shadow: none;
+            }
+        }
+    }
+    .testimonials-style-04 {
+        padding: 0 15px;
+        &.swiper-horizontal-3d {
+            .swiper-slide {
+                &.swiper-slide-prev, &.swiper-slide-next {
+                    opacity: 0
+                }
+                &.swiper-slide-active {
+                    box-shadow: 0 0 10px rgba(0,0,0,.10);
+                }
+            }
+        }
+    }
+    .testimonials-style-11 {
+        .swiper-button-prev.slider-custom-text-prev,
+        .swiper-button-next.slider-custom-text-next {
+            min-height: 1px;
+            @include prefix(transform, translateY(0), webkit);
+            top: initial;
+            right: auto;
+            left: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+            position: relative;
+            margin: 30px -3px 0;
+            display: inline-block;
+        }
+    }
+}
+@include respond-to('phone-portrait') {
+    .testimonials-style-12 {
+        .swiper-button-previous-nav {
+            left: 25px;
+        }
+        .swiper-button-next-nav {
+            right: 25px;
+        }
+    } 
+    .testimonials-style-13 {
+        .swiper-slide {
+            opacity: 1;
+            &.swiper-slide-active {
+                opacity: 1;
+            }
+            &.swiper-slide-next {
+                opacity:1;
+            }
+        } 
+    }
+}

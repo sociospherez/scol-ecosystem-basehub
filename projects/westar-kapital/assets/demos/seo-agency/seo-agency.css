@@ -1,0 +1,148 @@
+/* ===================================
+    Crafto - Seo agency
+====================================== */
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* variable */
+:root {      
+    --alt-font: 'Urbanist', sans-serif;
+    --primary-font: 'Atkinson Hyperlegible', sans-serif;
+    --base-color: #4c46c0;
+    --dark-gray: #2a2b3f;
+    --medium-gray: #797a8c;
+}   
+/* reset */
+body{
+    font-size: 17px;
+    line-height: 30px; 
+}
+.placeholder-medium-gray::-webkit-input-placeholder {
+    color: var(--white) !important;
+    text-overflow: ellipsis;
+    opacity:0.3;
+}
+.placeholder-medium-gray::-moz-placeholder {
+    color: var(--white) !important;
+    text-overflow: ellipsis;
+    opacity:0.3;
+}
+.placeholder-medium-gray:-ms-input-placeholder {
+    color: var(--white) !important;
+    text-overflow: ellipsis;
+    opacity:0.3;
+}
+/* bg color */
+.bg-sea-buckthorn {
+    background-color: #ec954d;
+}
+/* bg transparent color */
+.bg-dark-gray-transparent {
+    background-color: rgba(42, 43, 63,.8);
+}
+/* bg gradient color */
+.bg-gradient-chablis-red-quartz-white {
+    background-image: linear-gradient(to right, #fce7e1, #fce7e1, #efe2ea, #dcdaf5, #dcdaf5);
+}
+.bg-gradient-top-very-light-gray {
+    background-image: linear-gradient(to top, #f4f7fd, #f4f7fd, #f9fbff, #f9fbff, #ffffff);
+}
+/* text gradient color */
+.text-gradient-orange-sky-blue {
+    background-image: linear-gradient(to right, #f36b4a, #c26772, #6256c8, #6256c8, #6256c8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* btn */
+.btn {
+    font-weight: 600;
+}
+.btn-gradient-orange-sky-blue {
+    background-image: linear-gradient(to right, #f36b4a, #584ccb, #f36b4a);
+    background-size: 200% auto;
+    color: var(--white);
+}
+/* heading */
+h1 {
+    line-height: 4.375rem;
+}
+h2 {
+    line-height: 3.438rem;
+}
+h3 {
+    line-height: 2.813rem;
+}
+h4 {
+    line-height: 2.375rem;
+}
+h5 {
+    line-height: 2rem;
+}
+h6 {
+    line-height: 1.75rem;
+}
+/* opacity */
+.opacity-05 {
+    opacity: .05;
+}
+/* header */
+header .navbar-brand img {
+    max-height: 30px;
+}
+header .btn.btn-rounded.btn-very-small{
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 25px;
+}
+.navbar .navbar-nav .nav-link {
+    font-weight: 600;
+    font-size: 18px;
+}
+header .left-nav .navbar-nav:before {
+    background: rgba(0,0,0,.3); 
+}
+/* footer */
+footer .nav-link {
+    color: var(--dark-gray);  
+}
+.nav-link {
+    padding: 0.5rem 1.5rem;
+}
+footer.half-footer {
+    padding: 40px 0 40px 0;
+}
+footer .elements-social ul li:last-child {
+    margin-right: 0;
+}
+/* page title */
+.page-title-large h1 {
+    font-size: 3.8rem;
+    line-height: 4.2rem;
+}
+.page-title-large h2 {
+    font-size: 20px;
+    line-height: 30px;
+}
+/* media query responsive */
+@media (max-width: 991px) {
+    .tab-style-04 .nav-tabs .nav-item {
+        padding: 0 20px;
+    }
+    .process-step-style-02 .progress-step-separator {
+        display: block;
+    }
+    footer .nav-link {
+        padding: 0.5rem 1rem; 
+    }
+}
+@media (max-width: 768px) {
+    .tab-style-04 .nav-tabs .nav-item {
+        padding: 0 10px;
+    }
+}
+@media (max-width: 575px) {
+    .process-step-style-02 .progress-step-separator {
+        display: none;
+    }
+    .background-position-center-bottom {
+        background-position: center bottom -1px !important;
+    }
+}

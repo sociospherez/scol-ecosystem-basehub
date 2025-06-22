@@ -1,0 +1,155 @@
+/* Countdown style 01 */ 
+.countdown-style-01 { 
+    .counter-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        .countdown-box {
+            font-family: var(--alt-font);
+            color: var(--dark-gray);
+            background-color: var(--white);
+            width: 130px;
+            min-height: 130px;
+            padding: 25px 20px 20px;
+            margin: 0 15px;
+            text-align: center;
+            @include prefix(border-radius, 6px, webkit);
+            @include box-shadow(0 0 25px rgba(0, 0, 0, 0.05));
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            .number {
+                font-size: 2.375rem;
+                line-height: 2.5rem;
+                font-weight: 600;
+                margin-bottom: 5px;
+                letter-spacing: -1px;
+            }
+            span {
+                font-size:  14px;
+                line-height: 14px;
+                color: var(--medium-gray);
+                text-transform: uppercase;
+            }
+        }
+    } 
+}
+
+/* Countdown style 02 */ 
+.countdown-style-02 {
+    .countdown-box {
+        position: relative;
+        width: 165px;
+        padding: 0 15px;
+        color: var(--white);
+        font-family: var(--alt-font);
+        display: inline-block;
+        text-align: center;
+        &:before {
+            content: ":";
+            position: absolute;
+            top: 50%;
+            right: -5px;
+            @include prefix(transform, translateY(-50%), webkit);
+            color: var(--white);
+            text-align: center;
+            font-size: 3rem;
+            margin-top: -4px;
+        }
+        &:last-child {
+            &:before {
+                display: none;
+            }
+        }
+        .number {
+            font-size: 3.5rem;
+            line-height: 3.75rem;
+            font-weight: 600;
+            letter-spacing: -1px;
+        }
+        span {
+            font-size: 15px;
+            line-height: 14px;
+            text-transform: uppercase;
+            position: absolute;
+            top: -26px;
+            left: 0;
+            right: 0;
+            color: var(--white);
+            font-weight: 500;
+        }
+    }
+}
+
+/* Countdown style 03 */ 
+.countdown-style-03 {
+    .countdown-box {
+        width: 130px;
+        display: inline-block;
+        margin: 0 15px;
+        text-align: center;
+        .number {
+            color: var(--dark-gray);
+            font-size: 4.3rem;
+            line-height: 4.3rem;
+            font-family: var(--alt-font);
+            letter-spacing: -1px;
+            font-weight: 700;
+        }
+        span {
+            color: var(--medium-gray);
+            text-transform: uppercase;
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 500;
+        }
+    }
+}
+
+/* Countdown style 04 */ 
+.countdown-style-04 {
+    .countdown-box {
+        width: 160px;
+        display: inline-block;
+        margin: 0 7px;
+        text-align: center;
+        position: relative;
+        &:before {
+            content: ":";
+            position: absolute;
+            top: 20px;
+            font-size: 2rem;
+            color: var(--white);
+            right: -10px;
+            margin-top: -5px;
+            font-weight: 400;
+            opacity: .7;
+        }
+        &:last-child {
+            &:before {
+                display: none;
+            }
+        }
+        .number {
+            color: #ffffff;
+            font-size: 4.5rem;
+            line-height: 4.5rem;
+            font-family: var(--alt-font);
+            font-weight: 600;
+        }
+        span {
+            color: var(--very-light-gray);
+            font-size: 15px;
+        }
+    }
+}

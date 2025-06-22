@@ -1,0 +1,210 @@
+/* ===================================
+    Crafto - Spa salon
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* variable */
+:root {     
+    --base-color: #fb7d61;
+    --very-light-gray:#EEE8E6;
+    --dark-gray:#36332e;
+    --medium-gray: #858181;
+    --light-medium-gray: #f8f3f0;
+    --alt-font: 'Rufina', serif;
+    --primary-font: 'Jost', sans-serif;
+} 
+/* reset */
+body, html {
+    overflow-x: hidden;
+}
+body {
+    font-size: 18px;
+    line-height: 30px;
+}
+/* header */
+.navbar .navbar-nav .nav-link {
+    font-size: 19px;
+    padding: 50px 20px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+}
+header .navbar-brand img {
+    max-height: 80px;
+}
+.header-icon .header-social-icon a {
+    padding-left: 25px;
+}
+/* swiper number */
+.swiper-number-pagination-style-01 .swiper-number .swiper-pagination-bullet:after {
+    height: 1px;
+    background-color: var(--base-color);
+}
+.magic-drag-cursor #ball-cursor:before {
+  content: "DRAG";
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--primary-font) !important;
+}
+/* swiper slider */
+.slider-navigation-style-01.swiper-button-next {
+    right: 30px;
+}
+.slider-navigation-style-01.swiper-button-prev {
+    left: 30px;
+}
+/* heading */
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 25px;
+}
+h3 {
+    line-height: 3rem;
+}
+h4 {
+    line-height: 2.375rem;
+}
+/* btn */
+.btn {
+    font-family: var(--primary-font);
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+.btn.btn-double-border.btn-border-base-color { 
+    color: var(--dark-gray); 
+}
+.btn.btn-double-border.btn-border-base-color:after {
+    border-color: var(--base-color); 
+    transition: 0.3s ease;
+}
+/* bg gradient color */
+.bg-gradient-nero-grey-brown { 
+    background-image: linear-gradient(to right, #191919, #1c1a1d, #211b20, #261c21, #2c1d20);
+}
+.bg-base-color-transparent {
+    background-color: rgba(244, 134, 110,.9);
+}
+.bg-base-color-transparent-light {
+    background-color: rgba(244, 134, 110,.2);
+}
+.bg-gradient-dark-transparent {
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(7%, #36332e), to(transparent));
+    background: linear-gradient(to top, #36332e 7%, transparent 100%);
+}
+/* border color */
+.border-color-light-gray {
+    border-color: #DCD7D4 !important;
+}
+/* slider custom text */
+.swiper-button-prev.slider-custom-text-prev,
+.swiper-button-next.slider-custom-text-next {
+    border-color: #DCD7D4; 
+}
+.hover-box.dark-hover:hover .text-light-opacity {
+    opacity: 0.5;
+}
+.services-box-style-02:hover img{
+    -webkit-transform: scale(1.1); 
+    transform: scale(1.1);
+}
+.large-icon li {
+    margin: 0 3px;
+}
+.social-icon-style-04 ul li a span {
+    background-color: var(--base-color) !important;
+}
+.team-style-05 .social-icon a {
+    margin: 0 10px;
+}
+/* page title */
+.page-title-extra-large h1 {
+    font-size:4.375rem;
+    line-height: 4.375rem;
+}
+/* tab style */
+.tab-style-04 .nav-tabs .nav-item .nav-link, .tab-style-04 .nav-tabs .nav-item .nav-link.active, .tab-style-04 .nav-tabs .nav-item .nav-link.show, .tab-style-04 .nav-tabs .nav-item .nav-link:hover {
+    color: var(--white);
+}
+.tab-style-04 .nav-tabs .nav-item {
+    padding: 0 16px;
+}
+.tab-style-04 .nav-tabs .nav-item:first-child {
+    padding-left: 0;
+}
+.tab-style-08 ul .nav-item {
+    border-color: #DCD7D4;  
+}
+.tab-style-08 ul .nav-item .nav-link, .tab-style-08 ul .nav-item .nav-link.active, .tab-style-08 ul .nav-item .nav-link:hover {
+    color: var(--dark-gray);
+}
+/* map style */
+.arrow_box.marker02:after { 
+    width: 65px;
+    height: 80px;
+    background: url("../../images/demo-spa-salon-contact-map-icon.png") left center no-repeat; 
+    left: -22px;
+    top: -60px; 
+}
+/* footer */
+footer .elements-social .medium-icon li a {
+    width: 50px;
+    height: 50px;
+}
+footer.half-footer {
+    padding: 70px 0;
+}
+/* media query responsive */
+@media (max-width: 1399px) {
+    .center-logo .navbar-nav .nav-link, header.sticky .center-logo .navbar-nav .nav-link {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+@media (max-width: 1199px) {
+    .navbar.center-logo .navbar-nav .nav-link, header.sticky .center-logo .navbar-nav .nav-link {
+        padding: 50px 10px;
+    }
+    .header-icon .header-social-icon a {
+        font-size: 15px;
+    }
+    .lg-me-2px {
+        margin-right: 2px !important;
+    }
+}
+@media (max-width: 991px) {
+    header .navbar-brand,
+    header.sticky .fixed-header .navbar-brand, 
+    header.sticky .disable-fixed .navbar-brand{
+        padding: 15px 0;
+    }
+    header .navbar-brand img {
+        max-height: 50px;
+    }
+    .tab-style-08 ul .nav-item .nav-link {
+        padding: 15px 10px;
+    }
+    footer.half-footer {
+        padding: 60px 0;
+    }
+}
+@media (max-width: 767px) {
+    footer.half-footer {
+        padding: 50px 0;
+    }
+    footer .large-icon li {
+        margin: 0;
+    }
+    #map {
+        height: 400px !important;
+    }
+    .tab-style-04 .nav-tabs .nav-item,
+    .tab-style-04 .nav-tabs .nav-item:first-child{
+        padding: 0 16px;
+    }
+    /* swiper slider */
+    .slider-navigation-style-01.swiper-button-next {
+        right: 15px;
+    }
+    .slider-navigation-style-01.swiper-button-prev {
+        left: 15px;
+    }
+}

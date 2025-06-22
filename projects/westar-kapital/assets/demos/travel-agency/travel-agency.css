@@ -1,0 +1,252 @@
+/* ===================================
+    Crafto - Travel agency
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800;900&display=swap');
+/* variable */
+:root {     
+    --base-color: #C19052; 
+    --light-gray: #E7E4DF;
+    --red: #d03c3c;
+    --very-light-gray:#F2EFEB;
+    --alt-font: 'Barlow Semi Condensed', sans-serif;
+    --primary-font: 'Schibsted Grotesk', sans-serif;
+}
+/* reset */
+body {
+    font-size: 17px;
+    line-height: 32px; 
+}
+section, footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+section.big-section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+/* heading */
+h1 { 
+    line-height: 3.8rem;
+}
+/* header */
+.navbar .navbar-nav .nav-link {
+    font-size: 19px;
+}
+.header-icon .icon > a {
+    font-size: 19px;
+}
+header .navbar-brand img {
+    max-height: 34px;
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li a {
+    border-bottom: 1px solid var(--extra-medium-gray);
+    padding: 16px 20px;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--dark-gray);
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li:hover img {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(502%) contrast(502%);
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li a:hover{
+    background-color: var(--base-color);
+    color: var(--white);
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li.active > a {
+        color: var(--medium-gray);
+    }
+.navbar .navbar-nav .dropdown.dropdown-with-icon .dropdown-menu {
+    width: 320px;
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon .dropdown-menu li a {
+    color: var(--dark-gray);
+    font-size: 17px;
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon .dropdown-menu li a p {
+    line-height: 22px;
+    font-size: 14px;
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon .dropdown-menu li a img {
+    width: 60px;
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon .dropdown-menu li.active > a {
+    color: var(--medium-gray);
+}
+.push-menu .close-menu {
+    right: 30px;
+    top: 30px;
+}
+/* bg color */
+.bg-gradient-gulf-blue-sepia-brown {
+    background-image: linear-gradient(to right, #33455B, #494954, #795244, #91563D, #97573B);
+}
+.bg-bay-of-many-blue {
+    background-color: #363f6d;
+}
+.bg-gradient-gray-light-dark-transparent {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(32, 35, 41, 1)), to(transparent));
+    background-image: linear-gradient(to top, rgba(32, 35, 41, 1) 0%, transparent 70%);
+}
+.border-color-transparent-dark-very-light {
+    border-color: rgba(35, 35, 35, 0.15) !important;
+}
+/* feature box */
+.feature-box.feature-box-left-icon-middle .feature-box-icon {
+    margin-right: 20px;
+}
+/* page title  */
+.page-title-extra-large h1 {
+    font-size: 4.375rem;
+    line-height: 5rem;
+}
+.page-title-extra-large h2 {
+    font-size: 16px;
+    line-height: 16px;
+    padding: 12px 25px;
+    display: inline-block;
+}
+.page-title-button-style h1 {
+    padding: 0;
+    display: block;
+}
+.small-screen {
+    height: 350px !important;
+}
+/* btn */
+.btn.btn-extra-large {
+    font-size: 18px;
+    padding: 16px 36px 16px; 
+}
+.btn.btn-large {
+    font-size: 17px;
+    padding: 14px 32px;
+}
+.btn.btn-medium {
+    font-size: 15px;
+    padding: 12px 30px;
+}
+.btn.btn-small {
+    font-size: 14px;
+    padding: 10px 25px;
+}
+.btn.btn-very-small {
+    font-size: 12px;
+    padding: 8px 20px;
+}
+.btn.btn-link {
+    padding: 0 0 2px;
+}
+.btn i {
+    margin-left: 6px;
+}
+.team-style-01 figure figcaption .social-icon a {
+    margin: 0 7px;
+}
+/* blog */
+.blog-modern figure .post-content-wrapper {
+    bottom: -50px;
+}
+/* top right bottom left */
+.top-minus-75px {
+    top: -75px;
+}
+/* footer */
+footer .elements-social ul li:last-child {
+    margin-right: 0;
+}
+.footer-navbar li a:hover {
+    color: var(--medium-gray);
+}
+footer .nav-link {
+    line-height: normal;
+    color: var(--dark-gray);
+}
+footer .elements-social ul li {
+    margin: 0;
+}
+/* Revolution slider jquery */
+.erinyen .tp-tab-title {
+    font-size: 66px !important; text-align: center !important; text-transform: inherit !important; line-height: 60px !important; font-family: 'Barlow Semi Condensed', sans-serif !important; font-weight: 600 !important; letter-spacing: -3.3px; color: #ffffff !important;
+}
+.rev_column {
+    border-right: 1px solid rgba(255,255,255,0.3)
+}
+.rev_column:last-child {
+    border-right: 0px solid rgba(255,255,255,0.3)
+}
+.hesperiden.tparrows { width: 45px; height: 45px;background: rgba(0,0,0,.4); -webkit-transition: all 300ms ease-in-out; transition: all 300ms ease-in-out}
+.hesperiden.tparrows:hover {background: #fff; }
+.hesperiden.tparrows:before {line-height: 45px;}
+.hesperiden.tparrows.tp-rightarrow:hover:before, .hesperiden.tparrows.tp-leftarrow:hover:before {color: #000}
+.hesperiden.tparrows.tp-leftarrow:before { content: "\f104";font-family: "Font Awesome 6 Free";font-size: 15px; font-weight: 900}
+.hesperiden.tparrows.tp-rightarrow:before { content: "\f105";font-family: "Font Awesome 6 Free";font-size: 15px; font-weight: 900; margin-right: 0}
+/* media query responsive */
+@media (min-width: 2100px){
+    .background-image-layer {max-width: 120%!important; width: 3000px!important; overflow-y: visible!important; }
+    .extra-grass-layer {max-width: 120%!important; width: 3000px!important; bottom: -200px; }
+}
+@media (max-width: 1199px) and (min-width: 992px){
+    .blog-modern figure .post-content-wrapper { width: 90%; }
+    .blog-modern figure .post-content-wrapper .separator { margin: 0 9px; }
+}
+@media (max-width: 1200px) and (min-width: 1024px){
+    .object-layer {max-width: 800px !important; width: 800px !important;min-width: 800px !important;}
+    .blog-modern figure .post-content-wrapper { width: 90%; }
+}
+@media (max-width: 991px){
+    section, footer {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+    section.big-section {
+        padding-top: 95px;
+        padding-bottom: 95px;
+    }
+    .navbar .navbar-nav .simple-dropdown .dropdown-menu {
+        margin-top: 15px;
+    }
+    .navbar .navbar-nav .simple-dropdown .dropdown-menu li a {
+        padding: 14px 0 15px;
+    }
+}
+@media (max-width: 767px){
+    section, footer {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    section.big-section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .small-screen {
+        height: 300px !important;
+    }
+    .sm-clear-both {
+        clear: both
+    }
+}
+@media (max-width: 777px){
+    .tp-loop-wrap .tp-parallax-wrap:nth-child(4) {display: none}
+    #travel-agency_wrapper { height: 700px !important;}
+    .tp-fullwidth-forcer {height: 700px !important;}
+    section, footer { padding-top: 50px; padding-bottom: 50px; }
+}
+@media (max-width: 479px){
+    .rev_row .rev_column:nth-child(4) {display: none !important;}   
+    .rev_row .rev_column:nth-child(2) {display: none !important;}   
+    #travel-agency_wrapper { height: 700px !important;}
+    .tp-fullwidth-forcer {height: 700px !important;}
+}
+@media (max-width: 991px) and (min-width: 800px) and (orientation: landscape) {
+    #travel-agency-slider_forcefullwidth {height: 500px !important;}
+    #travel-agency_wrapper {height: 500px !important;}
+    .background-image-layer {display: none!important;}
+    .extra-grass-layer {max-width: 100%!important; width: 1200px!important;}
+    .object-layer {max-width: 600px !important; width: 600px !important;min-width: 600px !important;}
+    .rev_row .rev_column:nth-child(4) {display: none !important;}
+    .package-details .rev_column {padding-bottom: 20px!important;}
+    #slide-02-layer-03, #slide-02-layer-01, #slide-02-layer-02, #slide-03-layer-05, #slide-03-layer-01, #slide-03-layer-02, #slide-03-layer-04, #slide-03-layer-06 {max-width: 1200px !important; width: 1200px !important;min-width: 1200px !important;}
+    #slide-02-layer-05 { bottom: 60px !important;}
+}

@@ -1,0 +1,143 @@
+/* ===================================
+    Crafto - Freelancer
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* variable */
+:root {     
+    --base-color: #c2001c;
+    --light-medium-gray:#e9e9e9;
+    --primary-font: 'Inter', sans-serif;
+    --alt-font: 'Inter', sans-serif;
+}
+body {
+    font-size: 17px;
+    line-height: 30px;
+    color:var(--dark-gray);
+}
+section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+/* bg sliding line */
+.bg-sliding-line {
+    background-image: linear-gradient(135deg, transparent 45%, #9c2531 45%, #9c2531 55%, transparent 0);
+    background-size: 5px 5px;
+}
+/* header */
+.header-push-button .push-button {
+    height: 8px;
+}
+header .navbar-brand img {
+    max-height: 48px;
+}
+.header-push-button .push-button span:first-child {
+    width: 15px;
+    margin-right: 0;
+}
+.show-menu .header-push-button .push-button span:nth-child(1) {
+    width: 15px;
+    top: 0;
+}
+.show-menu .header-push-button .push-button span:nth-child(2) {
+    top: 6px;
+    -webkit-transform: rotate(0deg); 
+    transform: rotate(0deg);
+}
+.hamburger-logo img {
+    max-height: 48px;
+}
+.hamburger-nav {
+    width: 30%;
+}
+.menu-item-list .nav-link {
+    font-size: 45px;
+    line-height: 40px;
+}
+/* font size */
+.fs-335 {
+    font-size: 20.938rem;
+    line-height: 18.75rem;
+}
+/* margin */
+.mt-minus-40px {
+    margin-top: -40px;
+}
+/* top left right bottom */
+.top-20 {
+    top: 20%;
+}
+.top-35 {
+    top: 35%;
+}
+.gutter-medium {
+    margin-left: -7px;
+    margin-right: -7px;
+}
+.portfolio-transform .portfolio-box .caption {
+  padding: 20px 20px 10px;
+}
+.progress-bar-style-01 .progress .progress-bar-percent:after {
+    border-top-color: #000;
+}
+/* bg gradient color */
+.bg-gradient-top-very-light-gray { 
+    background-image:linear-gradient(to top, #ffffff, #ffffff, #fcfafa, #fcfafa, #f7f7f7);
+}
+/* text shadow large */
+.text-shadow-large {
+    text-shadow: 0 20px 60px rgb(0, 0, 0, 0.15);
+}
+.outside-box-bottom-2 {
+    margin-bottom: -2vw; 
+}
+@media only screen and (max-width: 1700px) {
+    .hamburger-nav {
+        width: 35%;
+    }
+}
+@media only screen and (max-width: 1600px) {
+    .fs-335 {
+        font-size: 15.625rem;
+        line-height: 15.625rem;
+    }
+    .left-img {
+        width: 300px;
+    }
+}
+@media only screen and (max-width: 1399px) {
+    .left-img {
+        width: 250px;
+    }
+    .hamburger-nav {
+        width: 40%;
+    }
+}
+@media only screen and (max-width: 1399px) {
+    .fs-335 {
+        font-size: 12.5rem;
+        line-height: 12.5rem;
+    }
+}
+@media only screen and (max-width: 1199px) {
+    .fs-335 {
+        font-size: 10.625rem;
+        line-height: 10.625rem;
+    }
+}
+@media only screen and (max-width: 991px) {
+    section {
+          padding-top: 75px;
+          padding-bottom: 75px;  
+    }
+}
+@media only screen and (max-width: 767px) {
+    .fs-335 {
+        font-size:6.25rem;
+        line-height: 6.25rem;
+    }
+    section {
+          padding-top: 50px;
+          padding-bottom: 50px;  
+    }
+}

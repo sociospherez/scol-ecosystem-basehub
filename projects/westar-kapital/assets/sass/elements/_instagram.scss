@@ -1,0 +1,70 @@
+/* Instagram */
+.instafeed-grid { 
+    list-style: none; 
+    text-align: center;
+    figure { 
+        position: relative; 
+        overflow: hidden; 
+        margin-bottom: 0; 
+        border-radius: 4px;
+        a {
+            .insta-icon { 
+                opacity: 0; 
+                position: absolute; 
+                top: 0; 
+                left: 0; 
+                text-align: center; 
+                background: rgba(35,35,35,0.7); 
+                width: 100%; 
+                height: 100%;  
+                @include prefix(transition, 0.3s, webkit); 
+                i { 
+                    margin-right: 5px; 
+                    margin-left: 5px; 
+                    position: relative; 
+                    display: block; 
+                    font-size: 26px; 
+                    color: var(--white); 
+                    top: 50%;
+                    @include prefix(transform, translateY(-50%) scale(1.5,1.5), webkit);
+                    @include prefix(transition, all 200ms cubic-bezier(0.37, 0.80, 0.63, 1), webkit);
+                }
+            }
+            .insta-video {
+                display: none;
+            }
+            video {
+                object-fit: cover;
+                width: 100%;
+                height: 100%; 
+                &[data-class="video"] {
+                    display: block;
+                }
+            }
+            [data-class="video"] {
+                +.insta-image {
+                    display: none;
+                }
+            }
+              
+        }
+        &:hover {
+            a {
+                .insta-icon { 
+                    opacity: 1;
+                    i{
+                        @include prefix(transform, translateY(-50%) scale(1,1), webkit);
+                    }
+                }
+            }
+        }
+    }
+}
+.instagram-follow-api {
+    .instagram-button {
+        z-index: 1; 
+        white-space: nowrap; 
+        padding: 12px 32px; 
+        box-shadow: 0 0 35px rgba(23,23,23,.4); 
+    }
+}

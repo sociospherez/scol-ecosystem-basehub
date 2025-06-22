@@ -1,0 +1,24 @@
+@include respond-to('tablet') {
+    .counter-style-06 {
+        .feature-box {
+            &:nth-last-child(2n+1) {
+                .feature-box-content { 
+                    &:after {
+                        display:none;
+                    }
+                }
+            }
+        } 
+    }
+}
+@include respond-to('phone-portrait') {
+    .counter-style-06 {
+        .feature-box {
+            .feature-box-content { 
+                &:after {
+                    display:none;
+                }
+            }
+        } 
+    }
+}

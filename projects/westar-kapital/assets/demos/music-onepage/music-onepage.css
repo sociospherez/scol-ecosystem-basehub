@@ -1,0 +1,222 @@
+/* ===================================
+    Crafto - Music onepage
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+@import url("https://use.typekit.net/clt8jxw.css");
+/* variable */
+:root {     
+    --alt-font: 'elza-condensed', cursive; 
+    --primary-font: 'Manrope', sans-serif;
+    --base-color: #FF2883;
+    --yellow: #ffd40c;
+    --dark-gray: #0f0f14;
+    --medium-gray:#5d5d64;
+} 
+/* reset */
+body {
+    font-size: 17px;
+    font-weight: 500;
+}
+/* primary font */
+.primary-font {
+    font-family: var(--primary-font) !important;
+}
+/* section */
+section {
+    padding-top: 130px;
+    padding-bottom: 130px;
+}
+/* icon */
+.icon-double-large {
+    font-size: 70px;
+}
+/* header */
+.left-modern-menu .left-modern-header .navbar-brand img {
+    max-height: 40px;
+}
+.menu-item-list .nav-link {
+    font-size: 40px;
+    line-height: 48px;
+    padding: 7px 20px 0 0;
+}
+.left-modern-menu .left-modern-header .modern-side-menu {
+    padding: 75px 0;
+    border-left: 1px solid #18181e;
+}
+.left-modern-menu .left-modern-header .modern-side-menu .mCustomScrollBox .mCSB_container {
+    padding: 0;
+}
+.menu-item-list .menu-item {
+    border-bottom: 1px solid #18181e;
+    padding: 10px 60px;
+}
+.menu-item-list .menu-item:last-child {
+    border-bottom: 0;
+}
+.menu-item-list .active .nav-link {
+    opacity: 1; 
+    color: var(--base-color);
+}
+.menu-item-list .nav-link:hover {
+    opacity: 1;
+    color: var(--base-color);
+}
+/* letter spacing */
+.ls-15px {
+    letter-spacing: 15px;
+}
+/* margin top bottom */
+.mt-minus-30px {
+    margin-top: -30px;
+}
+.mt-minus-50px {
+    margin-top: -50px;
+}
+/* font size */
+.fs-460 {
+    font-size: 460px;
+}
+/* word break normal */
+.word-break-normal {
+    word-break: normal;
+}
+/* text color */
+.text-black-russian-gray {
+    color: #1d1d23;
+}
+/* bg color */
+.bg-black-russian-gray {
+    background-color: #1d1d23;
+}
+.bg-payne-gray {
+    background-color: #45454a;
+}
+/* portfolio creative */
+.portfolio-creative .portfolio-box .portfolio-title::after {
+    letter-spacing: 0;
+    font-size: 145px;
+    top: 0;
+}
+.portfolio-creative .portfolio-box .portfolio-title::before {
+    top: 20px; 
+}
+.portfolio-creative .grid-item .popup-vimeo {
+    display: block;
+}
+.portfolio-creative .portfolio-box i {
+    margin-left: 3px;
+}
+/* tracklist style */
+.tracklist-style:hover {
+    background-color: #17171d;
+}
+/* countdown style 03 */
+.countdown-style-03 .countdown-box {
+    width: 90px;
+    margin: 0 5px;
+    text-align: left;
+}
+.countdown-style-03 .countdown-box .number {
+    color: var(--white);
+    font-size: 63px;
+    line-height: 65px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+.countdown-style-03 .countdown-box span {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    position: relative;
+    top:-14px;
+}
+/* swiper number pagination progress */
+.swiper-number-pagination-progress .swiper-pagination-wrapper .swiper-pagination-progress {
+    background-color: #212128;
+}
+.swiper-number-pagination-progress .swiper-pagination-wrapper .number-prev, .swiper-number-pagination-progress .swiper-pagination-wrapper .number-next {
+    color: var(--white); 
+}
+.services-box-style-01 .icon-box {
+    margin-top: 0;
+}
+/* stack box */
+.stack-box {
+    height: 200vh;
+}
+/* footer */
+.footer-navbar a {
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 15px;
+    padding: 0 30px;
+}
+footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+/* media query responsive */
+@media (max-width: 1600px){
+    section {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+}
+@media (max-width: 1399px) {
+    .fs-460 {
+        font-size: 370px;
+    }
+}
+@media (max-width: 1199px) {
+    .fs-460 {
+        font-size: 270px;
+    }
+    section {
+        padding-top: 95px;
+        padding-bottom: 95px;
+    }
+}
+@media (max-width: 991px) {
+    .countdown-style-03 .countdown-box {
+        width: 85px;
+    }
+    .countdown-style-03 .countdown-box .number {
+        font-size: 60px;
+        line-height: 62px;
+    }
+}
+@media (max-width: 767px) {
+    section {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .mt-minus-50px {
+        margin-top: -10px;
+    }
+    .menu-item-list .menu-item {
+        padding: 10px 35px;
+    }
+    .menu-item-list .nav-link {
+        font-size: 30px;
+        line-height: 34px;
+    }
+    .left-modern-menu .left-modern-header .modern-side-menu {
+        padding: 40px 0;
+    }
+}
+@media (max-width: 575px) {
+    .countdown-style-03 .countdown-box {
+        width: 45%;
+    }
+    .countdown-style-03 .countdown-box .number {
+        text-align: center;
+    }
+    .countdown-style-03 .countdown-box span {
+        text-align: center;
+        width: 100%;
+        display: block;
+        margin-top: 5px;
+    }
+}

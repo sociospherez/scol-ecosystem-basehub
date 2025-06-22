@@ -1,0 +1,114 @@
+/* ===================================
+    Crafto - Startup
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+/* variable */
+:root {     
+    --base-color: #00ce9b;
+    --alt-font: 'Manrope', sans-serif;
+    --primary-font: 'Rubik', sans-serif;
+    --dark-gray: #252840;
+    --medium-gray: #868d98;
+} 
+/* reset */
+body {
+    font-size: 17px;
+    line-height: 32px; 
+}
+a {
+    color: #868d98;
+} 
+b, strong {
+    font-weight: 600;
+}
+::-webkit-input-placeholder {
+    color: #868d98 !important;
+    text-overflow: ellipsis;
+}
+::-moz-placeholder {
+    color: #868d98 !important;
+    text-overflow: ellipsis;
+    opacity:1;
+}
+:-ms-input-placeholder {
+    color: #868d98 !important;
+    text-overflow: ellipsis;
+    opacity:1;
+}
+/* bg color */
+.bg-gradient-emerald-blue-emerald-green {
+    background-image:linear-gradient(50deg,#09afea 0,#19e089 100%);
+}
+.bg-gradient-black-green {
+    background-image: linear-gradient(to right top, #1f2021, #1b1d1c, #1b1d1c, #222523, #333c37);
+}
+/* text color */
+.text-gradient-emerald-blue-emerald-green {
+    background-image: linear-gradient(to right top, #09afea, #19e089);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* button gradient */
+.btn-gradient-emerald-blue-emerald-green {
+    background-image: linear-gradient(to right, #09afea, #19e089, #09afea);
+    background-size: 200% auto;
+    color: var(--white);
+}
+/* btn */
+.btn{
+    font-weight: 500;
+    text-transform: inherit;
+}
+.btn.btn-extra-large {
+    font-size: 22px;
+}
+.btn.btn-large {
+    font-size:17px;
+}
+.btn.btn-medium {
+    font-size: 16px;
+}
+.btn.btn-small {
+    font-size: 15px;
+}
+.btn.btn-very-small {
+    font-size: 13px;
+}
+.btn.btn-large .btn-icon i {
+    top: 1px;
+}
+.btn.btn-link {
+    padding: 0 0 2px;
+}
+.btn.btn-link-gradient {
+    padding: 0 0 3px;
+}
+/* header */
+header .navbar-brand img {
+    max-height: 30px;
+}
+.navbar .navbar-nav .nav-link {
+    font-size: 17px;
+    letter-spacing: .5px;
+    padding: 10px 22px
+}
+.push-menu .close-menu {
+    right: 30px;
+    top: 30px;
+}
+/* newsletter style  */
+.newsletter-style-02 input {
+    font-size: 14px;
+}
+/* footer */
+footer ul li {
+    margin-bottom: 2px;
+}
+/* media query responsive */
+@media (max-width: 1199px) {
+    .navbar .navbar-nav .nav-link {
+        padding: 10px 17px;
+    }
+}

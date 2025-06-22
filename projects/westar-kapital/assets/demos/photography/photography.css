@@ -1,0 +1,136 @@
+/* ===================================
+    Crafto - Photography
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800;900&display=swap');
+/* variable */
+:root {     
+    --base-color: #b1f1d7;
+    --very-light-gray:#f8f9f9;
+    --alt-font: 'Poppins', sans-serif;
+    --primary-font: 'Schibsted Grotesk', sans-serif;
+} 
+html {
+    overflow-x: hidden;
+}
+body{
+    font-size: 17px;
+    line-height: 28px;
+    color: var(--dark-gray);
+} 
+a, a:hover {
+    color: var(--dark-gray);
+}
+/* custom cursor */
+.custom-cursor .circle-cursor-inner {
+    background-color: var(--dark-gray);
+}
+.custom-cursor .circle-cursor-inner.cursor-link-hover {
+    background-color: var(--dark-gray);
+}
+.custom-cursor .circle-cursor-outer {
+    background: var(--base-color);
+}
+/* header */ 
+header .navbar-brand img {
+    max-height: 59px;
+}
+header .widget-text {
+    font-size: 15px;
+}
+header .navbar-brand {
+    padding: 33px 0;
+}
+header .navbar-brand img {
+    max-height: 60px;
+}
+.hamburger-logo img {
+    max-height: 87px;
+}
+.header-icon .header-social-icon a {
+    padding-left: 15px;
+}
+.menu-list-wrapper {
+    height: calc(85vh - 150px);
+}
+.hamburger-menu-simple .menu-item-list .nav-link {
+    font-size: 60px;
+    line-height: 50px;
+    left:0;
+}
+.hamburger-menu-simple .menu-item-list .nav-link:hover {
+    opacity: 1;
+    color: var(--base-color);
+    left: 10px;
+}
+header .elements-social ul li {
+    margin-right: 20px;
+    margin-left: 0;
+}
+header .elements-social ul li a {
+    width: auto;
+    height: auto;
+}
+.push-menu .close-menu {
+    width: 50px;
+    height: 50px;
+}
+.header-push-button .push-button {
+    height: 10px;
+}
+.header-push-button .push-button span:first-child {
+    width: 15px;
+    margin-right: 0;
+}
+.show-menu .header-push-button .push-button span:nth-child(1) {
+    width: 15px;
+    top: 0;
+}
+.show-menu .header-push-button .push-button span:nth-child(2) {
+    top: 6px;
+    -webkit-transform: rotate(0deg); 
+    transform: rotate(0deg);
+}
+/* heading tag */
+h2 {
+    font-size: 3.75rem;
+    line-height: 3.75rem;
+} 
+/* btn */
+.btn.btn-base-color {
+    color: var(--dark-gray);
+}
+/* footer */
+footer .footer-logo img {
+    max-height: 59px;
+}
+/* small icon */
+.small-icon a {
+    font-size: 16px;
+}
+@media (max-width: 991px) {
+    .header-transparent[data-header-hover=light] {
+        background-color: transparent !important;
+    }
+    .hamburger-menu-simple .menu-item-list .nav-link {
+        font-size: 45px;
+        line-height: 36px;
+    }
+    header .navbar-brand {
+        padding: 22px 0;
+    }
+}
+@media (max-width: 767px) {
+    header .navbar-expand-lg {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .hamburger-menu-simple .menu-item-list .nav-link {
+        font-size: 35px;
+        line-height: 22px;
+    }
+    .menu-list-wrapper {
+        height: calc(90vh - 120px);
+    }
+}

@@ -1,0 +1,199 @@
+/* ===================================
+    Crafto - Marketing
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* variable */
+:root {      
+    --alt-font: 'Inter', sans-serif;
+    --primary-font: 'Inter', sans-serif;
+    --base-color: #f96f4a;
+    --dark-gray: #1f242e; 
+    --yellow: #ffeb7d; 
+    --medium-gray: #717580;
+    --aluminium-grey: #6e727c;
+}   
+/* custom cursor */
+@media (hover: hover) and (pointer: fine) {
+    .custom-cursor .circle-cursor-outer {
+        border: 1px solid transparent;
+    }
+    .custom-cursor .circle-cursor-inner {
+        width: 10px;
+        height: 10px;
+        background: #1f242e;
+    }
+}
+body{
+    line-height: 30px;
+}
+/* header */
+.navbar .navbar-nav .nav-link {
+    font-size: 18px;
+}
+header .navbar-brand img {
+    max-height: 27px;
+}
+.navbar .navbar-nav .simple-dropdown .dropdown-menu {
+    width: 260px;
+}
+.navbar .navbar-nav .simple-dropdown .dropdown-menu li a {
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 500;
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon .dropdown-menu {
+    width: 360px;
+}
+.header-icon .header-social-icon a {
+    font-size: 17px;
+    padding-left: 23px;
+}
+/* bg color */
+.bg-light-red-grey {
+    background-color: #fff1ee;
+} 
+.bg-base-color-transparent {
+    background-color: rgba(255, 122, 86,.9);
+}
+/* bg gradient */
+.bg-gradient-black-green { 
+    background-image: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,242,239,1) 80%, rgba(255,242,239,1) 100%);
+}
+.bg-jungle-green {
+    background-color: #2ebb79;
+}
+/* slider shadow */
+.slider-shadow-left-right {
+    mask-image:linear-gradient(to right, transparent 10%, #000000 25%, #000000 75%, transparent 90%);
+    -webkit-mask-image:linear-gradient(to right, transparent 10%, #000000 25%, #000000 75%, transparent 90%); 
+}
+/* text color */
+.text-jungle-green {
+    color: #2ebb79;
+}
+/* btn */
+.btn {
+    text-transform: none;
+    letter-spacing: 0px;
+}
+.btn.btn-very-small { 
+    padding: 9px 18px;
+}
+.btn.btn-small { 
+    padding: 11px 22px;
+}
+.btn.btn-medium { 
+    padding: 12px 22px 13px;
+}
+.btn.btn-large { 
+    padding: 13px 26px 15px;
+}
+.btn.btn-extra-large { 
+    padding: 16px 32px 18px;
+    word-break: normal;
+}
+.btn.btn-extra-large .btn-icon i {
+    top: 0;
+}
+.btn-icon i {
+    top: 1px;
+}
+.btn.btn-link {
+    padding: 0 0 2px;
+}
+.btn.btn-hover-animation-switch .btn-icon {
+    margin-left: 6px;
+}
+/* portfolio filter */
+.portfolio-simple .portfolio-box:hover .portfolio-image img {
+    opacity: 1;
+}
+/* footer */
+footer .elements-social li {
+    margin: 0 10px 0 0;
+}
+footer .footer-logo img {
+    max-height: 27px;
+}
+footer {
+    padding-bottom: 30px;
+}
+footer {
+    font-size: 15px;
+    line-height: 30px;
+}
+/* newsletter style 02  */
+.newsletter-style-02 input {
+   padding-right: 90px !important; 
+   font-size: 14px;
+}
+/* tabs style 08 */
+.tab-style-08 ul .nav-item .nav-link.active,
+.tab-style-08 ul .nav-item .nav-link.show,
+.tab-style-08 ul .nav-item .nav-link:hover {
+    color: var(--dark-gray);
+}
+/* team style 01 */
+.team-style-01 figure figcaption .social-icon a {
+    margin: 0 5px;
+}
+/* process step style 05 */
+.process-step-style-05 .progress-step-separator {
+    bottom: -10px;
+    height: 100%;
+    z-index: -1;
+}
+/* select */
+.select:after {
+    right: 25px;
+}
+/* media query responsive */
+@media (max-width: 1199px) {
+    .navbar .navbar-nav .nav-link {
+        font-size: 16px;
+        padding: 10px 13px;
+    }
+    .newsletter-style-02 input {
+        padding-left: 15px;
+        padding-right: 100px;
+    }
+    .nav-link {
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+    }
+    .elements-social .large-icon li {
+        margin: 0 5px;
+    }
+    .lg-overflow-hidden {
+        overflow: hidden;
+    }
+    .lg-mt-45 {
+        margin-top: 45% !important;
+    }
+}
+@media (max-width: 991px) {
+    .header-icon .icon {
+        top: -2px;
+    }
+    .elements-social.social-icon-style-04 .large-icon a {
+        font-size: 21px;
+        width: 50px;
+        height: 50px;
+    }
+    .navbar .navbar-nav .nav-link {
+        font-size: 18px;
+    }
+    .md-right-minus-250px{
+        margin-right: -100px !important;
+    }
+    .tab-style-08 ul .nav-item .nav-link {
+        padding: 25px 25px;
+    }
+}
+@media (max-width: 767px) {
+    .elements-social ul li {
+        margin-bottom: 0;
+    }
+   
+}

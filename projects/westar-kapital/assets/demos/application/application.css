@@ -1,0 +1,195 @@
+/* ===================================
+    Crafto - Application
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+/* variable */
+:root {      
+    --alt-font: 'Manrope', sans-serif; 
+    --primary-font: 'Manrope', sans-serif;
+    --base-color:#fd6f63;
+    --dark-gray: #2c2e3c;
+    --medium-gray:#797a85;
+}
+/* reset */
+::-webkit-input-placeholder {
+    color: var(--aluminium-grey) !important;
+    text-overflow: ellipsis; 
+}
+::-moz-placeholder {
+    color: var(--aluminium-grey) !important;
+    text-overflow: ellipsis;
+    opacity: 1; 
+}
+:-ms-input-placeholder {
+    color: var(--aluminium-grey) !important;
+    text-overflow: ellipsis;
+    opacity: 1; 
+}
+/* custom cursor */
+@media (hover: hover) and (pointer: fine) {
+    .custom-cursor .circle-cursor-outer {
+        border: 1px solid transparent;
+    }
+    .custom-cursor .circle-cursor-inner {
+        width: 25px;
+        height: 25px;
+        background: rgba(44,46,60,.15)
+    }
+}
+/* bg gradient color */
+.bg-gradient-pink-orchid {
+    background-image: linear-gradient(to right top, #e958a1, #e15aae, #d15ec7, #c561db, #bf63e5);
+}
+.bg-dark-haiti {
+    background-color: #2e2b39;
+}
+.bg-floral-white {
+    background-color: #fff8e7;
+}
+.bg-licorice-blue {
+    background-color: #585d72;
+}
+.bg-black-pearl-blue {
+    background-color: #232530;
+}
+.bg-black-pearl-blue-dark {
+    background-color: #1f212a;
+}
+.bg-linen{
+    background-color: #fdedea;
+}
+.bg-oxford-blue{
+    background-color: #262D38;
+}
+/* text gradient color */
+.text-gradient-pink-orchid {
+    background-image: linear-gradient(to right, #e958a1, #e15aae, #d15ec7, #c561db, #bf63e5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 25px;
+}
+/* btn */  
+.btn {
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+}
+.btn.btn-extra-large {
+    font-size: 17px;
+}
+.btn.btn-large {
+    font-size:15px;
+}
+.btn.btn-medium {
+    font-size: 14px;
+}
+.btn.btn-small {
+    font-size: 13px;
+}
+.btn.btn-very-small {
+    font-size: 12px;
+}
+.btn-gradient-pink-orchid {
+    background-image: linear-gradient(to right, #e958a1, #bf63e5, #bf63e5);
+    background-size: 200% auto;
+    color: var(--white);
+}
+/* newsletter */
+.newsletter-style-02 .btn {
+    padding: 7px 18px 9px 18px;
+}
+.newsletter-style-02 input { 
+    padding-right: 50px;
+    font-size: 14px; 
+}
+/* border color gradient */
+.border-gradient-pink-orchid {
+    border-image: linear-gradient(to right top, #e958a1, #e15aae, #d15ec7, #c561db, #bf63e5);
+    border-image-slice: 1;
+}
+/* header */
+header .navbar-brand img {
+    max-height: 32px;
+}
+.navbar .navbar-nav .nav-link {
+    font-weight: 700;
+    font-size: 17px; 
+}
+header .btn i {
+    top: -1px !important;
+}
+header.sticky.sticky-active .disable-fixed[data-header-hover=light] {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+/* top right bottom left */
+.bottom-130px {
+    bottom: 130px;
+}
+.bottom-150px {
+    bottom: 150px;
+}
+.top-25 {
+    top: 25%!important;
+}
+/* height */
+.h-64px {
+    height: 64px !important;
+}
+/* margin */
+.margin-minus-95px-bottom {
+    margin-bottom: -95px;
+}
+/* border radius */
+.border-radius-top-left{
+    border-radius: 10px 0 0 10px !important;
+}
+.border-color-transparent-dark {
+    border-color: rgba(31, 36, 46, 0.5) !important;
+}
+/* page title */
+.page-title-extra-large h1 {
+    font-size: 4.063rem;
+    line-height: 4.375rem;
+}
+.page-title-extra-large h2 {
+    font-size: 16px;
+    line-height: 20px;
+}
+/* scrolling text */ 
+.marquees-text {
+    word-break: normal;
+}
+/* review */
+.review-star-icon i {
+    color: #ffae00;
+}
+/*  process step style 05  */
+.process-step-style-05 .progress-step-separator {
+    bottom: inherit;
+    height: 100%;
+}
+/*  footer  */
+footer .footer-logo img {
+    max-height: 32px;
+}
+footer ul li {
+    margin-bottom: 0;
+}
+/* media query responsive */
+@media (max-width: 1199px) {
+    .review-star-icon i {
+        letter-spacing: 2px;
+    }
+    .newsletter-style-02 input {
+        padding-left: 15px;
+    }
+}
+@media (max-width: 575px) {
+    header .header-icon .btn.btn-rounded.btn-small {
+        padding-left: 20px;
+    }
+}

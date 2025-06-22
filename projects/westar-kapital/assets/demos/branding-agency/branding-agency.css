@@ -1,0 +1,200 @@
+/* ===================================
+    Crafto - Branding agency
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+/* variable */
+:root {     
+    --base-color: #e99022; 
+    --medium-gray: #7b7a7a;
+    --dark-gray: #1d1d1d;  
+    --charcoal-blue: #232323;
+    --alt-font: 'Space Grotesk', sans-serif;
+    --primary-font: 'Inter', sans-serif;
+}
+body {
+    line-height: 30px;
+}
+a:hover {
+    color: var(--dark-gray);
+}
+h1, .h1 {
+    line-height: 4rem;
+}
+h3, .h3 { 
+    line-height: 2.813rem;
+}
+h4 {
+    line-height: 2.6rem;
+}
+/* header */
+.navbar .navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: 600;
+}
+header .header-button .btn.btn-switch-text.btn-medium > span {
+    padding: 12px 22px;
+}
+header .navbar-brand img {
+    max-height: 34px;
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li a {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--dark-gray) !important;
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li a:hover {
+    background-color: #f6f4f3;
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li a i {
+    font-size: 30px;
+    width: 35px;
+}
+/*margin*/
+.ms-100px {
+    margin-left: 100px;
+}
+.ms-80px {
+    margin-left: 80px;
+}
+.mb-minus-50px {
+    margin-bottom: -50px;
+}
+/* btn */
+.btn {
+    text-transform: none;
+    letter-spacing: 0;
+}
+.btn.btn-extra-large {
+    font-size: 16px;
+    padding: 16px 32px;
+}
+.btn.btn-large {
+    font-size: 15px;
+    padding: 15px 30px;
+}
+.btn.btn-switch-text.btn-large > span {
+    padding: 15px 30px;
+}
+.btn-gradient-fuel-yellow-blue {
+    background-image: linear-gradient(to right, #d18215, #3797a1, #d18215);
+    background-size: 200% auto;
+    color: var(--white);
+}
+/* left right top bottom */
+.left-minus-45 {
+    left: -45%;
+}
+.bottom-minus-200px {
+    bottom: -200px;
+}
+.one-half-screen {
+  height: 550px !important;
+}
+.swiper-pagination-progress .swiper-progress {
+    background-color: var(--dark-gray); 
+}
+.magic-drag-cursor #ball-cursor:before {
+    font-weight: 500;
+}
+/* text gradient color */
+.text-gradient-base-color {
+    background-image: linear-gradient(to right, #e97522 0%, #1ea3b1 100%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.text-orange{
+    color: #e97522;
+}
+.text-blue{
+    color: #1ea3b1;
+}
+/* bg gradient color */
+.bg-gradient-top-very-light-gray { 
+    background-image:linear-gradient(to right, #fbf3e9, #f9f4eb, #f4f4f0, #f2f4f2, #eff4f4);
+}
+.bg-linen {
+    background: #f6f4f3;
+}
+.bg-gradient-orange-transparent {
+    background: linear-gradient(to right, rgba(233, 117, 34, 1.0) 10%, rgba(255, 255, 255, 0.0) 95%);
+}
+.bg-gradient-blue-transparent {
+    background: linear-gradient(to right, rgba(30, 163, 177, 1.0) 10%, rgba(255, 255, 255, 0.0) 95%);
+}
+/* blog only text */
+.blog-only-text .card-body:after {
+    display: none;
+}
+/* social icon style 06 */
+.social-icon-style-06 li {
+    position: relative;
+}
+.social-icon-style-06 li:before {
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background-color: var(--medium-gray);
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    transform: translateY(-50%);
+    opacity: .5;
+}
+.social-icon-style-06 li:last-child:before {
+    display: none;
+}
+.google-maps-link a:hover {
+    color: var(--white);
+}
+/* footer */
+footer ul li {
+    margin-bottom: 0;
+    line-height: 28px;
+}
+footer a:hover {
+    color: var(--white);
+}
+footer .footer-logo img {
+    max-height: 34px;
+}
+/* z-index */
+.z-index-99 {
+    z-index: 99; 
+}
+@media (min-width: 992px) {
+    .navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li a {
+        padding: 20px 30px;
+    }
+    .navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        width: 285px;
+    }
+}
+@media (max-width: 1199px) {
+    .left-minus-45 {
+        left: -78%;
+    }
+    .lg-ms-70px {
+        margin-left: 70px;
+    }
+    .lg-bg-transparent {
+        background-color: transparent;
+    }
+    .one-half-screen {
+        height: auto !important;
+    }
+}
+@media (max-width: 991px) {
+    [data-mobile-nav-style=modern] .navbar-modern-inner .navbar-nav .nav-item .dropdown-menu a i {
+        font-size: 19px;
+        vertical-align: middle;
+        color: var(--white);
+    }
+    .md-top-auto {
+        top: auto;
+    }
+}

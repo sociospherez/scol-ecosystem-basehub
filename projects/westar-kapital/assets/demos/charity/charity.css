@@ -1,0 +1,272 @@
+/* ===================================
+    Crafto - Charity
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap');
+/* variable */
+:root {     
+    --base-color: #fbcc36;
+    --dark-gray: #384744; 
+    --medium-gray: #7c7a75;
+    --alt-font: 'Otomanopee One', sans-serif;
+    --primary-font: 'DM Sans', sans-serif;
+} 
+/* reset */
+body {
+    font-size: 17px;
+    line-height: 28px; 
+    overflow-x: hidden;
+}
+.alt-font{ 
+    word-spacing: -5px;
+}
+.map .alt-font {
+    word-spacing: normal;
+}
+.ws-minus-10px{
+    word-spacing: -10px;
+}
+.ws-minus-3px{
+    word-spacing: -3px;
+}
+section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+html, body {
+    overflow-x: hidden;
+}
+.h-700 {
+    height: 650px !important;
+}
+/* header */
+header .navbar-brand img {
+    max-height: 38px;
+}
+.navbar .navbar-nav .nav-link {
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: -0.3px;
+    padding: 10px 15px;
+}
+header .navbar-brand {
+    padding: 25px 0;
+}
+/* bg color */
+.bg-gradient-corduroy-green-dark-goldenrod {
+    background-image: linear-gradient(to right, #2b3a31, #3F452C, #665921, #8D6E17, #AD7F0F);
+}
+.bg-gradient-corduroy-green-dark-goldenrod-dark {
+    background: rgb(38,59,46);
+    background: linear-gradient(34deg, rgba(38,59,46,1) 0%, rgba(102,89,33,1) 50%, rgba(173,127,15,1) 100%);
+}
+.bg-gradient-corduroy-green-dark-goldenrod-transparent {
+    background-image: linear-gradient(to top right, rgba(43, 58, 49,.8), rgba(63, 69, 44,.7), rgba(141, 110, 23,.8), rgba(141, 110, 23,.8), rgb(173, 127, 15));
+}
+.bg-zircon-grey {
+    background-color: #D7E2E0;
+}
+.bg-racing-green {
+    background-color: #242E2C;
+}
+.bg-white-yellow {
+    background-color: #f9f4e8;
+}
+.bg-white-transparent {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+/* text color */
+.text-gradient-corduroy-green-dark-goldenrod {
+    background-image: linear-gradient(to right, #2b3a31, #3F452C, #665921, #8D6E17, #AD7F0F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.text-light-conch-green {
+    color: #A7B3B1;
+}
+.text-dark-golden-yellow {
+    color: #B6840D;
+}
+/* heading */
+h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 25px;
+}
+h3 {
+    line-height: 3rem;
+}
+/* border color */
+.border-color-dark-golden-yellow {
+    border-color: #B6840D !important;
+}
+/* btn */
+.btn {
+    font-family: var(--primary-font);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.btn.with-rounded > span {
+    border-radius: 4px;
+}
+.btn.with-rounded.btn-large > span {
+    line-height: 32px;
+}
+.btn.with-rounded.btn-large > span {
+    right: 12px;
+}
+.btn.with-rounded.btn-extra-large > span {
+    right: 14px;
+}
+.btn.with-rounded.btn-medium > span {
+    right: 10px;
+}
+.btn.btn-very-small {
+    padding: 8px 16px;
+    font-size: 12px;
+}
+.btn.with-rounded.btn-extra-large {
+    padding-right: 75px;
+}
+.btn.with-rounded.btn-large {
+    padding-right: 60px;
+}
+.btn.with-rounded.btn-medium {
+    padding-right: 55px;
+}
+.btn.with-rounded.btn-small {
+    padding-right: 50px;
+}
+.btn.with-rounded.btn-very-small {
+    padding-right: 40px;
+}
+.btn-gradient-green-goldenrod-yellow {
+    background-image: linear-gradient(to right, #2C3B31, #B5840D, #2C3B31);
+    background-size: 200% auto;
+    color: var(--white);
+}
+.btn.btn-base-color {
+    color: var(--dark-gray);
+}
+.btn.btn-box-shadow.btn-base-color:hover {
+    color: var(--dark-gray);
+}
+/* progress bar style */
+.progress-bar-style-01 .progress {
+    height: 7px;
+    border-radius: 6px;
+}
+.progress-bar-style-01 .progress .progress-bar {
+    border-radius: 6px;
+}
+/* pag title style */
+.page-title-extra-large h1 {
+    font-size: 3.8rem;
+    line-height: 3.8rem;
+    word-spacing: -8px;
+}
+.page-title-extra-large h2 {
+    font-size: 19px;
+    line-height: 34px;
+}
+.pagination-style-01 .page-item.active .page-link {
+    background: var(--dark-gray);
+    color: var(--white);
+}
+.placeholder-light::-webkit-input-placeholder { color: var(--white) !important; text-overflow: ellipsis; opacity:0.7; }
+.placeholder-light::-moz-placeholder { color: var(--white) !important; text-overflow: ellipsis; opacity:0.7; }
+.placeholder-light:-ms-input-placeholder { color: var(--white) !important; text-overflow: ellipsis; opacity:0.7; }
+/* contact form style 03 */
+.contact-form-style-03 {
+    margin-bottom: -125px;
+}
+/* interactive banner */
+.interactive-banner-style-02.hover-box * {
+    will-change: auto;
+}
+/* footer */
+footer {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    margin-top: -90px;
+    position: relative;
+    z-index: 1;
+}
+footer .footer-logo img {
+    max-height: 41px;
+}
+footer .nav-link {
+    color: #A7B3B1;
+    font-size: 15px;
+    line-height: normal;
+}
+footer .medium-icon a {
+    font-size: 18px;
+}
+footer .medium-icon li {
+    margin: 0 3px;
+} 
+/* google map */
+#map .gmnoprint[data-control-width="40"] {  
+    bottom: 30px !important;
+    top: auto !important;
+}
+.social-icon-style-09 ul.light li a {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+/* media query responsive */
+@media (max-width: 1600px) {
+    section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+}
+@media (max-width: 1199px) {
+    .navbar .navbar-nav .nav-link {
+        padding: 10px 16px;
+    }
+    footer .nav-link {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+@media (max-width: 991px) {
+    section {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+    .contact-form-style-03 {
+        margin-bottom: 75px;
+    }
+    .md-h-500 {
+        height: 500px !important;
+    }
+}
+@media (max-width: 767px) {
+    section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    footer {
+        padding-top: 90px;
+    }
+    .contact-form-style-03 {
+        margin-bottom: 50px;
+    }
+    .sm-h-400 {
+        height: 400px !important;
+    }
+}
+@media (max-width: 575px) {
+    section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    footer {
+        padding-top: 110px;
+    }
+    .large-icon a {
+        font-size: 22px;
+        width: 50px;
+        height: 50px;
+    }
+}
