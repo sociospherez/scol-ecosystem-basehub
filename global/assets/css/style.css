@@ -2604,6 +2604,8 @@ input:focus, select:focus, textarea:focus, .form-control:focus {
   height: 220px;
   box-shadow: none;
 }
+
+
 .magic-round-cursor #ball-cursor:before {
   display: none;
 }
