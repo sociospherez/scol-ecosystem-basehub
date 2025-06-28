@@ -116,6 +116,36 @@ section.extra-big-section {
   padding-top: 160px;
   padding-bottom: 160px;
 }
+
+.hero video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;   /* cover entire area */
+      object-fit: cover;           /* maintain aspect ratio */
+      filter: blur(6px) brightness(0.3); /* gloss + dim */
+      pointer-events: none;        /* disable interactions */
+      z-index: 3;
+    }
+
+    /* Dark overlay to improve text readability */
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+
+      text-shadow: rgba(204, 218, 239,0.8);;
+      z-index: 1;                  /* behind the text */
+    }
+
+    /* Hero content sits above overlay */
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      animation: fadeInUp 1s ease-out; /* slide and fade in */
+    }
 img {
   max-width: 100%;
   height: auto;
@@ -164,6 +194,38 @@ video {
   padding-right: 15px;
   padding-left: 15px;
 }
+
+.container-video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;   /* cover entire area */
+      object-fit: cover;           /* maintain aspect ratio */
+      filter: blur(6px) brightness(0.3); /* gloss + dim */
+      pointer-events: none;        /* disable interactions */
+      z-index: 3;
+    }
+
+    /* Dark overlay to improve text readability */
+    .container-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+
+      text-shadow: rgba(204, 218, 239,0.8);;
+      z-index: 1;                  /* behind the text */
+    }
+
+    /* Hero content sits above overlay */
+
+    .container-content {
+      position: relative;
+      z-index: 2;
+
+      animation: fadeInUp 1s ease-out; /* slide and fade in */
+    }
+
+
 .row {
   margin-right: -15px;
   margin-left: -15px;
@@ -8160,6 +8222,13 @@ header a.widget-text:hover {
   width: 100%;
   height: 100%;
   border-radius: 50%
+}
+
+.rounded-logo{
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+
 }
 
 .top-logo .navbar-nav .nav-link {
