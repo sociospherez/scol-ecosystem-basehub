@@ -202,18 +202,18 @@ video {
       object-fit: cover;           /* maintain aspect ratio */
       filter: blur(6px) brightness(0.3); /* gloss + dim */
       pointer-events: none;        /* disable interactions */
-      z-index: 3;
+      z-index: 8;
     }
 
     /* Dark overlay to improve text readability */
     .container-overlay {
-      position: absolute;
+      position: relative;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.1);
 
       text-shadow: rgba(204, 218, 239,0.8);;
-      z-index: 1;                  /* behind the text */
+      z-index: 9;                  /* behind the text */
     }
 
     /* Hero content sits above overlay */
@@ -1984,7 +1984,7 @@ input:focus, select:focus, textarea:focus, .form-control:focus {
   opacity: 0.8;
 }
 .swiper-button-next {
-  left: inherit;
+ left: inherit;
 }
 /* Swiper navigation style 01 */
 .slider-navigation-style-01 {

@@ -1,12 +1,12 @@
 /* ===================================
-    Crafto - Medical
+    bodyfx - Medical
 ====================================== */
 /* font */
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 /* variable */
-:root {     
-    --base-color: #18bcc7;  
-    --alt-font: 'Manrope', sans-serif; 
+:root {
+    --base-color: #18bcc7;
+    --alt-font: 'Manrope', sans-serif;
     --primary-font: 'Manrope', sans-serif;
     --dark-gray: #303334;
     --red: #f45959;
@@ -103,7 +103,7 @@ header .navbar-brand img {
 .social-icon-style-02 .small-icon li {
     margin: 0;
 }
-/* outside box right */ 
+/* outside box right */
 .outside-box-right-2 {
     margin-right: -2vw;
 }
@@ -121,7 +121,7 @@ header .navbar-brand img {
 .tab-style-01 .nav-tabs > li.nav-item {
     padding: 0 13px;
 }
-/* time table */ 
+/* time table */
 .time-table-box .hover-detail {
     padding: 25px 30px;
 }
