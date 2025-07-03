@@ -1,0 +1,315 @@
+/* ===================================
+    Crafto - Yoga and meditation
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+/* font */
+@font-face {
+    font-family: 'cerebri-sans-regular';
+    src: url('fonts/CerebriSans-Regular.woff2') format('woff2'),
+        url('fonts/CerebriSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+} 
+@font-face {
+    font-family: 'cerebri-sans-medium';
+    src: url('fonts/CerebriSans-Medium.woff2') format('woff2'),
+        url('fonts/CerebriSans-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'cerebri-sans-semibold';
+    src: url('fonts/CerebriSans-SemiBold.woff2') format('woff2'),
+        url('fonts/CerebriSans-SemiBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'cerebri-sans-bold';
+    src: url('fonts/CerebriSans-Bold.woff2') format('woff2'),
+        url('fonts/CerebriSans-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'cerebri-sans-light';
+    src: url('fonts/CerebriSans-Light.woff2') format('woff2'),
+        url('fonts/CerebriSans-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* variable */
+:root {     
+    --base-color: #d42c6c;  
+    --very-light-gray: #f8f2f3;
+    --dark-gray: #393334;
+    --medium-gray: #8b8883;
+    --forest-green: #417c11;
+    --soft-red: #f0e4e6;
+    --prime-violet: #e1d5d8;
+    --alt-font: 'Marcellus', serif;
+    --primary-font:  'cerebri-sans-regular';
+}
+/* reset */
+body {
+    font-size: 18px;
+    line-height: 30px; 
+}
+.mt-minus-30px {
+    margin-top: -30px;
+}
+/* alt font */
+.alt-font {
+    font-family:  var(--alt-font) !important; 
+}
+/* font weight */
+.primary-font.fw-500 {
+    font-family: 'cerebri-sans-medium' !important; 
+}
+.primary-font.fw-600 {
+    font-family: 'cerebri-sans-semibold' !important; 
+}
+.primary-font.fw-700 {
+    font-family: 'cerebri-sans-bold' !important; 
+}
+/* header */
+.navbar .navbar-nav .nav-link {
+    font-size: 19px;
+}
+header .navbar-brand img {
+    max-height:45px;
+}
+/* Shape image animation */
+.shape-image-animation svg {
+    height: auto;
+    width: auto;
+}
+/* bg color */
+.bg-gradient-fast-pink-light-yellow {
+    background-image: linear-gradient(to right, #d64e68, #d64e68, #e15c66, #f16e63, #f16e63);
+}
+.bg-base-color-transparent {
+    background-color: rgba(214,78,104,0.1);
+}
+/* border color */
+.border-color-prime-violet {
+    border-color: var(--prime-violet) !important;
+}
+/* heading */
+h4 {
+    line-height: 2.5rem;
+}
+/* btn */
+.btn {
+    font-weight: 400;
+    text-transform: none;
+}
+.btn.btn-extra-large {
+    font-size: 19px;
+}
+.btn.btn-large {
+    font-size: 18px;
+}
+.btn.btn-medium {
+    font-size: 17px;
+}
+.btn.btn-small {
+    font-size: 16px;
+}
+.btn.btn-very-small {
+    font-size: 15px;
+}
+.btn.btn-link {
+    padding: 0 0 2px;
+}
+.btn-gradient-base-color {
+    background-image: linear-gradient(to right, #df3468, #fe6b5b, #df3468);
+    background-size: 200% auto;
+    color: var(--white);
+}
+.slider-shadow-right {
+    mask-image: linear-gradient(to right, transparent 0%, #000000 0%, #000000 50%, transparent 80%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000000 0%, #000000 50%, transparent 80%);
+}
+/* icon with text style 10 */
+.icon-with-text-style-10 .feature-box-icon:before,
+.icon-with-text-style-10:hover .feature-box-icon:before {
+    opacity: 0.065;
+}
+/* services box */
+.services-box-style-01:hover .box-overlay {
+    opacity: 0.4;
+}
+/* event style 02  */ 
+.time-table-box + .time-table-box.name-box:before {
+    background-color: #5e5657;
+}
+.time-table-box .inner-box > div {
+    font-size: 16px;
+    margin-top: 2px;
+}
+.name-box span {
+    font-family: 'cerebri-sans-medium'; 
+    color: var(--dark-gray);
+}
+.hover-detail-inner span:first-child {
+    font-size: 18px;
+    color: var(--base-color);
+    display: block;
+}
+.hover-detail-inner span:nth-child(2) {
+    font-size: 16px;
+    color: var(--dark-gray);
+    font-family: 'cerebri-sans-medium';
+    margin-bottom: 8px;
+    display: block;
+}
+.hover-detail-inner p {
+    font-size: 16px;
+}
+/* accordion style 02 */
+.accordion-style-02 .accordion-item .accordion-header {
+    padding: 20px 0;
+}
+/* top right bottom left */
+.right-45px {
+    right: 45px;
+}
+/* page title */
+.page-title-extra-large h1 {
+    font-size: 4.063rem;
+    line-height: 4.688rem;
+}
+.page-title-extra-large h2 {
+    font-size: 20px;
+    line-height: 24px;
+}
+/* newsletter style 02 */
+.newsletter-style-02 input { 
+    padding-right: 100px !important;
+    font-size: 16px;
+}
+/* footer */
+footer .footer-logo img {
+    max-height: 45px;
+}
+.footer-dark p, .footer-dark a {
+    color: var(--medium-gray);
+}
+footer {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+footer .newsletter-style-02 .btn {
+    padding: 10px 12px 9px 12px;
+}
+footer .elements-social.social-icon-style-01 li:last-child,
+footer .elements-social.social-icon-style-02 li:last-child,
+footer .elements-social.social-icon-style-05 li:last-child,
+footer .elements-social.social-icon-style-08 li:last-child {
+    margin-right: 0;
+}
+/* Slider revolution css */
+.wave-sonar { position: absolute; width: 100%; height: 100%;border-radius: 50%;top: 0; left: 0; -webkit-animation: wave-sonar 2s linear infinite; animation: wave-sonar 2s linear infinite; background-color: #fff; opacity: 0.1;}
+
+@-webkit-keyframes wave-sonar {0% {opacity: 0.16; -webkit-transform: scale(0.1); -moz-transform: scale(0.1); -ms-transform: scale(0.1); transform: scale(0.1);} 100% {opacity: 0; -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1);}}
+@keyframes wave-sonar {0% {opacity: 0.16; -webkit-transform: scale(0.1); -moz-transform: scale(0.1); -ms-transform: scale(0.1); transform: scale(0.1);} 100% {opacity: 0; -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1);}}
+/* media query responsive */
+@media (max-width: 1399px) {
+    .shape-image-animation {
+        bottom: -10px;
+    }
+}
+@media (max-width: 1199px) {
+    .navbar .navbar-nav .nav-link {
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+    footer .elements-social.social-icon-style-01 li,
+    footer .elements-social.social-icon-style-02 li,
+    footer .elements-social.social-icon-style-05 li,
+    footer .elements-social.social-icon-style-08 li {
+        margin: 0 16px 0 0;
+    }
+    .accordion-style-05 .accordion-item .accordion-body {
+        padding-right: 0;
+    }
+    .accordion-style-05 .accordion-item {
+        padding-left: 60px;
+    }
+    .name-box span {
+        font-size: 16px;
+    }
+}
+@media (max-width: 991px) {
+    .md-z-index-minus-1 {
+        z-index: 1;
+    }
+    footer {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+    .time-schedule-scroll {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    .time-schedule-scroll .time-schedule-min-width {
+        min-width: 1000px;
+    }
+}
+@media (max-width: 767px) {
+    .sm-box-shadow {
+        box-shadow: 0 0 15px rgba(0,0,0,.06);
+    }
+    .slider-shadow-right {
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+    footer {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    } 
+}
+@media (max-width: 575px) {
+    .accordion-style-05 .accordion-item .number {
+        top: 18px;
+    }
+    .accordion-style-05 .accordion-item {
+        padding-left: 50px;
+        padding-right: 30px;
+    }
+    .social-icon-style-06 ul li a {
+        padding: 0 15px;
+    }
+    .elements-social ul li {
+     	margin-bottom: 0px;
+    } 
+}
+@media (min-width: 778px) and (max-width: 1250px) {
+    .yoga-and-meditation-slider-images {padding: 0 100px !important;}
+    .yoga-and-meditation-slider-text {padding: 0 60px !important;}
+}
+@media (max-width: 778px) {
+    #yoga-and-meditation-slider_wrapper { height: 750px !important; padding-top: 50px;}
+}
+@media (max-width: 479px) {
+    #yoga-and-meditation-slider_wrapper { height: 550px !important; padding-top: 0;}
+}
+@media (max-width: 359px) {
+    .header-icon .header-social-icon a {
+        font-size: 17px;
+        padding-left: 19px;
+    }
+    
+}
+@media  (max-width: 900px) and (orientation: landscape) {
+    #yoga-and-meditation-slider_wrapper { height: 500px !important;}
+    .yoga-and-meditation-slider-images {padding: 0 200px !important;}
+    .yoga-and-meditation-slider-text {padding: 0 120px !important;}
+}

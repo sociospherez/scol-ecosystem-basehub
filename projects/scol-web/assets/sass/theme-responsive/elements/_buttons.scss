@@ -1,0 +1,52 @@
+@include respond-to('phone-landscape') {
+    .btn {
+        &.btn-extra-large {
+            font-size: 15px;
+            padding: 20px 40px;
+        }
+        &.btn-large {
+            font-size:13px;
+            padding: 16px 36px;
+        }
+        &.btn-rounded {
+            &.btn-extra-large {
+                padding: 16px 36px;
+            }
+            &.btn-large {
+                padding: 12px 30px;
+            }
+        }
+        &.with-rounded {
+            &.btn-extra-large {
+                padding-right: 70px;
+            }
+            &.btn-large {
+                padding-right: 55px;
+            }
+        }
+        &.btn-link {
+            padding: 0 0 2px;
+        }
+
+        &.btn-link-gradient {
+            padding: 0 0 3px;
+        }
+        &.btn-switch-text {
+            &.btn-extra-large {
+                padding:0;
+            }
+            &.btn-large {
+                padding:0;
+            }
+            &.btn-medium {
+                padding:0;
+            }
+            &.btn-small {
+                padding:0;
+            }
+            &.btn-very-small {
+                padding:0;
+            }
+        }
+    }
+}

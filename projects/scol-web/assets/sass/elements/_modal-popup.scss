@@ -1,0 +1,359 @@
+/* Modal popup */ 
+#popup-form { cursor:default; }
+.mfp-image-holder, .mfp-iframe-holder {
+    .mfp-close {
+        color: var(--white);
+        background: transparent;
+    }
+}
+.mfp-iframe-holder .mfp-content {
+    max-width: 1050px;
+}
+.mfp-close,.mfp-close:active {
+    opacity: 1;
+    background-color:transparent;
+    right: 20px;
+    top: 20px;
+    height: 30px;
+    width: 30px;
+    font-size: 13px;
+    line-height: 31px;
+    position: absolute;
+    color: var(--dark-gray);
+}
+.lightbox-gallery a {
+    position: relative;
+    display:block;
+}
+.lightbox-gallery .gallary-over-layer {
+    position: absolute;
+    top: 0;
+    left:0;
+}
+.show-search-popup > section {
+    filter: grayscale(100%);
+}
+.show-search-popup .mfp-search.mfp-bg.mfp-ready {
+    opacity: 0.5;
+}
+.mfp-arrow {
+    opacity: 1;
+}
+.mfp-wrap {
+    cursor: url('../images/mfg-close.png'),auto;
+}
+.mfp-wrap .mfp-container {
+    cursor: auto;
+}
+.show-search-popup .mfp-close, .show-search-popup .mfp-close:active {
+    color: var(--dark-gray);
+}
+.show-search-popup .search-form .search-input {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+.show-search-popup .search-form .search-button {
+    color: var(--dark-gray);
+}
+.show-search-popup .mfp-container {
+    position: fixed;
+    height: 300px;
+    background-color: var(--white);
+    -webkit-animation-name: "ani-mfp";
+    animation-name: "ani-mfp";
+    -webkit-animation-duration: 0.2s;
+    -moz-animation-duration: 0.2s;
+    -o-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+}
+.show-search-popup .mfp-removing .mfp-container {
+    -webkit-animation-name: "ani-mfp-close";
+    animation-name: "ani-mfp-close";
+    -webkit-animation-duration: 0.2s;
+    -moz-animation-duration: 0.2s;
+    -o-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+}
+.show-search-popup .search-form .search-input {
+    color: var(--dark-gray);
+}
+.lightbox-gallery a {
+    position: relative;
+    display:block;
+}
+.lightbox-gallery .gallary-over-layer {
+    position: absolute;
+    top: 0;
+    left:0;
+}
+.mfp-arrow-right:after,
+.mfp-arrow-left:after {
+    display: none;
+}
+.mfp-arrow-left {
+    left: 30px;
+}
+.mfp-arrow-right {
+    right: 30px;
+}
+.mfp-arrow-left:before {
+    border-right: none;
+    content: "\e629";
+    font-size: 20px;
+    font-family: 'themify';
+    color: var(--white);
+    line-height: 60px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin: 0;
+    opacity: 1;
+}
+.mfp-arrow-right:before {
+    border-left: none;
+    content: "\e628";
+    font-size: 20px;
+    font-family: 'themify';
+    color: var(--white);
+    line-height: 60px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin: 0;
+    opacity: 1;
+}
+.mfp-bottom-bar {
+    margin-top: -24px;
+    font-size: 12px
+}
+.mfp-close {
+    font-size: 28px;
+    font-family: var(--alt-font);
+}
+.mfp-figure {
+    -webkit-animation-name: fadeIn;
+    -moz-animation-name: fadeIn;
+    -o-animation-name: fadeIn;
+    -ms-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: .4s;
+    -moz-animation-duration: .4s;
+    -ms-animation-duration: .4s;
+    -o-animation-duration: .4s;
+    animation-duration: .4s;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    webkit-backface-visibility: hidden;
+    -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+}
+
+/* Zoom animation */
+.my-mfp-zoom-in {
+    .zoom-anim-dialog {
+        opacity: 0;
+        @include prefix(transform, scale3d(0.9, 0.9, 1), webkit o);
+        @include prefix(transition, all 0.5s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+    }
+    &.mfp-ready {
+        .zoom-anim-dialog {
+            opacity: 1;
+            @include prefix(transform, translate3d(0, 0, 0) scale3d(1, 1, 1), webkit o);
+        }
+    }
+    &.mfp-removing {
+        .zoom-anim-dialog {
+            @include prefix(transform, scale(0.8), webkit);
+            opacity: 0;
+        }
+    }
+    &.mfp-bg {
+        opacity: 0;
+        @include prefix(transition, opacity 0.3s ease-out, webkit);
+    }
+    &.mfp-ready.mfp-bg {
+        opacity: 0.8;
+    }
+    &.mfp-removing {
+        &.mfp-bg {
+            opacity: 0;
+        }
+    }
+}
+
+/* Fade animation */
+.my-mfp-slide-bottom {
+    .zoom-anim-dialog {
+        opacity: 0;
+        @include prefix(transition, all 0.3s ease-out, webkit);
+        @include prefix(transform, translateY(-20px) perspective(600px) rotateX(10deg), webkit o);
+    }
+    &.mfp-ready {
+        .zoom-anim-dialog {
+            opacity: 1;
+            @include prefix(transform, translateY(0) perspective(600px) rotateX(0), webkit o);
+        }
+    }
+    &.mfp-removing {
+        .zoom-anim-dialog {
+            opacity: 0;
+            @include prefix(transform, translateY(-10px) perspective(600px) rotateX(10deg), webkit o);
+        }
+    }
+    &.mfp-bg {
+        opacity: 0;
+        @include prefix(transition, opacity 0.3s ease-out, webkit);
+    }
+    &.mfp-ready {
+        &.mfp-bg {
+            opacity: 0.8;
+        }
+    }
+    &.mfp-removing {
+        &.mfp-bg {
+            opacity: 0;
+        }
+    }
+}
+
+/* Slide up animation */
+.my-mfp-slide-up {
+    .slide-up-popup {
+        @include prefix(transition, all 0.5s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+        @include prefix(transform, translate3d(0, 30px, 0), webkit);
+    }
+    &.mfp-ready {
+        .slide-up-popup {    
+            @include prefix(transform, translate3d(0, 0, 0) scale3d(1, 1, 1), webkit o);
+        }
+    }
+    &.mfp-removing {
+        .slide-up-popup {
+            opacity: 0;
+            @include prefix(transform, translate3d(0, 30px, 0), webkit);
+        }
+    }
+    &.mfp-bg {
+        opacity: 0;
+        @include prefix(transition, opacity 0.3s ease-out, webkit);
+    }
+    &.mfp-ready {
+        &.mfp-bg {
+            opacity: 0.8;
+        }
+    }
+    &.mfp-removing {
+        &.mfp-bg {
+            opacity: 0;
+        }
+    }
+}
+
+.mfp-bg {
+    background: var(--dark-gray);
+    opacity: 0.9;
+}
+.mfp-bg, .mfp-wrap {
+    z-index: 10007;
+}
+.mfp-fade.mfp-bg { 
+    opacity: 0;
+    @include prefix(transition, all 0.3s ease-out, webkit o);
+}
+.mfp-fade.mfp-bg.mfp-ready {
+    opacity: 0.93;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+    opacity: 0;
+}
+.mfp-fade.mfp-wrap .mfp-content {
+    opacity: 0;
+    @include prefix(transition, all 0.3s ease-out, webkit o);
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content { 
+    opacity: 1; 
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content { 
+    opacity: 0; 
+}
+.mfp-ajax-holder { 
+    width: 70%;
+    height: calc(100% - 100px);
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    @include prefix(transform, translateY(-50%), webkit);
+}
+button.mfp-close,
+button.mfp-close:active {
+    height: 40px;
+    width: 40px; 
+    position: absolute;
+    right: 20px;
+    top: 20px;   
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    font-size: 0;
+    &:before {
+        content: "\f00d";
+        color: var(--black); 
+        font-family: "Font Awesome 6 Free";
+        font-size: 20px;
+        font-weight: 900;
+    }
+}
+
+/* Images gallery */
+.mfp-gallery button.mfp-close,
+.mfp-iframe-holder ~ button.mfp-close{
+    right: 40px;
+    top: 40px;
+    background-color: var(--white);
+    &:before {
+        color: var(--dark-gray); 
+    }
+} 
+
+/* Modal popup */
+.modal-popup-main {
+    position: relative;
+}
+
+/* Auto newsletter popup */
+.subscribe-popup .mfp-close,
+.subscribe-popup .mfp-close:active {
+    background-color: transparent;
+    font-size: 13px;
+    line-height: 30px;
+    top: 20px;
+    right: 20px;
+}
+.subscribe-popup .mfp-close.mfp-close-btn {
+    bottom: 0;
+    top: inherit;
+    position: relative;
+    width: auto;
+    right: 0; 
+    height: auto; 
+    font-size: 14px;
+}
+.subscribe-popup .mfp-close.mfp-close-btn:before {
+    display: none; 
+}
+.subscribe-popup .mfp-close:before {
+    color: var(--dark-gray);
+}
+.subscribe-popup .newsletter-style-02 input {
+    padding-right: 70px;
+}
+.subscribe-popup .newsletter-style-02 .btn {
+    padding: 6px 25px 9px 25px;
+}
+
+.newsletter-popup label {
+    cursor: pointer;
+}

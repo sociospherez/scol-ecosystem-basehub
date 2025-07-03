@@ -1,0 +1,17 @@
+@include respond-to('laptop') {
+    .fancy-text-style-3 {  
+        transform: rotate(0deg) !important; 
+    } 
+}
+@include respond-to('phone-landscape') {
+    .shadow-in {
+        .separator-animation {
+            width: calc(100% + 5px) !important;
+        }
+    }
+    .text-highlight {
+        .separator-animation {
+            left: -1px;
+        }
+    }
+}

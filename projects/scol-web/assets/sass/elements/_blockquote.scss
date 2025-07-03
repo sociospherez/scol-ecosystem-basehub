@@ -1,0 +1,28 @@
+/* Blockquote */
+blockquote {
+    footer {
+        padding:0;
+    }
+}
+
+/* Blockquote style 05 */
+.blockquote-style-04 {
+    .blockquote-img {
+        img {
+            margin-top: -114px;
+        }
+    }
+    .blockquote-content {
+        padding: 5% 0 5% 26%;
+        margin-left: -8vw;
+        @include prefix(border-radius, 50px 50px 125px 50px, webkit);
+    }
+}
+/* Use for mac desktop pc */
+@media only screen and (min-width: 1921px) {
+    .blockquote-style-04 {
+        .blockquote-content {
+            margin-left: -6vw;
+        }
+    }
+}

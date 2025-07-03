@@ -1,0 +1,145 @@
+/* ===================================
+    Crafto - Scattered portfolio
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* variable */
+:root {     
+    --base-color: #ffea00;
+    --medium-gray:#838383;
+    --light-gray: #cbcbcb;
+    --alt-font: 'Playfair Display', serif;
+    --primary-font: 'Manrope', sans-serif;
+}
+/* custom cursor */
+@media (hover: hover) and (pointer: fine) {
+    .custom-cursor .circle-cursor-outer {
+        border: 1px solid transparent;
+        background: var(--base-color);
+    }
+    .custom-cursor .circle-cursor-inner {
+        background: var(--black);
+    }
+    .custom-cursor .circle-cursor-inner.cursor-link-hover {
+        background-color: var(--black);
+        width: 10px;
+        height: 10px;
+        margin-left: -5px;
+        margin-top: -5px;
+
+    }
+}
+body {
+    font-size: 18px;
+    line-height: 34px;
+}
+/* header */
+header .navbar-brand img {
+    max-height: 74px;
+}
+.navbar .navbar-nav .nav-link {
+    font-weight: 600;
+    padding: 10px 25px;
+    font-size: 18px;
+}
+.navbar .navbar-nav .nav-item:last-child .nav-link{
+    padding-right: 0;
+}
+header .navbar-brand {
+    padding: 42px 0;
+}
+header .container-fluid {
+    padding-left: 80px;
+    padding-right: 80px;
+}
+/* font size */
+.fs-220 {
+    font-size: 13.75rem;
+    line-height: 11.7rem;
+}
+.fs-280 {
+    font-size: 17.5rem;
+    line-height: 17.5rem;
+}
+/* margin */
+.mb-50 {
+    margin-bottom: 50%;
+}
+.small-icon li {
+    margin: 0 8px;
+}
+/* btn */
+.btn {
+    font-family: var(--primary-font);
+    font-weight: 800;
+}
+/* contact form-style 03 */
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: var(--black) !important; text-overflow: ellipsis; opacity:1; }
+input::-moz-placeholder, textarea::-moz-placeholder { color: var(--black) !important; text-overflow: ellipsis; opacity:1; }
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { color: var(--black) !important; text-overflow: ellipsis; opacity:1; }
+input, select, textarea, .form-control, .form-select {
+    color: var(--black) !important;
+}
+/* media query responsive */
+@media (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1440px; 
+    }
+}
+@media (max-width: 1199px) {
+    .fs-220 {
+        font-size: 12.5rem;
+        line-height: 12.5rem;
+    }
+    .fs-280 {
+        font-size: 15rem;
+        line-height: 15rem;
+    }
+}
+@media (max-width: 991px) {
+    .navbar.bg-transparent {
+        background-color: transparent !important;
+    }
+    .fs-220 {
+        font-size: 10rem;
+        line-height: 10rem;
+    } 
+    header .navbar-brand {
+        padding: 30px 0;
+    }
+    .fs-280 {
+        font-size: 12rem;
+        line-height: 12rem;
+    }
+    .navbar-collapse-show[data-mobile-nav-style=full-screen-menu] .navbar-full-screen-menu-inner {
+        background-image: url(../../images/vertical-line-bg-small.svg) !important;
+    }
+    [data-mobile-nav-style=full-screen-menu] .navbar-full-screen-menu-inner .navbar-nav {
+        text-align: center;
+    }
+    [data-mobile-nav-style=full-screen-menu] .navbar-full-screen-menu-inner .navbar-nav > .nav-item {
+        border-bottom: 0;
+        padding: 0;
+    }
+    [data-mobile-nav-style=full-screen-menu] .navbar-full-screen-menu-inner .navbar-nav .nav-item .nav-link {
+        font-size: 42px;
+        line-height: 46px;
+    }
+}
+@media (max-width: 575px) {
+    header .navbar-brand {
+        padding: 15px 0;
+    }
+    header .navbar-brand img {
+        max-height: 55px;
+    }
+    .fs-220 {
+        font-size: 5.625rem;
+        line-height: 5.625rem;
+    } 
+    .fs-280 {
+        font-size: 8rem;
+        line-height: 8rem;
+    }
+}

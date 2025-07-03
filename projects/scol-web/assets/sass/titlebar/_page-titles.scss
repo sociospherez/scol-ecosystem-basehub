@@ -1,0 +1,152 @@
+/* ===================================
+   11. Page title
+====================================== */
+
+/* Breadcrumb */
+.breadcrumb {
+    margin: 0;
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+}
+.breadcrumb-style-01 {
+    ul {
+        li {
+            display: inline-block;
+            &:after {
+                content: "\e844";
+                font-family: "feather";
+                font-size: 13px;
+                font-weight: 900;
+                display: inline-block;
+                vertical-align: middle;
+                padding: 0 8px 0 10px;
+            }
+            &:last-child {
+                &:after {
+                    content: "";
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+
+/* Page title style */
+.page-title-double-large {
+    h1 {
+        font-size: 3.6rem;
+        line-height: 3.3rem;
+    }
+    h2 {
+        font-size: 17px;
+        line-height: 26px;
+    }
+}
+.page-title-extra-large {
+    h1 {
+        font-size: 3.3rem;
+        line-height: 3.3rem;
+    }
+    h2 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+.page-title-large {
+    h1 {
+        font-size: 2.8rem;
+        line-height: 3rem;
+    }
+    h2 {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+.page-title-medium {
+    h1 {
+        font-size: 2rem;
+        line-height: 2.2rem;
+    }
+    h2 {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+.page-title-small {
+    h1 {
+        font-size: 1.625rem;
+        line-height: 1.875rem;
+    }
+    h2 {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+.page-title-extra-small {
+    h1 {
+        font-size: 17px;
+        line-height: 20px;
+    }
+    h2 {
+        font-size: 3.8rem;
+        line-height: 3.8rem;
+    }
+}
+.page-title-button-style {
+    &.page-title-button-style {
+        @include prefix(transition, all 0.3s, webkit);
+    }
+    h1{
+        padding: 13px 30px;
+        display: inline-block;
+    }
+}
+.page-title-mini-version{
+    h1{
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+
+/* Down section icon */
+.down-section {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    a {
+        display: inline-block;
+    }
+    &.down-bottom {
+        bottom:0;
+        @include prefix(transform, translateY(50%), webkit);
+    }
+}
+
+/* Down section line */
+.down-section-line { 
+    .section-line {
+        position: relative;
+        &:before {
+            position: absolute; 
+            left: 0; 
+            top:0;
+            content:"";
+            height: 0;
+            width: 100%;
+            @include prefix(transition, all 0.5s, webkit);
+            background-color: var(--base-color);
+        } 
+    }
+    &:hover {
+        .section-line {
+            &:before {
+                height: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+@include respond-to('laptop') {
+    .clients-style-02 {
+        .swiper-button-prev {
+            left: -30px;
+        }
+        .swiper-button-next {
+            right: -30px; 
+        }
+    }
+}
+@include respond-to('tablet') {
+    .clients-style-02 {
+        .swiper-button-prev {
+            left: -15px;
+        }
+        .swiper-button-next {
+            right: -15px; 
+        }
+    }
+}
+@include respond-to('phone-landscape') {
+    .clients-style-02 {
+        .swiper-button-prev {
+            left: 0px;
+        }
+        .swiper-button-next {
+            right: 0px; 
+        }
+    }
+}

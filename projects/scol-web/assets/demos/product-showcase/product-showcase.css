@@ -1,0 +1,154 @@
+/* ===================================
+    Crafto - Product showcase
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+/* variable */
+:root {     
+    --alt-font: 'Manrope', sans-serif; 
+    --primary-font: 'Manrope', sans-serif;
+    --base-color: #ff1e80;
+    --dark-gray: #2c3038;
+    --medium-gray:#888e95;
+} 
+/* reset */
+body {
+    font-size: 17px;
+    line-height: 32px;
+}
+/* header */
+header .navbar-brand img {
+    max-height: 36px;
+}
+.navbar .navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 26px;
+}
+header .btn.btn-switch-text.btn-very-small > span {
+    padding: 10px 30px;
+}
+/* text gradient color */
+.text-gradient-dark-purple-watermelon {
+    background: linear-gradient(to right top, rgb(255, 30, 128) 15.923566878980886%, rgb(156, 50, 176) 50.63694267515923%, rgb(96,0,255) 99.68152866242038%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.ls-minus-20px {
+    letter-spacing: -20px !important;
+}
+.bg-dark-gray-01 {
+    background: #232323;
+}
+/* btn */
+.btn {
+    text-transform: inherit;
+    font-weight: 600;
+    letter-spacing: 0px;
+}
+.btn.btn-extra-large {
+    font-size: 17px;
+}
+.btn.btn-large {
+    font-size:16px;
+}
+.btn.btn-medium {
+    font-size: 15px;
+}
+.btn.btn-small {
+    font-size: 14px;
+}
+.btn.btn-very-small {
+    font-size: 13px;
+}
+.btn-gradient-purple-pink {
+    background-image: linear-gradient(to right, #ff1e80, #ab2fa8, #7d18d8);
+}
+.review-star-icon i {
+    letter-spacing: 1px;
+}
+/* slider revolution settings */
+.play-video-botton {color: #2c3038;}
+.wave-animation {
+    display: inline-block;
+}
+.wave-animation span {
+    animation: animate 3s linear infinite;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 100%;
+    position: absolute;
+    transform: scale(0);
+}
+.wave-animation span:nth-child(1) {
+    animation-delay: 1s;
+}
+.wave-animation span:nth-child(2) {
+    animation-delay: 2s;
+}
+.wave-animation span:nth-child(3) {
+    animation-delay: 3s;
+}
+.wave-animation span:nth-child(4) {
+    animation-delay: 4s;
+}
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: scale(0) translateX(0);
+    }
+    50% {
+        opacity: 0.4;
+        transform: scale(1) translateX(-25px);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5) translateX(-50px);
+    }
+}
+/* media query responsive */
+@media (max-width: 1199px) {
+    .navbar .navbar-nav .nav-link {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    header .btn.btn-switch-text.btn-very-small > span {
+        padding: 8px 25px;
+    }
+    .large-icon a {
+        font-size: 22px;
+        width: 45px;
+        height: 45px;
+    }
+    .large-icon li {
+        margin: 0 5px;
+    }
+    .ls-minus-20px {
+        letter-spacing: -10px !important;
+    }
+    footer .nav-link {
+        padding: 10px 10px;
+    }
+}
+@media (max-width: 991px) {
+    .large-icon li {
+        margin: 0 10px;
+    }
+    .large-icon a {
+        font-size: 24px;
+        width: 60px;
+        height: 60px;
+    }
+}
+@media (max-width: 767px) {
+    .elements-social ul li {
+        margin-bottom: 0;
+    }
+    .large-icon a {
+        font-size: 21px;
+        width: 45px;
+        height: 45px;
+    }
+}

@@ -1,0 +1,38 @@
+@include respond-to('desktop') {
+    footer {
+        padding-top: 90px; padding-bottom: 90px;
+    }
+}
+@include respond-to('tablet') {
+    footer {
+        padding-top: 75px; padding-bottom: 75px;
+        &.half-footer {
+            padding: 65px 0;
+        }
+    }
+    .footer-sticky {
+        position: relative!important;
+    }
+}
+@include respond-to('phone-landscape') {
+    footer {
+        padding-top: 50px; 
+        padding-bottom: 50px;
+        &.half-footer {
+            padding: 50px 0;
+        }
+        .elements-social {
+            li {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .footer-navbar {
+        li {
+            .nav-link {
+                padding-left: 0.8rem;
+                padding-right: 0.8rem;
+            }
+        }
+    }
+}
