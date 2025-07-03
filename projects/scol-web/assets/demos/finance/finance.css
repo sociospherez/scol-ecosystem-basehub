@@ -1,0 +1,118 @@
+/* ===================================
+    Crafto - Finance
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* variable */
+:root {     
+    --base-color: #BC8947; 
+    --stromboli-green:#3E6558;
+    --alt-font: 'Jost', sans-serif;
+    --primary-font: 'Jost', sans-serif;
+    --medium-gray: #828282;
+}
+/* reset */
+body {
+    font-size: 19px;
+    line-height: 32px;
+    overflow-x: hidden;
+}
+/* heading */
+h1 {
+    font-size: 4rem;
+    line-height: 3.6rem;
+}
+h2 {
+    line-height: 3.438rem;
+}
+h3 {
+    line-height: 2.813rem;
+}
+p {
+    margin-bottom: 20px;
+}
+/* bg gradient color */
+.bg-gradient-black-dark-brown {
+    background-image: linear-gradient(to right top, #000000, #000000, #30281B, #493825, #DA7310);
+}
+.bg-gradient-green-light-brown {
+    background-image: linear-gradient(to right top, #3C7663, #5B8365, #929A68, #B8AA6A, #DEBB6D);
+}
+.bg-gradient-light-brown-transparent { 
+    background-image: linear-gradient(to right top, rgba(45, 41, 37, .6), rgba(188, 137, 71, .9));
+}
+/* text gradient color */
+.text-gradient-green-brown-color {
+    background-image: linear-gradient(to right top, #3C7663, #5B8365, #929A68, #B8AA6A, #DEBB6D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* header */
+.navbar .navbar-nav .nav-link {
+    font-weight: 400;
+    font-size: 19px;
+    letter-spacing: .5px;
+}
+.navbar .btn {
+    font-size: 15px;
+    padding: 8px 20px;
+}
+header .navbar-brand img {
+    max-height: 30px;
+}
+.navbar .navbar-nav .dropdown .dropdown-menu a {
+    font-size: 18px;
+    line-height: 32px;
+}
+.navbar .navbar-nav .simple-dropdown .dropdown-menu {
+    border-radius: 5px;
+}
+/* subcribe style 02 */
+.newsletter-style-02 .btn {
+    padding: 10px 18px 9px 18px;
+}
+.newsletter-style-02 input {   
+    padding-right: 60px;
+    font-size: 18px;
+}
+.input-small, .textarea-small {
+    font-size: 16px;
+}
+/* page title */
+.page-title-extra-large h1 {
+    font-size: 4.3rem;
+    line-height: 4.7rem;
+}
+/* media query responsive */
+@media (max-width: 1199px) {
+    header .btn.btn-very-small {
+        padding: 7px 11px;
+    }
+    .newsletter-style-02 input {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+    }
+}
+@media (max-width: 991px) {
+    .md-outside-box-right-70 {
+        margin-right: -70vw;
+    }
+    [data-mobile-nav-style=full-screen-menu] .navbar-full-screen-menu-inner .navbar-nav .nav-item .nav-link {
+        font-size: 19px;
+    }
+    [data-mobile-nav-style=full-screen-menu] .navbar-full-screen-menu-inner .navbar-nav .nav-item .dropdown-menu a {
+        font-size: 16px;
+    }
+}
+@media (max-width: 767px) {
+    .blog-classic .card .card-body p {
+        margin-bottom: 15px;
+    }
+    .page-title-extra-large h1 {
+        line-height: 44px;
+    }
+    .sm-outside-box-right-0 {
+        margin-right: 0;
+    }
+}

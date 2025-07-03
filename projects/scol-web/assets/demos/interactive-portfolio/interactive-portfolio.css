@@ -1,0 +1,176 @@
+/* ===================================
+    Crafto - Interactive portfolio
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* variable */
+:root {     
+    --base-color:#997f00;
+    --dark-gray:#0c0c0b;
+    --medium-gray:#6f7071;
+    --medium-slate-blue: #21211e;
+    --alt-font: 'Bebas Neue', cursive;
+    --primary-font: 'Inter', sans-serif;
+} 
+/* header */
+header .container-fluid {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+header .navbar-brand {
+    padding: 38px 0;
+}
+header .navbar-brand img {
+    max-height: 23px;
+}
+.header-push-button .push-button {
+    height: 8px;
+}
+.header-push-button .push-button span:first-child {
+    width: 15px;
+    margin-right: 0;
+}
+.show-menu .header-push-button .push-button span:nth-child(1) {
+    width: 15px;
+    top: 0;
+}
+.show-menu .header-push-button .push-button span:nth-child(2) {
+    top: 6px;
+    -webkit-transform: rotate(0deg); 
+    transform: rotate(0deg);
+}
+.hamburger-menu-simple .menu-item-list .nav-link {
+    font-size: 70px;
+    line-height: 50px;
+}
+.hamburger-menu-simple .menu-item-list .nav-link:hover {
+    padding-left: 10px;
+}
+/* sticky image */
+.stickyImageContainer {
+    height: 100vh;
+    background-color: var(--black) !important;
+}
+.stickyImageContainer .bg-overlay {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+.stickyImageContainer.scrolling .bg-overlay {
+    transform: scale(0.75);    
+}
+.stickyImageContainer .slide {
+    justify-content: center;
+}
+/* magic view cursor */
+.magic-view-cursor #ball-cursor {
+    background-color: rgba(255,255,255,.2);
+    width: 150px;
+    height: 150px;
+}
+.magic-view-cursor #ball-cursor:before {
+    content: "Click and drag";
+    font-family: var(--primary-font) !important;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+}
+/* portfolio filter */
+.portfolio-filter li:hover a, .portfolio-filter li:focus a, .portfolio-filter li.active a {
+    color: var(--white);
+}
+/* font size */
+.fs-230 {
+    font-size: 14.375rem;
+    line-height:12rem ;
+}
+/* footer */
+.home-page-footer {
+    position: fixed;
+    bottom: 0;
+    padding:55px 40px;
+    width: 100%;
+}
+/* page title */
+.page-title-extra-large h1 {
+    font-size:8.5rem;
+    line-height:8.5rem;
+}
+/* bg color */
+.bg-gradient-dark-transparent {
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(7%, #0c0c0b), to(transparent));
+    background: linear-gradient(to top, #0c0c0b 7%, transparent 100%);
+}
+.bg-maire-yellow {
+    background-color: #181817;
+} 
+.bg-bistre-brown {
+    background-color: #3a2d1f;
+}
+.bg-nero-grey {
+    background-color: #1f1f1f;
+}
+.hover-box.dark-hover:hover .text-light-opacity {
+    opacity: 0.5;
+}
+/* footer */
+.footer-dark {
+    color: var(--medium-gray);  
+}
+.footer-dark p, .footer-dark a {
+    color: var(--medium-gray);
+}
+footer .footer-logo img {
+    max-height: 35px;
+}
+@media (max-width: 991px) {
+    .fs-230 {
+        font-size: 13.375rem;
+        line-height:11rem ;
+    }
+    .page-title-extra-large h1 {
+        font-size: 7.5rem;
+        line-height: 7.5rem;
+    }
+    .hamburger-menu-simple .menu-item-list .nav-link {
+        font-size: 50px;
+        line-height: 40px;
+    }
+    .header-transparent[data-header-hover=dark] {
+        background-color: transparent !important;
+    }
+    header .hamburger-push-button .push-button-text {
+        color: var(--white)!important;
+    }
+}
+@media (max-width: 767px) {
+    .page-title-extra-large h1 {
+        font-size: 6.2rem;
+        line-height: 6.2rem;
+    }
+    .hamburger-menu-simple .menu-item-list .nav-link {
+        font-size: 46px;
+        line-height: 38px;
+    }
+}
+@media (max-width: 575px) {
+    .fs-230 {
+        font-size: 7.2rem;
+        line-height:6.5rem ;
+    }
+    #stickyImgContainer .slides {
+        padding: 0 4.5vw;
+    }
+    /* footer */
+    .home-page-footer {
+        padding: 35px 15px;
+    } 
+}

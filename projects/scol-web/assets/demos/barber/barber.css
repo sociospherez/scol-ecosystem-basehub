@@ -1,0 +1,173 @@
+/* ===================================
+    Crafto - Barber
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+/* variable */
+:root {     
+    --base-color: #c59452;  
+    --medium-gray: #706f6b;
+    --dark-gray: #252523;
+    --light-medium-gray: #cbcbcb;
+    --light-yellow: #f3ebde;
+    --very-light-yellow: #fefdf8;
+    --medium-yellow: #f7f3e8;
+    --alt-font: 'Limelight', cursive;
+    --primary-font: 'Sen', sans-serif;
+}
+/* reset */
+body {
+    font-size: 17px;
+    line-height: 30px; 
+}
+/* header */
+header .navbar-brand img {
+    max-height: 108px;
+}
+.navbar .navbar-nav .nav-link {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+}
+.center-logo .navbar-nav .nav-link, header.sticky .center-logo .navbar-nav .nav-link {
+    padding: 55px 23px;
+}
+.header-icon .header-social-icon a {
+    font-size: 18px;
+    padding-left: 26px;
+}
+/* btn */
+.btn {
+    font-weight: 700;
+    font-family: var(--primary-font);
+    text-transform: none;
+    letter-spacing:0px;
+}
+.btn.btn-switch-text.btn.btn-extra-large > span {
+    padding: 18px 34px 18px;
+    font-size: 16px;
+}
+.btn.btn-switch-text.btn.btn-large > span {
+    padding: 13px 28px 13px;
+    font-size: 15px;
+}
+.btn.btn-switch-text.btn.btn-medium > span {
+    padding: 13px 25px 12px;
+    font-size: 14px;
+}
+.btn.btn-switch-text.btn.btn-small > span {
+    font-size: 13px;
+    padding: 12px 24px 10px;
+}
+.btn.btn-switch-text.btn.btn-very-small > span {
+    font-size: 11px;
+    padding: 9px 21px 5px;
+}
+.btn.btn-link {
+    padding: 0 0 2px;
+}
+.btn.btn-base-color {
+    color: var(--dark-gray);
+}
+/* heading */
+h3 {
+    font-size: 2.813rem;
+    line-height: 2.813rem;
+}
+/* margin */
+.mt-minus-50px {
+    margin-top: -50px;
+}
+/* bg color */
+.bg-medium-yellow {
+    background-color: var(--medium-yellow);
+}
+.bg-light-yellow {
+    background-color: var(--light-yellow);
+}
+.bg-very-light-yellow {
+    background-color: var(--very-light-yellow);
+}
+/* border color */
+.border-color-light-yellow {
+    border-color: var(--light-yellow) !important;
+}
+.bg-gradient-base-transparent {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(197, 148, 82, 1)), to(transparent));
+    background-image: linear-gradient(to top, rgba(197, 148, 82, 1) 25%, transparent 100%);
+}
+/* video icons */
+.video-icon-extra-large .video-icon {
+    width: 170px;
+    height: 170px;
+    font-size: 17px;
+}
+/* slider custom text */ 
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+    left: 30px;
+}
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: 30px;
+}
+/* image gallery style 01 */
+.image-gallery-style-01 .gallery-box:hover img {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+}
+/* footer */
+footer {
+    padding-top: 90px;
+    padding-bottom: 80px;
+}
+footer .footer-logo img {
+    max-height: 115px;
+}
+footer .social-icon-style-09 ul.light li a {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+}
+footer .large-icon a {
+    font-size: 20px;
+}
+footer .large-icon li {
+    margin: 0 7px;
+}
+@media (max-width: 1199px) {
+    .navbar.center-logo .navbar-nav .nav-link, .center-logo .navbar-nav .nav-link, header.sticky .center-logo .navbar-nav .nav-link {
+        padding: 55px 13px;
+    }
+    .header-icon .header-social-icon a {
+        font-size: 16px;
+        padding-left: 22px;
+    }
+}
+@media (max-width: 991px) {
+    .video-icon-extra-large .video-icon {
+        width: 150px;
+        height: 150px;
+    }
+    footer {
+        padding-top: 80px;
+        padding-bottom: 70px;
+    }
+    header .navbar-brand img {
+        max-height: 70px;
+    }
+    header .navbar-brand {
+        padding: 15px 0;
+    }
+}
+@media (max-width: 767px) {
+    header .navbar-brand img {
+        max-height: 57px;
+    }
+    footer {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .video-icon-extra-large .video-icon {
+        width: 120px;
+        height: 120px;
+    }
+}

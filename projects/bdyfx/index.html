@@ -1,251 +1,799 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Body Fix Clinic</title>
-  <!-- Bootstrap CSS for layout and components -->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+﻿<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+<title>Body Fix Clinic</title>
+<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- Bootstrap Icons for easy icon usage -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 
-  <!-- Google Fonts for custom typography -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script>
-  <!-- Custom Stylesheet -->
-  <link href="stylefz.css" rel="stylesheet">
+        <!-- favicon icon -->
+        <link rel="shortcut icon" href="assets/images/branding/favbdyfx-72x72.png" type="image/x-icon">
+        <link rel="apple-touch-icon" href="assets/images/branding/favbdyfx-57x57.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="assets/images/branding/favbdyfx-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="assets/images/branding/favbdyfx-114x114.png">
+        <!-- google fonts preconnect -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- style sheets and font icons  -->
+        <link rel="stylesheet" href="assets/css/vendors.min.css"/>
+        <link rel="stylesheet" href="assets/css/icon.min.css"/>
+        <link rel="stylesheet" href="assets/css/style.css"/>
+        <link rel="stylesheet" href="assets/css/responsive.css"/>
+        <link rel="stylesheet" href="assets/css/medical.css" />
+    </head>
+    <body data-mobile-nav-style="classic">
+        <div class="box-layout">
+            <!-- start header -->
+            <header>
+                <!-- start navigation -->
+                <nav class="navbar navbar-expand-lg header-light bg-white disable-fixed">
+                    <div class="container-fluid">
+                        <div class="col-auto col-lg-2 me-lg-0 me-auto">
+                            <a class="navbar-brand" href="index.html">
+                                <img src="assets/images/branding/banner-01-dark.jpg" data-at2x="assets/images/branding/banner-01-dark.jpg" alt="" class="rounded-logo">
+                                <!-- <img src="assets/images/branding/Bfc_Logo_sm_small.jpg" data-at2x="assets/images/branding/Bfc_Logo_sm_small.jpg" alt="" class="alt-logo">
+                                <img src="assets/images/branding/Bfc_Logo_sm_small.jpg" data-at2x="assets/images/branding/Bfc_Logo_sm_small.jpg" alt="" class="mobile-logo"> -->
+                            </a>
+                        </div>
+                        <div class="col-auto col-lg-8 menu-order position-static">
+                            <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-line"></span>
+                                <span class="navbar-toggler-line"></span>
+                                <span class="navbar-toggler-line"></span>
+                                <span class="navbar-toggler-line"></span>
+                            </button>
+                            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                                    <!-- <li class="nav-item"><a href="demo-medical-about.html" class="nav-link">About</a></li>
+                                    <li class="nav-item"><a href="demo-medical-treatments.html" class="nav-link">Treatments</a></li>
+                                    <li class="nav-item"><a href="demo-medical-doctors.html" class="nav-link">Doctors</a></li>
+                                    <li class="nav-item"><a href="demo-medical-timetable.html" class="nav-link">Timetable</a></li> -->
+                                    <!-- <li class="nav-item"><a href="demo-medical-contact.html" class="nav-link">Contact</a></li> -->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-auto col-lg-2 text-end d-none d-sm-flex">
+                            <div class="header-icon">
+                                <div class="header-button">
+                                    <a href="https://wa.me/447985115157?text=Hello%20Body%20Fix%20Clinic" target="_blank"><img src="assets/images/WhatsAppButtonWhiteSmall.png">
 
-  </style>
-</head>
-<body class="box-layout">
-  <!-- Sticky Social Bar -->
-  <div class="social-bar">
-    <!-- ARIA labels for accessibility -->
-    <a href="https://www.facebook.com/elite.cuppingtherapy/" target="_blank" aria-label="Facebook">
-      <i class="bi bi-facebook fs-4"></i> <!-- Facebook icon -->
-    </a>
-    <a href="https://www.instagram.com/bodyfixclinic/?igsh=MW05bmNnZGJ6d2gzNA%3D%3D&utm_source=qr#" target="_blank" aria-label="Instagram">
-      <i class="bi bi-instagram fs-4"></i> <!-- Instagram icon -->
-    </a>
-    <a href="https://wa.me/447985115157" target="_blank" aria-label="WhatsApp">
-      <i class="bi bi-whatsapp fs-4"></i> <!-- WhatsApp icon -->
-    </a>
-    <a href="#" target="_self" aria-label="BodyFix">
-      <!-- WhatsApp icon -->
-       <img src="assets/images/branding/favbdyfx-57x57.png" alt="Body Fix Clinic Logo" style="width: 30px; height: 30px; border-radius: 50%;">
-    </a>
-  </div>
+                                    </a>
+                                </div
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- end navigation -->
+            </header>
+            <!-- end header -->
+            <!-- start banner -->
+            <section class="big-section bottom-minus-15px border-radius-20px" data-parallax-background-ratio="0.4" style="background-image: url(assets/images/demo-medical-hero-banner-bg.jpg);">
 
-  <!-- Back To Top Button (JS toggles display) -->
-  <button id="backToTop" class="back" aria-label="Back to top">
-    <!-- <img src="scroller.gif" class="" alt=""> -->
-  </button>
+                <div class="container containt-overlay container-fluid position-relative">
+                    <div class="row lg-bottom-90px">
+                        <div class="col-xxl-3 col-xl-6 col-lg-7 pt-13 xl-pt-6 lg-pb-17 md-pb-6 sm-pt-40px text-center text-xl-start" data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                            <span class="fs-24 lg-mb-30px d-block text-base-color">Get help with Joint mobilization - lower back, shoulders & Neck</span>
+                            <h2 class="text-dark-gray fw-800 xs-fs-65 ls-minus-3px mb-45px d-block">Targeted Pain Relief</h2>
+                            <!-- <a href="#" class="btn btn-medium btn-switch-text btn-dark-gray btn-round-edge me-15px xs-me-5px">
+                                <span>
+                                    <span class="btn-double-text" data-text="Get fixed!">Find More!</span>
+                                </span>
+                            </a> -->
+                            <a href="https://wa.me/447985115157?text=Hello%20Body%20Fix%20Clinic" target="_blank" class="btn btn-medium btn-switch-text left-icon btn-transparent-light-gray border-color-transparent-dark-gray btn-round-edge">
+                                <span>
+                                    <span><i class="fa-brands fa-whatsapp fa-shake"></i></span>
+                                    <span class="btn-rounded">Contact now</span>
+                                </span>
+                            </a>
+                        </div>
 
-  <!-- Navbar -->
-  <!-- <nav class="navbar navbar-expand-lg bg-light-turquoise-blue"> -->
 
-  <!-- </nav> -->
+                        <div class="col-xxl-7 col-xl-6 col-lg-5 col-md-10 position-relative align-self-end lg-pb-8 md-pb-1 sm-pb-10 xs-pb-30">
+                        <div class="position-absolute top-minus-70px left-minus-80px xxl-left-minus-40px lg-left-30px lg-w-400px opacity-6 w-450px d-none d-lg-inline-block"><img src="assets/images/demo-medical-pattern-white.svg" alt="" data-bottom-top="transform: translateY(-90px)" data-top-bottom="transform: translateY(90px)"></div>
+                            <div class="w-85px h-85px border-radius-100 d-flex align-items-center justify-content-center position-absolute z-index-9 left-50px lg-left-5px sm-left-30px top-100px lg-top-30px mt-30 translate-middle-y" data-anime='{ "opacity": [0,1], "duration": 800, "delay": 200, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                                <!-- <div class="bg-red video-icon-box video-icon-medium feature-box-icon-rounded w-80px h-80px rounded-circle d-flex align-items-center justify-content-center">
+                                     <span>
+                                        <span class="video-icon">
+                                            <i class="bi bi-heart-fill icon-very-medium text-white position-relative top-3px m-0"></i>
+                                            <span class="video-icon-sonar">
+                                                <span class="video-icon-sonar-bfr border border-1 border-color-red"></span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div> -->
+                            </div>
+                            <!-- <figure class="outside-box-right-2 position-relative">
+                                <img src="assets/images/young-woman-having-neckache-while-working-home.jpg" alt=""> -->
+                                <!-- <figcaption class="blur-box bg-white-transparent position-absolute border-radius-6px top-50 right-minus-50px xl-right-minus-5px lg-right-minus-10px sm-right-5px w-250px p-25px text-center last-paragraph-no-margin animation-float">
+                                     start features box item
+                                     <div class="icon-with-text-style-02">
+                                        <div class="feature-box feature-box-left-icon-middle overflow-hidden">
+                                            <div class="feature-box-icon me-12px">
+                                                <img src="assets/images/branding/Bfc_Logo_sm_small.jpg" class="rounded-logo h-50px" alt="">
+                                            </div>
+                                            <div class="feature-box-content">
 
-  <!-- Hero Section (Video Carousel) -->
-  <section class="hero">
-    <!-- Bootstrap carousel for video slides -->
-    <!-- <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
-      <div class="carousel-inner">
-        Active slide
+                                                <i class="fa-solid fa-star "></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><p class="lh-20 fs-15">5 Star treament</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    end features box item
+                                </figcaption> -->
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-light-sea-green-transparent-light position-absolute bottom-0px w-100 pt-30px pb-10px">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-sm-auto lg-mt-40px">
+                                <div class="d-md-flex align-items-center justify-content-center text-dark-gray">
+                                    <i class="bi bi-info-circle icon-extra-medium me-10px"></i>
+                                    <span class="fw-600 fs-18">Life Hacks</span>
+                                    <span class="h-40px w-1px d-none d-lg-block opacity-7 ms-10px"></span>
+                                </div>
+                            </div>
+                            <div class="col-xl-8 text-white text-center text-sm-end">
+                                <div class="swiper slider-one-slide" data-slider-options='{ "slidesPerView": 1, "spaceBetween": 20, "loop": true, "pagination": { "el": ".slider-one-slide-pagination", "clickable": true }, "autoplay": { "delay": 6000, "disableOnInteraction": true}, "navigation": { "nextEl": ".swiper-button-next-nav", "prevEl": ".swiper-button-previous-nav" }, "keyboard": { "enabled": true, "onlyInViewport": true }, "effect": "slide" }'>
+                                    <div class="swiper-wrapper">
+                                        <!-- start text slider item -->
+                                        <div class="fs-15 swiper-slide">“Pain is a message, not a malfunction.” Learn to listen early — your body whispers before it screams.</div>
+                                        <!-- end text slider item -->
+                                        <!-- start text slider item -->
+                                        <div class="fs-15 swiper-slide">“Tight shoulders often mean a heavy mind.” Emotional stress settles in muscles. Regular release is mental self-care too</div>
+                                        <!-- end text slider item -->
+                                        <!-- start text slider item -->
+                                        <div class="fs-15 swiper-slide">“Prevention isn’t an expense. It’s a strategy.” Don’t wait for pain — build habits that keep you one step ahead.</div>
+                                        <!-- end text slider item -->
+                                        <!-- start text slider item -->
+                                        <div class="fs-15 swiper-slide">“Screens demand stillness. Stillness demands balance.” Offset your digital life with real movement — micro-mobility keeps major issues away.</div>
+                                        <!-- end text slider item -->
+                                        <!-- start text slider item -->
+                                        <div class="fs-15 swiper-slide">“The future of health? Hyper-personal care.” Your posture, your job, your stress — your treatment should match you, not the trend.</div>
+                                        <!-- end text slider item -->
+                                    </div>
+                                    <!-- start slider navigation -->
+                                    <div class="xl-left-minus-10px swiper-button-previous-nav swiper-button-prev"><i class="fa-solid fa-arrow-left fa-sm"></i></div>
+                                    <div class="xl-right-minus-10px swiper-button-next-nav swiper-button-next"><i class="fa-solid fa-arrow-right fa-sm"></i></div>
+                                    <!-- end slider pagination -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end banner -->
+            <!-- start section -->
+            <section>
+                <div class="container">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-lg-6 col-md-10 md-mb-15 xs-mb-20 offset-lg-0 offset-md-1 position-relative">
+                            <div class="w-75" data-animation-delay="200" data-shadow-animation="true" data-bottom-top="transform: translateY(50px)" data-top-bottom="transform: translateY(-50px)">
+                                <img src="assets/images/senior-man-having-back-pain.jpg" alt="" class="border-radius-6px w-100">
+                                <!-- <div class="position-absolute left-minus-70px lg-left-minus-15px md-left-minus-50px bottom-130px lg-bottom-90px md-mb-50px d-none d-md-flex flex-column align-items-center justify-content-center w-140px h-140px bg-white border-radius-100 p-10px box-shadow-quadruple-large" data-anime='{"translateY": [-15, 0], "scale": [0.5, 1], "opacity": [0,1], "duration": 800, "delay": 800, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                                    <img src="assets/images/branding/Bfc_Logo_sm.jpg" class=" rounded-logo top-50 translate-middle-y" alt="">
+                                    <img src="assets/images/demo-medical-home-07.png" class="animation-rotation" alt="">
+                                </div> -->
+                            </div>
+                            <div class="w-55 overflow-hidden position-absolute right-15px bottom-minus-50px" data-shadow-animation="true" data-animation-delay="100" data-bottom-top="transform: translateY(-20px)" data-top-bottom="transform: translateY(20px)">
+                                <img src="assets/images/young-woman-having-neckache-while-working-home.jpg" alt="" class="border-radius-6px box-shadow-quadruple-large w-100" />
+                            </div>
+                        </div>
+                        <div class="col-xl-5 offset-xl-1 col-lg-6 text-right text-md-start" data-anime='{ "opacity": [0,1], "duration": 600, "delay": 100, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                            <span class="fs-18 fw-600 text-dark-gray mb-20px d-flex align-items-center"><span class="text-center w-60px h-60px d-flex justify-content-center align-items-center rounded-circle bg-light-sea-green-transparent-light align-middle me-15px"><i class="fa-solid fa-house" style="color:#232323;"></i></span>About BodyFix Clinic</span>
+                            <h2 class="fw-800 text-dark-gray ls-minus-2px">Welcome to our clinic</h2>
+                            <p class="mb-30px w-95 lg-w-100 xs-mb-25px">BodyFix Clinic delivers evidence-informed, precision-based therapy for targeted pain relief. Our approach is clinical, not cosmetic—focused on resolving musculoskeletal dysfunctions through advanced techniques and professional expertise. We are committed to maintaining the highest standards of care, ensuring each client receives personalised treatment that meets both clinical goals and client expectations..</p>
+                            <div class="row align-items-center text-right text-sm-start">
+                                <div class="col-sm-auto xs-mb-10px">
+                                    <h2 class="alt-font text-dark-gray mb-0 d-inline-block align-middle me-10px fw-800">722+</h2>
+                                    <div class="text-center bg-golden-yellow text-white fs-14 ls-1px border-radius-4px d-inline-block ps-15px pe-15px lh-34 align-middle me-5px"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                </div>
+                                <div class="col-sm border-start border-2 border-color-dark-gray ps-25px ms-10px xl-ps-20px xs-border-start-0 xs-ps-15px xs-pe-15px xs-m-0">
+                                    <p class="m-0 lh-24 text-dark-gray fw-600">5 star reviews from our satisfied people.</p>
+                                </div>
+                            </div>
+                            <div class="d-inline-block mt-40px xs-mt-30px">
+                                <!-- <a href="demo-medical-about.html" class="btn btn-medium btn-switch-text btn-dark-gray btn-round-edge me-15px xs-me-5px">
+                                    <span>
+                                        <span class="btn-double-text" data-text="Trusted doctor">About clinic</span>
+                                    </span>
+                                </a> -->
+                                <a href="https://wa.me/447985115157?text=Hello%20Body%20Fix%20Clinic" target="_blank" class="btn btn-large btn-switch-text left-icon btn-transparent-light-gray border-color-transparent-dark-gray btn-round-edge xs-mt-15px">
+                                    <span>
+                                        <span><i class="fa-solid fa-brands fa-whatsapp"></i></span>
+                                        <span class="btn-double-text " data-text="Now!">Contact</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end section -->
+            <!-- start section -->
+            <section class="pt-0 position-relative">
+                <div class="position-absolute top-minus-70px lg-top-minus-50px left-minus-80px xxl-left-minus-40px lg-left-30px lg-w-300px opacity-1 w-350px z-index-1 d-none d-lg-inline-block"><img src="assets/images/demo-medical-pattern.svg" alt="" data-bottom-top="transform: translateY(-50px)" data-top-bottom="transform: translateY(50px)"></div>
+                <div class="bg-light-turquoise-blue border-radius-8px lg-no-border-radius pt-6 pb-6 md-pt-50px md-pb-50px overflow-hidden position-relative">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-xl-4 col-lg-5 md-mb-30px" data-anime='{"el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 800, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                                <span class="fs-18 fw-600 text-dark-gray mb-20px d-flex align-items-center"><span class="text-center w-60px h-60px d-flex justify-content-center align-items-center rounded-circle bg-light-sea-green-transparent-light align-middle me-15px"><i class="bi bi bi-shield-check text-base-color fs-22"></i></span>Our advance services</span>
+                                <h2 class="fw-800 text-dark-gray ls-minus-2px">Services offered</h2>
+                                <p class="mb-30px">Precision sports massage & joint mobilization for lower back, shoulders & more.</p>
+                                <a href="demo-medical-treatments.html" class="btn btn-medium btn-switch-text btn-dark-gray btn-round-edge">
+                                    <span>
+                                        <span class="btn-double-text" data-text="Enquire now!">Enquire now!</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="col-xl-8 ps-5 col-lg-7">
+                                <div class="outside-box-right-25 sm-outside-box-right-0" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 1200, "delay": 100, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                                    <div class="swiper magic-cursor ps-15px md-ps-0" data-slider-options='{ "slidesPerView": 1, "spaceBetween": 30, "loop": true, "autoplay": { "delay": 4000, "disableOnInteraction": false },  "pagination": { "el": ".slider-four-slide-pagination-1", "clickable": true, "dynamicBullets": false }, "keyboard": { "enabled": true, "onlyInViewport": true }, "breakpoints": { "1200": { "slidesPerView": 3 }, "768": { "slidesPerView": 2 }, "320": { "slidesPerView": 1 } }, "effect": "slide" }'>
+                                        <div class="swiper-wrapper pt-30px pb-20px">
+                                            <!-- start slider item -->
+                                            <div class="swiper-slide">
+                                                <!-- start features box item -->
+                                                <div class="icon-with-text-style-02 transition-inner-all">
+                                                    <div class="feature-box bg-white text-start hover-box dark-hover border-radius-6px p-15 xl-p-12 box-shadow-medium">
+                                                        <div class="feature-box-icon feature-box-icon-rounded w-110px h-110px bg-light-turquoise-blue rounded-circle mb-20px">
+                                                            <img src="assets/images/demo-medical-icon-01.svg" class="w-50px" alt="">
+                                                        </div>
+                                                        <div class="feature-box-content">
+                                                            <span class="d-block text-dark-gray fs-19 fw-700 mb-5px">Lower Back Relief</span>
+                                                            <p class="text-light-opacity">Precise treatment to ease chronic back tension</p>
+                                                            <a href="https://wa.me/447985115157?text=Hello%20Body%20Fix%20Clinic" class="btn btn-extra-large btn-link text-dark-gray border-bottom-0 left-icon fw-700"><i class="feather icon-feather-plus-circle icon-extra-medium ms-0"></i>Know more</a>
+                                                        </div>
+                                                        <div class="feature-box-overlay bg-base-color border-radius-6px"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- end features box item -->
+                                            </div>
+                                            <!-- end slider item -->
+                                            <!-- start slider item -->
+                                            <div class="swiper-slide">
+                                                <!-- start features box item -->
+                                                <div class="icon-with-text-style-02 transition-inner-all">
+                                                    <div class="feature-box bg-white text-start hover-box dark-hover border-radius-6px p-15 xl-p-12 box-shadow-medium">
+                                                        <div class="feature-box-icon feature-box-icon-rounded w-110px h-110px bg-light-turquoise-blue rounded-circle mb-20px">
+                                                            <img src="assets/images/demo-medical-icon-02.svg" class="w-50px" alt="">
+                                                        </div>
+                                                        <div class="feature-box-content">
+                                                            <span class="d-block text-dark-gray fs-19 fw-700 mb-5px">Sciatica Pain</span>
+                                                            <p class="text-light-opacity">Nerve pain reduced through focused pressure techniques</p>
+                                                            <a href="https://wa.me/447985115157?text=Hello%20Body%20Fix%20Clinic" class="btn btn-extra-large btn-link text-dark-gray border-bottom-0 left-icon fw-700"><i class="feather icon-feather-plus-circle icon-extra-medium ms-0"></i>Know more</a>
+                                                        </div>
+                                                        <div class="feature-box-overlay bg-base-color border-radius-6px"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- end features box item -->
+                                            </div>
+                                            <!-- end slider item -->
+                                             <!-- start slider item -->
+                                            <div class="swiper-slide">
+                                                <!-- start features box item -->
+                                                <div class="icon-with-text-style-02 transition-inner-all">
+                                                    <div class="feature-box bg-white text-start hover-box dark-hover border-radius-6px p-15 xl-p-12 box-shadow-medium">
+                                                        <div class="feature-box-icon feature-box-icon-rounded w-110px h-110px bg-light-turquoise-blue rounded-circle mb-20px">
+                                                            <img src="assets/images/demo-medical-icon-02.svg" class="w-50px" alt="">
+                                                        </div>
+                                                        <div class="feature-box-content">
+                                                            <span class="d-block text-dark-gray fs-19 fw-700 mb-5px">Shoulder Pain</span>
+                                                            <p class="text-light-opacity">Restore function with targeted soft tissue therapy</p>
+                                                            <a href="https://wa.me/447985115157?text=Hello%20Body%20Fix%20Clinic" class="btn btn-extra-large btn-link text-dark-gray border-bottom-0 left-icon fw-700"><i class="feather icon-feather-plus-circle icon-extra-medium ms-0"></i>Know more</a>
+                                                        </div>
+                                                        <div class="feature-box-overlay bg-base-color border-radius-6px"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- end features box item -->
+                                            </div>
+                                            <!-- end slider item -->
+                                             <!-- start slider item -->
+                                            <div class="swiper-slide">
+                                                <!-- start features box item -->
+                                                <div class="icon-with-text-style-02 transition-inner-all">
+                                                    <div class="feature-box bg-white text-start hover-box dark-hover border-radius-6px p-15 xl-p-12 box-shadow-medium">
+                                                        <div class="feature-box-icon feature-box-icon-rounded w-110px h-110px bg-light-turquoise-blue rounded-circle mb-20px">
+                                                            <img src="assets/images/demo-medical-icon-02.svg" class="w-50px" alt="">
+                                                        </div>
+                                                        <div class="feature-box-content">
+                                                            <span class="d-block text-dark-gray fs-19 fw-700 mb-5px">Frozen Shoulder Correction</span>
+                                                            <p class="text-light-opacity">Mobilisation techniques to regain full shoulder movement</p>
+                                                            <a href="https://wa.me/447985115157?text=Hello%20Body%20Fix%20Clinic" class="btn btn-extra-large btn-link text-dark-gray border-bottom-0 left-icon fw-700"><i class="feather icon-feather-plus-circle icon-extra-medium ms-0"></i>Know more</a>
+                                                        </div>
+                                                        <div class="feature-box-overlay bg-base-color border-radius-6px"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- end features box item -->
+                                            </div>
+                                            <!-- end slider item -->
+                                             <!-- start slider item -->
+                                            <div class="swiper-slide">
+                                                <!-- start features box item -->
+                                                <div class="icon-with-text-style-02 transition-inner-all">
+                                                    <div class="feature-box bg-white text-start hover-box dark-hover border-radius-6px p-15 xl-p-12 box-shadow-medium">
+                                                        <div class="feature-box-icon feature-box-icon-rounded w-110px h-110px bg-light-turquoise-blue rounded-circle mb-20px">
+                                                            <img src="assets/images/demo-medical-icon-02.svg" class="w-50px" alt="">
+                                                        </div>
+                                                        <div class="feature-box-content">
+                                                            <span class="d-block text-dark-gray fs-19 fw-700 mb-5px">Neck Pain</span>
+                                                            <p class="text-light-opacity">Release stiffness and improve neck range gently</p>
+                                                            <a href="https://wa.me/447985115157?text=Hello%20Body%20Fix%20Clinic" class="btn btn-extra-large btn-link text-dark-gray border-bottom-0 left-icon fw-700"><i class="feather icon-feather-plus-circle icon-extra-medium ms-0"></i>Know more</a>
+                                                        </div>
+                                                        <div class="feature-box-overlay bg-base-color border-radius-6px"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- end features box item -->
+                                            </div>
+                                            <!-- end slider item -->
+                                             <!-- start slider item -->
+                                            <div class="swiper-slide">
+                                                <!-- start features box item -->
+                                                <div class="icon-with-text-style-02 transition-inner-all">
+                                                    <div class="feature-box bg-white text-start hover-box dark-hover border-radius-6px p-15 xl-p-12 box-shadow-medium">
+                                                        <div class="feature-box-icon feature-box-icon-rounded w-110px h-110px bg-light-turquoise-blue rounded-circle mb-20px">
+                                                            <img src="assets/images/demo-medical-icon-02.svg" class="w-50px" alt="">
+                                                        </div>
+                                                        <div class="feature-box-content">
+                                                            <span class="d-block text-dark-gray fs-19 fw-700 mb-5px">Posture Correction</span>
+                                                            <p class="text-light-opacity">Realign body to reduce long-term strain</p>
+                                                            <a href="https://wa.me/447985115157?text=Hello%20Body%20Fix%20Clinic" class="btn btn-extra-large btn-link text-dark-gray border-bottom-0 left-icon fw-700"><i class="feather icon-feather-plus-circle icon-extra-medium ms-0"></i>Know more</a>
+                                                        </div>
+                                                        <div class="feature-box-overlay bg-base-color border-radius-6px"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- end features box item -->
+                                            </div>
+                                            <!-- end slider item -->
+                                             <!-- start slider item -->
+                                            <div class="swiper-slide">
+                                                <!-- start features box item -->
+                                                <div class="icon-with-text-style-02 transition-inner-all">
+                                                    <div class="feature-box bg-white text-start hover-box dark-hover border-radius-6px p-15 xl-p-12 box-shadow-medium">
+                                                        <div class="feature-box-icon feature-box-icon-rounded w-110px h-110px bg-light-turquoise-blue rounded-circle mb-20px">
+                                                            <img src="assets/images/demo-medical-icon-02.svg" class="w-50px" alt="">
+                                                        </div>
+                                                        <div class="feature-box-content">
+                                                            <span class="d-block text-dark-gray fs-19 fw-700 mb-5px">Golfers and Tennis Elbow</span>
+                                                            <p class="text-light-opacity">Reduce elbow pain, improve joint function</p>
+                                                            <a href="https://wa.me/447985115157?text=Hello%20Body%20Fix%20Clinic" class="btn btn-extra-large btn-link text-dark-gray border-bottom-0 left-icon fw-700"><i class="feather icon-feather-plus-circle icon-extra-medium ms-0"></i>Know more</a>
+                                                        </div>
+                                                        <div class="feature-box-overlay bg-base-color border-radius-6px"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- end features box item -->
+                                            </div>
+                                            <!-- end slider item -->
+                                             <!-- start slider item -->
+                                            <div class="swiper-slide">
+                                                <!-- start features box item -->
+                                                <div class="icon-with-text-style-02 transition-inner-all">
+                                                    <div class="feature-box bg-white text-start hover-box dark-hover border-radius-6px p-15 xl-p-12 box-shadow-medium">
+                                                        <div class="feature-box-icon feature-box-icon-rounded w-110px h-110px bg-light-turquoise-blue rounded-circle mb-20px">
+                                                            <img src="assets/images/demo-medical-icon-02.svg" class="w-50px" alt="">
+                                                        </div>
+                                                        <div class="feature-box-content">
+                                                            <span class="d-block text-dark-gray fs-19 fw-700 mb-5px">Hijama Cupping Therapy</span>
+                                                            <p class="text-light-opacity">Stimulate healing through therapeutic suction therapy</p>
+                                                            <a href="https://wa.me/447985115157?text=Hello%20Body%20Fix%20Clinic" class="btn btn-extra-large btn-link text-dark-gray border-bottom-0 left-icon fw-700"><i class="feather icon-feather-plus-circle icon-extra-medium ms-0"></i>Know more</a>
+                                                        </div>
+                                                        <div class="feature-box-overlay bg-base-color border-radius-6px"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- end features box item -->
+                                            </div>
+                                            <!-- end slider item -->
+                                            <!-- start slider item -->
+                                            <div class="swiper-slide">
+                                                <!-- start features box item -->
+                                                <div class="icon-with-text-style-02 transition-inner-all">
+                                                    <div class="feature-box bg-white text-start hover-box dark-hover border-radius-6px p-15 xl-p-12 box-shadow-medium">
+                                                        <div class="feature-box-icon feature-box-icon-rounded w-110px h-110px bg-light-turquoise-blue rounded-circle mb-20px">
+                                                            <img src="assets/images/demo-medical-icon-03.svg" class="w-50px" alt="">
+                                                        </div>
+                                                        <div class="feature-box-content">
+                                                            <span class="d-block text-dark-gray fs-19 fw-700 mb-5px">Bulge Disc</span>
+                                                            <p class="text-light-opacity">Non-surgical approach to relieve disc compression</p>
+                                                            <a href="https://wa.me/447985115157?text=Hello%20Body%20Fix%20Clinic" class="btn btn-extra-large btn-link text-dark-gray border-bottom-0 left-icon fw-700"><i class="feather icon-feather-plus-circle icon-extra-medium ms-0"></i>Know more</a>
+                                                        </div>
+                                                        <div class="feature-box-overlay bg-base-color border-radius-6px"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- end features box item -->
+                                            </div>
+                                            <!-- end slider item -->
+                                            <!-- start slider item -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-cols-1 row-cols-lg-3 row-cols-sm-2 mt-5 align-items-center justify-content-center" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 800, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
+                            <!-- start content box item -->
+                            <div class="col md-mb-40px border-end xs-border-end-0 border-color-transparent-dark-very-light">
+                                <div class="d-flex flex-column flex-md-row justify-content-center align-items-center text-center text-md-start">
+                                    <div class="flex-shrink-0 me-25px sm-me-0">
+                                        <h2 class="mb-0 text-dark-gray fw-800 ls-minus-2px">4.98</h2>
+                                    </div>
+                                    <div>
+                                        <div class="fs-18 lh-32 last-paragraph-no-margin text-dark-gray">
+                                            <i class="bi bi-star-fill text-dark-gray"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                        </div>
+                                        <span class="fs-18 lh-26 d-block fw-600 text-dark-gray">488 ratings</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end content box item -->
+                            <!-- start content box item -->
+                            <div class="col md-mb-40px border-end md-border-end-0 border-color-transparent-dark-very-light">
+                                <div class="d-flex flex-column flex-md-row justify-content-center align-items-center text-center text-md-start">
+                                    <div class="flex-shrink-0 me-25px sm-me-0">
+                                        <h2 class="mb-0 text-dark-gray fw-800 ls-minus-2px">98<sup class="fs-30">%</sup></h2>
+                                    </div>
+                                    <div>
+                                        <span class="fs-18 text-dark-gray lh-26 d-block fw-600">Genuine positive<br/> feedback.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end content box item -->
+                            <!-- start content box item -->
+                            <div class="col text-dark-gray fw-600">
+                                <div class="d-flex flex-column flex-md-row justify-content-center align-items-center text-center text-md-start">
+                                    <div class="flex-shrink-0 me-25px sm-me-0">
+                                        <h2 class="mb-0 text-dark-gray fw-800 ls-minus-2px">10<sup class="fs-30">+</sup></h2>
+                                    </div>
+                                    <div>
+                                        <span class="fs-18 lh-26 d-block fw-600">Daily patients<br>consulted.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end content box item -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end section -->
+            <!-- start section -->
+            <!-- <section class="overlap-height py-0">
+                <div class="container overlap-gap-section">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-lg-6 md-mb-50px position-relative" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 1200, "delay": 50, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                            <div class="atropos" data-atropos data-atropos-perspective="2450">
+                                <div class="atropos-scale">
+                                    <div class="atropos-rotate">
+                                        <div class="atropos-inner">
+                                            <img src="https://placehold.co/1000x751" alt="" class="border-radius-6px"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute-middle-center text-white-space-nowrap z-index-9">
+                                <a href="https://www.youtube.com/watch?v=cfXHhfNy7tU" class="btn btn-extra-large btn-white left-icon btn-box-shadow btn-rounded popup-youtube"><i class="fa-brands fa-youtube"></i>See our virtual tour</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 offset-xl-1 col-lg-6" data-anime='{ "translateY": [30, 0], "opacity": [0,1], "duration": 1200, "delay": 150, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                            <span class="fs-18 fw-600 text-dark-gray mb-20px d-flex align-items-center"><span class="text-center w-60px h-60px d-flex justify-content-center align-items-center rounded-circle bg-light-sea-green-transparent-light align-middle me-15px"><i class="bi bi-layout-text-sidebar-reverse text-base-color fs-20"></i></span>Modern technologies</span>
+                            <h2 class="fw-800 text-dark-gray ls-minus-2px">We help you get well sooner!</h2>
+                            <p class="mb-35px md-mb-30px w-90 lg-w-100">We value each and every human life placed in our hands and constantly work towards meeting the expectations of our customers.</p>
+                            <a href="tel:12345678910" class="btn btn-large btn-switch-text btn-dark-gray btn-round-edge left-icon">
+                                <span>
+                                    <span><i class="feather icon-feather-phone-call"></i></span>
+                                    <span class="btn-double-text" data-text="+1 234 567 8910">+1 234 567 8910</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center pt-6 pb-6 md-pt-8 md-pb-8" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 1200, "delay": 150, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                        <div class="col-auto icon-with-text-style-08">
+                            <div class="feature-box feature-box-left-icon-middle">
+                                <div class="feature-box-icon me-10px">
+                                    <i class="bi bi-emoji-smile icon-very-medium text-base-color"></i>
+                                </div>
+                                <div class="feature-box-content text-dark-gray fs-20 fw-600 ls-minus-05px">We can give you the big smile you've always wanted.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <!-- end section -->
+            <!-- start section -->
+            <section class="bg-light-turquoise-blue border-radius-8px lg-no-border-radius pt-6 pb-6 position-relative z-index-0">
+                <div class="container overlap-section mb-5 sm-mb-50px">
+                    <div class="bg-base-color border-radius-6px pt-4 pb-4 ps-6 pe-6 xl-p-4 sm-p-30px" data-anime='{ "opacity": [0,1], "duration": 600, "delay": 100, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-xl-3 lg-mb-25px text-center text-xl-start">
+                                <h6 class="text-white fw-700 mb-0 w-80 xl-w-100">Journey towards<span class="highlight-separator" data-shadow-animation="true" data-animation-delay="500">Pain<span><img src="assets/images/highlight-separator.svg" alt=""></span></span> relief</h6>
+                            </div>
+                            <div class="col-xl-9">
+                                <div class="row row-cols-auto row-cols-lg-3 row-cols-md-2 justify-content-center align-items-center">
+                                    <!-- start process step item -->
+                                    <div class="col process-step-style-07 position-relative md-mb-30px">
+                                        <div class="process-step-item d-flex align-items-center">
+                                            <div class="process-step-icon-wrap position-relative">
+                                                <div class="process-step-icon d-flex justify-content-center align-items-center mx-auto rounded-circle h-70px w-70px border border-1 border-color-transparent-white-very-light box-shadow-bottom">
+                                                    <span class="number position-relative z-index-1 text-white fw-500">01</span>
+                                                </div>
+                                            </div>
+                                            <div class="process-content ps-20px last-paragraph-no-margin">
+                                                <span class="d-block fw-600 text-white fs-18">Identify Service</span>
+                                                <p class="text-white opacity-7">Select and share details as to how we can help</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end process step item -->
+                                    <!-- start process step item -->
+                                    <div class="col process-step-style-07 position-relative md-mb-30px">
+                                        <div class="process-step-item d-flex align-items-center">
+                                            <div class="process-step-icon-wrap position-relative">
+                                                <div class="process-step-icon d-flex justify-content-center align-items-center mx-auto rounded-circle h-70px w-70px border border-1 border-color-transparent-white-very-light box-shadow-bottom">
+                                                    <span class="number position-relative z-index-1 text-white fw-500">02</span>
+                                                </div>
+                                            </div>
+                                            <div class="process-content ps-20px last-paragraph-no-margin">
+                                                <span class="d-block fw-600 text-white fs-18">Book session</span>
+                                                <p class="text-white opacity-7">Work along your therapist to target pain areas</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end process step item -->
 
-         Additional slides
-        <div class="carousel-item">
-          <video autoplay loop muted playsinline>
-            <source src="assets/videos/5390846-uhd_4096_2160_30fps.mp4" type="video/mp4">
-          </video>
+                                    <!-- start process step item -->
+                                    <div class="col process-step-style-07 position-relative">
+                                        <div class="process-step-item d-flex align-items-center">
+                                            <div class="process-step-icon-wrap position-relative">
+                                                <div class="process-step-icon d-flex justify-content-center align-items-center mx-auto rounded-circle h-70px w-70px border border-1 border-color-transparent-white-very-light box-shadow-bottom">
+                                                    <span class="number position-relative z-index-1 text-white fw-500">03</span>
+                                                </div>
+                                            </div>
+                                            <div class="process-content ps-20px last-paragraph-no-margin">
+                                                <span class="d-block fw-600 text-white fs-18">Achive your goals</span>
+                                                <p class="text-white opacity-7">Live your life pain free!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end process step item -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="container">
+                    <div class="row mb-3">
+                        <div class="col text-center" data-anime='{ "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                            <h2 class="fw-800 text-dark-gray ls-minus-2px">Qualified doctors</h2>
+                        </div>
+                    </div>
+                    <div class="row row-cols-1 row-cols-xl-4 row-cols-sm-2 justify-content-center" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+
+                        <div class="col team-style-06 lg-mb-30px">
+                            <div class="d-flex flex-column p-35px pb-20px lg-p-30px text-center border-radius-6px bg-white box-shadow-quadruple-large position-relative">
+                                <div class="position-relative">
+                                    <a href="#" class="d-inline-block position-relative"><img class="rounded-circle w-150px h-150px mb-20px" src="https://placehold.co/200x200" alt=""><span class="fs-13 fw-600 text-dark-gray alt-font lh-30 position-absolute top-25px right-minus-40px border-radius-30px bg-yellow ps-15px pe-15px"><i class="fa-solid fa-star"></i> 4.9</span></a>
+                                </div>
+                                <a href="#" class="text-dark-gray fs-18 fw-700 mb-5px">Dr. Shoko mugikura</a>
+                                <p class="w-90 mx-auto lh-28">Specialize in <span class="text-dark-gray text-decoration-line-bottom fw-500">psychiatry</span> at crafto clinic.</p>
+                                <div class="text-center elements-social social-icon-style-02 border-top border-color-light-medium-gray w-100 pt-15px">
+                                    <ul class="small-icon dark">
+                                        <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i class="fa-brands fa-dribbble"></i></a></li>
+                                        <li><a class="twitter" href="http://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                         start team member item
+                        <div class="col team-style-06 lg-mb-30px">
+                            <div class="d-flex flex-column p-35px pb-20px lg-p-30px text-center border-radius-6px bg-white box-shadow-quadruple-large position-relative">
+                                <div class="position-relative">
+                                    <a href="#" class="d-inline-block position-relative"><img class="rounded-circle w-150px h-150px mb-20px" src="https://placehold.co/200x200" alt=""><span class="fs-13 fw-600 text-dark-gray alt-font lh-30 position-absolute top-25px right-minus-40px border-radius-30px bg-yellow ps-15px pe-15px"><i class="fa-solid fa-star"></i> 4.7</span></a>
+                                </div>
+                                <a href="#" class="text-dark-gray fs-18 fw-700 mb-5px">Dr. Herman miller</a>
+                                <p class="w-90 mx-auto lh-28">Specialize in <span class="text-dark-gray text-decoration-line-bottom fw-500">cancer</span> at crafto clinic.</p>
+                                <div class="text-center elements-social social-icon-style-02 border-top border-color-light-medium-gray w-100 pt-15px">
+                                    <ul class="small-icon dark">
+                                        <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i class="fa-brands fa-dribbble"></i></a></li>
+                                        <li><a class="twitter" href="http://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        end team member item -->
+                        <!-- start team member item
+                        <div class="col team-style-06 sm-mb-30px">
+                            <div class="d-flex flex-column p-35px pb-20px lg-p-30px text-center border-radius-6px bg-white box-shadow-quadruple-large position-relative">
+                                <div class="position-relative">
+                                    <a href="#" class="d-inline-block position-relative"><img class="rounded-circle w-150px h-150px mb-20px" src="https://placehold.co/200x200" alt=""><span class="fs-13 fw-600 text-dark-gray alt-font lh-30 position-absolute top-25px right-minus-40px border-radius-30px bg-yellow ps-15px pe-15px"><i class="fa-solid fa-star"></i> 5.0</span></a>
+                                </div>
+                                <a href="#" class="text-dark-gray fs-18 fw-700 mb-5px">Dr. Leonel mooney</a>
+                                <p class="w-90 mx-auto lh-28">Specialize in <span class="text-dark-gray text-decoration-line-bottom fw-500">pediatrics</span> at crafto clinic.</p>
+                                <div class="text-center elements-social social-icon-style-02 border-top border-color-light-medium-gray w-100 pt-15px">
+                                    <ul class="small-icon dark">
+                                        <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i class="fa-brands fa-dribbble"></i></a></li>
+                                        <li><a class="twitter" href="http://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        end team member item
+                        start team member item
+                        <div class="col team-style-06">
+                            <div class="d-flex flex-column p-35px pb-20px lg-p-30px text-center border-radius-6px bg-white box-shadow-quadruple-large position-relative">
+                                <div class="position-relative">
+                                    <a href="#" class="d-inline-block position-relative"><img class="rounded-circle w-150px h-150px mb-20px" src="https://placehold.co/200x200" alt=""><span class="fs-13 fw-600 text-dark-gray alt-font lh-30 position-absolute top-25px right-minus-40px border-radius-30px bg-yellow ps-15px pe-15px"><i class="fa-solid fa-star"></i> 5.0</span></a>
+                                </div>
+                                <a href="#" class="text-dark-gray fs-18 fw-700 mb-5px">Dr. Matthew taylor</a>
+                                <p class="w-90 mx-auto lh-28">Specialize in <span class="text-dark-gray text-decoration-line-bottom fw-500">psychiatry</span> at crafto clinic.</p>
+                                <div class="text-center elements-social social-icon-style-02 border-top border-color-light-medium-gray w-100 pt-15px">
+                                    <ul class="small-icon dark">
+                                        <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i class="fa-brands fa-dribbble"></i></a></li>
+                                        <li><a class="twitter" href="http://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        end team member item -->
+                    </div>
+                    <div class="row justify-content-center align-items-center mt-5 sm-mt-7" data-anime='{ "translateY": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                        <div class="col-12 text-center last-paragraph-no-margin">
+                            <div class="fs-12 lh-30 fw-600 text-white text-uppercase d-inline-block bg-base-color border-radius-30px ps-20px pe-20px me-10px sm-m-5px align-middle">trust</div>
+                            <div class="d-inline-block align-middle text-dark-gray fs-20 fw-600 ls-minus-05px">Genuine 300+ people trusting BodyFix Clinic treatment.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="position-absolute top-10px right-minus-80px xxl-right-minus-40px lg-right-15px opacity-1 w-350px z-index-minus-1 d-none d-lg-block"><img src="assets/images/demo-medical-pattern.svg" alt="" data-bottom-top="transform: translateY(50px)" data-top-bottom="transform: translateY(-50px)"></div>
+            </section> -->
+            <!-- end section -->
+            <!-- start section -->
+            <section class="position-relative" id="appointment">
+                <div class="container">
+                    <div class="row justify-content-center" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 1200, "delay": 50, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                        <div class="col-xl-4 col-lg-5 md-mb-50px">
+                            <h2 class="fw-800 text-dark-gray ls-minus-2px">Request an appointment.</h2>
+                            <p class="w-90 md-w-100 mb-30px">Your information will be forwarded to a scheduling specialist who will contact you.</p>
+                            <div class="row g-0 align-items-center">
+                                <!-- <div class="col-auto">
+                                    <img class="me-15px" src="https://placehold.co/112x68" alt="" />
+                                </div>
+                                <div class="col">
+                                    <span class="fw-600 text-dark-gray">For urgent matters<br><a href="tel:12345678910" class="fs-22 ls-minus-05px fw-800">+1 234 567 8910</a></span>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="contact-form-style-05">
+                                <!-- start contact form -->
+                                <form action="email-templates/contact-form.php" method="post">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-6 sm-mb-25px">
+                                            <input class="mb-25px form-control required" type="text" name="name" placeholder="Patient's full name*" />
+                                            <input class="mb-25px form-control required" type="text" name="email" placeholder="Patient's email*" />
+                                            <div class="date-time row gutter-very-small">
+                                                <div class="date-icon col-xl-6 lg-mb-25px">
+                                                    <input class="form-control" type="date" name="date" value="2023-01-01" min="2023-01-01" max="2099-12-31" aria-label="date"  />
+                                                </div>
+                                                <div class="time-icon col-xl-6">
+                                                    <input class="form-control" type="time" name="time" value="09:12" min="09:00" max="12:00" aria-label="time" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-25px select">
+                                                <select class="form-control" name="select" aria-label="select-service">
+                                                    <option value="">Select service</option>
+                                                    <option value="Lower Back Relief">Lower Back Relief</option>
+                                                    <option value="Sciatica Pain">Sciatica Pain</option>
+                                                    <option value="Bulge Disc">Bulge Disc</option>
+                                                    <option value="Shoulder Pain">Shoulder Pain</option>
+                                                    <option value="Frozen Shoulder Correction">Frozen Shoulder Correction</option>
+                                                    <option value="Rotator Cuff Injury">Rotator Cuff Injury</option>
+                                                    <option value="Neck Pain">Neck Pain</option>
+                                                    <option value="Posture Correction">Posture Correction</option>
+                                                    <option value="Golfers and Tennis Elbow">Golfers and Tennis Elbow</option>
+                                                    <option value="Hijama Cupping Therapy">Hijama Cupping Therapy</option>
+
+                                                </select>
+                                            </div>
+                                            <textarea class="form-control" cols="20" rows="4" name="comment" placeholder="Your message"></textarea>
+                                        </div>
+                                        <div class="col-md-6 mt-25px sm-mt-20px">
+                                            <p class="mb-0 fs-13 lh-24 text-center text-md-start">We are committed to protecting your privacy. We will never collect information about you without your explicit consent.</p>
+                                        </div>
+                                        <div class="col-md-6 text-center text-md-end mt-25px sm-mt-20px">
+                                            <input type="hidden" name="redirect" value="">
+                                            <button class="btn btn-medium btn-base-color btn-round-edge left-icon btn-box-shadow submit" type="submit"><i class="bi bi-calendar-check"></i>Book appointment</button>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-results mt-20px d-none text-center"></div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- end contact form -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-absolute bottom-minus-15px right-100px lg-right-0px z-index-minus-1 opacity-1 w-300px lg-w-200px"><img src="https://placehold.co/448x434" alt="" data-bottom-top="transform: translateY(-50px)" data-top-bottom="transform: translateY(50px)"></div>
+                </div>
+            </section>
+            <!-- end section -->
+            <!-- start footer -->
+            <footer class="p-0">
+                <div class="footer-top bg-dark-gray pt-35px pb-35px border-radius-6px lg-no-border-radius position-relative overflow-hidden">
+                    <div class="position-absolute right-minus-100px bottom-minus-80px margin-100px-top opacity-1 w-250px"><img src="assets/images/demo-medical-pattern-white.svg" alt="" class=""></div>
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <!-- start footer column -->
+                            <div class="col-xl-3 col-sm-6 order-1 text-center text-sm-start xs-mb-20px">
+                                <a href="#" class="footer-logo d-inline-block"><img src="assets/images/favbdyfx-100x100.png" data-at2x="assets/images/favbdyfx-100x100.png" alt="" class="rounded-logo"></a>
+                            </div>
+                            <!-- end footer column -->
+                            <!-- start footer column -->
+                            <div class="col-xl-6 order-3 order-xl-2 lg-mt-10px">
+                                <ul class="footer-navbar text-center lh-normal">
+                                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                                    <!-- <li class="nav-item"><a href="#" class="nav-link">About</a></li> -->
+                                    <!-- <li class="nav-item"><a href="demo-medical-treatments.html" class="nav-link">Treatments</a></li>
+                                    <li class="nav-item"><a href="demo-medical-doctors.html" class="nav-link">Doctors</a></li>
+                                    <li class="nav-item"><a href="demo-medical-timetable.html" class="nav-link">Timetable</a></li>
+                                    <li class="nav-item"><a href="demo-medical-contact.html" class="nav-link">Contact</a></li> -->
+                                </ul>
+                            </div>
+                            <!-- end footer column -->
+                            <!-- start footer column -->
+                            <div class="col-xl-3 col-sm-6 position-relative text-center text-sm-end elements-social social-icon-style-08 order-2 order-xl-3">
+                                <ul class="small-icon light">
+                                    <li><a class="facebook" href="https://www.facebook.com/elite.cuppingtherapy/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a class="instagram" href="https://www.instagram.com/bodyfixclinic/?igsh=MW05bmNnZGJ6d2gzNA%3D%3D&utm_source=qr#" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <!-- <li><a class="twitter" href="http://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i class="fa-brands fa-dribbble"></i></a></li> -->
+                                </ul>
+                            </div>
+                            <!-- end footer column -->
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row row-cols-1 row-cols-md-2 align-items-center pt-30px pb-30px">
+
+                         <div class="col last-paragraph-no-margin fs-15 text-center text-md-start sm-mb-10px">
+                            <p>&copy; 2025 Bodyfix is Proudly Powered by <a href="https://solutionscalloutltd.co.uk" target="_blank" class="text-decoration-line-bottom text-dark-gray fw-600">SCOL</a></p>
+                        </div>
+                        <!-- end copyright -->
+                         <!-- start footer menu
+                        <div class="col text-end fs-15 text-center text-md-end">
+                            <ul class="footer-navbar lh-normal">
+                                <li class="me-35px sm-me-20px"><a href="#">Terms and conditions</a></li>
+                                <li><a href="#">Privacy policy</a></li>
+                            </ul>
+                        </div>
+                         end footer menu -->
+                    </div>
+                </div>
+            </footer>
+            <!-- end footer -->
+            <!-- start sticky column -->
+            <div class="sticky-wrap d-none d-xl-inline-block" data-animation-delay="100" data-shadow-animation="true">
+                <span class="fs-15 fw-500 d-flex align-items-center"><i class="fa-solid fa-envelope bi bi-envelope icon-small me-10px align-middle"></i>Arrange your appointment — <a href="https://wa.me/447985115157?text=Hello%20Body%20Fix%20Clinic" target="_blank" class="text-decoration-line-bottom fw-700 lh-22">Book appointment</a></span>
+            </div>
+            <!-- end sticky column -->
         </div>
-        <div class="carousel-item">
-          <video autoplay loop muted playsinline>
-            <source src="video3.mp4" type="video/mp4">
-          </video>
+        <!-- start scroll progress -->
+        <div class="scroll-progress d-none d-xxl-block">
+            <a href="#" class="scroll-top" aria-label="scroll">
+                <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
+            </a>
         </div>
-      </div>
-    </div> -->
-    <!-- Dark overlay to ensure text visibility -->
-    <div class="hero-overlay">
-      <video autoplay loop muted playsinline>
-      <source src="video3.mp4" type="video/mp4">
-    </video>
-  </div>
-    <!-- Hero text and CTA -->
-    <div class="hero-content container">
-      <h1 class="display-4 fw-bold">Targeted Pain Relief</h1>
-      <h6 class="fw-bold mt-4">Precision sports massage &amp; joint mobilization for lower back, shoulders &amp; more.</h6>
-      <p class="lead mt-3">Lower Back Relief, Sciatica Pain, Bulge disc, Shoulder Pain, Frozen Shoulder Correction, Rotator Cuff Injury/option>, Neck Pain, Posture Correction, Golfers and tennis Elbow, Hijama Cupping thereapy</p>
-
-      <a href="#appointment" class="btn btn-primary btn-lg mt-4">Book Your Session</a>
-    </div>
-
-  </section>
-
-  <!-- Appointment Section: Form and Contact Info -->
-  <section class="py-5" id="appointment">
-    <div class="container">
-      <div class="row g-5">
-        <!-- Info Column -->
-        <div class="col-lg-4">
-          <h2 class="fw-bold">Request Info</h2>
-          <p class="text-muted">Fill the form or chat via WhatsApp for quick scheduling</p>
-          <!-- WhatsApp Link -->
-          <p><i class="bi bi-whatsapp me-2 text-success"></i>
-            <a href="https://wa.me/447985115157?text=Hello%20Body%20Fix%20Clinic" target="_blank">Chat on WhatsApp</a>
-          </p>
-          <!-- Phone Link -->
-          <p><i class="bi bi-telephone-fill me-2"></i>
-            <a href="tel:447985115157">+44 7985 115 157</a>
-          </p>
-        </div>
-        <!-- Form Column -->
-        <div class="col-lg-8">
-          <form class="row g-3">
-            <div class="col-md-6">
-              <label class="form-label visually-hidden" for="name">Full Name</label>
-              <input type="text" id="name" class="form-control" placeholder="Your Full Name" required>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label visually-hidden" for="email">Email</label>
-              <input type="email" id="email" class="form-control" placeholder="Your Email" required>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label visually-hidden" for="date">Date</label>
-              <input type="date" id="date" class="form-control" required>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label visually-hidden" for="time">Time</label>
-              <input type="time" id="time" class="form-control" required>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label visually-hidden" for="service">Service</label>
-              <select id="service" class="form-select" required>
-                <option value="" disabled selected>Select Service</option>
-                <option>Lower Back Relief</option>
-
-                  <option value="">Sciatica Pain</option>
-                  <option>Bulge disc</option>
-
-                <option>Shoulder Pain</option>
-                  <option>Frozen Shoulder Correction</option>
-                  <option>Rotator Cuff Injury/option>
-
-                <option>Neck Pain</option>
-                <option>Posture Correction</option>
-                <option>Golfers and tennis Elbow</option>
-
-                <option>Hijama Cupping thereapy</option>
-
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label visually-hidden" for="message">Additional Details</label>
-              <textarea id="message" class="form-control" rows="3" placeholder="Additional Details"></textarea>
-            </div>
-            <div class="col-12 text-center">
-              <button type="submit" class="btn btn.btn-medium"><i class="bi bi-calendar-check me-2"></i>Book Appointment</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Reviews Section: Testimonials -->
-  <section class="py-5 bg-light " id="reviews">
-    <div class="container">
-      <h2 class="text-center fw-bold mb-4">What Our Clients Say</h2>
-      <p class="text-center text-muted mb-5">★★★★★ &nbsp; (120+ Google Reviews)</p>
-      <div class="row g-4">
-        <!-- Each review card -->
-        <div class="col-md-4">
-          <div class="card review-card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Emily R.</h5>
-              <p class="card-text">"Incredible relief after just one session! Highly recommend Body Fix Clinic to anyone suffering from chronic pain."</p>
-            </div>
-            <div class="card-footer bg-transparent border-0">
-              <small class="text-muted">Reviewed 2 days ago</small>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card review-card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Mark T.</h5>
-              <p class="card-text">"Professional and targeted therapy—my shoulder mobility has never been better."</p>
-            </div>
-            <div class="card-footer bg-transparent border-0">
-              <small class="text-muted">Reviewed 1 week ago</small>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card review-card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Sarah L.</h5>
-              <p class="card-text">"I came in with severe back pain and walked out feeling like a new person."</p>
-            </div>
-            <div class="card-footer bg-transparent border-0">
-              <small class="text-muted">Reviewed 3 weeks ago</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer Section -->
-  <footer id="footer" class="bg-dark text-white py-5">
-    <div class="container">
-      <div class="row align-items-center">
-        <!-- Logo -->
-        <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
-          <img src="assets/images/branding/favbdyfx-57x57.png" alt="Body Fix Clinic Logo" style="max-width:150px; border-radius: 50%;  ">
-        </div>
-        <!-- Newsletter opt-in -->
-        <div class="col-md-4 mb-3 mb-md-0">
-          <h5 class="fw-bold">Location - Find us!</h5>
-          <a href="https://maps.app.goo.gl/xDJVYc2r9omJU2Zp9" target="_blank" style="max-width:150px; border-radius: 50%;">
-
-              <img src="assets/images/branding/maps.png" alt="Google Maps Location" style="max-width:300px;">
-              </a>
-        </div>
-          <!-- <form class="d-flex">
-            <input type="email" class="form-control me-2" placeholder="Your email" required>
-            <button class="btn btn-primary" type="submit">Subscribe</button>
-          </form> -->
-
-        <!-- Contact info -->
-        <div class="col-md-4 text-center text-md-end">
-          <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i>info@bodyfix-clinic.co.uk</p>
-          <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i>+44 7985 115 157</p>
-          <p class="mb-0">&copy; 2025 Body Fix Clinic. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap JS and dependencies -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Custom JS for back-to-top button -->
-  <script>
-    // Show back-to-top button after scrolling down
-    const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        backToTop.style.display = 'flex';
-      } else {
-        backToTop.style.display = 'none';
-      }
-    });
-    // Smooth scroll to top when clicked
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
-</body>
+        <!-- end scroll progress -->
+        <!-- javascript libraries -->
+        <script type="text/javascript" src="assets/js/jquery.js"></script>
+        <script type="text/javascript" src="assets/js/vendors.min.js"></script>
+        <script type="text/javascript" src="assets/js/main.js"></script>
+    </body>
 </html>
