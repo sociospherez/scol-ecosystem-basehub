@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zeeshan A. Abbasi – Hero Journey</title>
+  <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0f0f13; color: #fff; overflow-x: hidden; }
+    .hero {
+      height: 100vh; display: flex; align-items: center; justify-content: center;
+      background: url('https://images.unsplash.com/photo-1581093448798-5cbf9bb12c78?auto=format&fit=crop&w=1350&q=80')
+      no-repeat center center/cover; position: relative; text-align: center;
+    }
+    .hero::after {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+    }
+    .hero-content {
+      position: relative; z-index: 2; max-width: 900px; padding: 2rem;
+    }
+    .hero h1 { font-size: 2.5rem; color: #fff; line-height: 1.2; }
+    .hero p { font-size: 1.1rem; margin-top: 1rem; color: #ccc; }
+    .section { padding: 4rem 1.5rem; max-width: 1000px; margin: auto; }
+    .section h2 { font-size: 1.8rem; margin-bottom: 1rem; color: #9b82f4; }
+    .card {
+      background: #1c1c24; border-radius: 10px; padding: 1.5rem; margin-bottom: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3); transition: all 0.6s ease;
+      opacity: 0; transform: translateY(40px);
+    }
+    .card.visible { opacity: 1; transform: translateY(0); }
+    .card:hover {
+      transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+    .card h3 { color: #fff; margin-bottom: 0.5rem; }
+    .card p { color: #bbb; }
+    .tag {
+      background: #7a5af5; color: white; padding: 2px 6px; border-radius: 4px;
+      font-size: 0.75rem; margin-left: 6px;
+    }
+    .icon-bar { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+    .icon-bar i { font-size: 1.5rem; color: #9b82f4; }
+    .counter {
+      display: flex; flex-wrap: wrap; justify-content: space-around;
+      margin-top: 3rem; font-size: 1.5rem; color: #9b82f4;
+    }
+    .tabs {
+      display: flex; flex-wrap: wrap; margin-bottom: 1rem; gap: 1rem;
+    }
+    .tabs button {
+      background: #333; color: #fff; border: none;
+      padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;
+    }
+    .tabs button.active { background: #7a5af5; }
+    .case-study-content { display: none; }
+    .case-study-content.active { display: block; }
+    .milestone i {
+      font-size: 1.5rem; color: #9b82f4; display: block; margin-bottom: 0.5rem;
+    }
+    footer {
+      text-align: center; padding: 2rem; background: #111; font-size: 0.9rem; color: #666;
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { font-size: 1rem; }
+      .section h2 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Building Change, Empowering People, Engineering the Future</h1>
+      <p>From Developer to Strategist — A journey of co-creation, scale, and systems thinking</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>The Journey</h2>
+    <div class="card"><h3>🧱 Foundations – QA & Engineering <span class="tag">Test Strategy</span> <span class="tag">Automation</span></h3><p>Quality assurance, reliability engineering, and test automation. My roots in disciplined technical delivery began here.</p></div>
+    <div class="card"><h3>⚙️ Development – Full-Stack Systems <span class="tag">Azure-Native</span> <span class="tag">Low-Code Enabled</span> <span class="tag">API-First</span></h3><p>I architect digital ecosystems from the ground up — designing resilient APIs in <strong>.NET</strong> and <strong>Python</strong>, orchestrating seamless data flows, and creating sleek, performant frontends with <strong>React</strong>. Every interface I craft is purpose-driven, backed by scalable infrastructure, and ready for enterprise-grade cloud deployments. This is full-stack with vision — not just code, but a narrative of user, system, and value.</p><div class="icon-bar"><i class="uil uil-brackets-curly" title=".NET / Python"></i><i class="uil uil-react" title="React"></i><i class="uil uil-cloud" title="Azure"></i><i class="uil uil-database" title="APIs & Data"></i><i class="uil uil-rocket" title="CI/CD"></i></div></div>
+    <div class="card"><h3>📦 Program Leadership <span class="tag">Global Rollouts</span> <span class="tag">ERP</span></h3><p>Overseeing global ERP rollouts (SAP, D365), vendor alignment, and compliance with stakeholder governance.</p></div>
+    <div class="card"><h3>📊 Executive Strategy & Delivery Governance <span class="tag">C-Suite Advisory</span> <span class="tag">KPI Dashboards</span></h3><p>Translating complex technical initiatives into C-suite-aligned KPIs, dashboards, and board-ready decision flows.</p></div>
+    <div class="card"><h3>🔭 Innovation & Research <span class="tag">XR</span> <span class="tag">AI-Driven</span></h3><p>CoE building for Power Platform, AI integration research, and extended reality deployments in enterprise contexts.</p></div>
+    <div class="card"><h3>🌍 Brand-as-a-Service <span class="tag">Mindset Systems</span> <span class="tag">Transformation Design</span></h3><p>More than a PM — I am a system. Helping organisations reshape their mindset, delivery flows, and innovation capability.</p></div>
+    <div class="counter">
+      <div><strong>12+</strong><br>Years Experience</div>
+      <div><strong>3</strong><br>Global Regions</div>
+      <div><strong>50+</strong><br>Projects Delivered</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Case Studies</h2>
+    <div class="tabs">
+      <button onclick="showCa;se('erp')" class="active"><i class="uil uil-server"></i> ERP Rollout</button>
+      <button onclick="show
+
+
+
+
+
+      "uil uil-robot"></i> AI CoE</button>
+      <button onclick="showCase('xr')"><i class="uil uil-vr"></i> Extended Reality</button>
+    </div>
+    <div id="erp" class="case-study-content active">
+      <p><strong>ERP Rollout:</strong> Led a multi-phase global implementation of Microsoft Dynamics 365, aligning finance, operations, and procurement across 3 continents. Resulted in a 28% increase in reporting efficiency and seamless stakeholder engagement.</p>
+    </div>
+    <div id="ai" class="case-study-content">
+      <p><strong>AI CoE:</strong> Established a Power Platform and AI Centre of Excellence, developing frameworks for scalable low-code governance, and piloting predictive workflows integrated with Azure cognitive services.</p>
+    </div>
+    <div id="xr" class="case-study-content">
+      <p><strong>Extended Reality:</strong> Spearheaded immersive XR initiatives to enhance architectural visualization and stakeholder walkthroughs, reducing approval timelines by 34% and boosting design accuracy through live feedback.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Timeline</h2>
+    <div id="timeline" style="overflow-x: auto; white-space: nowrap; padding-bottom: 1rem; display: flex; gap: 1rem; scroll-snap-type: x mandatory;">
+      <div class="milestone" style="scroll-snap-align: start; display: inline-block; min-width: 250px; background: #1c1c24; padding: 1rem; border-left: 5px solid #7a5af5; border-radius: 8px; transition: transform 0.5s;"><i class="uil uil-bug"></i><h4>2012–2014</h4><p>QA & Engineering Foundations</p></div>
+      <div class="milestone" style="scroll-snap-align: start; display: inline-block; min-width: 250px; background: #1c1c24; padding: 1rem; border-left: 5px solid #9b82f4; border-radius: 8px; transition: transform 0.5s;"><i class="uil uil-brackets-curly"></i><h4>2014–2017</h4><p>Full-Stack Delivery and DevOps Integration</p></div>
+      <div class="milestone" style="scroll-snap-align: start; display: inline-block; min-width: 250px; background: #1c1c24; padding: 1rem; border-left: 5px solid #ff8c42; border-radius: 8px; transition: transform 0.5s;"><i class="uil uil-server"></i><h4>2017–2020</h4><p>ERP & Enterprise Modernization Programs</p></div>
+      <div class="milestone" style="scroll-snap-align: start; display: inline-block; min-width: 250px; background: #1c1c24; padding: 1rem; border-left: 5px solid #26c6da; border-radius: 8px; transition: transform 0.5s;"><i class="uil uil-clipboard-alt"></i><h4>2020–2022</h4><p>Strategic PMO & Governance Initiatives</p></div>
+      <div class="milestone" style="scroll-snap-align: start; display: inline-block; min-width: 250px; background: #1c1c24; padding: 1rem; border-left: 5px solid #66bb6a; border-radius: 8px; transition: transform 0.5s;"><i class="uil uil-brain"></i><h4>2022–Now</h4><p>AI, XR, and Innovation-Led Transformation</p></div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Zeeshan Abbasi — Strategic Technologist & Transformation Partner
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.card').forEach(card => observer.observe(card));
+
+    function showCase(id) {
+      document.querySelectorAll('.case-study-content').forEach(div => div.classList.remove('active'));
+      document.querySelectorAll('.tabs button').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    const milestones = document.querySelectorAll('.milestone');
+    const milestoneObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.transform = 'scale(1.05)';
+        } else {
+          entry.target.style.transform = 'scale(1)';
+        }
+      });
+    }, { threshold: 0.6 });
+    milestones.forEach(m => milestoneObserver.observe(m));
+  </script>
+</body>
+</html>

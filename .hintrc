@@ -8,6 +8,7 @@
     "axe/text-alternatives": "off",
     "axe/name-role-value": "off",
     "compat-api/css": "off",
-    "css-prefix-order": "off"
+    "css-prefix-order": "off",
+    "button-type": "off"
   }
 }

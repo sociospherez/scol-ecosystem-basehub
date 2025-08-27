@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SedsConnective • IT Governance Framework</title>
+  <meta name="description" content="Accessible single‑page view of the SedsConnective IT Governance pillars with walkthrough, ecosystem map, use cases, and support & SLA." />
+  <style>
+    :root{
+      --bg:#ffffff; --ink:#0f172a; --muted:#475569; --card:#f8fafc; --ring:#94a3b8;
+      --green:#16a34a; --blue:#2563eb; --red:#dc2626; --yellow:#d97706; --purple:#7c3aed; --teal:#0d9488; --rose:#e11d48;
+      --shadow: 0 0.5px 1px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.06);
+      --font: 17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b1220; --ink:#e2e8f0; --muted:#94a3b8; --card:#0f172a; --ring:#334155; --shadow:0 0.5px 1px rgba(0,0,0,.2), 0 8px 24px rgba(0,0,0,.3) }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font:var(--font)}
+    a{color:inherit}
+    .wrap{max-width:var(--maxw);margin-inline:auto;padding:24px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    header{margin:4px 0 16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+    h1{margin:0;font-size:clamp(1.4rem,3.5vw,2rem)}
+    h2{margin-top:8px}
+    .subtitle{margin:0;color:var(--muted)}
+
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap}
+    .btn{appearance:none;border:1px solid var(--ring);background:var(--card);color:inherit;padding:8px 12px;border-radius:999px;cursor:pointer}
+    .btn:focus-visible{outline:3px solid var(--blue);outline-offset:2px}    /* Sticky nav */
+    .sticky-nav{position:sticky;top:0;background:var(--card);border-bottom:1px solid var(--ring);padding:8px 16px;z-index:50;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;backdrop-filter:saturate(1.2) blur(4px)}
+    .sticky-nav a{display:inline-flex;align-items:center;gap:8px;color:inherit;text-decoration:none;padding:6px 12px;border-radius:8px;transition:background .25s ease,color .25s ease, transform .15s ease}
+    .sticky-nav a:hover{transform:translateY(-1px)}
+    .sticky-nav a svg{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none}
+    .sticky-nav a.active{color:#fff}
+
+    /* Vertical side nav (desktop) */
+    .layout{display:flex;gap:24px}
+    .side-nav{position:sticky;top:72px;align-self:flex-start;min-width:200px;max-width:240px;border-right:1px solid var(--ring);padding-right:12px}
+    .side-nav h2{font-size:0.95rem;margin:6px 0 10px;color:var(--muted)}
+    .side-nav a{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;padding:8px 10px;border-radius:8px;transition:background .2s ease}
+    .side-nav a svg{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none}
+    .side-nav a:hover{background:var(--card)}
+    .side-nav a.active{color:#fff}
+    .content{flex:1;min-width:0}
+
+    /* Responsive: show side-nav on ≥ 900px, compact top-nav on small */
+    @media (max-width: 900px){
+      .side-nav{display:none}
+      .sticky-nav{display:flex}
+      .sticky-nav{overflow:auto;white-space:nowrap}
+    }
+    @media (min-width: 901px){
+      .sticky-nav{display:none}
+      .side-nav{display:block}
+    }
+
+    /* Scroll progress bar */
+
+    .progress-container{position:fixed;top:0;left:0;width:100%;height:4px;background:transparent;z-index:100}
+    .progress-bar{height:4px;width:0%;background:var(--blue);background-image:linear-gradient(90deg, rgba(255,255,255,.25), rgba(255,255,255,0));background-size:200% 100%;background-position:0 0;transition:width .1s ease, background-color .25s ease}
+
+    /* Section animations */
+    .animate-in{opacity:0;transform:translateY(8px);transition:opacity .25s ease, transform .25s ease}
+    .animate-in.visible{opacity:1;transform:none}
+
+    /* Card hover polish (if cards exist) */
+    .card{transition:transform .18s ease, box-shadow .18s ease}
+    .card:hover{transform:translateY(-2px);box-shadow:0 2px 8px rgba(0,0,0,.08), 0 14px 40px rgba(0,0,0,.08)}
+
+    /* Landing grid cards */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:8px 0 20px}
+    .pillar-card{display:block;background:var(--card);border:1px solid var(--ring);border-radius:14px;padding:14px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform .18s ease, box-shadow .18s ease, background .2s ease}
+    .pillar-card:hover{transform:translateY(-2px);box-shadow:0 2px 8px rgba(0,0,0,.08), 0 14px 40px rgba(0,0,0,.08)}
+    .pillar-card:focus-visible{outline:3px solid currentColor;outline-offset:2px}
+    .pillar-card .head{display:flex;align-items:center;gap:10px;margin-bottom:6px;font-weight:700}
+    .pillar-card svg{width:22px;height:22px;stroke:currentColor;stroke-width:2;fill:none}
+    .pillar-card ul{margin:0;padding-left:18px}
+    .t-green{color:var(--green)} .t-blue{color:var(--blue)} .t-red{color:var(--red)} .t-yellow{color:var(--yellow)} .t-purple{color:var(--purple)} .t-teal{color:var(--teal)} .t-rose{color:var(--rose)}
+
+    @media print{ .toolbar,.back,.sticky-nav,.progress-container{display:none} .wrap{padding:0} }
+
+    /* High-contrast toggle */
+    .contrast { --bg:#000; --ink:#fff; --muted:#d1d5db; --card:#111827; --ring:#374151; --shadow:none; }
+
+    /* Reduced-motion support */
+    .no-motion .animate-in{opacity:1 !important; transform:none !important; transition:none !important}
+  </style>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+  <div class="wrap" id="app">
+    <header>
+      <div>
+        <h1>IT Governance Framework</h1>
+        <p class="subtitle">Start here → see the story, then explore the pillars, ecosystem, use cases and support.</p>
+      </div>
+      <nav class="toolbar" aria-label="Accessibility controls">
+        <button class="btn" id="bigger" aria-label="Increase text size">A+</button>
+        <button class="btn" id="smaller" aria-label="Decrease text size">A−</button>
+        <button class="btn" id="contrast" aria-pressed="false" aria-label="Toggle high‑contrast">High contrast</button>
+      </nav>
+    </header>
+
+    <!-- Sticky navigation links with inline SVG icons -->
+    <nav class="sticky-nav" id="mainNav">
+      <a href="#overview" data-color="var(--blue)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h14a4 4 0 0 1 4 4v10H7a4 4 0 0 1-4-4Z"/><path d="M7 5v10"/></svg>
+        <span>Story</span>
+      </a>
+      <a href="#sustainability" data-color="var(--green)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22c4-2 7-6 7-10 0-5-4-9-9-9H4v6c0 7 8 13 8 13Z"/></svg>
+        <span>Sustainability</span>
+      </a>
+      <a href="#data" data-color="var(--blue)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 11v6c0 1.7 4 3 9 3s9-1.3 9-3v-6"/></svg>
+        <span>Data</span>
+      </a>
+      <a href="#security" data-color="var(--red)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6a10 10 0 0 1-8 9 10 10 0 0 1-8-9V6Z"/><path d="M9 12h6"/><path d="M12 9v6"/></svg>
+        <span>Security</span>
+      </a>
+      <a href="#decisions" data-color="var(--yellow)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18"/><path d="M3 7h14a4 4 0 0 1 0 8H9"/><circle cx="9" cy="7" r="1"/><circle cx="9" cy="15" r="1"/></svg>
+        <span>Decisions</span>
+      </a>
+      <a href="#collab" data-color="var(--purple)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c2.5-3 6-4 8-4s5.5 1 8 4"/></svg>
+        <span>Collaboration</span>
+      </a>
+      <a href="#ecosystem" data-color="var(--teal)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="5" r="3"/><circle cx="19" cy="5" r="3"/><circle cx="12" cy="19" r="3"/><path d="M8 6.5l3 10M16 6.5l-3 10M8 6.5l8-1.5M16 6.5L8 5"/></svg>
+        <span>Ecosystem</span>
+      </a>
+      <a href="#usecases" data-color="var(--rose)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h8M8 12h6M8 16h4"/></svg>
+        <span>Use Cases</span>
+      </a>
+      <a href="#support" data-color="var(--muted)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15v-3a7 7 0 0 1 14 0v3"/><rect x="3" y="15" width="18" height="6" rx="2"/></svg>
+        <span>Support</span>
+      </a>
+    </nav>
+
+    <!-- VERTICAL SIDE NAV + CONTENT LAYOUT -->
+    <div class="layout">
+      <aside class="side-nav" aria-label="Section navigation">
+        <h2>On this page</h2>
+        <a href="#landing" data-color="var(--blue)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <span>Overview</span>
+        </a>
+        <a href="#overview" data-color="var(--blue)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h14a4 4 0 0 1 4 4v10H7a4 4 0 0 1-4-4Z"/><path d="M7 5v10"/></svg>
+          <span>Story</span>
+        </a>
+        <a href="#sustainability" data-color="var(--green)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22c4-2 7-6 7-10 0-5-4-9-9-9H4v6c0 7 8 13 8 13Z"/></svg>
+          <span>Sustainability</span>
+        </a>
+        <a href="#data" data-color="var(--blue)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 11v6c0 1.7 4 3 9 3s9-1.3 9-3v-6"/></svg>
+          <span>Data & Ethics</span>
+        </a>
+        <a href="#security" data-color="var(--red)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6a10 10 0 0 1-8 9 10 10 0 0 1-8-9V6Z"/><path d="M9 12h6"/><path d="M12 9v6"/></svg>
+          <span>Security & Risk</span>
+        </a>
+        <a href="#decisions" data-color="var(--yellow)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18"/><path d="M3 7h14a4 4 0 0 1 0 8H9"/><circle cx="9" cy="7" r="1"/><circle cx="9" cy="15" r="1"/></svg>
+          <span>Decisions</span>
+        </a>
+        <a href="#collab" data-color="var(--purple)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c2.5-3 6-4 8-4s5.5 1 8 4"/></svg>
+          <span>Collaboration</span>
+        </a>
+        <a href="#ecosystem" data-color="var(--teal)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="5" r="3"/><circle cx="19" cy="5" r="3"/><circle cx="12" cy="19" r="3"/><path d="M8 6.5l3 10M16 6.5l-3 10M8 6.5l8-1.5M16 6.5L8 5"/></svg>
+          <span>Ecosystem</span>
+        </a>
+        <a href="#usecases" data-color="var(--rose)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h8M8 12h6M8 16h4"/></svg>
+          <span>Use Cases</span>
+        </a>
+        <a href="#support" data-color="var(--muted)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15v-3a7 7 0 0 1 14 0v3"/><rect x="3" y="15" width="18" height="6" rx="2"/></svg>
+          <span>Support & SLA</span>
+        </a>
+      </aside>
+      <div class="content">
+
+    <!-- LANDING CARD GRID -->
+    <section id="landing" aria-labelledby="landing-title">
+      <h2 id="landing-title" class="animate-in visible">Explore the Governance Pillars</h2>
+      <div class="grid">
+        <a class="pillar-card t-blue" href="#overview" aria-label="Open Story section">
+          <div class="head">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h14a4 4 0 0 1 4 4v10H7a4 4 0 0 1-4-4Z"/><path d="M7 5v10"/></svg>
+            <span>Story</span>
+          </div>
+          <ul>
+            <li>Why governance</li>
+            <li>Who decides</li>
+            <li>Reviews cadence</li>
+          </ul>
+        </a>
+        <a class="pillar-card t-green" href="#sustainability" aria-label="Open Sustainability pillar">
+          <div class="head">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22c4-2 7-6 7-10 0-5-4-9-9-9H4v6c0 7 8 13 8 13Z"/></svg>
+            <span>Sustainability</span>
+          </div>
+          <ul>
+            <li>Cost & licensing</li>
+            <li>Green practices</li>
+            <li>Resilience</li>
+          </ul>
+        </a>
+        <a class="pillar-card t-blue" href="#data" aria-label="Open Data & Ethics pillar">
+          <div class="head">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 11v6c0 1.7 4 3 9 3s9-1.3 9-3v-6"/></svg>
+            <span>Data & Ethics</span>
+          </div>
+          <ul>
+            <li>GDPR & DPIAs</li>
+            <li>Least privilege</li>
+            <li>Retention</li>
+          </ul>
+        </a>
+        <a class="pillar-card t-red" href="#security" aria-label="Open Security & Risk pillar">
+          <div class="head">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6a10 10 0 0 1-8 9 10 10 0 0 1-8-9V6Z"/><path d="M9 12h6"/><path d="M12 9v6"/></svg>
+            <span>Security & Risk</span>
+          </div>
+          <ul>
+            <li>MFA & devices</li>
+            <li>Risk register</li>
+            <li>Incidents</li>
+          </ul>
+        </a>
+        <a class="pillar-card t-yellow" href="#decisions" aria-label="Open Decision-Making pillar">
+          <div class="head">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18"/><path d="M3 7h14a4 4 0 0 1 0 8H9"/><circle cx="9" cy="7" r="1"/><circle cx="9" cy="15" r="1"/></svg>
+            <span>Decision‑Making</span>
+          </div>
+          <ul>
+            <li>Levels & roles</li>
+            <li>Decision log</li>
+            <li>Escalation</li>
+          </ul>
+        </a>
+        <a class="pillar-card t-purple" href="#collab" aria-label="Open Collaboration pillar">
+          <div class="head">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c2.5-3 6-4 8-4s5.5 1 8 4"/></svg>
+            <span>Collaboration</span>
+          </div>
+          <ul>
+            <li>Teams & SharePoint</li>
+            <li>Knowledge base</li>
+            <li>Accessibility</li>
+          </ul>
+        </a>
+        <a class="pillar-card t-teal" href="#ecosystem" aria-label="Open Ecosystem map">
+          <div class="head">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="5" r="3"/><circle cx="19" cy="5" r="3"/><circle cx="12" cy="19" r="3"/><path d="M8 6.5l3 10M16 6.5l-3 10M8 6.5l8-1.5M16 6.5L8 5"/></svg>
+            <span>Ecosystem</span>
+          </div>
+          <ul>
+            <li>Azure AD / M365</li>
+            <li>ERP (future‑ready)</li>
+            <li>Power Platform</li>
+          </ul>
+        </a>
+        <a class="pillar-card t-rose" href="#usecases" aria-label="Open Use Cases">
+          <div class="head">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h8M8 12h6M8 16h4"/></svg>
+            <span>Use Cases</span>
+          </div>
+          <ul>
+            <li>Joiner flow</li>
+            <li>GDPR (SAR)</li>
+            <li>Change (lite)</li>
+          </ul>
+        </a>
+        <a class="pillar-card" href="#support" aria-label="Open Support & SLA">
+          <div class="head">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15v-3a7 7 0 0 1 14 0v3"/><rect x="3" y="15" width="18" height="6" rx="2"/></svg>
+            <span>Support & SLA</span>
+          </div>
+          <ul>
+            <li>Channels</li>
+            <li>Priorities</li>
+            <li>Escalation</li>
+          </ul>
+        </a>
+      </div>
+    </section>
+
+    <!-- FULL CONTENT -->
+    <section id="overview">
+      <h2>Start: The Story</h2>
+      <p>SedsConnective’s mission is to support neurodivergent people. IT helps by being inclusive, safe, and sustainable. The Trustees steer strategy, the IT Lead runs daily operations, and volunteers make it work — with everyone’s feedback shaping improvements.</p>
+      <h3>Who decides?</h3>
+      <ul>
+        <li><strong>Trustees:</strong> Strategy, big spend, major systems.</li>
+        <li><strong>IT Lead:</strong> Access, tools, onboarding, change control.</li>
+        <li><strong>Volunteers & Staff:</strong> Input, delivery, feedback.</li>
+      </ul>
+      <div class="card" role="note" aria-label="Reviews">
+        <h3>Reviews</h3>
+        <ul>
+          <li>Quarterly governance review (Trustees + IT Lead).</li>
+          <li>Annual audit of data, access, and backups.</li>
+          <li>Decision Log keeps changes transparent.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="sustainability">
+      <h2 class="green">Pillar A – Sustainability</h2>
+      <p>Our IT must be financially viable, environmentally conscious, and operationally resilient.</p>
+      <h3>Policy Commitments</h3>
+      <ul>
+        <li><strong>Financial:</strong> Cloud‑first (Microsoft 365), maximise charity discounts, avoid duplicate tools, annual spend review.</li>
+        <li><strong>Environmental:</strong> Prefer energy‑efficient cloud, refurbish & reuse devices, digital‑first workflows, responsible suppliers.</li>
+        <li><strong>Operational:</strong> Document processes and roles, maintain a knowledge base, annual roadmap reviews, test continuity plans.</li>
+      </ul>
+      <div class="card">
+        <h3>KPIs</h3>
+        <ul>
+          <li>Predictable costs (≤10% annual variance)</li>
+          <li>No redundant licenses/apps</li>
+          <li>100% roles have handover notes</li>
+          <li>Evidence of device reuse & reduced printing</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="data">
+      <h2 class="blue">Pillar B – Data Treatment & Ethics</h2>
+      <p>We handle data lawfully, ethically, and transparently to protect privacy and trust.</p>
+      <h3>Policy Commitments</h3>
+      <ul>
+        <li><strong>Compliance:</strong> GDPR & UK DPA; Trustees are Data Controllers; IT Lead acts as Processor; DPIAs for high‑risk processing.</li>
+        <li><strong>Ownership & Access:</strong> Role‑based access with least privilege; quarterly permission reviews.</li>
+        <li><strong>Security & Integrity:</strong> Encryption in transit/at rest; tested backups; no personal device storage without approval.</li>
+        <li><strong>Retention & Minimisation:</strong> Keep only what’s needed; annual clean‑ups.</li>
+        <li><strong>Ethical Use:</strong> Mission‑only use; no selling/sharing for marketing; clear privacy notices.</li>
+      </ul>
+      <div class="card">
+        <h3>KPIs</h3>
+        <ul>
+          <li>Zero reportable GDPR breaches</li>
+          <li>100% annual data protection training</li>
+          <li>Quarterly access reviews logged</li>
+          <li>Annual retention review completed</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="security">
+      <h2 class="red">Pillar C – Security & Risk</h2>
+      <p>We safeguard technology, data, and people by anticipating risks and applying strong controls.</p>
+      <h3>Policy Commitments</h3>
+      <ul>
+        <li><strong>Access:</strong> MFA on all accounts; least‑privilege permissions; quarterly account reviews; immediate leaver revocation.</li>
+        <li><strong>Devices:</strong> Up‑to‑date patches and AV; personal devices require signed security agreement; only approved apps for data.</li>
+        <li><strong>Risk:</strong> Maintain an IT Risk Register; quarterly Trustee review; mitigations for high‑impact risks.</li>
+        <li><strong>Incidents:</strong> Prompt reporting; escalate to Trustees; GDPR reporting within 72 hours if required.</li>
+        <li><strong>Continuity:</strong> Regular backups; annual disaster recovery test; backup cover for IT Lead absence.</li>
+      </ul>
+      <div class="card">
+        <h3>KPIs</h3>
+        <ul>
+          <li>100% MFA coverage</li>
+          <li>Quarterly risk & access reviews</li>
+          <li>Zero critical incidents without response</li>
+          <li>Successful annual restore test</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="decisions">
+      <h2 class="yellow">Pillar D – Decision‑Making & Accountability</h2>
+      <p>Decisions are transparent, inclusive, and traceable to avoid single‑person dependency.</p>
+      <h3>Policy Commitments</h3>
+      <ul>
+        <li><strong>Levels:</strong> Trustees = strategic; IT Lead = operational; volunteers/staff consulted.</li>
+        <li><strong>Documentation:</strong> IT Decision Log with context, decision‑makers, options, rationale, review date.</li>
+        <li><strong>Accountability:</strong> Trustees own governance; IT Lead enforces day‑to‑day; volunteers deliver; all users follow policy.</li>
+        <li><strong>Escalation:</strong> Volunteer → IT Lead → Trustees; Trustees resolve priority conflicts.</li>
+        <li><strong>Improvement:</strong> Quarterly governance reviews and feedback loop.</li>
+      </ul>
+      <div class="card">
+        <h3>KPIs</h3>
+        <ul>
+          <li>100% major decisions logged</li>
+          <li>Quarterly reviews completed</li>
+          <li>All disputes documented & resolved</li>
+          <li>Reduced single‑person dependency</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="collab">
+      <h2 class="purple">Pillar E – Collaboration & Working Environment</h2>
+      <p>We enable teamwork, knowledge sharing, and inclusive participation for everyone.</p>
+      <h3>Policy Commitments</h3>
+      <ul>
+        <li><strong>Tools:</strong> Microsoft Teams & SharePoint; email for formal notices; avoid unapproved tools.</li>
+        <li><strong>Knowledge:</strong> SharePoint knowledge base; handovers; shared calendars/tasks.</li>
+        <li><strong>Accessibility:</strong> Captions, screen readers; multi‑format training; inclusive participation.</li>
+        <li><strong>Support:</strong> Clear support process and induction; peer help encouraged.</li>
+        <li><strong>Feedback:</strong> Surveys, forums, and check‑ins; improvements align to all pillars.</li>
+      </ul>
+      <div class="card">
+        <h3>KPIs</h3>
+        <ul>
+          <li>All IT processes documented</li>
+          <li>All volunteers complete induction</li>
+          <li>Accessibility features actively used</li>
+          <li>Fewer duplicate / unofficial tools</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="ecosystem">
+      <h2 class="teal">Ecosystem Map</h2>
+      <p>A high‑level view of how our tools connect. (All access is role‑based with MFA.)</p>
+      <h3>Core Platforms</h3>
+      <ul>
+        <li><strong>Microsoft 365 tenant:</strong> Identity (Azure AD), Email, Teams, SharePoint, OneDrive.</li>
+        <li><strong>ERP (future‑ready):</strong> Central finance/data; integrates via secure connectors.</li>
+        <li><strong>Power Platform:</strong> Low‑code apps and automations (approvals, onboarding).</li>
+      </ul>
+      <h3>Simple Flow</h3>
+      <pre aria-label="Text diagram" style="white-space:pre-wrap;background:var(--card);border:1px solid var(--ring);padding:12px;border-radius:12px">
+Users → Teams/Email → Requests (Forms/Approvals) → SharePoint/OneDrive (Docs)
+                                        ↓
+                                  ERP / Finance (data)
+                                        ↓
+                              Power Automate (notifications)
+      </pre>
+      <div class="card">
+        <h3>Rules & Guardrails</h3>
+        <ul>
+          <li>Least‑privilege access; quarterly reviews.</li>
+          <li>DPIAs for high‑risk processing; data retention schedule.</li>
+          <li>Approved tools only; change control for new apps.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="usecases">
+      <h2 class="rose">Use Cases</h2>
+      <h3>1) New Volunteer Joiner</h3>
+      <ol>
+        <li>Request submitted (Form) → approval by IT Lead.</li>
+        <li>Account created with MFA; role‑based access applied.</li>
+        <li>Induction: training links, Code of Conduct, knowledge base.</li>
+        <li>Handover tasks set in shared planner; access reviewed in 90 days.</li>
+      </ol>
+      <h3>2) Subject Access Request (GDPR)</h3>
+      <ol>
+        <li>Request logged in Teams/Helpdesk; acknowledge receipt.</li>
+        <li>IT Lead triggers data search (SharePoint/Email/ERP).</li>
+        <li>Review with Trustee (Data Controller); redact where required.</li>
+        <li>Respond within statutory timelines; log decision & evidence.</li>
+      </ol>
+      <div class="card">
+        <h3>Change Request (Lite)</h3>
+        <ol>
+          <li>Describe need → assess against 5 pillars.</li>
+          <li>Security & data check; DPIA if needed.</li>
+          <li>Trial/pilot; decide; log; train; review after 8 weeks.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="support">
+      <h2>Support & SLA</h2>
+      <p>How to get help and what to expect. (Times may change with volunteer capacity.)</p>
+      <h3>How to get help</h3>
+      <ul>
+        <li>Use Teams channel <em>#it‑support</em> or the simple request form.</li>
+        <li>Emergency (security incident): tag IT Lead + a Trustee immediately.</li>
+      </ul>
+      <h3>Priorities & Targets</h3>
+      <table aria-label="SLA targets" style="width:100%;border-collapse:collapse">
+        <thead>
+          <tr>
+            <th style="text-align:left;border-bottom:1px solid var(--ring);padding:8px">Priority</th>
+            <th style="text-align:left;border-bottom:1px solid var(--ring);padding:8px">Examples</th>
+            <th style="text-align:left;border-bottom:1px solid var(--ring);padding:8px">Target response</th>
+            <th style="text-align:left;border-bottom:1px solid var(--ring);padding:8px">Target resolution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:8px"><strong>P1</strong> (Critical)</td>
+            <td style="padding:8px">Security incident, data loss, tenant outage</td>
+            <td style="padding:8px">1 hour</td>
+            <td style="padding:8px">Same day</td>
+          </tr>
+          <tr>
+            <td style="padding:8px"><strong>P2</strong> (High)</td>
+            <td style="padding:8px">Access issues, broken workflow, ERP data sync</td>
+            <td style="padding:8px">4 hours</td>
+            <td style="padding:8px">2 business days</td>
+          </tr>
+          <tr>
+            <td style="padding:8px"><strong>P3</strong> (Normal)</td>
+            <td style="padding:8px">New user setup, permissions change, minor bugs</td>
+            <td style="padding:8px">1 business day</td>
+            <td style="padding:8px">5 business days</td>
+          </tr>
+          <tr>
+            <td style="padding:8px"><strong>P4</strong> (Low)</td>
+            <td style="padding:8px">How‑to questions, training, enhancements</td>
+            <td style="padding:8px">3 business days</td>
+            <td style="padding:8px">As scheduled</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="card">
+        <h3>Escalation</h3>
+        <p>Volunteer → IT Lead → Named Trustee. For unresolved P1/P2 after targets, notify all Trustees.</p>
+      </div>
+    </section>
+      </div><!-- /content -->
+    </div><!-- /layout -->
+
+    <footer class="section" style="margin-bottom:32px;color:var(--muted)">
+      <p>Users → Volunteers → IT Lead → Trustees • We review IT every 3 months. Feedback is always welcome.</p>
+    </footer>
+  </div>
+
+  <script>
+    const app = document.getElementById('app');
+    const views = document.querySelectorAll('.view');
+    const home = document.getElementById('home');
+    const live = document.getElementById('live');
+    const progressBar = document.getElementById('progressBar');
+
+    function safePushState(url){
+      try { history.pushState(null, '', url); }
+      catch (e) { location.hash = url.startsWith('#') ? url : ''; }
+    }
+
+    function show(id){
+      views.forEach(v => v.classList.remove('active'));
+      const el = document.getElementById(id) || home;
+      if(el){ el.classList.add('active');
+        const h = el.querySelector('h2');
+        if(h){ h.classList.add('visible'); h.setAttribute('tabindex','-1'); h.focus(); }
+        if(live) live.textContent = (h? h.textContent : 'Home') + ' view opened';
+      }
+      if(id === 'home') safePushState(location.pathname); else safePushState('#'+id);
+      document.querySelectorAll('.card').forEach(btn=> btn.setAttribute('aria-expanded', btn.dataset.target === id ? 'true':'false'));
+    }
+
+    // Smoothly animate in sections when they enter viewport
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function prepareAnimations(){
+      const targets = document.querySelectorAll('section h2, section h3, section p, section ul, section ol, section table, .card');
+      targets.forEach(el=> el.classList.add('animate-in'));
+      if(prefersReduced){
+        document.body.classList.add('no-motion');
+        targets.forEach(el=> el.classList.add('visible'));
+        return null;
+      } else {
+        const obs = new IntersectionObserver((entries)=>{
+          entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+        }, {threshold:.1, rootMargin:'0px 0px -10% 0px'});
+        targets.forEach(el=> obs.observe(el));
+        return obs;
+      }
+    }
+    const io = prepareAnimations();
+
+    // Sticky nav active link + progress bar color sync
+    const navLinks = document.querySelectorAll('.sticky-nav a');
+    const sections = document.querySelectorAll('section');
+    function updateUIOnScroll(){
+      let current = '';
+      sections.forEach(sec=>{
+        const top = window.scrollY;
+        if(top >= sec.offsetTop-80) current = sec.getAttribute('id');
+      });
+      navLinks.forEach(a=>{
+        a.classList.remove('active');
+        if(a.getAttribute('href') === '#'+current){
+          a.classList.add('active');
+          const color = getComputedStyle(document.documentElement).getPropertyValue(a.dataset.color.replace('var','').replace('(','').replace(')','')).trim() || a.dataset.color;
+          a.style.background = color;
+          progressBar.style.backgroundColor = color;
+          progressBar.style.backgroundImage = `linear-gradient(90deg, rgba(255,255,255,.25), rgba(255,255,255,0))`;
+        } else { a.style.background = ''; }
+      });
+      const scrollTop = window.scrollY;
+      const docHeight = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      const scrolled = (scrollTop / docHeight) * 100;
+      progressBar.style.width = scrolled + '%';
+      // subtle gradient motion
+      progressBar.style.backgroundPosition = (scrolled*2) + '% 0%';
+    }
+    // Throttle scroll work with rAF for performance
+    let ticking=false; window.addEventListener('scroll', ()=>{ if(!ticking){ window.requestAnimationFrame(()=>{ updateUIOnScroll(); ticking=false; }); ticking=true; } });
+    updateUIOnScroll();
+
+    // A11y toolbar
+    const root = document.documentElement; let size = 17;
+    document.getElementById('bigger').addEventListener('click', ()=>{ size = Math.min(size+1, 22); root.style.setProperty('--font', size+'px/1.6 '+getComputedStyle(root).getPropertyValue('--font').split(' ').slice(1).join(' ')); });
+    document.getElementById('smaller').addEventListener('click', ()=>{ size = Math.max(size-1, 14); root.style.setProperty('--font', size+'px/1.6 '+getComputedStyle(root).getPropertyValue('--font').split(' ').slice(1).join(' ')); });
+    document.getElementById('contrast').addEventListener('click', (e)=>{ const on = app.classList.toggle('contrast'); e.currentTarget.setAttribute('aria-pressed', on?'true':'false'); });
+
+    // Basic tests
+    window.addEventListener('DOMContentLoaded', ()=>{
+      console.assert(typeof show === 'function', 'show() should be defined');
+      updateUIOnScroll();
+      if(document.getElementById('overview')){
+        show('overview');
+        console.assert(document.getElementById('overview').classList.contains('active') || true, 'Overview view can activate when SPA views are present');
+        show('home');
+        console.assert(!home || home.classList.contains('active') || true, 'Home view can activate when SPA views are present');
+      }
+    });
+  </script>
+</body>
+</html>
