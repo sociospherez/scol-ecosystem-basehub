@@ -1,0 +1,204 @@
+/* ===================================
+    13. Elements
+====================================== */
+/* Accordion */
+.accordion {
+    .accordion-item {
+        color: inherit;
+        border: none;
+        .accordion-header { 
+            background-color: transparent;            
+            border: none;
+            padding: 0;
+            margin-bottom: 0;
+            .accordion-title {
+                cursor: pointer;
+                padding-right: 25px;
+                i {
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    @include prefix(transform, translateY(-50%), webkit);
+                }
+            }
+        }
+        .accordion-collapse {
+            border: 0;
+        }
+    }
+}
+
+/* Accordion style 01 */ 
+.accordion-style-01 {
+    .accordion-item {
+        margin-bottom: 20px;
+        overflow:inherit;
+        padding: 20px 35px;
+        @include prefix(border-radius, 4px !important, webkit);
+        @include prefix(transition, all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), webkit);
+        @include box-shadow(0px 0px 20px 0px rgba(111, 111, 111, 0.15));
+        &:last-child {
+            margin-bottom: 0;
+        }
+        .collapse {
+            overflow: hidden;
+        }
+        .accordion-body {
+            padding: 12px 45px 10px 0px;
+        }
+        .accordion-header {
+            .accordion-title {
+                > i {
+                    position: static;
+                    @include prefix(transform, none, webkit);
+                }
+            }
+        }
+    }
+}
+
+/* Accordion style 02 */
+.accordion-style-02 {
+    .accordion-item {
+        background-color:transparent;
+        .accordion-header {
+            margin-bottom: 0;
+            padding: 15px 0;
+            .accordion-title {
+                i {
+                    right: 0;
+                }
+            } 
+        }
+        &.active-accordion {
+            .accordion-header {
+                border-bottom-color: transparent !important;
+            }
+        }
+        .accordion-body {
+            padding: 0 25px 30px 0;
+        }
+    }
+    .right-icon {
+        background-color: var(--white);
+        color: var(--dark-gray);
+        &:hover {
+            background-color: var(--base-color);
+            color: var(--white);
+        }
+    }
+}
+
+/* Accordion style 03 */
+.accordion-style-03 {
+    .accordion-item {
+        margin-bottom: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        @include prefix(border-radius, 0, webkit);
+        background-color:transparent;
+        .accordion-header {
+            padding: 15px 30px;
+            @include prefix(border-radius, 0, webkit);
+        }
+        .accordion-body {
+            padding: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+        }
+    }
+}
+
+/* Accordion style 04 */
+.accordion-style-04 {
+    .accordion-item {
+        @include prefix(transition, all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), webkit);
+        @include prefix(border-radius, 0, webkit);
+        background-color:transparent;
+        .accordion-header {
+            padding: 18px 35px;
+        }
+        .accordion-body {
+            padding: 25px 40px 30px;
+        }
+        &.active-accordion {
+            @include box-shadow(0px 5px 25px 0px rgba(111, 111, 111, 0.15));        
+            background: var(--white);
+        }
+    }    
+}
+
+/* Accordion style 05 */ 
+.accordion-style-05 {
+    .accordion-item {
+        margin-bottom: 20px;
+        overflow: hidden;
+        padding: 22px 35px 22px 65px;
+        position: relative;
+        @include prefix(border-radius, 4px !important, webkit);
+        @include prefix(transition, all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), webkit);
+        @include box-shadow(0px 0px 45px 0px rgba(111, 111, 111, 0.15));
+        &:last-child {
+            margin-bottom: 0;
+        }
+        .collapse {
+            overflow: hidden;
+        }
+        .accordion-body {
+            padding: 10px 45px 10px 0px;
+        }
+        .number {
+            position: absolute;
+            left: -13px;
+            top: 15px; 
+        }
+        &.active-accordion {
+            @include box-shadow(0px 15px 40px 5px rgba(111, 111, 111, 0.15));
+            .number {
+                -webkit-text-fill-color: var(--base-color);
+                -webkit-text-stroke-color: var(--base-color); 
+            }
+        }
+    }
+}
+
+/* Accordion style 06 */ 
+.accordion-style-06 {
+    .accordion-item {
+        margin-bottom: 0;
+        overflow: hidden;
+        padding: 15px 100px 15px 45px;
+        position: relative;
+        @include prefix(border-radius, 4px !important, webkit);
+        &:last-child {
+            margin-bottom: 0;
+        }
+        .collapse {
+            overflow: hidden;
+            border-radius: 0;
+        }
+        .accordion-body {
+            padding: 10px 0 10px 0px;
+        }
+        i {
+            position: absolute;
+            right: -32px;
+            top: 50%;
+            opacity: 0;
+            @include prefix(transition, 0.3s, webkit);
+            color: var(--dark-gray);
+            @include prefix(transform, rotate(-35deg) translateY(-50%), webkit);
+        }  
+        .collapsing {
+            i {
+                opacity: 0;
+            }  
+        }
+        &.active-accordion {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            background-image: linear-gradient(to bottom, #f2f8f7, #f5fafa, #f9fbfd, #fcfdfe, #ffffff);
+                i {
+                    opacity: .15;
+            }
+        }
+    }
+}

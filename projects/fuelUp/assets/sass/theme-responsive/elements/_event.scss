@@ -1,0 +1,68 @@
+@include respond-to('tablet') {
+    .event-style-03 {
+        .accordion {
+            .trainer-box {
+                margin-bottom: 25px;
+                margin-top: 15px;
+                margin-right: 0;
+            }
+        }
+        .nav-tabs {
+            .nav-link {
+                padding-right: 5px;
+                padding-left: 5px;
+            }
+        }
+        .accordion {
+            .accordion-title {
+                .event-time {
+                    min-width: 290px;
+                }
+            }
+        }
+    } 
+    .time-schedule-scroll {
+        overflow-x: auto;
+        overflow-y: hidden;
+        .time-schedule-min-width {
+            min-width: 1050px;
+        }
+    }
+}
+@include respond-to('phone-landscape') {
+    .time-schedule-scroll {
+        overflow-x: auto;
+        overflow-y: hidden;
+        .time-schedule-min-width {
+            min-width: 980px; 
+        }
+    }
+    .time-table-box {
+        &.day {
+            padding: 15px 10px;
+        }
+    }
+    .event-style-03 {
+        .accordion {
+            .accordion-title {
+                .event-time {
+                    min-width: 1px;
+                    margin-right: 20px;
+                }
+            }
+            .accordion-item {
+                .accordion-body {
+                    padding-right: 0;
+                }
+            }
+        }
+        .nav-tabs {
+            > li {
+                &.nav-item:not(:last-child) {
+                    border-right: 0;
+                    border-bottom: 1px solid rgba(255,255,255,0.5);
+                }
+            }
+        }
+    }
+}

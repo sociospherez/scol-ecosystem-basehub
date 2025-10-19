@@ -1,0 +1,112 @@
+/* Image gallery style 01 */ 
+.image-gallery-style-01 {
+    .gallery-box {
+        .gallery-image {
+            will-change: transform;
+        }
+        &:hover {
+            img {
+                opacity: 0.5;
+                -webkit-filter: blur(2px);
+                filter: blur(2px);
+                @include prefix(transform, scale(1.1), webkit);
+            }
+        }
+    }
+}
+
+/* Image gallery style 02 */ 
+.image-gallery-style-02 {
+    .gallery-box {
+        &:hover {
+            img {
+                -webkit-filter: grayscale(1);
+                filter: grayscale(1);
+                opacity: 0.3;
+            }
+        }
+    }
+}
+
+/* Image gallery style 03 */ 
+.image-gallery-style-03 {
+    .gallery-box {
+        i {
+            opacity: 0;
+            visibility: hidden;
+        }
+        img {
+            @include prefix(transform, scale(1.13) translateZ(0), webkit);
+        }
+        &:hover {
+            i {
+                opacity: 1;
+                visibility: visible;
+            }
+            img {
+                opacity: 0.2;
+                @include prefix(transform, scale(1) translateZ(0), webkit);
+            }
+        }
+    }
+}
+
+/* Image gallery style 04 */ 
+.image-gallery-style-04 {
+    .gallery-box {
+        will-change: transform;
+        img {
+            width: 100%;
+        }
+        &:hover { 
+            img {
+                opacity: 0.2;
+            }
+        }
+    }
+}
+
+/* Image gallery style 05 */ 
+.image-gallery-style-05 {
+    .gallery-box {
+        will-change: transform;
+        &:hover {
+            img {
+                opacity: 0.2;
+            }
+        }
+    }
+}
+
+/* Image gallery style 06 */ 
+.image-gallery-style-06 {
+    .gallery-box {
+        will-change: transform;
+        img{
+            width: 100%;
+        }
+        .gallery-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            .gallery-title {
+                @include prefix(transform, scale(1.5), webkit);
+            }
+        }
+        &:hover {
+            img{
+                opacity: .2;
+                @include prefix(transform, scale(1.15), webkit);
+            }
+            .gallery-hover {
+                opacity: 1;
+                visibility: visible;
+                .gallery-title {
+                    @include prefix(transform, scale(1), webkit);
+                }
+            }
+        }
+    }
+}

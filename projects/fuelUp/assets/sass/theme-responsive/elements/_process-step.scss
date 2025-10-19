@@ -1,0 +1,26 @@
+@include respond-to('tablet') {
+    .process-step-style-02, .process-step-style-03, .process-step-style-04 {
+        &:nth-child(2) {
+            .progress-step-separator {
+                display: none;
+            }
+        }
+    }
+}
+@include respond-to('phone-landscape') {
+    .process-step-style-02, .process-step-style-03, .process-step-style-04 { 
+        .progress-step-separator {
+            display: none;
+        } 
+    }
+    .process-step-style-01 {
+        .progress-step-separator {
+            position: absolute;
+            top: 50%;
+            left: 0; 
+            transform: none;
+            right: 0;
+            margin: 0 auto;
+        }
+    }
+}

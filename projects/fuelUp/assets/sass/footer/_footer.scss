@@ -1,0 +1,135 @@
+/* ===================================
+   17. Footer
+====================================== */ 
+footer {
+    padding-top: 110px; padding-bottom: 110px;
+    &.half-footer {
+        padding-top: 70px; padding-bottom: 70px;
+    }
+    &.big-footer {
+        padding-top: 140px; padding-bottom: 140px;
+    }
+    .footer-logo {
+        img {
+            max-height: 30px;
+        }
+    }
+    ul {
+        padding: 0;
+        list-style: none;
+        margin: 0;
+        li {
+            margin-bottom: 5px;
+        }
+    }
+    .elements-social {
+        &.social-icon-style-01, &.social-icon-style-02, &.social-icon-style-05, &.social-icon-style-08 {
+            li {
+                margin: 0 15px 0 0;
+                a {
+                    width: auto;
+                    height: auto;
+                }
+            }
+        }
+    }
+    .newsletter-style-05 {
+        .input-small {
+            font-size: 14px;
+        }
+    }
+    .nav-link {
+        color: var(--medium-gray);
+        padding: .5rem 1rem;
+    }
+    .footer-navbar{
+        .nav-item{
+            &:last-child{
+                a{
+                    padding-right: 0
+                }
+            }
+        }
+    }
+}
+
+/* Footer dark  */
+.footer-dark {
+    color: var(--aluminium-grey);
+    p,a {
+        color: var(--aluminium-grey);
+    }
+    a {
+        &:hover {
+            color: var(--base-color);
+        }
+    }
+}
+
+/* Footer light */
+.footer-light {
+    a {
+        &:hover {
+            color: var(--base-color);
+        }
+    }
+}
+
+/* Footer navbar */
+.footer-navbar {
+    li {
+        display: inline-block;
+        margin-bottom: 0;
+        a {
+            &:hover {
+                color: var(--base-color);
+            }
+        }
+        &:last-child {
+            a {
+                padding-right: 0;
+            }
+        }
+        &:first-child {
+            a {
+                padding-left: 0;
+            }
+        }
+    }
+    .nav-link {
+        &:focus {
+            color: inherit;
+        }
+    }
+}
+
+/* Footer sticky */
+.main-content {
+    position: relative;
+    z-index: 2;
+    background:var(--white); 
+}
+.footer-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    overflow: hidden;
+}
+
+/* Landing page footer */
+.footer-demo{
+    ul {
+        li{
+            margin-bottom: 0;
+            line-height: 30px;
+        }
+    }
+    a {
+        &:hover {
+            color: #fff;
+        }
+    }
+    img {
+        max-height: 55px !important;
+    }
+}

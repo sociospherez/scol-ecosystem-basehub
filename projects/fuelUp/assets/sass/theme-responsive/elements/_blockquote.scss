@@ -1,0 +1,45 @@
+@include respond-to('mini-desktop') {
+    .blockquote-style-04 {
+        .blockquote-img {
+            img {
+                margin-top: -106px;
+            }
+        }
+        .blockquote-content {
+            padding-left: 23%;
+        }
+    }
+}
+@include respond-to('laptop') {
+    .blockquote-style-04 {
+        .blockquote-img {
+            img {
+                margin-top: -89px;
+            }
+        }
+        .blockquote-content {
+            padding-left: 20%;
+            border-bottom-right-radius: 89px; 
+        }
+    }
+}
+@include respond-to('tablet') {
+    .blockquote-style-04 {
+        .blockquote-img {
+            img {
+                margin-top: -72px;
+            }
+        }
+        .blockquote-content {
+            border-bottom-right-radius: 64px; 
+        }
+    }
+}
+@include respond-to('phone-landscape') {
+    .blockquote-style-04 {
+        .blockquote-content {
+            margin-left: 0;
+            padding: 8% 10%;
+        }
+    }
+}

@@ -1,0 +1,234 @@
+@include respond-to('desktop') {
+    .sticky-image-distortion-wrapper {
+        .menu {
+            padding-left: 30px;
+        }
+    }
+    .sticky-image-title {
+        a {
+            padding-left: 50px;
+        }
+    }
+    .sticky-category {
+        left: 35px;
+    }
+    .sticky-image-distortion-wrapper {
+        .menu {
+            .menu__link {
+                &.active {
+                        .sticky-image-title {
+                        a {
+                           padding-left: 70px; 
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sticky-image-distortion-wrapper {
+        .menu {
+            .menu__link {
+                &.active {
+                    .sticky-category {
+                        left: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+@include respond-to('mini-desktop') {
+    .threeD-letter-menu {
+        .menu-item {
+            .hover-reveal {
+                width: 320px;
+                height: 320px;
+            }
+        }
+    }
+    .sticky-image-distortion-wrapper {
+        .menu {
+            .menu__link {
+                &.active {
+                    .sticky-image-title {
+                        .title {
+                            left: 65px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sticky-image-title {
+        .title {
+            left: 50px;
+        }
+    }
+    .sticky-category {
+        left: 0;
+    }
+    .sticky-image-distortion-wrapper {
+        .menu {
+            .menu__link {
+                &.active {
+                    .sticky-category {
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+    .sticky-image-distortion-wrapper {
+        .menu {
+            .menu__link {
+                &.active {
+                        .sticky-image-title {
+                        a {
+                           padding-left: 55px; 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include respond-to('laptop') {
+    .portfolio-creative {
+        .portfolio-box {
+            .portfolio-title {
+                &:after {
+                    font-size: 80px;
+                }
+            }
+        }
+    }
+    .threeD-letter-menu {
+        .menu-item {
+            .hover-reveal {
+                width: 320px;
+                height: 320px;
+            }
+        }
+    }
+    .sticky-image-distortion-wrapper {
+        .menu {
+            padding-top: 160px;
+        }
+    }
+    .sticky-image-title {
+        a {
+            padding-left: 15px;
+        }
+    }
+}
+@include respond-to('tablet') {
+    .portfolio-filter {
+        &.filter-btn {
+            li {
+                padding: 0 6px; 
+                a {
+                    padding: 6px 25px; 
+                }
+              }
+        }
+    }
+    .mousetip-wrapper {
+        .caption { 
+            display: none !important;
+        }
+    }
+    .portfolio-creative {
+        .portfolio-box {
+            .portfolio-title {
+                &:after {
+                    font-size: 60px;
+                }
+            }
+        }
+    }
+    .sticky-image-distortion-wrapper {
+        .menu {
+            .menu__link {
+                &.active {
+                    .svg-wrapper {
+                        margin-top: 50px;
+                    }
+                } 
+            }
+        }
+    }
+}
+@include respond-to('phone-landscape') {
+    .portfolio-filter {
+        &.filter-btn {
+            li {
+                padding: 0;
+                margin-bottom: 10px; 
+                a {
+                    display: block; 
+                }
+              }
+        }
+    } 
+    .nav-tabs {
+        li {
+            padding: 0;
+            display: block;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+    }
+    .sticky-image-distortion-wrapper {
+        .menu {
+            padding: 130px 30px 30px 30px;
+            width: 100%;
+
+            .menu__link {
+                flex-direction: column;
+                &.active {
+                    .svg-wrapper {
+                        height: auto;
+                        margin-top: 0;
+                    }
+                }
+            }
+            .svg-wrapper {
+                position: relative;
+                right: 22px;
+                width: 100%;
+                height: 0;
+            }
+        }
+        .sticky-image-title {
+            width: 100%;
+            a {
+                padding: 30px 35px 30px;
+            }
+        }
+    }
+}
+@include respond-to('phone-portrait') {
+    .portfolio-attractive {
+        .portfolio-box:hover {
+            .portfolio-hover {
+                .icon-box {
+                    margin-top: -10px;
+                }
+            }
+        }
+    }
+    .sticky-image-distortion-wrapper {
+        .menu {
+            padding: 130px 0 0 0;
+
+            .svg-wrapper {
+                right: 20px;
+            }
+        }
+    }
+    .sticky-image-title {
+        .title {
+            display: none;
+        }
+    } 
+}

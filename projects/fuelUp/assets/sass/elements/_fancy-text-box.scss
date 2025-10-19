@@ -1,0 +1,32 @@
+/* Fancy text box style 01 */  
+.fancy-text-box-style-01 { 
+    border-bottom: 1px solid; 
+    border-right: 1px solid; 
+    overflow: hidden; 
+    .text-box-wrapper {
+        .text-box, .text-box-hover {
+            display: block; width: 100%; 
+            @include prefix(transition, all 0.6s cubic-bezier(0.12, 0, 0.39, 0), webkit);  
+        }
+        .text-box-hover {
+            opacity: 0; 
+            position: absolute; 
+        }
+        &:hover {
+            .text-box {
+                opacity: 0; 
+                visibility: hidden; 
+                @include prefix(transform, translateY(-100%), webkit);
+                @include prefix(transition, all 0.6s cubic-bezier(0.12, 0, 0.39, 0), webkit);
+            } 
+            .text-box-hover {
+                opacity: 1; 
+                @include prefix(transform, translateY(-100%), webkit);
+                @include prefix(transition, all 0.6s cubic-bezier(0.12, 0, 0.39, 0), webkit); 
+            }
+        }
+    }
+    &:last-child { 
+        border-right: 0;
+    }
+}

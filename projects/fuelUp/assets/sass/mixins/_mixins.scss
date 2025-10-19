@@ -1,0 +1,46 @@
+// Box shadow
+@mixin box-shadow($value) {
+    -webkit-box-shadow: $value;
+    box-shadow:         $value;
+}
+
+// Property prefix
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+ 
+  #{$property}: $value;
+}
+
+// Divice breakpoint
+$breakpoints: (
+  'desktop':  1600px,
+  'mini-desktop':  1399px,
+  'laptop': 1199px,
+  'tablet':  991px,
+  'phone-landscape':  767px,
+  'phone-portrait':  575px
+) !default;
+
+// Device prefix for responsive
+$prefix: (
+  'desktop':  'xxl',
+  'mini-desktop':  'xl',
+  'laptop': 'lg',
+  'tablet':  'md',
+  'phone-landscape':  'sm',
+  'phone-portrait':  'xs'
+);
+
+// Mixin for media query
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media ($media-max: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+  @else {
+    @warn "Sorry unfortunately, no value could be retrieved from `#{$breakpoint}`. ";
+  }
+}

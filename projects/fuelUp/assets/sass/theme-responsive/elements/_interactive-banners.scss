@@ -1,0 +1,7 @@
+@include respond-to('laptop') {
+    .interactive-banner-style-06 {
+        .interactive-banners-content {
+            transform: translateY(calc(100% - 110px));
+        }
+    }
+}
