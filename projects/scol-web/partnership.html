@@ -1,239 +1,433 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Communication With Intelligence — Partnership</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- assumes your global CSS + fonts are already included by the base layout -->
+<title>Partnership | Communication That Understands</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Strategic partnership proposal: connectivity + security + intelligent communications.">
+  <!-- favicon + fonts are shared with your base layout -->
+  <link rel="shortcut icon" href="assets/images/Favicon-scol-32x32.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png">
+  <!-- styles (same order as index) -->
+  <link rel="stylesheet" href="assets/css/vendors.min.css"/>
+  <link rel="stylesheet" href="assets/css/icon.min.css"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="stylesheet" href="assets/css/responsive.css"/>
+  <link rel="stylesheet" href="assets/css/it-business.css"/>
 </head>
-<body class="page partnership-page">
+<body data-mobile-nav-style="full-screen-menu" data-mobile-nav-bg-color="#252840">
+  <!-- header (reuse your site header) -->
+  <header>
+    <nav class="navbar navbar-expand-lg header-transparent bg-transparent header-reverse glass-effect" data-header-hover="light">
+      <div class="container-fluid">
+        <div class="col-auto col-xxl-3 col-lg-2 me-lg-0 me-auto">
+          <a class="navbar-brand" href="index-it-business.html">
+            <img src="assets/images/Scol-business-logo-white@2x.png" alt="" class="default-logo">
+            <img src="assets/images/Scol-business-logo-dark@2x.png" alt="" class="alt-logo">
+            <img src="assets/images/Scol-business-logo-dark@2x.png" alt="" class="mobile-logo">
+          </a>
+        </div>
+        <div class="col-auto col-xxl-6 col-lg-8 menu-order position-static">
+          <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+            <span class="navbar-toggler-line"></span>
+            <span class="navbar-toggler-line"></span>
+            <span class="navbar-toggler-line"></span>
+            <span class="navbar-toggler-line"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a href="index-it-business.html" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="partnership.html" class="nav-link active">Partnership</a></li>
+              <!-- <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Case studies</a></li>
 
-  <!-- ========== HERO ========== -->
-  <header class="section hero light-bg">
-    <div class="container">
-      <div class="hero-inner">
-        <h1 class="hero-title">Communication that understands — not just connects</h1>
-        <p class="hero-subtitle">
-          We’re proposing a strategic partnership that merges a proven VoIP & connectivity backbone
-          with security and behavioural intelligence — turning every interaction into learning and improvement.
-        </p>
-        <div class="hero-cta">
-          <a href="#framework" class="btn btn-primary">See the framework</a>
-          <a href="#contact" class="btn btn-outline">Talk to us</a>
+              <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li> -->
+            </ul>
+          </div>
+        </div>
+        <div class="col-auto col-xxl-3 col-lg-2 text-end d-none d-sm-flex">
+          <div class="header-button">
+            <a href="#contact" class="btn btn-large btn-transparent-white-light btn-rounded text-transform-none border-1">Start a project<i class="fa-solid fa-arrow-right"></i></a>
+          </div>
         </div>
       </div>
-    </div>
+    </nav>
   </header>
 
-  <!-- ========== VALUE PROP (WHY TOGETHER) ========== -->
-  <section class="section value-prop" id="why">
-    <div class="container">
-      <div class="section-head">
-        <h2>Why this partnership works</h2>
-        <p class="muted">
-          Pair a small-business-ready network with an innovation layer that adds security, analytics, and insight.
-        </p>
+  <!-- HERO -->
+  <section class="cover-background one-third-screen sm-h-500px pb-0 position-relative" style="background-image:url('assets/images/slides/banner-bg-02.jpg');">
+    <div class="opacity-extra-medium bg-dark-gray"></div>
+    <div class="container h-100">
+      <div class="row align-items-center justify-content-center h-100">
+        <div class="col-xl-9 col-lg-10 text-center position-relative z-index-1" data-anime='{"el":"childs","translateY":[30,0],"opacity":[0,1],"duration":700,"staggervalue":200}'>
+          <span class="ps-25px pe-25px pt-5px pb-5px mb-20px text-uppercase text-white fs-12 ls-1px fw-600 border-radius-100px bg-gradient-dark-gray-transparent d-inline-flex align-items-center">
+            <i class="bi bi-telephone-forward text-white icon-small me-10px"></i> Partnership Proposal
+          </span>
+          <h1 class="text-white fw-600 ls-minus-2px mb-15px">Communication that understands — not just connects</h1>
+          <p class="text-white opacity-7 fs-18 w-85 mx-auto">Together we pair a proven VoIP & connectivity backbone with security and behavioural intelligence — turning every interaction into learning and improvement.</p>
+          <a href="#framework" class="btn btn-extra-large btn-switch-text bg-gradient-tan-geraldine btn-rounded me-10px mt-10px">
+            <span><span class="btn-double-text" data-text="See the framework">See the framework</span><span><i class="fa-solid fa-arrow-right"></i></span></span>
+          </a>
+          <a href="#contact" class="btn btn-extra-large btn-switch-text btn-transparent-white-light btn-rounded border-2 mt-10px">
+            <span><span class="btn-double-text" data-text="Book a pilot">Book a pilot</span><span><i class="fa-solid fa-phone"></i></span></span>
+          </a>
+        </div>
       </div>
-
-      <div class="grid grid-3 cards">
-        <article class="card">
-          <h3>Connectivity at scale</h3>
-          <p>Fast, reliable VoIP + broadband built for SMEs — simple onboarding, clear pricing, national reach.</p>
-        </article>
-        <article class="card">
-          <h3>Security as standard</h3>
-          <p>Cyber hygiene baked in: regular vulnerability scans, optional biannual pen tests, and compliance guidance.</p>
-        </article>
-        <article class="card">
-          <h3>Intelligence that learns</h3>
-          <p>Optional AI add-on surfaces tone, sentiment, and conversation flow — live coaching + post-call insights.</p>
-        </article>
-      </div>
+    </div>
+    <div class="shape-image-animation p-0 w-100 bottom-minus-40px d-none d-md-block">
+      <svg xmlns="http://www.w3.org/2000/svg" widht="3000" height="400" viewBox="0 180 2500 200" fill="#ffffff">
+        <path class="st1" d="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250">
+          <animate attributeName="d" dur="5s" repeatCount="indefinite"
+            values="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250;
+                    M 0 250 C 400 50 400 400 3000 250 L 3000 550 L 0 550 L 0 250;
+                    M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250"/>
+        </path>
+      </svg>
     </div>
   </section>
 
-  <!-- ========== PARTNERSHIP FRAMEWORK TABLE ========== -->
-  <section class="section framework" id="framework">
+  <!-- WHY THIS PARTNERSHIP WORKS -->
+  <section class="pt-60px pb-60px">
     <div class="container">
-      <div class="section-head">
-        <h2>The Intelligent Communication Framework</h2>
-        <p class="muted">Clear roles. Combined outcomes.</p>
+      <div class="row justify-content-center mb-5" data-anime='{"el":"childs","translateY":[30,0],"opacity":[0,1],"duration":600}'>
+        <div class="col-xl-7 col-lg-9 text-center">
+          <h3 class="text-dark-gray fw-700 ls-minus-2px mb-0">Why this partnership works</h3>
+          <p class="w-85 mx-auto mt-15px">Pair a small-business-ready network with an innovation layer that adds security, analytics, and insight.</p>
+        </div>
       </div>
-
-      <div class="table-wrap">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Layer</th>
-              <th>Connectivity Partner brings</th>
-              <th>We bring</th>
-              <th>Combined outcome</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Network foundation</strong></td>
-              <td>Business VoIP, fibre/4G/5G broadband, provisioning</td>
-              <td>Managed setup, multi-site rollout playbooks</td>
-              <td>Seamless, scalable deployment</td>
-            </tr>
-            <tr>
-              <td><strong>Security & assurance</strong></td>
-              <td>Encrypted voice/data channels</td>
-              <td>Cyber hygiene, vuln scans, optional biannual pen tests</td>
-              <td>Communication with confidence</td>
-            </tr>
-            <tr>
-              <td><strong>Intelligence layer</strong></td>
-              <td>Call data + CRM touchpoints</td>
-              <td>Sentiment/tone analysis, live prompts, post-call summaries</td>
-              <td>Conversations that teach and improve</td>
-            </tr>
-            <tr>
-              <td><strong>Sector focus</strong></td>
-              <td>SME reach and service model</td>
-              <td>Education (incl. SEN), Health & Social Care, Legal</td>
-              <td>Inclusive, people-centred communication</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="note info">
-        <p><strong>Engagement model:</strong> Supports Referral, Reseller/MSP, and Strategic Co-development — chosen based on volume, technical scope, and market focus.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== APPLICATION AREAS ========== -->
-  <section class="section use-cases" id="use-cases">
-    <div class="container">
-      <div class="section-head">
-        <h2>Where it helps first</h2>
-        <p class="muted">Start simple. Scale when ready.</p>
-      </div>
-
-      <div class="grid grid-4 cards">
-        <article class="card">
-          <h3>Education & SEN</h3>
-          <p>Tone & clarity cues help staff adapt communication styles. MIS/CRM notes auto-updated post-call.</p>
-          <ul class="list-bullets">
-            <li>Adaptive prompts during calls</li>
-            <li>Safeguarding-friendly summaries</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>Health & Social Care</h3>
-          <p>Stress/tone markers support patient experience and triage quality; anonymised insights for training.</p>
-          <ul class="list-bullets">
-            <li>Empathy and escalation signals</li>
-            <li>Compliance-aware summaries</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>Customer Support Teams</h3>
-          <p>Live coaching and post-call analytics highlight clarity, talk ratio, and missed-call recovery actions.</p>
-          <ul class="list-bullets">
-            <li>Outcome tagging to CRM</li>
-            <li>Manager dashboards</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>Legal & Professional</h3>
-          <p>Secure VoIP with structured notes and follow-up tasks; integrates with case and document workflows.</p>
-          <ul class="list-bullets">
-            <li>Evidence-ready call summaries</li>
-            <li>Permissioned access controls</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== SECURITY PLAN (KEPT PRACTICAL) ========== -->
-  <section class="section security" id="security">
-    <div class="container">
-      <div class="section-head">
-        <h2>Security, without the drama</h2>
-        <p class="muted">Pragmatic protections for SMEs and institutions.</p>
-      </div>
-
-      <div class="grid grid-3 cards">
-        <article class="card">
-          <h3>Hygiene baseline</h3>
-          <p>Config hardening, MFA, least-privilege roles, credential audits.</p>
-        </article>
-        <article class="card">
-          <h3>Regular checks</h3>
-          <p>Quarterly vuln scans; optional biannual penetration tests with remediation plans.</p>
-        </article>
-        <article class="card">
-          <h3>Compliance-minded</h3>
-          <p>Data-handling guidance aligned to sector expectations (e.g., education, care).</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== QUESTIONS FOR TUESDAY (COLLAPSIBLE IF YOU HAVE JS) ========== -->
-  <section class="section faq" id="partner-questions">
-    <div class="container">
-      <div class="section-head">
-        <h2>Key questions for our partner call</h2>
-      </div>
-
-      <ul class="accordion">
-        <li class="accordion-item">
-          <button class="accordion-trigger">Engagement depth</button>
-          <div class="accordion-panel">
-            <p>Do you prefer pure referrals you close, full reseller ownership, or co-development of new offers?</p>
+      <div class="row row-cols-1 row-cols-md-3 g-4" data-anime='{"el":"childs","translateY":[15,0],"opacity":[0,1],"duration":500,"staggervalue":150}'>
+        <div class="col">
+          <div class="services-box-style-02 border-radius-6px overflow-hidden bg-white h-100">
+            <div class="ps-20px pe-20px pt-30px pb-25px text-center">
+              <i class="line-icon-Wifi icon-large text-dark-gray mb-15px"></i>
+              <h5 class="text-dark-gray fw-700 mb-5px">Connectivity at scale</h5>
+              <p class="mb-0">Fast, reliable VoIP + fibre/4G/5G built for SMEs — simple onboarding, clear pricing, national reach.</p>
+            </div>
           </div>
-        </li>
-        <li class="accordion-item">
-          <button class="accordion-trigger">API & integrations</button>
-          <div class="accordion-panel">
-            <p>Is there an API/CRM framework we can use for analytics, summaries, and live prompts?</p>
+        </div>
+        <div class="col">
+          <div class="services-box-style-02 border-radius-6px overflow-hidden bg-white h-100">
+            <div class="ps-20px pe-20px pt-30px pb-25px text-center">
+              <i class="line-icon-Shield-2 icon-large text-dark-gray mb-15px"></i>
+              <h5 class="text-dark-gray fw-700 mb-5px">Security as standard</h5>
+              <p class="mb-0">Cyber hygiene, quarterly vuln scans, optional biannual penetration tests, and pragmatic compliance guidance.</p>
+            </div>
           </div>
-        </li>
-        <li class="accordion-item">
-          <button class="accordion-trigger">Security scope</button>
-          <div class="accordion-panel">
-            <p>Can security (scans/pen tests) be bundled as an add-on across VoIP + broadband packages?</p>
+        </div>
+        <div class="col">
+          <div class="services-box-style-02 border-radius-6px overflow-hidden bg-white h-100">
+            <div class="ps-20px pe-20px pt-30px pb-25px text-center">
+              <i class="line-icon-AI icon-large text-dark-gray mb-15px"></i>
+              <h5 class="text-dark-gray fw-700 mb-5px">Intelligence that learns</h5>
+              <p class="mb-0">Optional AI add-on surfaces tone, sentiment, and conversation flow — live coaching + post-call insights.</p>
+            </div>
           </div>
-        </li>
-        <li class="accordion-item">
-          <button class="accordion-trigger">Market focus</button>
-          <div class="accordion-panel">
-            <p>Beyond SMEs, are you exploring Education (incl. SEN), Health & Care, or Legal pilots?</p>
-          </div>
-        </li>
-        <li class="accordion-item">
-          <button class="accordion-trigger">Scale path</button>
-          <div class="accordion-panel">
-            <p>Is the roadmap more SME volume or stepping into mid-market/multi-site complexity?</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ========== CTA ========== -->
-  <section class="section cta" id="contact">
-    <div class="container">
-      <div class="cta-box">
-        <h2>Ready to pilot “communication that understands”?</h2>
-        <p>Start with the base connectivity bundle. Add security. Switch on intelligence when you’re ready.</p>
-        <div class="cta-actions">
-          <a href="/contact" class="btn btn-primary">Book a pilot</a>
-          <a href="#framework" class="btn btn-outline">Review framework</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- your site footer include goes here -->
+  <!-- INTELLIGENT COMMUNICATION FRAMEWORK (TABLE) -->
+  <section class="overflow-hidden bg-very-light-gray position-relative" id="framework">
+    <div class="container">
+      <div class="row align-items-center mb-4" data-anime='{"el":"childs","translateY":[30,0],"opacity":[0,1],"duration":600}'>
+        <div class="col-lg-7">
+          <h3 class="text-dark-gray fw-700 ls-minus-2px mb-0">The Intelligent Communication Framework</h3>
+          <p class="mt-10px mb-0">Clear roles. Combined outcomes.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="table-responsive bg-white border-radius-6px box-shadow-quadruple-large">
+            <table class="table table-striped mb-0">
+              <thead>
+                <tr>
+                  <th>Layer</th>
+                  <th>Connectivity partner brings</th>
+                  <th>We bring</th>
+                  <th>Combined outcome</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Network foundation</strong></td>
+                  <td>Business VoIP, fibre/4G/5G broadband, provisioning</td>
+                  <td>Managed setup, multi-site rollout playbooks</td>
+                  <td>Seamless, scalable deployment</td>
+                </tr>
+                <tr>
+                  <td><strong>Security & assurance</strong></td>
+                  <td>Encrypted voice/data channels</td>
+                  <td>Cyber hygiene, vuln scans, optional biannual pen tests</td>
+                  <td>Communication with confidence</td>
+                </tr>
+                <tr>
+                  <td><strong>Intelligence layer</strong></td>
+                  <td>Call data + CRM touchpoints</td>
+                  <td>Sentiment/tone analysis, live prompts, post-call summaries</td>
+                  <td>Conversations that teach and improve</td>
+                </tr>
+                <tr>
+                  <td><strong>Sector focus</strong></td>
+                  <td>SME reach and service model</td>
+                  <td>Education (incl. SEN), Health & Social Care, Legal</td>
+                  <td>Inclusive, people-centred communication</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="note info mt-20px">
+            <p class="mb-0"><strong>Engagement model:</strong> Supports Referral, Reseller/MSP, and Strategic Co-development — chosen by volume, technical scope, and market focus.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="pt-60px pb-60px">
+    <div class="container">
+      <div class="row justify-content-center mb-4" data-anime='{"el":"childs","translateY":[30,0],"opacity":[0,1],"duration":600}'>
+        <div class="col-xl-7 col-lg-9 text-center">
+          <h3 class="text-dark-gray fw-700 ls-minus-2px mb-0">Where it helps first</h3>
+          <p class="w-85 mx-auto mt-10px">Start simple. Scale when ready.</p>
+        </div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" data-anime='{"el":"childs","translateY":[15,0],"opacity":[0,1],"duration":500,"staggervalue":150}'>
+        <div class="col">
+          <div class="services-box-style-02 border-radius-6px overflow-hidden bg-white h-100">
+            <div class="ps-20px pe-20px pt-25px pb-20px">
+              <h5 class="text-dark-gray fw-700 mb-5px">Education & SEN</h5>
+              <p class="mb-10px">Tone & clarity cues help staff adapt styles. MIS/CRM notes auto-update post-call.</p>
+              <ul class="list-unstyled mb-0">
+                <li>Adaptive prompts during calls</li>
+                <li>Safeguarding-friendly summaries</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="services-box-style-02 border-radius-6px overflow-hidden bg-white h-100">
+            <div class="ps-20px pe-20px pt-25px pb-20px">
+              <h5 class="text-dark-gray fw-700 mb-5px">Health & Social Care</h5>
+              <p class="mb-10px">Stress/tone markers support patient experience; anonymised insights for training.</p>
+              <ul class="list-unstyled mb-0">
+                <li>Empathy & escalation signals</li>
+                <li>Compliance-aware notes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="services-box-style-02 border-radius-6px overflow-hidden bg-white h-100">
+            <div class="ps-20px pe-20px pt-25px pb-20px">
+              <h5 class="text-dark-gray fw-700 mb-5px">Customer Support Teams</h5>
+              <p class="mb-10px">Live coaching & analytics: clarity, talk ratio, and missed-call recovery actions.</p>
+              <ul class="list-unstyled mb-0">
+                <li>Outcome tagging to CRM</li>
+                <li>Manager dashboards</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="services-box-style-02 border-radius-6px overflow-hidden bg-white h-100">
+            <div class="ps-20px pe-20px pt-25px pb-20px">
+              <h5 class="text-dark-gray fw-700 mb-5px">Legal & Professional</h5>
+              <p class="mb-10px">Secure VoIP with structured notes and follow-ups; integrates with case workflows.</p>
+              <ul class="list-unstyled mb-0">
+                <li>Evidence-ready summaries</li>
+                <li>Permissioned access controls</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURITY -->
+  <section class="bg-dark-gray">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-xl-7 col-lg-9 text-center" data-anime='{"el":"childs","translateY":[30,0],"opacity":[0,1],"duration":600}'>
+          <h3 class="text-white mb-0 fw-600">Security, without the drama</h3>
+          <p class="text-white opacity-7 mt-10px mb-0">Pragmatic protections for SMEs and institutions.</p>
+        </div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-3 g-4" data-anime='{"el":"childs","translateY":[15,0],"opacity":[0,1],"duration":400,"staggervalue":120}'>
+        <div class="col">
+          <div class="feature-box hover-box h-100 transition dark-hover pt-25 pb-25 overflow-hidden border border-1 border-color-transparent-white-light border-color-transparent-on-hover">
+            <div class="feature-box-icon"><i class="line-icon-Lock-2 icon-extra-large text-white mb-15px"></i></div>
+            <div class="feature-box-content"><span class="d-inline-block text-white fw-600 fs-16">Hygiene baseline</span><p class="text-white opacity-7 mb-0">Config hardening, MFA, least-privilege roles, credential audits.</p></div>
+            <div class="feature-box-overlay bg-base-color"></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="feature-box hover-box h-100 transition dark-hover pt-25 pb-25 overflow-hidden border border-1 border-color-transparent-white-light border-color-transparent-on-hover">
+            <div class="feature-box-icon"><i class="line-icon-Settings-Window icon-extra-large text-white mb-15px"></i></div>
+            <div class="feature-box-content"><span class="d-inline-block text-white fw-600 fs-16">Regular checks</span><p class="text-white opacity-7 mb-0">Quarterly vuln scans; optional biannual pentests with remediation plans.</p></div>
+            <div class="feature-box-overlay bg-base-color"></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="feature-box hover-box h-100 transition dark-hover pt-25 pb-25 overflow-hidden border border-1 border-color-transparent-white-light border-color-transparent-on-hover">
+            <div class="feature-box-icon"><i class="line-icon-Check-2 icon-extra-large text-white mb-15px"></i></div>
+            <div class="feature-box-content"><span class="d-inline-block text-white fw-600 fs-16">Compliance-minded</span><p class="text-white opacity-7 mb-0">Data-handling guidance aligned to sector expectations (education, care, legal).</p></div>
+            <div class="feature-box-overlay bg-base-color"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUESTIONS FOR THE CALL (ACCORDION-LIKE LIST) -->
+  <section class="pt-60px pb-40px" id="partner-questions">
+    <div class="container">
+      <div class="row align-items-center mb-4" data-anime='{"el":"childs","translateY":[30,0],"opacity":[0,1],"duration":600}'>
+        <div class="col-lg-7">
+          <h3 class="text-dark-gray fw-700 ls-minus-2px mb-0">Key questions for our partner call</h3>
+        </div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 g-3">
+        <div class="col">
+          <div class="bg-white border-radius-6px box-shadow-quadruple-large p-20px h-100">
+            <h6 class="fw-700 text-dark-gray mb-5px">Engagement depth</h6>
+            <p class="mb-0">Do you prefer pure referrals you close, full reseller ownership, or co-development of new offers?</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="bg-white border-radius-6px box-shadow-quadruple-large p-20px h-100">
+            <h6 class="fw-700 text-dark-gray mb-5px">API & integrations</h6>
+            <p class="mb-0">Is there an API/CRM framework we can use for analytics, summaries, and live prompts?</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="bg-white border-radius-6px box-shadow-quadruple-large p-20px h-100">
+            <h6 class="fw-700 text-dark-gray mb-5px">Security scope</h6>
+            <p class="mb-0">Can security (scans/pentests) be bundled as an add-on across VoIP + broadband packages?</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="bg-white border-radius-6px box-shadow-quadruple-large p-20px h-100">
+            <h6 class="fw-700 text-dark-gray mb-5px">Market focus</h6>
+            <p class="mb-0">Beyond SMEs, are you exploring Education (incl. SEN), Health & Care, or Legal pilots?</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="bg-white border-radius-6px box-shadow-quadruple-large p-20px h-100">
+            <h6 class="fw-700 text-dark-gray mb-5px">Scale path</h6>
+            <p class="mb-0">Is the roadmap more SME volume or stepping into mid-market/multi-site complexity?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cover-background one-third-screen sm-h-500px pb-0 position-relative" style="background-image:url('assets/images/smartbg.jpg');" id="contact">
+    <div class="opacity-extra-medium bg-dark-gray"></div>
+    <div class="container h-100">
+      <div class="row align-items-center justify-content-center h-100">
+        <div class="col-xl-8 col-lg-10 text-center position-relative z-index-1" data-anime='{"el":"childs","translateY":[30,0],"opacity":[0,1],"duration":600}'>
+          <span class="ps-25px pe-25px pt-5px pb-5px mb-20px text-uppercase text-white fs-12 ls-1px fw-600 border-radius-100px bg-gradient-dark-gray-transparent d-inline-flex align-items-center">
+            <i class="bi bi-megaphone text-white icon-small me-10px"></i> Ready to pilot?
+          </span>
+          <h2 class="text-white fw-600 ls-minus-2px mb-10px">Start with the base connectivity bundle</h2>
+          <p class="text-white opacity-7 mb-25px">Add security. Switch on intelligence when you’re ready.</p>
+          <a href="mailto:info@solutionscallout.co.uk" class="btn btn-extra-large btn-switch-text bg-gradient-tan-geraldine btn-rounded me-10px">
+            <span><span class="btn-double-text" data-text="Email us now">Email us now</span><span><i class="fa-solid fa-arrow-right"></i></span></span>
+          </a>
+          <a href="tel:7404240893" class="btn btn-extra-large btn-switch-text btn-transparent-white-light btn-rounded border-2">
+            <span><span class="btn-double-text" data-text="Call 07404 240 893">Call 07404 240 893</span><span><i class="fa-solid fa-phone"></i></span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="shape-image-animation p-0 w-100 bottom-minus-40px d-none d-md-block">
+      <svg xmlns="http://www.w3.org/2000/svg" widht="3000" height="400" viewBox="0 180 2500 200" fill="#ffffff">
+        <path class="st1" d="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250">
+          <animate attributeName="d" dur="5s" repeatCount="indefinite"
+            values="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250;
+                    M 0 250 C 400 50 400 400 3000 250 L 3000 550 L 0 550 L 0 250;
+                    M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250"/>
+        </path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="p-0 footer-light position-relative">
+    <div class="container position-relative">
+      <div class="row justify-content-center pt-5 sm-pt-40px">
+        <div class="col-6 col-xl-3 col-lg-12 col-sm-6 last-paragraph-no-margin text-xl-start text-lg-center lg-mb-50px sm-mb-30px">
+          <a href="#" class="footer-logo mb-15px d-inline-block">
+            <img src="assets/images/Scol-business-logo-dark@2x.png" alt="">
+          </a>
+          <p class="lh-28 w-90 xl-w-100 mx-lg-auto mx-xl-0">Gearing your company through an innovative strategy.</p>
+          <div class="elements-social social-icon-style-02 mt-15px">
+            <ul class="medium-icon dark">
+              <li class="my-0"><a class="linkedin" href="https://www.linkedin.com/company/solcoltd/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6 col-xl-2 col-lg-3 col-sm-4 xs-mb-30px">
+          <span class="fw-600 d-block text-dark-gray mb-5px">Company</span>
+          <ul>
+            <li><a href="#">Who we are</a></li>
+            <li><a href="#">Our services</a></li>
+            <li><a href="#">Our clients</a></li>
+            <li><a href="#contact">Contact us</a></li>
+            <li><a href="PrivacyPo.html" target="_blank">Privacy policy</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-xl-2 col-lg-3 col-md-5 col-sm-4 xs-mb-30px">
+          <span class="fw-600 d-block text-dark-gray mb-5px">Services</span>
+          <ul>
+            <li><a href="#">Planning</a></li>
+            <li><a href="#">Research</a></li>
+            <li><a href="#">Consulting</a></li>
+            <li><a href="#">Analysis</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-xl-2 col-lg-3 col-md-3 col-sm-4 xs-mb-30px">
+          <span class="fw-600 d-block text-dark-gray mb-5px">Need help?</span>
+          <span>Call us directly?</span>
+          <span class="d-block mb-10px"><a class="text-dark-gray fw-600" href="tel:7404240893">(44) 7404 240 893</a></span>
+          <span>Need support?</span>
+          <a href="mailto:info@solutionscallout.co.uk" class="text-dark-gray fw-600">info@solutionscallout.co.uk</a>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-sm-6 md-mb-50px sm-mb-30px xs-mb-0">
+          <span class="fw-600 d-block text-dark-gray mb-5px">Subscribe newsletter</span>
+          <p class="lh-28 w-95 mb-10px xs-mb-10px">Subscribe our newsletter to get the latest news and updates!</p>
+          <div class="d-inline-block w-100 newsletter-style-04 position-relative">
+            <form action="assets/email-templates/subscribe-newsletter.php" method="post" class="position-relative w-100">
+              <input class="fs-15 bg-white w-100 border-0 border-bottom border-1 border-color-dark-gray form-control required" type="email" name="email" placeholder="Enter your email address"/>
+              <input type="hidden" name="redirect" value="">
+              <button class="btn submit" aria-label="submit"><i class="icon feather icon-feather-mail icon-small"></i></button>
+              <div class="form-results border-radius-0px p-15px fs-16 lh-24 w-100 text-center position-absolute d-none"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center align-items-center pt-7">
+        <div class="col-12"><div class="divider-style-03 divider-style-03-01 border-color-extra-medium-gray"></div></div>
+        <div class="col-lg-5 pt-20px pb-20px text-center text-lg-start fs-14">
+          <p>&copy; <span id="year"></span> Solutions Callout Limited London - England UnitedKingdom</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- scroll + js -->
+  <div class="scroll-progress d-none d-xxl-block">
+    <a href="#" class="scroll-top" aria-label="scroll">
+      <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
+    </a>
+  </div>
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/vendors.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
