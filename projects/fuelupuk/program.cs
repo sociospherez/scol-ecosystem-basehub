@@ -17,8 +17,10 @@ var app = builder.Build();
 app.UseCors("cors");
 
 record Payload(string? email, string? hp, string? ua, string? referrer, string? origin);
-static bool LooksLikeEmail(string e) =>
-  Regex.IsMatch(e, @"^[^\s@]+@[^\s@]+\.[^\s@]{2,}$", RegexOptions.IgnoreCase);
+static bool LooksLikeEmail(string e)
+{
+  return MyRegex().IsMatch(e);
+}
 
 app.MapPost("/api/notify", async (HttpContext ctx) =>
 {
@@ -51,3 +53,9 @@ app.MapPost("/api/notify", async (HttpContext ctx) =>
 });
 
 app.Run();
+
+partial class Program
+{
+  [GeneratedRegex(@"^[^\s@]+@[^\s@]+\.[^\s@]{2,}$", RegexOptions.IgnoreCase, "en-GB")]
+  private static partial Regex MyRegex();
+}
