@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FuelUp.uk — Coming Soon</title>
+  <meta name="description" content="FuelUp.uk — on-demand fuel delivery across the UK. Reliable, safe, and right where you are." />
+  <style>
+    /* ---------- Brand Tokens ---------- */
+    :root{
+      --fu-blue:#0B4F6C;     /* Petrol Blue */
+      --fu-amber:#FF9A00;    /* Energy Amber */
+      --fu-green:#2FA84F;    /* Leaf Green */
+      --fu-cyan:#00B8D9;     /* Cyan Velocity */
+      --fu-char:#222222;     /* Charcoal */
+      --fu-soft:#F5F6F7;     /* Soft Grey */
+      --fu-bg: radial-gradient(1200px 800px at 50% 25%, rgba(255,255,255,0.10), rgba(255,255,255,0) 60%),
+               linear-gradient(180deg, #0a3f56 0%, #062a3a 100%);
+    }
+
+    /* ---------- Base ---------- */
+    * { box-sizing: border-box; }
+    html, body { height:100%; }
+    body {
+      margin:0; color:#fff; background:var(--fu-bg);
+      font: 16px/1.6 Inter, Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    a { color: var(--fu-cyan); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width:1100px; margin:0 auto; padding: clamp(16px, 3vw, 32px); }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      min-height: 88dvh;
+      display:grid; place-items:center;
+      text-align:center; padding-top:40px;
+    }
+    .logo-wrap { width:min(560px, 88vw); margin:0 auto 18px; }
+    .logo-ring { width:100%; height:auto; display:block; filter: drop-shadow(0 6px 24px rgba(0,0,0,.35)); }
+    .headline {
+      font-weight:800; letter-spacing:.2px; margin:.25rem 0 0;
+      font-size: clamp(28px, 4.2vw, 48px);
+    }
+    .subline {
+      color:#cfe7f2; margin:.5rem auto 1.25rem;
+      font-size: clamp(16px, 2.4vw, 20px);
+      max-width: 720px;
+    }
+
+    /* ---------- Email Capture (no backend; just demo) ---------- */
+    .cta {
+      display:flex; gap:10px; justify-content:center; align-items:center;
+      flex-wrap:wrap; margin: 18px auto 8px;
+    }
+    .input {
+      background:#092e40; border:1px solid rgba(255,255,255,.12);
+      color:#fff; outline:none; border-radius:12px; padding:14px 16px; width:min(420px, 86vw);
+    }
+    .btn {
+      appearance:none; border:0; cursor:pointer;
+      background: linear-gradient(90deg, var(--fu-amber), #FFC44D);
+      color:#0f1e27; font-weight:800; border-radius:12px; padding:14px 20px;
+      box-shadow:0 6px 18px rgba(255,154,0,.25);
+      transition: transform .08s ease, box-shadow .2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow:0 10px 26px rgba(255,154,0,.32); }
+    .note { color:#a6c3ce; font-size:14px; }
+
+    /* ---------- Features ---------- */
+    .features { display:grid; gap:18px; grid-template-columns: repeat(3, minmax(0,1fr));
+      margin:42px auto 12px; max-width:900px; }
+    @media (max-width:820px){ .features{ grid-template-columns:1fr; } }
+    .card {
+      background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12);
+      padding:20px 18px; border-radius:16px;
+      backdrop-filter: blur(4px);
+    }
+    .ic { width:28px; height:28px; margin-right:8px; vertical-align:-6px; }
+    .card h3 { margin:0 0 6px; font-size:18px; }
+    .card p { margin:0; color:#cfe7f2; }
+
+    /* ---------- Footer ---------- */
+    footer {
+      border-top:1px solid rgba(255,255,255,.1);
+      padding:24px 0; color:#d9e7ee; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+      font-size:15px;
+    }
+    .foot-grid { display:grid; gap:16px; grid-template-columns:1fr; }
+    @media (min-width:700px){
+      .foot-grid { grid-template-columns: 2fr 1fr; align-items:center; }
+      .foot-right { text-align:right; }
+    }
+
+    /* ---------- SVG Animation ---------- */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .ring-animate { transform-origin:50% 50%; animation: spin 28s linear infinite; }
+  </style>
+</head>
+<body>
+  <main class="wrap hero" role="main">
+    <!-- ========= Hybrid Swirl Logo (inline SVG) ========= -->
+    <div class="logo-wrap" aria-hidden="true">
+      <svg class="logo-ring" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#00B8D9"/>
+            <stop offset="45%" stop-color="#0B4F6C"/>
+            <stop offset="75%" stop-color="#FF9A00"/>
+            <stop offset="100%" stop-color="#2FA84F"/>
+          </linearGradient>
+          <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="rgba(255,255,255,.2)"/>
+            <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+          </linearGradient>
+        </defs>
+        <!-- Clean tech halo -->
+        <circle class="ring-animate" cx="300" cy="300" r="190" fill="none" stroke="url(#g1)" stroke-width="26" stroke-linecap="round"/>
+
+        <!-- Soft brush accents (human energy) -->
+        <path d="M130 280 C220 210 320 210 440 260" fill="none" stroke="url(#g2)" stroke-width="22" stroke-linecap="round"/>
+        <path d="M160 360 C260 420 380 410 470 330" fill="none" stroke="url(#g2)" stroke-width="18" stroke-linecap="round"/>
+
+        <!-- Minimal leaf tip (subtle) -->
+        <path d="M470 240 C500 235 525 250 535 268 C512 270 492 265 470 240 Z"
+              fill="#2FA84F" opacity=".95" />
+      </svg>
+    </div>
+
+    <h1 class="headline">FuelUp.uk — Refuelling the UK, differently.</h1>
+    <p class="subline">On-demand fuel delivery — reliable, safe, and right where you are. <br/>Coming soon — be first to know.</p>
+
+    <!-- ===== Notify Form (front-end only) ===== -->
+    <form class="cta" id="notifyForm" aria-label="Notify me form" novalidate>
+  <!-- visible input -->
+  <input id="email" class="input" type="email" placeholder="your@email.com" required />
+  <button class="btn" type="submit">Notify Me</button>
+
+  <!-- honeypot (hidden to humans) -->
+  <input type="text" id="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true"
+         style="position:absolute;left:-5000px;opacity:0;height:0;width:0;" />
+
+  <!-- elapsed timer gets populated by JS -->
+  <input type="hidden" id="elapsed" name="elapsed" />
+</form>
+
+<p id="thanks" class="note" hidden>Thanks — we’ll ping you when we launch.</p>
+
+<!-- Toast UX -->
+<div id="toast" style="
+  position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%);
+  background: rgba(15, 35, 48, 0.9); color: #fff; padding: 12px 16px; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.12); box-shadow: 0 8px 24px rgba(0,0,0,.35);
+  font: 14px/1.3 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  opacity: 0; pointer-events: none; transition: opacity .25s ease;">Saved — you’re on the list.</div>
+
+
+    <!-- ===== 3 Up Features ===== -->
+    <section class="features" aria-label="Why FuelUp">
+      <article class="card">
+        <h3><svg class="ic" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v12H3zM5 8v8h14V8z"/></svg>Delivered to you</h3>
+        <p>Skip the queue. Order in seconds — we bring fuel to your location.</p>
+      </article>
+      <article class="card">
+        <h3><svg class="ic" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l7 4v12l-7 4-7-4V6z"/></svg>Certified & Safe</h3>
+        <p>Trained drivers, safety checklists, and transparent proof-of-fill.</p>
+      </article>
+      <article class="card">
+        <h3><svg class="ic" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z"/></svg>Responsible</h3>
+        <p>Smart routing and modern standards — better for people and places.</p>
+      </article>
+    </section>
+  </main>
+
+  <!-- ========= Footer ========= -->
+  <footer>
+    <div class="wrap foot-grid">
+      <div class="foot-left">
+        <strong>FuelUp.uk</strong><br/>
+        Contact: <a href="mailto:contact@fuelup.uk">contact@fuelup.uk</a> &nbsp;|&nbsp;
+
+        Website: <a href="https://www.fuelup.uk" rel="noopener">www.fuelup.uk</a>
+      </div>
+      <div class="foot-right">
+        <span>&copy; <span id="y"></span> FuelUp.uk. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // small helpers
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+
+
+
+
+
+<script>
+  // ===== Configure this =====
+  const ENDPOINT = 'https://script.google.com/macros/s/AKfycbwncuNjnyIoUmgT5cFq4Mji4eSmxKG2UY9nYh8_Fg4ez10nP47QOn7sZuzg0A1ixne4VQ/exec';
+
+  // simple elapsed timer for bot-check
+  const startTs = Date.now();
+
+  const form = document.getElementById('notifyForm');
+  const emailEl = document.getElementById('email');
+  const thanksEl = document.getElementById('thanks');
+  const toast = document.getElementById('toast');
+  const elapsedEl = document.getElementById('elapsed');
+
+  function showToast(msg='Saved — you\u2019re on the list.') {
+    toast.textContent = msg;
+    toast.style.opacity = '1';
+    setTimeout(() => { toast.style.opacity = '0'; }, 2400);
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = (emailEl.value || '').trim();
+    if (!email) { emailEl.focus(); return; }
+
+    elapsedEl.value = (Date.now() - startTs).toString();
+
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type':'application/json' },
+        body: JSON.stringify({
+          email,
+          hp: document.getElementById('hp').value || '',
+          elapsed: elapsedEl.value,
+          ua: navigator.userAgent,
+          ref: document.referrer || location.origin,
+          origin: location.origin
+        })
+      });
+
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.ok) {
+        thanksEl.hidden = false;
+        form.reset();
+        showToast();
+      } else {
+        showToast('Sorry, could not save. Please try again.');
+        console.warn('Signup error', data);
+      }
+    } catch (err) {
+      showToast('Network error. Please try again later.');
+      console.error(err);
+    }
+  });
+</script>
+
+</body>
+</html>

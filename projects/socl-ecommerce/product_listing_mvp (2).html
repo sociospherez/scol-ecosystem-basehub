@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Product Listings MVP</title>
+  <style>
+    body {
+      font-family: Montserrat, Roboto, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .tab-button {
+      background: #1976d2;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .tab-button.active {
+      background: #004ba0;
+    }
+    .filters {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .filters select, .filters button {
+      padding: 6px 10px;
+      font-size: 14px;
+      margin: 0 5px;
+    }
+    .product-section {
+      display: none;
+    }
+    .product-section.active {
+      display: block;
+    }
+    .product-card {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .product-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #3a3a3a;
+    }
+    .trend-badge {
+      font-size: 12px;
+      background: #dcedc8;
+      padding: 3px 8px;
+      border-radius: 12px;
+      margin-left: 10px;
+    }
+    .product-title {
+      font-size: 14px;
+      color: #000000b0;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .product-bullets {
+      margin: 10px 20px;
+      padding-left: 20px;
+      font-size: 14px;
+    }
+    .tags {
+      background: #e0f7fa;
+      display: inline-block;
+      padding: 4px 8px;
+      margin: 2px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quick Product Listings</h1>
+
+  <div class="filters">
+    <select id="categoryFilter">
+      <option value="">All Categories</option>
+      <option value="Accessories">Accessories</option>
+      <option value="DIY Tools">DIY Tools</option>
+    </select>
+    <select id="trendFilter">
+      <option value="">All Trends</option>
+      <option value="⬆⬆ Consistently High">⬆⬆ Consistently High</option>
+      <option value="⬆ Growing">⬆ Growing</option>
+      <option value="➡ Stable">➡ Stable</option>
+    </select>
+    <button onclick="applyFilters()">Apply Filters</button>
+    <button onclick="downloadCSV()">Export CSV</button>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab('summary')">Summary</button>
+    <button class="tab-button" onclick="showTab('market')">Market Insight</button>
+    <button class="tab-button" onclick="showTab('logistics')">Procurement</button>
+  </div>
+
+  <div id="summary" class="product-section active"></div>
+  <div id="market" class="product-section"></div>
+  <div id="logistics" class="product-section"></div>
+
+  <script>
+    let productData = [];
+
+    const dataUrl = 'Cleaned_Product_Insights.json';
+
+    fetch(dataUrl)
+      .then(response => response.json())
+      .then(data => {
+        productData = data;
+        renderAll();
+      });
+
+    function renderAll(filtered = null) {
+      const data = filtered || productData;
+      const sections = {
+        summary: document.getElementById('summary'),
+        market: document.getElementById('market'),
+        logistics: document.getElementById('logistics')
+      };
+
+      Object.values(sections).forEach(section => section.innerHTML = '');
+
+      data.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+
+        const name = document.createElement('div');
+        name.className = 'product-name';
+        name.innerHTML = `${product["Product Name"]} <span class='trend-badge'>${product["6-Month Trend Indicator"]}</span>`;
+
+        const category = document.createElement('div');
+        category.className = 'product-title';
+        category.innerText = `${product.Category} | £${product["Suggested Retail Price (GBP)"]} | Margin: ${product["Estimated Margin (%)"]}%`;
+
+        const use = document.createElement('div');
+        use.style.marginTop = '8px';
+        use.innerText = `Use: ${product["Product Use Frequency"]} | Target: ${product["Target User / Buyer Type"]}`;
+
+        card.appendChild(name);
+        card.appendChild(category);
+        card.appendChild(use);
+        sections.summary.appendChild(card);
+
+        const marketCard = card.cloneNode(false);
+        marketCard.className = 'product-card';
+        marketCard.innerHTML = `
+          <div class='product-name'>${product["Product Name"]}</div>
+          <div class='product-bullets'>
+            <strong>Season:</strong> ${product["Seasonality / Trend Notes"]}<br>
+            <strong>Search Vol:</strong> ${product["Search Volume (UK)"]}<br>
+            <strong>Sales Rank:</strong> ${product["Amazon/B2C Sales Rank"]}<br>
+            <strong>Return Risk:</strong> ${product["Return Rate Risk"]}<br>
+            <strong>Competition:</strong> ${product["Online Market Competition"]}
+          </div>
+          <div class='product-bullets'><strong>Keywords:</strong><br>
+            ${product["Search Keywords"].split(',').map(tag => `<span class='tags'>${tag.trim()}</span>`).join(' ')}
+          </div>`;
+        sections.market.appendChild(marketCard);
+
+        const logisticsCard = card.cloneNode(false);
+        logisticsCard.className = 'product-card';
+        logisticsCard.innerHTML = `
+          <div class='product-name'>${product["Product Name"]}</div>
+          <div class='product-bullets'>
+            <strong>Sourcing Cost:</strong> £${product["Sourcing Cost (Est.)"]}<br>
+            <strong>Dimensions:</strong> ${product["Dimensions (Size + Weight)"]}<br>
+            <strong>Shipping Ease:</strong> ${product["Shipping Ease (1–5)"]}<br>
+            <strong>Bundle Potential:</strong> ${product["Bundle Potential"]}<br>
+            <a href="${product["Notes / Sourcing Links"]}" target="_blank">Source Link</a>
+          </div>`;
+        sections.logistics.appendChild(logisticsCard);
+      });
+    }
+
+    function showTab(tabName) {
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.product-section').forEach(section => section.classList.remove('active'));
+      document.querySelector(`.tab-button[onclick*="${tabName}"]`).classList.add('active');
+      document.getElementById(tabName).classList.add('active');
+    }
+
+    function applyFilters() {
+      const cat = document.getElementById('categoryFilter').value;
+      const trend = document.getElementById('trendFilter').value;
+      const filtered = productData.filter(p => {
+        return (!cat || p.Category === cat) && (!trend || p["6-Month Trend Indicator"] === trend);
+      });
+      renderAll(filtered);
+    }
+
+    function downloadCSV() {
+      const headers = Object.keys(productData[0]);
+      const rows = productData.map(obj => headers.map(h => `"${(obj[h] || '').toString().replace(/"/g, '""')}"`).join(","));
+      const csv = [headers.join(","), ...rows].join("\n");
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.setAttribute('download', 'product_export.csv');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
