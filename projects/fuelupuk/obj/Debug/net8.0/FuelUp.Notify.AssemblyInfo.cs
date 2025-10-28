@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FuelUp.Notify")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc9721a9705981ecb9ed7a45c17eec51cb29483a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+671b2f50abf55e03f91b450189b20447d1cc32cc")]
 [assembly: System.Reflection.AssemblyProductAttribute("FuelUp.Notify")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FuelUp.Notify")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
