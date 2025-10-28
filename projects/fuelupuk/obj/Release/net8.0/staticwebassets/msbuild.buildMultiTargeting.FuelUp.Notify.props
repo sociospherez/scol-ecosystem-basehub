@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\FuelUp.Notify.props" />
+</Project>
