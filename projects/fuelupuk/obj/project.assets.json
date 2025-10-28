@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\repos\\scol-ecosystem-basehub\\projects\\fuelupuk\\FuelUp.Notify.csproj",
+      "projectUniqueName": "d:\\repos\\scol-ecosystem-basehub-1\\projects\\fuelupuk\\FuelUp.Notify.csproj",
       "projectName": "FuelUp.Notify",
-      "projectPath": "D:\\repos\\scol-ecosystem-basehub\\projects\\fuelupuk\\FuelUp.Notify.csproj",
+      "projectPath": "d:\\repos\\scol-ecosystem-basehub-1\\projects\\fuelupuk\\FuelUp.Notify.csproj",
       "packagesPath": "C:\\Users\\zabba\\.nuget\\packages\\",
-      "outputPath": "D:\\repos\\scol-ecosystem-basehub\\projects\\fuelupuk\\obj\\",
+      "outputPath": "d:\\repos\\scol-ecosystem-basehub-1\\projects\\fuelupuk\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\zabba\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -40,8 +40,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "10.0.100"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -65,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.415/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
