@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\repos\\scol-ecosystem-basehub-1\\projects\\fuelupuk\\FuelUp.Notify.csproj",
+      "projectUniqueName": "D:\\repos\\scol-ecosystem-basehub\\projects\\fuelupuk\\FuelUp.Notify.csproj",
       "projectName": "FuelUp.Notify",
-      "projectPath": "d:\\repos\\scol-ecosystem-basehub-1\\projects\\fuelupuk\\FuelUp.Notify.csproj",
+      "projectPath": "D:\\repos\\scol-ecosystem-basehub\\projects\\fuelupuk\\FuelUp.Notify.csproj",
       "packagesPath": "C:\\Users\\zabba\\.nuget\\packages\\",
-      "outputPath": "d:\\repos\\scol-ecosystem-basehub-1\\projects\\fuelupuk\\obj\\",
+      "outputPath": "D:\\repos\\scol-ecosystem-basehub\\projects\\fuelupuk\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\zabba\\AppData\\Roaming\\NuGet\\NuGet.Config"
