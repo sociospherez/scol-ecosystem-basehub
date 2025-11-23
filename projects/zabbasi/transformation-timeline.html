@@ -1,0 +1,543 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Zeeshan Abbasi – Circular Transformation Journey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Fonts + Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --card-bg: #ffffff;
+      --border-soft: #e5e7eb;
+      --accent: #14b8a6;
+      --shadow-main: 0 18px 40px rgba(15, 23, 42, 0.12);
+    }
+
+    body[data-theme="dark"] {
+      --bg: #020617;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --card-bg: #020617;
+      --border-soft: #334155;
+      --accent: #22d3ee;
+      --shadow-main: 0 18px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      padding: 28px 16px;
+      transition: background 0.35s ease, color 0.35s ease;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 24px 22px 32px;
+      box-shadow: var(--shadow-main);
+      border: 1px solid var(--border-soft);
+      transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-soft);
+      margin-bottom: 18px;
+    }
+
+    .title-block {
+      flex: 1 1 260px;
+    }
+
+    .title-main {
+      font-size: 1.5rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .actions a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .actions a:hover {
+      text-decoration: underline;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      border: 1px solid var(--border-soft);
+      background: transparent;
+      color: var(--text-main);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition:
+        background 0.2s ease,
+        transform 0.1s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      background: rgba(148, 163, 184, 0.12);
+      border-color: var(--accent);
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    @media (max-width: 840px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .actions {
+        align-items: flex-start;
+      }
+    }
+
+    /* CIRCULAR JOURNEY */
+
+    .circle-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .circle-outer {
+      position: relative;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      border: 2px dashed rgba(148, 163, 184, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .center-label {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.3), rgba(15, 23, 42, 0.9));
+      color: #f9fafb;
+      text-align: center;
+      padding: 26px 18px;
+      font-size: 0.8rem;
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.6);
+    }
+
+    body[data-theme="light"] .center-label {
+      background: radial-gradient(circle at top, rgba(45, 212, 191, 0.25), #0f172a);
+    }
+
+    .center-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    .center-phase {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .center-year {
+      margin-top: 3px;
+      font-size: 0.78rem;
+      opacity: 0.85;
+    }
+
+    .center-text {
+      margin-top: 6px;
+      font-size: 0.76rem;
+      line-height: 1.5;
+    }
+
+    .node {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 26px;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, outline 0.2s ease;
+      outline: 2px solid transparent;
+      outline-offset: 3px;
+    }
+
+    .node:hover {
+      transform: translate(-50%, -50%) scale(1.08);
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.55);
+    }
+
+    .node.active {
+      outline: 2px solid #fbbf24;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    /* Colored gradients for nodes */
+    .node-0 { background: linear-gradient(135deg, #fbbf24, #f97316); }
+    .node-1 { background: linear-gradient(135deg, #f97316, #fb7185); }
+    .node-2 { background: linear-gradient(135deg, #22c55e, #16a34a); }
+    .node-3 { background: linear-gradient(135deg, #38bdf8, #0ea5e9); }
+    .node-4 { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+    .node-5 { background: linear-gradient(135deg, #a855f7, #d946ef); }
+    .node-6 { background: linear-gradient(135deg, #f97316, #facc15); }
+    .node-7 { background: linear-gradient(135deg, #ec4899, #f97316); }
+
+    /* radial positions (using transform from circle centre) */
+    .node[data-angle] {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Right-hand details panel */
+
+    .details-card {
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      padding: 14px 13px;
+      background: rgba(15, 23, 42, 0.96);
+      color: #e5e7eb;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.65);
+      font-size: 0.85rem;
+    }
+
+    body[data-theme="light"] .details-card {
+      background: #f9fafb;
+      color: #111827;
+      box-shadow: 0 14px 30px rgba(148, 163, 184, 0.35);
+    }
+
+    .details-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #9ca3af;
+    }
+
+    .details-phase {
+      font-size: 1.02rem;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .details-meta {
+      margin-top: 2px;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .details-text {
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    .details-hint {
+      margin-top: 10px;
+      font-size: 0.76rem;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 600px) {
+      .circle-outer {
+        width: 300px;
+        height: 300px;
+      }
+      .center-label {
+        width: 150px;
+        height: 150px;
+        font-size: 0.74rem;
+      }
+      .node {
+        width: 58px;
+        height: 58px;
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body data-theme="light">
+  <div class="page">
+    <header>
+      <div class="title-block">
+        <div class="title-main">TRANSFORMATION JOURNEY</div>
+        <p class="subtitle">
+          A compact view of the phases I use to stabilise, scale and evolve ERP &amp; digital platforms.
+          Hover or tap each node to see how the equation changes.
+        </p>
+      </div>
+      <div class="actions">
+        <div>London · Global ERP &amp; Digital Ops</div>
+        <div><a href="mailto:zabbasi85@gmail.com">zabbasi85@gmail.com</a></div>
+        <div><a href="https://www.linkedin.com/in/zeabbasi/" target="_blank">linkedin.com/in/zeabbasi</a></div>
+        <div class="btn-row">
+          <button id="themeToggle" class="btn" type="button">🌙 Dark mode</button>
+        </div>
+      </div>
+    </header>
+
+    <p class="intro">
+      The circle reads clockwise. Start at <strong>Trigger &amp; Context</strong> and follow each step as risk is
+      reduced, visibility increases, and innovation becomes a repeatable pattern.
+    </p>
+
+    <div class="layout">
+      <!-- Left: circular journey -->
+      <div class="circle-wrapper">
+        <div class="circle-outer" id="circleOuter">
+          <div class="center-label" id="centerLabel">
+            <div class="center-title">Current Phase</div>
+            <div class="center-phase" id="centerPhase">Trigger &amp; Context</div>
+            <div class="center-year" id="centerYear">Phase 0</div>
+            <div class="center-text" id="centerText">
+              Disruption hits: a failing go-live, board concern or regulatory risk. We define what is really at stake and
+              what “fixed” must mean.
+            </div>
+          </div>
+
+          <!-- Nodes (icons) -->
+          <div
+            class="node node-0 active"
+            data-angle="270"
+            data-phase="Phase 0"
+            data-title="Trigger &amp; Context"
+            data-text="Disruption hits: a failing ERP go-live, board concern or regulatory pressure. We clarify what is really at stake and what &quot;fixed&quot; must mean for the business equation."
+          >
+            <i class="fa-solid fa-bell"></i>
+          </div>
+
+          <div
+            class="node node-1"
+            data-angle="315"
+            
+            data-title="Rapid Assessment"
+            data-text="A short, sharp assessment of architecture, processes and data. The output is a precise risk map and a list of moves that buy back control quickly."
+          >
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+          </div>
+
+          <div
+            class="node node-2"
+            data-angle="0"
+            
+            data-title="Roadmap &amp; Governance"
+            data-text="We turn insight into a stabilise → optimise → innovate roadmap, with decision rhythms, KPIs and clear ownership so leaders steer, not chase."
+          >
+            <i class="fa-solid fa-diagram-project"></i>
+          </div>
+
+          <div
+            class="node node-3"
+            data-angle="45"
+            
+            data-title="ERP &amp; Platform Stabilisation"
+            data-text="We make core platforms predictable again: SAP / BC architecture, integrations, environments and vendors aligned on a single definition of &quot;done&quot;."
+          >
+            <i class="fa-solid fa-server"></i>
+          </div>
+
+          <div
+            class="node node-4"
+            data-angle="90"
+            
+            data-title="High-Tech Enablement"
+            data-text="Once the base is stable, we unlock capability: XR, high-performance computing and better workflows so teams can work at the speed of the strategy."
+          >
+            <i class="fa-solid fa-vr-cardboard"></i>
+          </div>
+
+          <div
+            class="node node-5"
+            data-angle="135"
+            
+            data-title="Data &amp; Analytics"
+            data-text="Power BI models and executive dashboards are built around the questions that actually drive decisions: margin, risk, throughput and service levels."
+          >
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+
+          <div
+            class="node node-6"
+            data-angle="180"
+            
+            data-title="Automation &amp; AI"
+            data-text="We automate repetitive work and introduce AI selectively, where it clearly improves decisions or experience instead of adding noise."
+          >
+            <i class="fa-solid fa-robot"></i>
+          </div>
+
+          <div
+            class="node node-7"
+            data-angle="225"
+            
+            data-title="Innovation Engine"
+            data-text="Roles, rituals and metrics are locked into the operating model so improvement becomes a continuous loop, not a one-off &quot;project&quot;."
+          >
+            <i class="fa-solid fa-infinity"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: details / “equation” -->
+      <div class="details-card">
+        <div class="details-label">Phase Equation</div>
+        <div class="details-phase" id="detailsTitle">Trigger &amp; Context</div>
+        <div class="details-meta" id="detailsPhase">Phase 0</div>
+        <div class="details-text" id="detailsText">
+          Disruption hits: a failing ERP go-live, board concern or regulatory pressure. We clarify what is really
+          at stake and what “fixed” must mean for the business equation.
+        </div>
+        <div class="details-hint">
+          Hover or tap the coloured nodes in the circle to step through the full journey from crisis to innovation engine.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Theme toggle
+    (function () {
+      const body = document.body;
+      const toggle = document.getElementById('themeToggle');
+      const stored = localStorage.getItem('circular-theme');
+      if (stored === 'dark' || stored === 'light') {
+        body.setAttribute('data-theme', stored);
+      }
+
+      function updateLabel() {
+        const theme = body.getAttribute('data-theme') || 'light';
+        toggle.textContent = theme === 'light' ? '🌙 Dark mode' : '☀️ Light mode';
+      }
+
+      updateLabel();
+
+      toggle.addEventListener('click', () => {
+        const current = body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        const next = current === 'dark' ? 'light' : 'dark';
+        body.setAttribute('data-theme', next);
+        localStorage.setItem('circular-theme', next);
+        updateLabel();
+      });
+    })();
+
+    // Position nodes around the circle + interaction
+    (function () {
+      const nodes = document.querySelectorAll('.node');
+      const circle = document.querySelector('.circle-outer');
+      //const centerPhase = document.getElementById('centerPhase');
+      const centerYear = document.getElementById('centerYear');
+      const centerText = document.getElementById('centerText');
+      const detailsTitle = document.getElementById('detailsTitle');
+      const detailsPhase = document.getElementById('detailsPhase');
+      const detailsText = document.getElementById('detailsText');
+
+      const radius = 160; // distance from centre
+
+      nodes.forEach(node => {
+        const angleDeg = parseFloat(node.getAttribute('data-angle'));
+        const angleRad = (angleDeg - 90) * (Math.PI / 180); // start at top
+        const x = radius * Math.cos(angleRad);
+        const y = radius * Math.sin(angleRad);
+
+        node.style.left = '50%';
+        node.style.top = '50%';
+        node.style.transform = `translate(${x}px, ${y}px)`;
+
+        function activate() {
+          nodes.forEach(n => n.classList.remove('active'));
+          node.classList.add('active');
+
+          const phase = node.getAttribute('data-phase');
+          const title = node.getAttribute('data-title');
+          const text = node.getAttribute('data-text');
+
+          centerPhase.innerHTML = title;
+          // centerYear.textContent = phase;
+          centerText.innerHTML = text;
+
+          detailsTitle.innerHTML = title;
+          // detailsPhase.textContent = phase;
+          detailsText.innerHTML = text;
+        }
+
+        node.addEventListener('mouseenter', activate);
+        node.addEventListener('click', activate); // for mobile / click users
+      });
+    })();
+  </script>
+</body>
+</html>

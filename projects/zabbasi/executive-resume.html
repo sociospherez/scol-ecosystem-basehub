@@ -1,0 +1,762 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Zeeshan Abbasi – Executive Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Optional: Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --card-bg: #111319;
+      --accent: #4fd1c5;
+      --accent-soft: rgba(79, 209, 197, 0.14);
+      --text-main: #f7fafc;
+      --text-muted: #a0aec0;
+      --border-soft: #2d3748;
+    }
+
+    /* Light mode overrides */
+    body[data-theme="light"] {
+      --bg: #f7fafc;
+      --card-bg: #ffffff;
+      --accent: #3182ce;
+      --accent-soft: rgba(49, 130, 206, 0.08);
+      --text-main: #1a202c;
+      --text-muted: #4a5568;
+      --border-soft: #e2e8f0;
+      background: radial-gradient(circle at top left, #edf2f7 0, #e2e8f0 45%, #cbd5e0 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #1a202c 0, #0b0c10 45%, #050608 100%);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding: 24px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: rgba(10, 12, 18, 0.98);
+      border-radius: 18px;
+      padding: 32px 28px 40px;
+      box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(10px);
+      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    body[data-theme="light"] .page {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow:
+        0 18px 45px rgba(15, 23, 42, 0.1),
+        0 0 0 1px rgba(15, 23, 42, 0.02);
+      border-color: rgba(148, 163, 184, 0.2);
+    }
+
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid var(--border-soft);
+      padding-bottom: 18px;
+      margin-bottom: 14px;
+      transition: border-color 0.3s ease;
+    }
+
+    .title-block {
+      flex: 1 1 260px;
+    }
+
+    .name {
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .role-tagline {
+      margin-top: 4px;
+      font-size: 0.98rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+    }
+
+    .chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .chip {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(79, 209, 197, 0.4);
+      background: rgba(9, 12, 18, 0.8);
+      transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    }
+
+    body[data-theme="light"] .chip {
+      background: rgba(226, 232, 240, 0.7);
+      border-color: rgba(49, 130, 206, 0.4);
+    }
+
+    .contact {
+      flex: 0 1 260px;
+      text-align: right;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-line {
+      margin-bottom: 4px;
+    }
+
+    /* Top action bar (mode toggle + downloads) */
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-bottom: 18px;
+      margin-top: 4px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      border: 1px solid var(--border-soft);
+      background: rgba(15, 18, 26, 0.9);
+      color: var(--text-main);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition:
+        background 0.2s ease,
+        transform 0.1s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+    }
+
+    body[data-theme="light"] .btn {
+      background: #ffffff;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      background: rgba(26, 32, 44, 0.9);
+      border-color: var(--accent);
+    }
+
+    body[data-theme="light"] .btn:hover {
+      background: #edf2f7;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #0b0c10;
+    }
+
+    .btn-primary:hover {
+      background: #38b2ac;
+      border-color: #38b2ac;
+    }
+
+    .btn-ghost {
+      background: transparent;
+    }
+
+    .mode-toggle {
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.9fr;
+      gap: 24px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 840px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      .contact {
+        text-align: left;
+      }
+      .top-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    .section {
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .section-title::before {
+      content: "";
+      display: inline-block;
+      width: 14px;
+      height: 2px;
+      margin-right: 8px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      vertical-align: middle;
+    }
+
+    .summary-card, .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 14px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    body[data-theme="light"] .summary-card,
+    body[data-theme="light"] .card {
+      border-color: rgba(148, 163, 184, 0.25);
+    }
+
+    .summary-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .summary-text strong {
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+
+    body[data-theme="light"] .summary-text strong {
+      color: #1a202c;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .pill {
+      font-size: 0.72rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(79, 209, 197, 0.4);
+      color: #e6fffb;
+      white-space: nowrap;
+    }
+
+    body[data-theme="light"] .pill {
+      color: #1a202c;
+      border-color: rgba(49, 130, 206, 0.4);
+    }
+
+    .role {
+      margin-bottom: 10px;
+    }
+
+    .role-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.9rem;
+      margin-bottom: 3px;
+    }
+
+    .role-title {
+      font-weight: 600;
+    }
+
+    .role-org {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .role-dates {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .role-location {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .role-tagline-small {
+      font-size: 0.82rem;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    ul.bullets {
+      list-style: none;
+      padding-left: 0;
+      margin: 4px 0 2px;
+    }
+
+    ul.bullets li {
+      position: relative;
+      padding-left: 14px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+
+    ul.bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-size: 0.8rem;
+    }
+
+    .tag-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 5px;
+      margin-top: 6px;
+    }
+
+    .tag-item {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding: 4px 6px;
+      border-radius: 9px;
+      background: rgba(15, 18, 26, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    @media (max-width: 560px) {
+      .tag-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .edu-item {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .tech-badge {
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: #e2e8f0;
+      background: rgba(9, 12, 18, 0.85);
+    }
+
+    body[data-theme="light"] .tech-badge {
+      color: #1a202c;
+      background: #edf2f7;
+    }
+
+    .label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    /* Links inside bullets in project pack */
+    .card a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="page">
+    <!-- Header -->
+    <header class="header">
+      <div class="title-block">
+        <div class="name">Zeeshan Abbasi</div>
+        <div class="role-tagline">
+          Global ERP Transformation Lead · Programme Recovery · Digital Operations
+        </div>
+        <div class="chips-row">
+          <span class="chip">SAP &amp; Business Central</span>
+          <span class="chip">Architecture-Aware Delivery</span>
+          <span class="chip">Governance &amp; Risk</span>
+          <span class="chip">AI &amp; Automation</span>
+        </div>
+      </div>
+      <div class="contact">
+        <div class="contact-line"><a href="tel:+447404240893">+44 7404 240893</a></div>
+        <div class="contact-line">
+          <a href="mailto:zabbasi85@gmail.com">zabbasi85@gmail.com</a>
+        </div>
+        <div class="contact-line">
+          <a href="https://www.linkedin.com/in/zeabbasi/" target="_blank" rel="noreferrer">
+            linkedin.com/in/zeabbasi
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Top actions: mode toggle + downloads -->
+    <div class="top-actions">
+      <button id="modeToggle" class="btn mode-toggle" type="button">☀️ Light mode</button>
+      <a class="btn btn-primary" href="/mnt/data/ITPM ERP-SAP-MSD- ZeeshanAbbasi - Jn25 (1).docx" download>
+        📄 Download Resume
+      </a>
+      <a class="btn btn-ghost" href="#project-pack">
+        📚 Project Pack &amp; Case Studies
+      </a>
+    </div>
+
+    <!-- Main layout -->
+    <div class="layout">
+      <!-- Left column -->
+      <div>
+        <!-- Profile Summary -->
+        <section class="section">
+          <div class="section-title">Profile Summary</div>
+          <div class="summary-card">
+            <p class="summary-text">
+              Transformation leader with <strong>15+ years</strong> delivering
+              <strong>ERP turnarounds</strong>, platform stabilisation, and
+              <strong>global rollouts</strong> across the UK, EU and GCC. Combines
+              architecture awareness, programme governance, and stakeholder leadership
+              to rescue at-risk initiatives and scale digital operations with control.
+              Trusted by C-level leaders to translate complexity into clear roadmaps,
+              measurable outcomes and sustainable capability.
+            </p>
+            <div class="pill-row">
+              <span class="pill">ERP Stabilisation &amp; Modernisation</span>
+              <span class="pill">Programme Recovery &amp; Triage</span>
+              <span class="pill">Digital Ops &amp; Platform Strategy</span>
+              <span class="pill">Stakeholder &amp; Vendor Leadership</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section">
+          <div class="section-title">Experience</div>
+          <div class="card">
+
+            <!-- Independent Consulting -->
+            <div class="role">
+              <div class="role-header">
+                <div>
+                  <div class="role-title">Independent Consultant / Fractional Transformation Lead</div>
+                  <div class="role-org">Multiple Clients · ERP &amp; Digital Operations</div>
+                </div>
+                <div class="role-dates">Jun 2023 – Present · UK &amp; Remote</div>
+              </div>
+              <div class="role-tagline-small">
+                ERP stabilisation, programme recovery and data-led decision support for SMEs and mid-market organisations.
+              </div>
+              <ul class="bullets">
+                <li>
+                  Provide <strong>ERP and digital transformation advisory</strong> across SAP, Dynamics 365 Business Central
+                  and integrated platform landscapes, focusing on stabilisation and roadmap clarity.
+                </li>
+                <li>
+                  Lead <strong>programme triage and recovery</strong> for at-risk initiatives, clarifying scope, risk and
+                  delivery priorities for founders, directors and C-level sponsors.
+                </li>
+                <li>
+                  Design <strong>Power BI and Power Platform–based dashboards</strong> that give leadership real-time visibility
+                  of KPIs, risks and decision points across operations and technology.
+                </li>
+                <li>
+                  Support <strong>solution shaping and partner engagements</strong>, translating business goals into phased,
+                  pragmatic technology roadmaps and governance models.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Foster + Partners -->
+            <div class="role">
+              <div class="role-header">
+                <div>
+                  <div class="role-title">Senior Technology Project Manager</div>
+                  <div class="role-org">Foster + Partners</div>
+                </div>
+                <div class="role-dates">2019 – 2024 · London, UK</div>
+              </div>
+              <div class="role-tagline-small">
+                ERP transformation, high-tech computing and digital platform governance.
+              </div>
+              <ul class="bullets">
+                <li>
+                  Led enterprise-wide <strong>Microsoft Dynamics 365 Business Central</strong> rollout
+                  across finance, projects and supply chain, embedding governance, risk controls and
+                  KPIs for long-term digital maturity.
+                </li>
+                <li>
+                  Designed and implemented quality and audit frameworks, giving the CSO clear oversight
+                  of strategic initiatives, delivery risk and outcome tracking.
+                </li>
+                <li>
+                  Drove a multi-phase transformation of <strong>remote desktops, high-performance
+                  workstations and XR platforms</strong>, enabling advanced architectural workflows and
+                  global collaboration.
+                </li>
+                <li>
+                  Led <strong>Common Data Environment (CDE)</strong> migration to cloud, improving data
+                  integrity, accessibility and lifecycle governance for global project teams.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Inteliawz -->
+            <div class="role">
+              <div class="role-header">
+                <div>
+                  <div class="role-title">Senior PM / Account Manager</div>
+                  <div class="role-org">Inteliawz (Pharma &amp; Enterprise Clients)</div>
+                </div>
+                <div class="role-dates">2012 – 2019 · UAE · KSA · Qatar</div>
+              </div>
+              <div class="role-tagline-small">
+                SAP ecosystem integrations, compliance-driven transformation, executive reporting.
+              </div>
+              <ul class="bullets">
+                <li>
+                  Delivered <strong>SAP Ariba</strong> and <strong>SAP Concur</strong> integrations across
+                  multiple pharmaceutical production sites under GMP/FDA-regulated standards.
+                </li>
+                <li>
+                  Governed Source-to-Pay and Travel-to-Reimburse processes across
+                  <strong>SAP FICO &amp; HANA</strong>, ensuring audit-ready workflows and regional compliance.
+                </li>
+                <li>
+                  Built <strong>Power BI</strong> reporting for spend visibility, vendor performance and
+                  sourcing cycle times, enabling data-driven decisions for global finance stakeholders.
+                </li>
+                <li>
+                  Acted as senior interface between production heads, procurement, finance controllers
+                  and vendors, aligning local requirements with global technology roadmaps.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Early career (compressed) -->
+            <div class="role">
+              <div class="role-header">
+                <div>
+                  <div class="role-title">QA / Testing Leadership &amp; Visiting Faculty</div>
+                  <div class="role-org">Netsolace · Landmark Resources · Ultimus ME · IIUI</div>
+                </div>
+                <div class="role-dates">2007 – 2012</div>
+              </div>
+              <ul class="bullets">
+                <li>
+                  Led QA teams across POS and enterprise platforms; implemented automation and performance
+                  testing aligned with release governance and security requirements.
+                </li>
+                <li>
+                  Taught <strong>Software Project Management</strong> at university level, using live projects
+                  and case-based learning.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right column -->
+      <div>
+        <!-- Core Specialisms -->
+        <section class="section">
+          <div class="section-title">Core Specialisms</div>
+          <div class="card">
+            <div class="tag-grid">
+              <div class="tag-item">ERP Transformation (SAP, SAP HANA, BC, Oracle)</div>
+              <div class="tag-item">Programme Recovery &amp; Risk Governance</div>
+              <div class="tag-item">Architecture-Aware Delivery &amp; Roadmapping</div>
+              <div class="tag-item">Digital Ops &amp; Platform Management</div>
+              <div class="tag-item">C-Suite Engagement &amp; Executive Reporting</div>
+              <div class="tag-item">Vendor Management &amp; Multi-Site Delivery</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Strategic Initiatives -->
+        <section class="section">
+          <div class="section-title">Strategic Initiatives &amp; Research</div>
+          <div class="card">
+            <div class="label">Power Platform Centre of Excellence</div>
+            <p class="summary-text" style="margin-bottom: 8px;">
+              Designed and led a <strong>Power Platform CoE</strong>, defining governance, security and
+              lifecycle controls for Power Apps and Power Pages. Enabled citizen development while
+              maintaining compliance, auditability and platform stability.
+            </p>
+            <div class="label">Generative AI &amp; Automation</div>
+            <p class="summary-text">
+              Applied <strong>generative AI</strong> to workflow optimisation, insight generation and
+              decision support. Advocates ethical, governance-aligned AI adoption frameworks anchored to
+              real business outcomes.
+            </p>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+          <div class="section-title">Education &amp; Certifications</div>
+          <div class="card">
+            <div class="edu-item">
+              <strong>Master’s – Global Project Management</strong> (In Progress)  
+              University of Lincoln, UK
+            </div>
+            <div class="edu-item">
+              <strong>BS Software Engineering</strong> (Project Management Specialisation)
+            </div>
+            <div class="edu-item">
+              Agile Project Management · PMP® Training · Product Management
+            </div>
+          </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="section">
+          <div class="section-title">Selected Tech Stack</div>
+          <div class="card">
+            <div class="tech-grid">
+              <span class="tech-badge">SAP Ariba</span>
+              <span class="tech-badge">SAP Concur</span>
+              <span class="tech-badge">SAP FICO / HANA</span>
+              <span class="tech-badge">MS Dynamics 365 BC</span>
+              <span class="tech-badge">Power Platform (CoE)</span>
+              <span class="tech-badge">Power BI</span>
+              <span class="tech-badge">SharePoint</span>
+              <span class="tech-badge">XR / High-Tech Computing</span>
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">.NET</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Project Pack & Case Studies -->
+        <section class="section" id="project-pack">
+          <div class="section-title">Project Pack &amp; Case Studies</div>
+          <div class="card">
+            <p class="summary-text" style="margin-bottom: 6px;">
+              Curated examples of ERP, PMO and sector transformation work, available as downloadable whitepapers and case studies.
+            </p>
+            <ul class="bullets">
+              <li>
+                <a href="/mnt/data/Driving Innovation and Excellence in the FinTech Industry.pdf" download>
+                  Driving Innovation and Excellence in the FinTech Industry – Agile Delivery in FinTech
+                </a>
+              </li>
+              <li>
+                <a href="/mnt/data/Establishing and Measuring Success.pdf" download>
+                  Establishing and Measuring the Success of a PMO – PMO setup & metrics in acquired businesses
+                </a>
+              </li>
+              <li>
+                <a href="/mnt/data/MSDyn - AED - 356BC Transformation Strategy.pdf" download>
+                  Strategic Implementation of Microsoft Dynamics 365 Business Central – AES Enterprise case
+                </a>
+              </li>
+              <li>
+                <a href="/mnt/data/White Paper Driving Business Transformation in the Energy Sector - A Roadmap for the Future.docx" download>
+                  Enhancing Digital Transformation in the Retail Energy Sector – sustainable digital roadmap
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const body = document.body;
+      const toggle = document.getElementById('modeToggle');
+
+      // Initialise from localStorage if present
+      const stored = localStorage.getItem('theme');
+      if (stored === 'light' || stored === 'dark') {
+        body.setAttribute('data-theme', stored);
+      }
+
+      function updateLabel() {
+        const theme = body.getAttribute('data-theme') || 'dark';
+        if (theme === 'dark') {
+          toggle.textContent = '☀️ Light mode';
+        } else {
+          toggle.textContent = '🌙 Dark mode';
+        }
+      }
+
+      updateLabel();
+
+      toggle.addEventListener('click', function () {
+        const current = body.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+        const next = current === 'light' ? 'dark' : 'light';
+        body.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateLabel();
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Commercials Manager – Strategic Profile</title>
+  <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0f0f13; color: #fff; overflow-x: hidden; }
+    .hero { height: 100vh; display: flex; align-items: center; justify-content: center; background: url('assets/images/hero1.png') no-repeat center center/cover; position: relative; text-align: center; }
+    .hero::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
+    .hero-content { position: relative; z-index: 2; max-width: 900px; padding: 2rem; }
+    .hero h1 { font-size: 2.5rem; color: #fff; line-height: 1.2; }
+    .hero p { font-size: 1.1rem; margin-top: 1rem; color: #ccc; }
+    .section { padding: 4rem 1.5rem; max-width: 1000px; margin: auto; }
+    .section h2 { font-size: 1.8rem; margin-bottom: 1rem; color: #9b82f4; }
+    .card { background: #1c1c24; border-radius: 10px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 0 10px rgba(0,0,0,0.3); transition: all 0.6s ease; opacity: 0; transform: translateY(40px); }
+    .card.visible { opacity: 1; transform: translateY(0); }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+    .card h3 { color: #fff; margin-bottom: 0.5rem; }
+    .card p { color: #bbb; }
+    .counter { display: flex; flex-wrap: wrap; justify-content: space-around; margin-top: 3rem; font-size: 1.5rem; color: #9b82f4; }
+    .milestone i { font-size: 1.5rem; color: #9b82f4; display: block; margin-bottom: 0.5rem; }
+    footer { text-align: center; padding: 2rem; background: #111; font-size: 0.9rem; color: #666; }
+    canvas { background: #1c1c24; border-radius: 12px; padding: 1rem; margin: 2rem auto; display: block; max-width: 500px; }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Driving Value Through Strategy, Contracts, and Innovation</h1>
+      <p>Transforming IT investments into measurable outcomes for public services</p>
+    </div>
+  </section>  <section class="section">
+    <h2>Core Competency Radar</h2>
+    <canvas id="skillsRadar"></canvas>
+    <script>
+      const ctx = document.getElementById('skillsRadar').getContext('2d');
+      new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: ['IT Procurement', 'Contract Negotiation', 'Budget Management', 'Supplier Management', 'Risk & Compliance', 'Strategic Reporting', 'Stakeholder Engagement'],
+          datasets: [{
+            label: 'Skill Level (1–4)',
+            data: [4, 3, 3, 4, 3, 4, 4],
+            backgroundColor: 'rgba(123, 104, 238, 0.2)',
+            borderColor: '#9b82f4',
+            pointBackgroundColor: '#9b82f4'
+          }]
+        },
+        options: {
+          scales: {
+            r: {
+              angleLines: { display: false },
+              suggestedMin: 0,
+              suggestedMax: 4,
+              ticks: { stepSize: 1, color: '#999' },
+              pointLabels: { color: '#ccc', font: { size: 12 } }
+            }
+          },
+          plugins: {
+            legend: { labels: { color: '#ccc' } }
+          }
+        }
+      });
+    </script>
+  </section>  <section class="section">
+    <h2>Additional Strengths</h2>
+    <div class="card"><h3>🧠 Soft Skills & Strategic Collaboration</h3><p>Skilled in influencing senior stakeholders, leading change management initiatives, and translating complex commercial data into actionable insights. Highly collaborative, with strong interpersonal awareness and negotiation acumen.</p></div>
+    <div class="card"><h3>🛠️ Procurement Tools & Frameworks</h3><p>Proficient in MS Project, Power BI, SAP Ariba, and Dynamics 365 Procurement. Deep familiarity with PCR 2015, Crown Commercial frameworks, and sustainability-aligned vendor evaluation models.</p></div>
+    <div class="card"><h3>🌍 Global & Legislative Vendor Experience</h3><p>Experience across UK public sector, GCC (UAE, KSA), and EU vendor ecosystems. Adapted to diverse contract law, regulatory expectations, and localization of procurement and data handling frameworks.</p></div>
+  </section>  <section class="section">
+    <h2>Commercial Leadership Timeline</h2>
+    <div style="overflow-x: auto; white-space: nowrap; padding-bottom: 1rem; display: flex; gap: 1rem; scroll-snap-type: x mandatory;">
+      <div class="milestone" style="scroll-snap-align: start; min-width: 250px; background: #1c1c24; padding: 1rem; border-left: 5px solid #7a5af5; border-radius: 8px;"><i class="uil uil-clipboard-alt"></i><h4>2012–2014</h4><p>QA & Commercial Testing Foundations</p></div>
+      <div class="milestone" style="scroll-snap-align: start; min-width: 250px; background: #1c1c24; padding: 1rem; border-left: 5px solid #9b82f4; border-radius: 8px;"><i class="uil uil-brackets-curly"></i><h4>2014–2017</h4><p>Project Oversight & Budgeting</p></div>
+      <div class="milestone" style="scroll-snap-align: start; min-width: 250px; background: #1c1c24; padding: 1rem; border-left: 5px solid #ff8c42; border-radius: 8px;"><i class="uil uil-server"></i><h4>2017–2020</h4><p>Vendor Strategy & ERP Rollouts</p></div>
+      <div class="milestone" style="scroll-snap-align: start; min-width: 250px; background: #1c1c24; padding: 1rem; border-left: 5px solid #26c6da; border-radius: 8px;"><i class="uil uil-clipboard-alt"></i><h4>2020–2022</h4><p>Contract Governance & Spend Control</p></div>
+      <div class="milestone" style="scroll-snap-align: start; min-width: 250px; background: #1c1c24; padding: 1rem; border-left: 5px solid #66bb6a; border-radius: 8px;"><i class="uil uil-lightbulb"></i><h4>2022–Now</h4><p>Innovation-Led Commercial Strategy</p></div>
+    </div>
+  </section>  <footer>
+    &copy; 2025 – Strategic IT Commercials & Procurement Portfolio
+  </footer>  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.card').forEach(card => observer.observe(card));
+  </script></body>
+</html>

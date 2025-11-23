@@ -1,0 +1,157 @@
+let collectPerformanceData = function () {
+
+    let hostnameParts = window.document.location.hostname.split('.');
+    let tld = hostnameParts.pop();
+    if (tld === 'uk') {
+        tld = 'co.uk';
+    }
+    let domainName = hostnameParts.pop();
+    // only collect data from PROD environments
+    // => we are running on a "ionos" domain
+    if (domainName !== 'ionos') {
+        return;
+    }
+    // any sub-domain contains "prelive" (showrooms)
+    let subDomains = hostnameParts.find((element) => element.indexOf('prelive') !== -1);
+    if (typeof subDomains !== 'undefined') {
+        return;
+    }
+    // path starts with prelive
+    if (document.location.pathname.startsWith('/prelive')) {
+        return;
+    }
+
+    let endpoint = '//pixel.ionos.' + tld + '/rum';
+    // data layer for performance
+    let performance = window.ionos && window.ionos.performance ? window.ionos.performance : {};
+    let firstRequestDone = false;
+
+    function sendToEndpoint(metric) {
+        let name = metric.name.toLowerCase();
+        let value = metric.value;
+        if (name === 'lcp' || name === 'fcp' && typeof value != 'undefined') {
+            value = value / 1000;
+        }
+
+        let rating = metric.rating;
+        let attribution = metric.attribution;
+
+        let body = new FormData();
+        // parameters which need to be present for a valid request
+        body.append('application', performance.application);
+        body.append('application_version', performance.application_version);
+        body.append('page', performance.page);
+        body.append('variant', performance.variant);
+        body.append('visit_id', performance.visit_id);
+
+        // send browser / DOM data only with the first request
+        if (!firstRequestDone) {
+            let browser = bowser.parse(window.navigator.userAgent);
+
+            body.append('device_type', browser.platform.type);
+            body.append('browser', browser.browser.name || 'unknown');
+            body.append('browser_version', browser.browser.version || 'unknown');
+
+            let domContentLoaded = 0;
+            let domComplete = 0;
+            let domInteractive = 0;
+            let documentLoad = 0;
+            // collect performance data with "PerformanceNavigationTiming" if present
+            if (window.performance && window.performance.getEntriesByName && typeof window.performance.getEntriesByName === 'function') {
+                let performanceEntries = window.performance.getEntriesByType("navigation");
+                let entry = performanceEntries.shift();
+
+                if (typeof entry !== "undefined") {
+                    domContentLoaded = entry.domContentLoadedEventEnd - entry.domContentLoadedEventStart;
+                    domComplete = entry.domComplete;
+                    domInteractive = entry.domInteractive;
+                    documentLoad = entry.loadEventEnd - entry.loadEventStart;
+                }
+            }
+
+            body.append('dom_content_loaded', domContentLoaded);
+            body.append('dom_complete', domComplete);
+            body.append('dom_interactive', domInteractive);
+            body.append('document_load', documentLoad);
+        }
+
+        // Web Vitals
+        body.append(name, value);
+        if (typeof rating != "undefined") {
+            body.append(name + '_rating', rating);
+        }
+
+        // attribution build delivers some more detailed data
+        if (typeof attribution != 'undefined') {
+            switch (name) {
+                case 'lcp':
+                    body.append('lcp_url', attribution.url);
+                    body.append('lcp_elementId', attribution.target);
+                    break;
+
+                case 'cls':
+                    body.append('cls_largestShiftTarget', attribution.largestShiftTarget);
+                    break;
+
+                case 'inp':
+                    body.append('inp_interactionTarget', attribution.interactionTarget);
+                    break;
+            }
+        }
+
+        // feature detection for "sendBeacon"
+        if (navigator.sendBeacon) {
+            navigator.sendBeacon(endpoint, body);
+        } else {
+            fetch(endpoint, {
+                body: body,
+                method: 'POST',
+                keepalive: true
+            });
+        }
+
+        firstRequestDone = true;
+    }
+
+    // load browser / platform detection library
+    let m = window.document.createElement("script");
+    m.async = true;
+    m.setAttribute("src", 'https://var.uicdn.net/shopsshort/performance/bowser-2.11.0-es5.js');
+    const bowserPromise = new Promise((bowserResolve, bowserReject) => {
+        m.onload = function() {
+            bowserResolve();
+        }
+        m.onerror = function() {
+            bowserReject();
+        }
+    });
+    window.document.head.appendChild(m);
+
+    // load web-vitals library
+    let n = window.document.createElement("script");
+    n.async = true;
+    // attribution build to get debug information to report
+    n.setAttribute("src", 'https://var.uicdn.net/shopsshort/performance/web-vitals-5.0.3.iife.js');
+
+    const webVitalsPromise = new Promise((webVitalsResolve, webVitalsReject) => {
+        n.onload = function() {
+            webVitalsResolve();
+        }
+        n.onerror = function() {
+            webVitalsReject();
+        }
+    });
+    window.document.head.appendChild(n);
+
+    Promise.all([bowserPromise, webVitalsPromise]).then(() => {
+        webVitals.onCLS(sendToEndpoint);
+        webVitals.onLCP(sendToEndpoint);
+        webVitals.onTTFB(sendToEndpoint);
+        webVitals.onFCP(sendToEndpoint);
+        webVitals.onINP(sendToEndpoint);
+    });
+};
+
+if (window.privacyConsent && typeof window.privacyConsent.invoke === 'function' && window.PrivacyConsentEnum && window.PrivacyConsentEnum.STATISTICS) {
+    window.privacyConsent.invoke(collectPerformanceData, window.PrivacyConsentEnum.STATISTICS, undefined, true);
+}

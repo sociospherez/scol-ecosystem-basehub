@@ -1,0 +1,15 @@
+*[id^=ias-static-overlay-] .page-header--activating-solid {
+    background-color: #11c7e6;
+    color: #fff;
+}
+
+*[id^=ias-static-overlay-] .page-header--warning-solid {
+    background-color: #fa0;
+    color: #fff;
+}
+.ias-generic-layer-badge-placeholder {
+  height: 15px!important;
+}
+body.oao-pi-headless div[data-ias-zoneid^=hcc_flyout]{
+  display: none;
+}
