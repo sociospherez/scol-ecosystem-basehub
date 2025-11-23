@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vendor Evaluation & Risk Heatmap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      color: #111827;
+      background-color: #f3f4f6;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: radial-gradient(circle at top left, #e5f2ff, #f9fafb);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+      border: 1px solid #e5e7eb;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.25rem;
+      color: #111827;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: #6b7280;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: #111827;
+    }
+
+    .section {
+      margin-bottom: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      border-radius: 1rem;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem 1.25rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .hint {
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    /* Score badges */
+
+    .score-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.25rem;
+    }
+
+    .badge {
+      border: 1px solid #d1d5db;
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.8rem;
+      background: #ffffff;
+      color: #374151;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease,
+        box-shadow 0.15s ease, transform 0.05s ease;
+    }
+
+    .badge:hover {
+      border-color: #9ca3af;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+      transform: translateY(-1px);
+    }
+
+    .badge.selected {
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.45);
+    }
+
+    .badge.badge-low.selected {
+      background: linear-gradient(135deg, #b91c1c, #ef4444);
+    }
+
+    .badge.badge-mid.selected {
+      background: linear-gradient(135deg, #d97706, #f59e0b);
+    }
+
+    .badge.badge-high.selected {
+      background: linear-gradient(135deg, #15803d, #22c55e);
+    }
+
+    /* Red flag toggles */
+
+    .flag-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.6rem 1rem;
+      font-size: 0.85rem;
+    }
+
+    .flag-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #ffffff;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease,
+        transform 0.05s ease;
+    }
+
+    .flag-toggle:hover {
+      box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+      transform: translateY(-1px);
+    }
+
+    .flag-toggle .flag-label {
+      color: #374151;
+      font-size: 0.82rem;
+    }
+
+    .flag-switch {
+      position: relative;
+      width: 38px;
+      height: 20px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      transition: background 0.15s ease;
+    }
+
+    .flag-knob {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.3);
+      transition: transform 0.15s ease;
+    }
+
+    .flag-toggle.active {
+      border-color: #f97373;
+      background: #fff1f2;
+    }
+
+    .flag-toggle.active .flag-switch {
+      background: #ef4444;
+    }
+
+    .flag-toggle.active .flag-knob {
+      transform: translateX(18px);
+    }
+
+    button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: white;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      margin-top: 0.75rem;
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+      transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.1s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(37, 99, 235, 0.3);
+      opacity: 0.97;
+    }
+
+    button:active {
+      transform: translateY(0);
+      box-shadow: 0 8px 16px rgba(37, 99, 235, 0.25);
+    }
+
+    .results {
+      margin-top: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .score-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .score-pill {
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .score-pill span.dot {
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .pill-excellent { background: #ecfdf5; color: #166534; }
+    .pill-strong { background: #eff6ff; color: #1d4ed8; }
+    .pill-mid { background: #fffbeb; color: #92400e; }
+    .pill-risk { background: #fef2f2; color: #b91c1c; }
+
+    .pill-excellent span.dot { background: #22c55e; }
+    .pill-strong span.dot { background: #3b82f6; }
+    .pill-mid span.dot { background: #f59e0b; }
+    .pill-risk span.dot { background: #ef4444; }
+
+    .stat {
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    .stat strong {
+      font-size: 1.05rem;
+      color: #111827;
+    }
+
+    .heatmap-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    .heatmap-table th,
+    .heatmap-table td {
+      padding: 0.5rem 0.6rem;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+    }
+
+    .heatmap-table th {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      background: #f3f4f6;
+    }
+
+    .heat-low {
+      background: #fef2f2;
+      color: #991b1b;
+    }
+
+    .heat-med {
+      background: #fffbeb;
+      color: #92400e;
+    }
+
+    .heat-high {
+      background: #ecfdf5;
+      color: #166534;
+    }
+
+    .roadmap {
+      font-size: 0.9rem;
+      color: #374151;
+      border-radius: 0.75rem;
+      padding: 0.75rem 0.9rem;
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+    }
+
+    .roadmap-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: #1d4ed8;
+    }
+
+    .red-flag-count {
+      font-size: 0.85rem;
+      color: #b91c1c;
+      margin-top: 0.25rem;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem;
+      }
+      .container {
+        padding: 1.25rem 1.25rem 1.5rem;
+        border-radius: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Vendor Evaluation & Risk Heatmap</h1>
+    <p class="subtitle">
+      Tap a score badge for each category, toggle red flags on/off, then generate a score, risk view, and next-step roadmap.
+    </p>
+
+    <!-- SCORING SECTION -->
+    <div class="section">
+      <h2>1. Scoring by Category (1 = Poor, 5 = Excellent)</h2>
+      <p class="hint">Badges are preloaded with neutral defaults (3). Change them as you go through the call.</p>
+      <div class="grid">
+
+        <div class="field score-field" data-category="companyStructure">
+          <label>Company Structure & Transparency</label>
+          <span class="hint">Clarity of legal entities, ownership, offices, and leadership.</span>
+          <div class="score-badges">
+            <button type="button" class="badge badge-low" data-score="1">1</button>
+            <button type="button" class="badge badge-low" data-score="2">2</button>
+            <button type="button" class="badge badge-mid selected" data-score="3">3</button>
+            <button type="button" class="badge badge-high" data-score="4">4</button>
+            <button type="button" class="badge badge-high" data-score="5">5</button>
+          </div>
+        </div>
+
+        <div class="field score-field" data-category="productMaturity">
+          <label>Product Maturity</label>
+          <span class="hint">Live deployments, stability, roadmap, demos.</span>
+          <div class="score-badges">
+            <button type="button" class="badge badge-low" data-score="1">1</button>
+            <button type="button" class="badge badge-low" data-score="2">2</button>
+            <button type="button" class="badge badge-mid selected" data-score="3">3</button>
+            <button type="button" class="badge badge-high" data-score="4">4</button>
+            <button type="button" class="badge badge-high" data-score="5">5</button>
+          </div>
+        </div>
+
+        <div class="field score-field" data-category="teamQuality">
+          <label>Team Quality & Depth</label>
+          <span class="hint">Engineering strength, seniority, onshore/offshore mix.</span>
+          <div class="score-badges">
+            <button type="button" class="badge badge-low" data-score="1">1</button>
+            <button type="button" class="badge badge-low" data-score="2">2</button>
+            <button type="button" class="badge badge-mid selected" data-score="3">3</button>
+            <button type="button" class="badge badge-high" data-score="4">4</button>
+            <button type="button" class="badge badge-high" data-score="5">5</button>
+          </div>
+        </div>
+
+        <div class="field score-field" data-category="technicalStrength">
+          <label>Technical Delivery & Architecture</label>
+          <span class="hint">DevOps, CI/CD, integration capability, solution design.</span>
+          <div class="score-badges">
+            <button type="button" class="badge badge-low" data-score="1">1</button>
+            <button type="button" class="badge badge-low" data-score="2">2</button>
+            <button type="button" class="badge badge-mid selected" data-score="3">3</button>
+            <button type="button" class="badge badge-high" data-score="4">4</button>
+            <button type="button" class="badge badge-high" data-score="5">5</button>
+          </div>
+        </div>
+
+        <div class="field score-field" data-category="security">
+          <label>Security & Compliance</label>
+          <span class="hint">Certifications, security practices, data handling.</span>
+          <div class="score-badges">
+            <button type="button" class="badge badge-low" data-score="1">1</button>
+            <button type="button" class="badge badge-low" data-score="2">2</button>
+            <button type="button" class="badge badge-mid selected" data-score="3">3</button>
+            <button type="button" class="badge badge-high" data-score="4">4</button>
+            <button type="button" class="badge badge-high" data-score="5">5</button>
+          </div>
+        </div>
+
+        <div class="field score-field" data-category="clients">
+          <label>Client Evidence & References</label>
+          <span class="hint">Named clients, case studies, reference calls.</span>
+          <div class="score-badges">
+            <button type="button" class="badge badge-low" data-score="1">1</button>
+            <button type="button" class="badge badge-low" data-score="2">2</button>
+            <button type="button" class="badge badge-mid selected" data-score="3">3</button>
+            <button type="button" class="badge badge-high" data-score="4">4</button>
+            <button type="button" class="badge badge-high" data-score="5">5</button>
+          </div>
+        </div>
+
+        <div class="field score-field" data-category="support">
+          <label>Support, SLAs & Operations</label>
+          <span class="hint">24/7 coverage, SLAs, escalation paths.</span>
+          <div class="score-badges">
+            <button type="button" class="badge badge-low" data-score="1">1</button>
+            <button type="button" class="badge badge-low" data-score="2">2</button>
+            <button type="button" class="badge badge-mid selected" data-score="3">3</button>
+            <button type="button" class="badge badge-high" data-score="4">4</button>
+            <button type="button" class="badge badge-high" data-score="5">5</button>
+          </div>
+        </div>
+
+        <div class="field score-field" data-category="commercials">
+          <label>Commercial Transparency</label>
+          <span class="hint">Pricing clarity, IP terms, contract structure.</span>
+          <div class="score-badges">
+            <button type="button" class="badge badge-low" data-score="1">1</button>
+            <button type="button" class="badge badge-low" data-score="2">2</button>
+            <button type="button" class="badge badge-mid selected" data-score="3">3</button>
+            <button type="button" class="badge badge-high" data-score="4">4</button>
+            <button type="button" class="badge badge-high" data-score="5">5</button>
+          </div>
+        </div>
+
+        <div class="field score-field" data-category="roadmapVision">
+          <label>Roadmap & Strategic Vision</label>
+          <span class="hint">Future plans, product direction, market focus.</span>
+          <div class="score-badges">
+            <button type="button" class="badge badge-low" data-score="1">1</button>
+            <button type="button" class="badge badge-low" data-score="2">2</button>
+            <button type="button" class="badge badge-mid selected" data-score="3">3</button>
+            <button type="button" class="badge badge-high" data-score="4">4</button>
+            <button type="button" class="badge badge-high" data-score="5">5</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RED FLAGS -->
+    <div class="section">
+      <h2>2. Red Flags Observed</h2>
+      <p class="hint">Tap to toggle. Red = on, white = off. More red usually means more caution.</p>
+      <div class="flag-list">
+        <div class="flag-toggle" data-flag="no-demo">
+          <div class="flag-label">No live demo environment available.</div>
+          <div class="flag-switch"><div class="flag-knob"></div></div>
+        </div>
+
+        <div class="flag-toggle" data-flag="no-clients">
+          <div class="flag-label">No verifiable client names or references shared.</div>
+          <div class="flag-switch"><div class="flag-knob"></div></div>
+        </div>
+
+        <div class="flag-toggle" data-flag="thin-team">
+          <div class="flag-label">Team seems very small or mostly freelancers.</div>
+          <div class="flag-switch"><div class="flag-knob"></div></div>
+        </div>
+
+        <div class="flag-toggle" data-flag="heavy-custom">
+          <div class="flag-label">Products require heavy customisation to work.</div>
+          <div class="flag-switch"><div class="flag-knob"></div></div>
+        </div>
+
+        <div class="flag-toggle" data-flag="vague-answers">
+          <div class="flag-label">Answers about structure, security or hosting were vague.</div>
+          <div class="flag-switch"><div class="flag-knob"></div></div>
+        </div>
+
+        <div class="flag-toggle" data-flag="no-sla">
+          <div class="flag-label">No clear SLAs, support model or escalation paths.</div>
+          <div class="flag-switch"><div class="flag-knob"></div></div>
+        </div>
+
+        <div class="flag-toggle" data-flag="no-roadmap">
+          <div class="flag-label">No visible product roadmap or version history.</div>
+          <div class="flag-switch"><div class="flag-knob"></div></div>
+        </div>
+
+        <div class="flag-toggle" data-flag="anything-you-want">
+          <div class="flag-label">They claim “we can build anything you want” with no focus.</div>
+          <div class="flag-switch"><div class="flag-knob"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <button id="calculateBtn">
+      Calculate Score & Risk View
+      <span aria-hidden="true">➜</span>
+    </button>
+
+    <!-- RESULTS -->
+    <div id="results" class="results" style="display:none;">
+      <div class="score-summary">
+        <div class="stat">
+          <strong id="totalScore">Total Score: 0</strong><br />
+          out of 45
+        </div>
+        <div class="stat">
+          <strong id="avgScore">Average: 0.0</strong><br />
+          per category
+        </div>
+        <div class="stat">
+          <span id="riskBadge" class="score-pill">
+            <span class="dot"></span>
+            <span id="riskLabel">Risk Level</span>
+          </span>
+        </div>
+      </div>
+
+      <div id="redFlagInfo" class="red-flag-count"></div>
+
+      <div>
+        <h2>Heatmap by Category</h2>
+        <table class="heatmap-table" id="heatmapTable">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Score (1–5)</th>
+              <th>Risk View</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filled by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="roadmap" id="roadmapBox">
+        <div class="roadmap-title">Next-Step Roadmap</div>
+        <div id="roadmapText">
+          Complete the form and calculate to see suggested next steps.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const categories = [
+      { id: "companyStructure", label: "Company Structure & Transparency" },
+      { id: "productMaturity", label: "Product Maturity" },
+      { id: "teamQuality", label: "Team Quality & Depth" },
+      { id: "technicalStrength", label: "Technical Delivery & Architecture" },
+      { id: "security", label: "Security & Compliance" },
+      { id: "clients", label: "Client Evidence & References" },
+      { id: "support", label: "Support, SLAs & Operations" },
+      { id: "commercials", label: "Commercial Transparency" },
+      { id: "roadmapVision", label: "Roadmap & Strategic Vision" }
+    ];
+
+    // Badge selection
+    document.querySelectorAll(".score-badges").forEach(group => {
+      group.addEventListener("click", e => {
+        if (!e.target.classList.contains("badge")) return;
+        const badge = e.target;
+        const siblings = badge.parentElement.querySelectorAll(".badge");
+        siblings.forEach(b => b.classList.remove("selected"));
+        badge.classList.add("selected");
+      });
+    });
+
+    // Flag toggles
+    document.querySelectorAll(".flag-toggle").forEach(flag => {
+      flag.addEventListener("click", () => {
+        flag.classList.toggle("active");
+      });
+    });
+
+    function classifyRisk(totalScore, redFlags) {
+      let baseLabel, pillClass;
+      if (totalScore >= 40) {
+        baseLabel = "Excellent Vendor";
+        pillClass = "pill-excellent";
+      } else if (totalScore >= 34) {
+        baseLabel = "Strong Potential";
+        pillClass = "pill-strong";
+      } else if (totalScore >= 26) {
+        baseLabel = "Mid-tier / Mixed";
+        pillClass = "pill-mid";
+      } else {
+        baseLabel = "High Risk";
+        pillClass = "pill-risk";
+      }
+
+      if (redFlags >= 5 && totalScore < 40) {
+        baseLabel = "High Risk (Red Flags)";
+        pillClass = "pill-risk";
+      } else if (redFlags >= 3 && totalScore < 40 && totalScore >= 26) {
+        baseLabel = "Caution – Investigate Further";
+        pillClass = "pill-mid";
+      }
+
+      return { label: baseLabel, className: pillClass };
+    }
+
+    function heatClass(score) {
+      if (score <= 2) return "heat-low";
+      if (score === 3) return "heat-med";
+      return "heat-high";
+    }
+
+    function roadmapMessage(totalScore, redFlags) {
+      if (totalScore >= 40 && redFlags <= 1) {
+        return "Recommendation: Proceed to a structured Proof of Concept (PoC) or pilot. Keep negotiations focused on commercials and implementation timelines, and lock in SLAs early.";
+      }
+      if (totalScore >= 34 && totalScore <= 39) {
+        return "Recommendation: Vendor looks promising. Run deeper due diligence: request reference calls, detailed architecture docs, and a formal proposal. A small-scope pilot with clear exit criteria is ideal.";
+      }
+      if (totalScore >= 26 && totalScore <= 33) {
+        return "Recommendation: Treat as a tactical or limited-scope partner. Before any critical dependency, demand stronger evidence: demos, load tests, and at least one strong reference in your domain.";
+      }
+      return "Recommendation: High risk profile. Unless this vendor is uniquely positioned or solving a niche problem no one else can, avoid core dependencies and consider alternatives.";
+    }
+
+    document.getElementById("calculateBtn").addEventListener("click", () => {
+      let totalScore = 0;
+      const heatmapBody = document.querySelector("#heatmapTable tbody");
+      heatmapBody.innerHTML = "";
+
+      categories.forEach(cat => {
+        const field = document.querySelector(`.score-field[data-category="${cat.id}"]`);
+        const selected = field.querySelector(".badge.selected");
+        let value = selected ? parseInt(selected.dataset.score, 10) : 3;
+        if (isNaN(value)) value = 3;
+        totalScore += value;
+
+        const tr = document.createElement("tr");
+        const tdLabel = document.createElement("td");
+        tdLabel.textContent = cat.label;
+
+        const tdScore = document.createElement("td");
+        tdScore.textContent = value;
+
+        const tdHeat = document.createElement("td");
+        tdHeat.textContent =
+          value <= 2 ? "High risk / weak area"
+          : value === 3 ? "Medium risk / acceptable"
+          : "Low risk / strong";
+
+        tdHeat.classList.add(heatClass(value));
+
+        tr.appendChild(tdLabel);
+        tr.appendChild(tdScore);
+        tr.appendChild(tdHeat);
+        heatmapBody.appendChild(tr);
+      });
+
+      const avgScore = totalScore / categories.length;
+
+      const redFlagEls = document.querySelectorAll(".flag-toggle.active");
+      const redFlagCount = redFlagEls.length;
+
+      const riskInfo = classifyRisk(totalScore, redFlagCount);
+
+      document.getElementById("results").style.display = "grid";
+      document.getElementById("totalScore").textContent = `Total Score: ${totalScore}`;
+      document.getElementById("avgScore").textContent = `Average: ${avgScore.toFixed(1)}`;
+
+      const riskBadge = document.getElementById("riskBadge");
+      riskBadge.className = "score-pill " + riskInfo.className;
+      document.getElementById("riskLabel").textContent = riskInfo.label;
+
+      const redFlagInfo = document.getElementById("redFlagInfo");
+      if (redFlagCount > 0) {
+        redFlagInfo.textContent = `${redFlagCount} red flag${redFlagCount > 1 ? "s" : ""} observed – interpret the score with caution.`;
+      } else {
+        redFlagInfo.textContent = "No explicit red flags toggled.";
+      }
+
+      document.getElementById("roadmapText").textContent =
+        roadmapMessage(totalScore, redFlagCount);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vendor Evaluation & Risk Heatmap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      color: #111827;
+      background-color: #f3f4f6;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: radial-gradient(circle at top left, #e5f2ff, #f9fafb);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+      border: 1px solid #e5e7eb;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.25rem;
+      color: #111827;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: #6b7280;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: #111827;
+    }
+
+    .section {
+      margin-bottom: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      border-radius: 1rem;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem 1.25rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .hint {
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    select {
+      padding: 0.45rem 0.5rem;
+      border-radius: 0.6rem;
+      border: 1px solid #d1d5db;
+      font-size: 0.9rem;
+      background-color: #ffffff;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 1px #2563eb33;
+    }
+
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.4rem 1rem;
+      font-size: 0.85rem;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+      color: #374151;
+    }
+
+    .checkbox-item input {
+      margin-top: 0.2rem;
+    }
+
+    button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: white;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      margin-top: 0.75rem;
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+      transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.1s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(37, 99, 235, 0.3);
+      opacity: 0.97;
+    }
+
+    button:active {
+      transform: translateY(0);
+      box-shadow: 0 8px 16px rgba(37, 99, 235, 0.25);
+    }
+
+    .results {
+      margin-top: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .score-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .score-pill {
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .score-pill span.dot {
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .pill-excellent { background: #ecfdf5; color: #166534; }
+    .pill-strong { background: #eff6ff; color: #1d4ed8; }
+    .pill-mid { background: #fffbeb; color: #92400e; }
+    .pill-risk { background: #fef2f2; color: #b91c1c; }
+
+    .pill-excellent span.dot { background: #22c55e; }
+    .pill-strong span.dot { background: #3b82f6; }
+    .pill-mid span.dot { background: #f59e0b; }
+    .pill-risk span.dot { background: #ef4444; }
+
+    .stat {
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    .stat strong {
+      font-size: 1.05rem;
+      color: #111827;
+    }
+
+    .heatmap-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    .heatmap-table th,
+    .heatmap-table td {
+      padding: 0.5rem 0.6rem;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+    }
+
+    .heatmap-table th {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      background: #f3f4f6;
+    }
+
+    .heat-low {
+      background: #fef2f2;
+      color: #991b1b;
+    }
+
+    .heat-med {
+      background: #fffbeb;
+      color: #92400e;
+    }
+
+    .heat-high {
+      background: #ecfdf5;
+      color: #166534;
+    }
+
+    .roadmap {
+      font-size: 0.9rem;
+      color: #374151;
+      border-radius: 0.75rem;
+      padding: 0.75rem 0.9rem;
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+    }
+
+    .roadmap-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: #1d4ed8;
+    }
+
+    .red-flag-count {
+      font-size: 0.85rem;
+      color: #b91c1c;
+      margin-top: 0.25rem;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem;
+      }
+      .container {
+        padding: 1.25rem 1.25rem 1.5rem;
+        border-radius: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Vendor Evaluation & Risk Heatmap</h1>
+    <p class="subtitle">
+      Rate each area after your call, mark any red flags, and let the tool generate a score, risk view, and next-step roadmap.
+    </p>
+
+    <!-- SCORING SECTION -->
+    <div class="section">
+      <h2>1. Scoring by Category (1 = Poor, 5 = Excellent)</h2>
+      <p class="hint">Use your gut based on the conversation, but be consistent. Missing answers default to 3 (neutral).</p>
+      <div class="grid">
+        <div class="field">
+          <label for="companyStructure">Company Structure & Transparency</label>
+          <span class="hint">Clarity of legal entities, ownership, offices, and leadership.</span>
+          <select id="companyStructure">
+            <option value="3">3 - Neutral / Mixed</option>
+            <option value="1">1 - Poor</option>
+            <option value="2">2 - Weak</option>
+            <option value="4">4 - Good</option>
+            <option value="5">5 - Excellent</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="productMaturity">Product Maturity</label>
+          <span class="hint">Live deployments, stability, roadmap, demos.</span>
+          <select id="productMaturity">
+            <option value="3">3 - Neutral / Mixed</option>
+            <option value="1">1 - Prototype-level</option>
+            <option value="2">2 - Limited</option>
+            <option value="4">4 - Solid</option>
+            <option value="5">5 - Battle-tested</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="teamQuality">Team Quality & Depth</label>
+          <span class="hint">Engineering strength, seniority, onshore/offshore mix.</span>
+          <select id="teamQuality">
+            <option value="3">3 - Neutral / Mixed</option>
+            <option value="1">1 - Very weak</option>
+            <option value="2">2 - Thin</option>
+            <option value="4">4 - Strong</option>
+            <option value="5">5 - Excellent bench</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="technicalStrength">Technical Delivery & Architecture</label>
+          <span class="hint">DevOps, CI/CD, integration capability, solution design.</span>
+          <select id="technicalStrength">
+            <option value="3">3 - Neutral / Mixed</option>
+            <option value="1">1 - Ad-hoc</option>
+            <option value="2">2 - Basic</option>
+            <option value="4">4 - Mature</option>
+            <option value="5">5 - Very strong</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="security">Security & Compliance</label>
+          <span class="hint">Certifications, security practices, data handling.</span>
+          <select id="security">
+            <option value="3">3 - Neutral / Mixed</option>
+            <option value="1">1 - Weak / unclear</option>
+            <option value="2">2 - Minimal</option>
+            <option value="4">4 - Structured</option>
+            <option value="5">5 - Certified & robust</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="clients">Client Evidence & References</label>
+          <span class="hint">Named clients, case studies, reference calls.</span>
+          <select id="clients">
+            <option value="3">3 - Neutral / Mixed</option>
+            <option value="1">1 - None</option>
+            <option value="2">2 - Very limited</option>
+            <option value="4">4 - Good references</option>
+            <option value="5">5 - Strong portfolio</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="support">Support, SLAs & Operations</label>
+          <span class="hint">24/7 coverage, SLAs, escalation paths.</span>
+          <select id="support">
+            <option value="3">3 - Neutral / Mixed</option>
+            <option value="1">1 - Undefined</option>
+            <option value="2">2 - Basic</option>
+            <option value="4">4 - Clear & structured</option>
+            <option value="5">5 - Enterprise-grade</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="commercials">Commercial Transparency</label>
+          <span class="hint">Pricing clarity, IP terms, contract structure.</span>
+          <select id="commercials">
+            <option value="3">3 - Neutral / Mixed</option>
+            <option value="1">1 - Vague</option>
+            <option value="2">2 - Patchy</option>
+            <option value="4">4 - Clear</option>
+            <option value="5">5 - Very transparent</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="roadmapVision">Roadmap & Strategic Vision</label>
+          <span class="hint">Future plans, product direction, market focus.</span>
+          <select id="roadmapVision">
+            <option value="3">3 - Neutral / Mixed</option>
+            <option value="1">1 - No clear vision</option>
+            <option value="2">2 - Vague</option>
+            <option value="4">4 - Thoughtful</option>
+            <option value="5">5 - Strong & coherent</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- RED FLAGS -->
+    <div class="section">
+      <h2>2. Red Flags Observed</h2>
+      <p class="hint">Tick anything that was present in the conversation. More red flags increase the risk level.</p>
+      <div class="checkbox-group">
+        <label class="checkbox-item">
+          <input type="checkbox" class="red-flag" value="no-demo" />
+          <span>No live demo environment available.</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" class="red-flag" value="no-clients" />
+          <span>No verifiable client names or references shared.</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" class="red-flag" value="thin-team" />
+          <span>Team seems very small or mostly freelancers.</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" class="red-flag" value="heavy-custom" />
+          <span>Products require “heavy customisation” to work.</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" class="red-flag" value="vague-answers" />
+          <span>Answers about structure, security or hosting were vague.</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" class="red-flag" value="no-sla" />
+          <span>No clear SLAs, support model or escalation paths.</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" class="red-flag" value="no-roadmap" />
+          <span>No visible product roadmap or version history.</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" class="red-flag" value="anything-you-want" />
+          <span>They claim “we can build anything you want” with no focus.</span>
+        </label>
+      </div>
+    </div>
+
+    <button id="calculateBtn">
+      Calculate Score & Risk View
+      <span aria-hidden="true">➜</span>
+    </button>
+
+    <!-- RESULTS -->
+    <div id="results" class="results" style="display:none;">
+      <div class="score-summary">
+        <div class="stat">
+          <strong id="totalScore">Total Score: 0</strong><br />
+          out of 45
+        </div>
+        <div class="stat">
+          <strong id="avgScore">Average: 0.0</strong><br />
+          per category
+        </div>
+        <div class="stat">
+          <span id="riskBadge" class="score-pill">
+            <span class="dot"></span>
+            <span id="riskLabel">Risk Level</span>
+          </span>
+        </div>
+      </div>
+
+      <div id="redFlagInfo" class="red-flag-count"></div>
+
+      <div>
+        <h2>Heatmap by Category</h2>
+        <table class="heatmap-table" id="heatmapTable">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Score (1–5)</th>
+              <th>Risk View</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filled by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="roadmap" id="roadmapBox">
+        <div class="roadmap-title">Next-Step Roadmap</div>
+        <div id="roadmapText">
+          Complete the form and calculate to see suggested next steps.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const categories = [
+      { id: "companyStructure", label: "Company Structure & Transparency" },
+      { id: "productMaturity", label: "Product Maturity" },
+      { id: "teamQuality", label: "Team Quality & Depth" },
+      { id: "technicalStrength", label: "Technical Delivery & Architecture" },
+      { id: "security", label: "Security & Compliance" },
+      { id: "clients", label: "Client Evidence & References" },
+      { id: "support", label: "Support, SLAs & Operations" },
+      { id: "commercials", label: "Commercial Transparency" },
+      { id: "roadmapVision", label: "Roadmap & Strategic Vision" }
+    ];
+
+    function classifyRisk(totalScore, redFlags) {
+      // Base classification from score
+      let baseLabel, pillClass;
+      if (totalScore >= 40) {
+        baseLabel = "Excellent Vendor";
+        pillClass = "pill-excellent";
+      } else if (totalScore >= 34) {
+        baseLabel = "Strong Potential";
+        pillClass = "pill-strong";
+      } else if (totalScore >= 26) {
+        baseLabel = "Mid-tier / Mixed";
+        pillClass = "pill-mid";
+      } else {
+        baseLabel = "High Risk";
+        pillClass = "pill-risk";
+      }
+
+      // Adjust for red flags
+      let adjustedLabel = baseLabel;
+      if (redFlags >= 5 && totalScore < 40) {
+        adjustedLabel = "High Risk (Red Flags)";
+        pillClass = "pill-risk";
+      } else if (redFlags >= 3 && totalScore < 40 && totalScore >= 26) {
+        adjustedLabel = "Caution – Investigate Further";
+        pillClass = "pill-mid";
+      }
+
+      return { label: adjustedLabel, className: pillClass };
+    }
+
+    function heatClass(score) {
+      if (score <= 2) return "heat-low";
+      if (score === 3) return "heat-med";
+      return "heat-high";
+    }
+
+    function roadmapMessage(totalScore, redFlags) {
+      if (totalScore >= 40 && redFlags <= 1) {
+        return "Recommendation: Proceed to a structured Proof of Concept (PoC) or pilot. Keep negotiations focused on commercials and implementation timelines, and lock in SLAs early.";
+      }
+      if (totalScore >= 34 && totalScore <= 39) {
+        return "Recommendation: Vendor looks promising. Run deeper due diligence: request reference calls, detailed architecture docs, and a formal proposal. A small-scope pilot with clear exit criteria is ideal.";
+      }
+      if (totalScore >= 26 && totalScore <= 33) {
+        return "Recommendation: Treat as a tactical or limited-scope partner. Before any critical dependency, demand stronger evidence: demos, load tests, and at least one strong reference in your domain.";
+      }
+      // total < 26
+      return "Recommendation: High risk profile. Unless this vendor is uniquely positioned or solving a niche problem no one else can, avoid core dependencies and consider alternatives.";
+    }
+
+    document.getElementById("calculateBtn").addEventListener("click", () => {
+      let totalScore = 0;
+      const heatmapBody = document.querySelector("#heatmapTable tbody");
+      heatmapBody.innerHTML = "";
+
+      categories.forEach(cat => {
+        const el = document.getElementById(cat.id);
+        let value = parseInt(el.value, 10);
+        if (isNaN(value)) value = 3;
+        totalScore += value;
+
+        const tr = document.createElement("tr");
+        const tdLabel = document.createElement("td");
+        tdLabel.textContent = cat.label;
+
+        const tdScore = document.createElement("td");
+        tdScore.textContent = value;
+
+        const tdHeat = document.createElement("td");
+        tdHeat.textContent =
+          value <= 2 ? "High risk / weak area"
+          : value === 3 ? "Medium risk / acceptable"
+          : "Low risk / strong";
+
+        tdHeat.classList.add(heatClass(value));
+
+        tr.appendChild(tdLabel);
+        tr.appendChild(tdScore);
+        tr.appendChild(tdHeat);
+        heatmapBody.appendChild(tr);
+      });
+
+      const avgScore = totalScore / categories.length;
+
+      // Red flags
+      const redFlagEls = document.querySelectorAll(".red-flag");
+      let redFlagCount = 0;
+      redFlagEls.forEach(chk => {
+        if (chk.checked) redFlagCount++;
+      });
+
+      // Classification
+      const riskInfo = classifyRisk(totalScore, redFlagCount);
+
+      // Update UI
+      document.getElementById("results").style.display = "grid";
+      document.getElementById("totalScore").textContent = `Total Score: ${totalScore}`;
+      document.getElementById("avgScore").textContent = `Average: ${avgScore.toFixed(1)}`;
+
+      const riskBadge = document.getElementById("riskBadge");
+      riskBadge.className = "score-pill " + riskInfo.className;
+      document.getElementById("riskLabel").textContent = riskInfo.label;
+
+      const redFlagInfo = document.getElementById("redFlagInfo");
+      if (redFlagCount > 0) {
+        redFlagInfo.textContent = `${redFlagCount} red flag${redFlagCount > 1 ? "s" : ""} observed – interpret the score with caution.`;
+      } else {
+        redFlagInfo.textContent = "No explicit red flags ticked.";
+      }
+
+      document.getElementById("roadmapText").textContent =
+        roadmapMessage(totalScore, redFlagCount);
+    });
+  </script>
+</body>
+</html>

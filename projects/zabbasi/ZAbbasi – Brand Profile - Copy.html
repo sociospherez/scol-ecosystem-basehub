@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Operating Model – Timeline View</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --line: #111827;
+      --card-border: #e5e7eb;
+      --accent-1: #fbbf24;
+      --accent-2: #fb7185;
+      --accent-3: #22c55e;
+      --accent-4: #3b82f6;
+      --accent-5: #a855f7;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      padding: 32px 16px 40px;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin: 30px 4px 10px;
+    }
+
+    /* Base timeline strip */
+
+    .timeline-strip {
+      position: relative;
+      padding: 40px 0 10px;
+      border-top: 3px solid var(--line);
+      border-bottom: 3px solid transparent; /* visual spacing */
+      margin-bottom: 10px;
+    }
+
+    .timeline-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .node {
+      flex: 1;
+      text-align: center;
+      position: relative;
+      padding: 0 6px;
+    }
+
+    .node-number {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .node-heading {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .node-year {
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+
+    .node-text {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    .node-tag {
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .node-icon-wrap {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .node-line {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 2px;
+      height: 40px;
+      background: var(--line);
+      transform: translateX(-50%);
+      z-index: 0;
+    }
+
+    .node-circle {
+      position: relative;
+      z-index: 1;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 26px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+    }
+
+    .c1 { background: linear-gradient(135deg, var(--accent-1), #f97316); }
+    .c2 { background: linear-gradient(135deg, var(--accent-2), #fb7185); }
+    .c3 { background: linear-gradient(135deg, var(--accent-3), #16a34a); }
+    .c4 { background: linear-gradient(135deg, var(--accent-4), #1d4ed8); }
+    .c5 { background: linear-gradient(135deg, var(--accent-5), #ec4899); }
+
+    /* --- Interactive variant (B) --- */
+
+    .timeline-strip.interactive .node-card {
+      border-radius: 16px;
+      border: 1px solid var(--card-border);
+      padding: 12px 10px 14px;
+      transition:
+        box-shadow 0.18s ease,
+        transform 0.18s ease,
+        border-color 0.18s ease,
+        background 0.18s ease;
+      cursor: pointer;
+    }
+
+    .timeline-strip.interactive .node-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.16);
+      border-color: rgba(37, 99, 235, 0.7);
+      background: #f9fafb;
+    }
+
+    .timeline-strip.interactive .node-card.active {
+      border-color: rgba(37, 99, 235, 1);
+      background: #eff6ff;
+      box-shadow: 0 18px 36px rgba(37, 99, 235, 0.25);
+    }
+
+    .node-more {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.2s ease, opacity 0.2s ease;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      text-align: left;
+    }
+
+    .node-card.active .node-more {
+      max-height: 200px;
+      opacity: 1;
+    }
+
+    .more-toggle {
+      margin-top: 6px;
+      font-size: 0.78rem;
+      color: #2563eb;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .more-toggle i {
+      font-size: 0.7rem;
+    }
+
+    @media (max-width: 900px) {
+      .timeline-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .timeline-strip {
+        border-top: none;
+      }
+      .node-line {
+        display: none;
+      }
+      .timeline-strip.interactive .node-card {
+        text-align: left;
+      }
+      .node-icon-wrap {
+        margin-bottom: 6px;
+      }
+      .node-icon-wrap,
+      .node-number {
+        margin-right: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <h1>OPERATING MODEL</h1>
+    <p class="subtitle">
+      How we turn complex ERP &amp; digital programmes into a controlled, insight-led and value-focused delivery model.
+    </p>
+
+    <!-- ======================= A. STATIC EXECUTIVE STRIP ======================= -->
+    <div class="section-label">A &mdash; Static executive view</div>
+
+    <div class="timeline-strip">
+      <div class="timeline-row">
+
+        <!-- 01 Discovery & Insight -->
+        <div class="node">
+          <div class="node-icon-wrap">
+            <div class="node-line"></div>
+            <div class="node-circle c1">
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
+            </div>
+          </div>
+          <div class="node-number">01</div>
+          <div class="node-heading">Discovery &amp; Insight</div>
+          <div class="node-text">
+            Architecture and data mapping, stakeholder interviews and risk clustering to agree a single view of reality.
+          </div>
+          <div class="node-year">Trigger / Current State</div>
+          <div class="node-tag">Research</div>
+        </div>
+
+        <!-- 02 Communication & Alignment -->
+        <div class="node">
+          <div class="node-icon-wrap">
+            <div class="node-line"></div>
+            <div class="node-circle c2">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+          </div>
+          <div class="node-number">02</div>
+          <div class="node-heading">Communication &amp; Alignment</div>
+          <div class="node-text">
+            Shared language, decision rhythms and a single programme hub so every team is working from the same script.
+          </div>
+          <div class="node-year">Ways of Working</div>
+          <div class="node-tag">Communication</div>
+        </div>
+
+        <!-- 03 Cost–Value Intelligence -->
+        <div class="node">
+          <div class="node-icon-wrap">
+            <div class="node-line"></div>
+            <div class="node-circle c3">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+          </div>
+          <div class="node-number">03</div>
+          <div class="node-heading">Cost–Value Intelligence</div>
+          <div class="node-text">
+            Effort vs impact, cost-of-delay and vendor value tracking so every pound is linked to a measurable outcome.
+          </div>
+          <div class="node-year">Budget &amp; Priority</div>
+          <div class="node-tag">Cost / Value</div>
+        </div>
+
+        <!-- 04 Integrations & Orchestration -->
+        <div class="node">
+          <div class="node-icon-wrap">
+            <div class="node-line"></div>
+            <div class="node-circle c4">
+              <i class="fa-solid fa-diagram-project"></i>
+            </div>
+          </div>
+          <div class="node-number">04</div>
+          <div class="node-heading">Integrations &amp; Orchestration</div>
+          <div class="node-text">
+            SAP / BC / HANA and adjacent systems connected properly so the end-to-end journey behaves as one platform.
+          </div>
+          <div class="node-year">System Landscape</div>
+          <div class="node-tag">Integrations</div>
+        </div>
+
+        <!-- 05 Visibility & Assurance -->
+        <div class="node">
+          <div class="node-icon-wrap">
+            <div class="node-line"></div>
+            <div class="node-circle c5">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+          </div>
+          <div class="node-number">05</div>
+          <div class="node-heading">Visibility &amp; Assurance</div>
+          <div class="node-text">
+            Power BI dashboards, KPIs and governance views so leaders can see risk, value and progress in real time.
+          </div>
+          <div class="node-year">Outcomes</div>
+          <div class="node-tag">Dashboards &amp; Reporting</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ======================= B. INTERACTIVE / EXPANDABLE STRIP ======================= -->
+    <div class="section-label">B &mdash; Hover / click to expand</div>
+
+    <div class="timeline-strip interactive" id="interactiveStrip">
+      <div class="timeline-row">
+
+        <!-- 01 -->
+        <div class="node">
+          <div class="node-card" data-node="1">
+            <div class="node-icon-wrap">
+              <div class="node-line"></div>
+              <div class="node-circle c1">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+              </div>
+            </div>
+            <div class="node-number">01</div>
+            <div class="node-heading">Discovery &amp; Insight</div>
+            <div class="node-text">
+              Capture reality before prescribing change.
+            </div>
+            <div class="node-year">Research</div>
+            <div class="more-toggle">
+              More <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="node-more">
+              <strong>What happens here</strong><br/>
+              • Architecture and integration maps<br/>
+              • Data quality and reporting review<br/>
+              • Stakeholder interviews and pain-point heatmaps<br/>
+              • Early hypothesis on risk and opportunity<br/><br/>
+              <strong>Why it matters</strong><br/>
+              Everyone starts from the same picture, not ten competing narratives.
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="node">
+          <div class="node-card" data-node="2">
+            <div class="node-icon-wrap">
+              <div class="node-line"></div>
+              <div class="node-circle c2">
+                <i class="fa-solid fa-comments"></i>
+              </div>
+            </div>
+            <div class="node-number">02</div>
+            <div class="node-heading">Communication &amp; Alignment</div>
+            <div class="node-text">
+              Turn insight into a common language.
+            </div>
+            <div class="node-year">Communication</div>
+            <div class="more-toggle">
+              More <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="node-more">
+              <strong>What happens here</strong><br/>
+              • Programme “one-pager” everyone understands<br/>
+              • Decision rhythms and governance forums<br/>
+              • Clear ownership and escalation routes<br/>
+              • Shared terminology across business and IT<br/><br/>
+              <strong>Why it matters</strong><br/>
+              Miscommunication is where most cost and delay hide. Fixing language fixes behaviour.
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="node">
+          <div class="node-card" data-node="3">
+            <div class="node-icon-wrap">
+              <div class="node-line"></div>
+              <div class="node-circle c3">
+                <i class="fa-solid fa-scale-balanced"></i>
+              </div>
+            </div>
+            <div class="node-number">03</div>
+            <div class="node-heading">Cost–Value Intelligence</div>
+            <div class="node-text">
+              Link every initiative to value and risk.
+            </div>
+            <div class="node-year">Cost / Value</div>
+            <div class="more-toggle">
+              More <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="node-more">
+              <strong>What happens here</strong><br/>
+              • Effort vs impact scoring of backlog items<br/>
+              • Cost-of-delay analysis and scenario views<br/>
+              • Vendor and licence value tracking<br/>
+              • Guardrails for scope creep and “wishlist” items<br/><br/>
+              <strong>Why it matters</strong><br/>
+              Protects budget from slow leaks and ensures the best ideas move first.
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="node">
+          <div class="node-card" data-node="4">
+            <div class="node-icon-wrap">
+              <div class="node-line"></div>
+              <div class="node-circle c4">
+                <i class="fa-solid fa-diagram-project"></i>
+              </div>
+            </div>
+            <div class="node-number">04</div>
+            <div class="node-heading">Integrations &amp; Orchestration</div>
+            <div class="node-text">
+              Make the landscape behave like one system.
+            </div>
+            <div class="node-year">Integrations</div>
+            <div class="more-toggle">
+              More <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="node-more">
+              <strong>What happens here</strong><br/>
+              • Design of end-to-end data flows<br/>
+              • API and interface standards<br/>
+              • Environment and release coordination<br/>
+              • Integration monitoring and error-handling patterns<br/><br/>
+              <strong>Why it matters</strong><br/>
+              Avoids the classic “works in one system, breaks the next” failure that kills trust.
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 -->
+        <div class="node">
+          <div class="node-card" data-node="5">
+            <div class="node-icon-wrap">
+              <div class="node-line"></div>
+              <div class="node-circle c5">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+            </div>
+            <div class="node-number">05</div>
+            <div class="node-heading">Visibility &amp; Assurance</div>
+            <div class="node-text">
+              Give everyone the same live picture.
+            </div>
+            <div class="node-year">Dashboards &amp; Reporting</div>
+            <div class="more-toggle">
+              More <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="node-more">
+              <strong>What happens here</strong><br/>
+              • Power BI dashboards for execs and teams<br/>
+              • Risk, dependency and benefit tracking<br/>
+              • SLA / compliance reporting where needed<br/>
+              • Simple narrative views for non-technical sponsors<br/><br/>
+              <strong>Why it matters</strong><br/>
+              People act faster and more confidently when they can see change, risk and value in one place.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simple click/hover interaction: only one expanded at a time
+    (function () {
+      const cards = document.querySelectorAll('.timeline-strip.interactive .node-card');
+
+      function activate(card) {
+        cards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+      }
+
+      cards.forEach(card => {
+        card.addEventListener('click', () => activate(card));
+        card.addEventListener('mouseenter', () => activate(card)); // hover support on desktop
+      });
+
+      // Start with first card active
+      if (cards[0]) cards[0].classList.add('active');
+    })();
+  </script>
+</body>
+</html>

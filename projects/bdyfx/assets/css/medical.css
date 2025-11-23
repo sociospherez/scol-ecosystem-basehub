@@ -28,8 +28,8 @@ body{
     padding: 10px 22px;
 }
 header .container-fluid {
-    padding-left: 85px;
-    padding-right: 85px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 .sticky-wrap.shadow-in {
     left: 31px;
@@ -111,7 +111,7 @@ header .navbar-brand img {
 .tab-style-01 .nav-tabs .nav-link.show,
 .tab-style-01 .nav-tabs .nav-link.active,
 .tab-style-01 .nav-tabs .nav-link:hover {
-    background-color: var(--base-color);
+    background-color: var();
     color: var(--white);
 }
 .tab-style-01 .nav-tabs .nav-link {
