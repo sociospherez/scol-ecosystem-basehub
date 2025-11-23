@@ -1,6 +1,0 @@
-C:\inetpub\fuelup-notify\site\FuelUp.Notify.exe
-C:\inetpub\fuelup-notify\site\appsettings.json
-C:\inetpub\fuelup-notify\site\FuelUp.Notify.dll
-C:\inetpub\fuelup-notify\site\FuelUp.Notify.deps.json
-C:\inetpub\fuelup-notify\site\FuelUp.Notify.runtimeconfig.json
-C:\inetpub\fuelup-notify\site\FuelUp.Notify.pdb
