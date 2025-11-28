@@ -1,0 +1,327 @@
+/* ===================================
+    Crafto - Gym and fitness
+====================================== */
+/* font */
+@import url("https://use.typekit.net/rrw2seg.css");
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* variable */
+:root {     
+    --base-color: #91D800;  
+    --dark-gray: #232323;
+    --light-medium-gray: #cbcbcb;
+    --alt-font: korolev-condensed, sans-serif;
+    --primary-font: 'Urbanist', sans-serif;
+} 
+/* reset */
+body {
+    font-size: 17px;
+    line-height: 28px; 
+    letter-spacing: .4px;
+}
+/* custom cursor */
+.custom-cursor .circle-cursor-inner {
+    background-color: var(--dark-gray);
+    width: 12px;
+    height: 12px;
+}
+.custom-cursor .circle-cursor-inner.cursor-link-hover {
+    background-color: var(--dark-gray);
+}
+.custom-cursor .circle-cursor-outer {
+    border: 1px solid transparent;
+}
+/* header */
+header .navbar-brand img {
+    max-height: 43px;
+}
+header .navbar-brand,
+header.sticky .fixed-header .navbar-brand,
+header.sticky .disable-fixed .navbar-brand {
+    padding: 18px 0;
+}
+.header-push-button {
+    padding-left: 25px;
+}
+.header-push-button .push-button span {
+    background: var(--base-color);
+}
+.show-menu {
+    overflow: visible;
+}
+.hamburger-nav {
+    width: 42%;
+}
+.menu-item-list .nav-link {
+    padding: 5px 20px 5px 0;
+    font-size: 38px;
+    width: auto
+}
+.hamburger-nav .menu-item-list {
+    padding: 0;
+}
+/* btn */
+.btn {
+    font-weight: 500;
+}
+.btn.btn-extra-large {
+    padding: 19px 33px 16px;
+    font-size: 17px;
+}
+.btn.btn-large {
+    font-size: 16px;
+    padding: 14px 27px 12px;
+}
+.btn.btn-medium {
+    font-size: 15px;
+    padding: 14px 25px 10px;
+}
+.btn.btn-small {
+    font-size: 14px;
+    padding: 12px 21px 10px;
+}
+.btn.btn-very-small {
+    font-size: 12px;
+    padding: 9px 17px 5px;
+}
+.btn.btn-link {
+    padding: 0 0 2px;
+}
+.btn.btn-base-color,
+.btn.btn-box-shadow.btn-base-color:hover {
+    color: var(--dark-gray);
+}
+h1, .h1 {
+    font-size: 4rem;
+    line-height: 3.8rem;
+}
+h3 {
+    line-height: 2.813rem;
+}
+h4 {
+    line-height: 2.375rem;
+}
+h5 {
+    line-height: 2rem;
+}
+h6 {
+    line-height: 1.75rem;
+}
+/* background color */
+.bg-nero-grey {
+    background-color: #1c1c1c;
+}
+.bg-cultured {
+    background-color: #f4f9f6;
+}
+.bg-base-color-transparent {
+    background-color: rgba(145, 216, 0, 0.95);
+}
+.bg-base-color-transparent-light {
+    background-color: rgba(145, 216, 0, 0.6);
+}
+/* border color */
+.border-color-base-color-transparent {
+    border-color: rgba(116, 214, 11, 0.3) !important;
+}
+.event-style-03 .nav-tabs .nav-link {
+    padding-top: 21px;
+}
+/* box shadow */
+.box-shadow-double-large {
+    -webkit-box-shadow: 0px 47px 45px rgb(0, 0, 0, 0.20);
+    box-shadow: 0px 47px 45px rgb(0, 0, 0, 0.20);
+}
+/* tab style 08 */
+.tab-style-08 ul .nav-item .nav-link.active, .tab-style-08 ul .nav-item .nav-link.show, .tab-style-08 ul .nav-item .nav-link:hover {
+    color: var(--dark-gray);
+}
+.tab-style-08 ul .nav-item .tab-border {
+    top: 0;
+    bottom: auto;
+    height: 4px;
+}
+.tab-style-08 ul .nav-item {
+    border-right: 0;
+}
+/* accordion style */
+.accordion-style-06 .accordion-item.active-accordion {
+    background-image: linear-gradient(to bottom, #f7f8f9, #f9fafb, #fbfbfc, #fdfdfd, #ffffff);
+}
+.accordion-style-01 .accordion-item.active-accordion {
+    padding: 30px 35px;
+}
+.accordion-style-02 .accordion-item .accordion-header {
+    padding: 22px 0;
+}
+.team-style-08:hover figure figcaption .member-designation {
+    opacity: 1;
+}
+/* social icon style 09 */
+.social-icon-style-09 .medium-icon li {
+    margin: 0 4px;
+}
+.social-icon-style-09 .medium-icon a {
+    font-size: 18px;
+}
+/* Counter style 07 */
+.counter-style-07 .vertical-counter-number ul {
+    line-height: 1;
+}
+/* page title */
+.page-title-extra-small h1 {
+    font-size: 19px;
+    line-height: 22px;
+}
+.page-title-extra-small h2 {
+    font-size: 4rem;
+    line-height: 4rem;
+}
+.small-screen {
+    height: 500px !important;
+}
+/* review */
+.review-star-icon i {
+    color: var(--base-color);
+}
+/* text stroke color */
+.text-outline-color-white { 
+    -webkit-text-stroke-color: var(--white); 
+}
+/* right */
+.right-minus-380px {
+    right: -380px;
+}
+/* top */
+.top-30 {
+    top: 30%!important;
+}
+/* line height */
+.lh-160 {
+    line-height: 10rem;
+}
+.top-minus-200px {
+    top: -200px;
+}
+/* nresletter popup  */
+.subscribe-popup .mfp-close:before, .subscribe-popup .mfp-close:active:before {
+    color: var(--white);
+}
+.mfp-bg {
+    background-color: var(--dark-gray);
+}
+/* footer */
+footer .footer-logo img {
+    max-height: 43px;
+}
+footer .nav-link {
+    line-height: normal;
+}
+/* Revolution slider */
+.rev_column_inner {padding-left: 30% !important; padding-right: 15% !important; }
+.next-btn { background-size: 110% auto; background-position: right center; transition: 0.5s cubic-bezier(0.61, 1, 0.88, 1) !important; }
+.next-btn:hover { background-position: left center; }
+#gym-and-fitness-slider .uranus.tp-leftarrow:before{width:50px; height:50px; line-height:50px; font-size:25px; content: "\F12F"; font-family: bootstrap-icons!important;}
+#gym-and-fitness-slider .uranus.tp-rightarrow:before{width:50px; height:50px; line-height:50px; font-size:25px; content: "\F138"; font-family: bootstrap-icons!important;}
+@media (max-width: 1500px) {
+    .rev_column_inner {padding-left: 10% !important; padding-right: 10% !important; }
+    .background-text {display: none !important;}
+}
+@media (max-width: 1399px) {
+    .accordion-style-01 .accordion-item .accordion-body {
+        padding-right: 40px;
+    }
+}
+@media (max-width: 1199px) {
+    .accordion-style-01 .accordion-item {
+        padding: 20px 20px;
+    }
+    .accordion-style-01 .accordion-item.active-accordion {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .accordion-style-01 .accordion-item .accordion-body {
+        padding-right: 10px;
+    }
+    .lg-left-minus-250px {
+        left: -250px !important;
+    }
+    .next-btn {transition:  none !important;}
+}
+@media (max-width: 1023px) {
+    .rev_column {width: 50% !important;}
+}
+@media (max-width: 778px) {
+    .rev_row_zone .row { display: flex !important; flex-direction: column-reverse; }
+    .rev_column { height: 100%; }
+    .rev_column_inner {padding-bottom: 6% !important; padding-top: 6% !important; }
+    #rs-gym-and-fitness-01 .tp-bgimg {background-image: url("https://placehold.co/1920x1100") !important;}
+    #rs-gym-and-fitness-02 .tp-bgimg {background-image: url("https://placehold.co/1920x1100") !important;}
+    #rs-gym-and-fitness-03 .tp-bgimg {background-image: url("https://placehold.co/1920x1100") !important;}
+}
+@media (max-width: 479px) {
+    .rev_column_inner {padding-bottom: 8% !important; padding-top: 8% !important; padding-left: 3% !important; padding-right: 3% !important; }
+}
+@media  (max-width: 900px) and (orientation: landscape) {
+    .right-col {padding: 35% 0 !important;}
+}
+@media (max-width: 991px) {
+    .tab-style-08 ul .nav-item .nav-link {
+        padding: 18px 20px;
+    }
+    .menu-item-list .nav-link {
+        font-size: 30px;
+    }
+    .page-title-big-typography .small-screen {
+        height: 300px !important;
+    }
+    .page-title-extra-small h2 {
+        font-size: 3.8rem;
+        line-height: 3.8rem;
+    }
+    .event-style-03 .nav-tabs .nav-link {
+        padding: 17px 8px 14px;
+    }
+    .event-style-03 .accordion .accordion-title .event-time {
+        min-width: 260px;
+    }
+    .small-screen {
+        height: 400px !important;
+    }
+}
+@media (max-width: 767px) {
+    h1, h2, h3, h4, h5, h6 {
+        letter-spacing: 0;
+    }
+    .menu-list-wrapper {
+        padding: 25px 0;
+    }
+    .menu-item-list .nav-link {
+        font-size: 28px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+    .page-title-big-typography .small-screen {
+        height: auto !important;
+    }
+    .event-style-03 .accordion .accordion-title .event-time {
+        min-width: 140px;
+    }
+    .small-screen {
+        height: 300px !important;
+    }
+}
+@media (max-width: 575px) {
+    .accordion-style-06 .accordion-item {
+        padding: 10px 90px 10px 25px;
+    }
+    .accordion-style-06 .accordion-item.active-accordion {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .btn.btn-extra-large {
+        font-size: 16px;
+    }
+    .header-push-button {
+        padding-left: 0;
+    }
+}

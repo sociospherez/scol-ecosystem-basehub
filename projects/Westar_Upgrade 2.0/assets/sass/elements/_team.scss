@@ -1,0 +1,416 @@
+/* Team style 01 */
+.team-style-01 {
+    figure {
+        figcaption {
+            position: absolute;
+            bottom: -1px;   
+            .social-icon { 
+                display: block !important;
+                height: auto !important;
+                margin-bottom: -50px !important;
+                overflow: visible !important;
+                @include prefix(transition, 0.4s, webkit); 
+                a {
+                    margin:0 10px;
+                    &:last-child {
+                        margin-right: 0
+                    }
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+        .text-light-opacity {
+            &:hover {
+                opacity: 1 !important;
+            }
+        }
+        &:hover {
+            figcaption {
+                .social-icon {
+                    margin-bottom: 0px !important;
+                }
+            }
+        }
+    }
+}
+
+/* Team style 02 */
+.team-style-02 {
+    figure {
+        figcaption {
+            position: absolute;
+            opacity: 0;
+            bottom: 0;
+            @include prefix(transition, all 0.5s cubic-bezier(0.12, 0, 0.39, 0), webkit);
+            .social-icon {
+                a {
+                    margin:0 12px;
+                    opacity: 0;
+                    @include prefix(transition, 0.45s cubic-bezier(0.19, 1, 0.22, 1), webkit); 
+                    @include prefix(transform, translateY(-25px), webkit); 
+                    display: inline-block;
+                    &:nth-child(1) {
+                        @include prefix(transition, all 0.3s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+                    }
+                    &:nth-child(2) {
+                        @include prefix(transition, all 0.4s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+                    }
+                    &:nth-child(3) {
+                        @include prefix(transition, all 0.6s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+                    }
+                    &:nth-child(4) {
+                        @include prefix(transition, all 0.8s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+                    }
+                    &:nth-child(5) {
+                        @include prefix(transition, all 1s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+                    }
+                }
+            }
+            .team-member-name {
+                opacity: 0;
+                @include prefix(transform, translate3d(0, 15px, 0), webkit);
+                @include prefix(transition, all 1s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+            }
+            .member-designation {
+                opacity: 0;
+                @include prefix(transform, translate3d(0, 15px, 0), webkit);
+                @include prefix(transition, all 0.7s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+
+            }
+        }
+        &:hover {
+            figcaption {
+                opacity: 1;
+                .team-member-name {
+                    opacity: 1;
+                    @include prefix(transform, translate3d(0, 0, 0), webkit);
+                    @include prefix(transition, all 0.4s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+                }
+                .member-designation {
+                    opacity: .7;
+                    @include prefix(transform, translate3d(0, 0, 0), webkit);
+                    @include prefix(transition, all 0.7s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+                }
+                a {
+                    opacity: 1;
+                    @include prefix(transform, translateY(0), webkit);
+                    &:nth-child(1) {
+                        @include prefix(transition, all 0.3s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+                    }
+                    &:nth-child(2) {
+                        @include prefix(transition, all 0.4s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+                    }
+                    &:nth-child(3) {
+                        @include prefix(transition, all 0.6s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+                    }
+                    &:nth-child(4) {
+                        @include prefix(transition, all 0.8s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+                    }
+                    &:nth-child(5) {
+                        @include prefix(transition, all 1s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Team style 04 */
+.team-style-04 {
+    .team-content {
+        position: absolute;
+        bottom: 0;
+        @include prefix(transition, all 0.5s cubic-bezier(0.37, 0.31, 0.2, 0.85), webkit);
+    }
+
+    figure {
+        figcaption {
+            position: absolute;
+            bottom: -20px;
+            @include prefix(transition, all 0.5s cubic-bezier(0.37, 0.31, 0.2, 0.85), webkit);
+
+            .social-icon {
+                @include prefix(transition, all 0s linear, webkit);
+
+                a {
+                    margin: 0 10px;
+                }
+            }
+        }
+
+        &:hover {
+            figcaption {
+                bottom: 0px;
+            }
+        }
+    }
+}
+
+/* Team style 05 */
+.team-style-05 {
+    .team-content {
+        position: absolute;
+        bottom: 0;
+        opacity: 0;
+        @include prefix(transition, all 0.4s cubic-bezier(0.12, 0, 0.39, 0), webkit);
+        p { 
+            top: 55%;
+            @include prefix(transition, all 0.5s ease, webkit);
+        }
+    }
+    .social-icon {
+        a { 
+            opacity: 0;
+            @include prefix(transition, 0.45s cubic-bezier(0.19, 1, 0.22, 1), webkit); 
+            @include prefix(transform, translateY(25px), webkit); 
+            margin: 0 10px;
+            display: inline-block;
+            &:nth-child(1) {
+                @include prefix(transition, all 0.3s ease, webkit);
+            }
+            &:nth-child(2) {
+                @include prefix(transition, all 0.4s ease, webkit);
+            }
+            &:nth-child(3) {
+                @include prefix(transition, all 0.6s ease, webkit);
+            }
+            &:nth-child(4) {
+                @include prefix(transition, all 0.8s ease, webkit);
+            }
+            &:nth-child(5) {
+                @include prefix(transition, all 1s ease, webkit);
+            }
+        }
+    }
+    &:hover {
+        .team-content {
+            opacity: 1; 
+            p {
+                top: 50%; 
+            }
+        }
+        .social-icon {
+            a {
+                opacity: 1;
+                @include prefix(transform, translateY(0), webkit);
+                &:nth-child(1) {
+                    @include prefix(transition, all 0.3s ease, webkit);
+                }
+                &:nth-child(2) {
+                    @include prefix(transition, all 0.6s ease, webkit);
+                }
+                &:nth-child(3) {
+                    @include prefix(transition, all 0.9s ease, webkit);
+                }
+                &:nth-child(4) {
+                    @include prefix(transition, all 1.1s ease, webkit);
+                }
+                &:nth-child(5) {
+                    @include prefix(transition, all 1.4s ease, webkit);
+                }
+            }
+        }
+    }
+}
+
+/* Team style 08 */
+.team-style-08 {
+    figure {
+        @include prefix(transform, translate3d(0, 0, 0), webkit);
+        @include prefix(transition, all 0.5s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+        figcaption {
+            position: absolute;
+            opacity: 0;
+            bottom: 0;
+            @include prefix(transition, all 0.5s, webkit);
+            .social-icon {
+                a {
+                    margin: 0 0 10px;
+                    opacity: 0;
+                    display: inline-block;
+                    background-color: var(--dark-gray);
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    @include prefix(transform, translate3d(0, 15px, 0), webkit);
+                    @include prefix(transition, all 0.3s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+                    @include prefix(transform, scale(1), webkit);
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            .team-member-name {
+                opacity: 0;
+                @include prefix(transform, translate3d(0, 15px, 0), webkit);
+                @include prefix(transition, all 0.5s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+            }
+            .member-designation {
+                opacity: 0;
+                @include prefix(transform, translate3d(0, 20px, 0), webkit);
+                @include prefix(transition, all 0.7s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+
+            }
+        }
+    }
+    &:hover {
+        figure{
+            @include prefix(transform, translate3d(0, -8px, 0), webkit);
+            figcaption {
+                opacity: 1;
+                .social-icon {
+                    a{
+                        &:hover{
+                            @include prefix(transform, scale(1.1), webkit);
+                        }
+                    }
+                }
+                .team-member-name {
+                    opacity: 1;
+                    @include prefix(transform, translate3d(0, 0, 0), webkit);
+                }
+                .member-designation {
+                    opacity: .6;
+                    @include prefix(transform, translate3d(0, 0, 0), webkit);
+                }
+                a {
+                    @include prefix(transform, translate3d(0, 0, 0), webkit);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+/* Team style 09 */
+.team-style-09 {
+    .nav-tabs {
+        > li {
+            &.nav-item {
+                padding: 0;
+                .number {
+                    color: var(--dark-gray);
+                    @include prefix(transition, 0.4s cubic-bezier(0.12, 0, 0.39, 0), webkit);
+                }
+                &:last-child{
+                    .nav-link {
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
+        .nav-link {
+            border: 0;
+            display: flex;
+            border-bottom: 1px solid var(--extra-medium-gray);
+            padding: 20px 0;
+            margin-bottom: 0;
+            background-color: transparent;
+            @include prefix(border-radius, 0, webkit);    
+            @include prefix(transition, 0.3s cubic-bezier(0.12, 0, 0.39, 0), webkit);
+            &:hover{
+                @include prefix(transform, translate3d(10px, 0, 0), webkit);
+            }
+            &.active, &:hover {
+                border-bottom: 1px solid var(--dark-gray);
+            }
+        }
+    }
+}
+
+/* Team style 10 */
+.team-style-10 {
+    figure {
+        @include prefix(transform, translate3d(0, 0, 0), webkit);
+        @include prefix(transition, all 0.5s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+        .hover-switch-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; 
+            opacity: 0;
+            @include prefix(transition, all 0.2s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+        }
+        figcaption {
+            position: absolute;
+            opacity: 0;
+            bottom: 0;
+            @include prefix(transition, all 0.5s, webkit);
+            .social-icon {
+                a {
+                    margin: 0 0 10px;
+                    opacity: 0;
+                    display: inline-block;
+                    background-color: var(--dark-gray);
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    will-change: transform;
+                    @include prefix(transition, all 0.3s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+                    @include prefix(transform, scale(1.1), webkit);
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            .team-member-strip {
+                @include prefix(transform, translate3d(0, 20px, 0), webkit);
+                @include prefix(transition, all 0.3s cubic-bezier(0.2, 0, 0.8, 1), webkit);
+                .team-member-name {
+                    opacity: 0;
+                    @include prefix(transform, translate3d(0, 15px, 0), webkit);
+                    @include prefix(transition, all 0.5s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+                }
+                .member-designation {
+                    opacity: 0;
+                    @include prefix(transform, translate3d(0, 20px, 0), webkit);
+                    @include prefix(transition, all 0.7s cubic-bezier(0.2, 0, 0.3, 1), webkit);
+
+                }
+            }
+        }
+    }
+    &:hover {
+        figure{ 
+            .hover-switch-image {
+                left: 0;
+                opacity: 1;
+            }
+            figcaption {
+                opacity: 1;
+                .social-icon {
+                    a{
+                        @include prefix(transform, scale(1), webkit);
+                        &:hover{
+                            @include prefix(transform, scale(1.1), webkit);
+                        }
+                    }
+                }
+                .team-member-strip {
+                    @include prefix(transform, translate3d(0, 0, 0), webkit);
+                    .team-member-name {
+                        opacity: 1;
+                        @include prefix(transform, translate3d(0, 0, 0), webkit);
+                    }
+                    .member-designation {
+                        opacity: 1;
+                        @include prefix(transform, translate3d(0, 0, 0), webkit);
+                    }
+                }
+                a {
+                    @include prefix(transform, translate3d(0, 0, 0), webkit);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

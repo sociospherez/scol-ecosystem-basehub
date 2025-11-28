@@ -1,0 +1,146 @@
+/* ===================================
+    Crafto - Horizontal portfolio
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+/* variable */
+:root {     
+    --base-color:#e910b3;
+    --dark-gray:#0d0d0d;
+    --woodsmoke-gray:#212222;
+    --medium-gray: #747474;
+    --alt-font: 'Prata', serif;
+    --primary-font: 'Inter', sans-serif;
+}
+/* custom cursor */
+@media (hover: hover) and (pointer: fine) {
+    .custom-cursor .circle-cursor-outer {
+        border: 1px solid transparent;
+    }
+    .custom-cursor .circle-cursor-inner {
+        width: 20px;
+        height: 20px;
+        left: -5px;
+        top: -5px;
+        background: var(--base-color);
+    }
+    .custom-cursor .circle-cursor-inner.cursor-link-hover {
+        width: 30px;
+        height: 30px;
+        background: var(--base-color);
+        opacity: 0.5 !important;
+    }
+}
+.container-fluid {
+    max-width: 1750px;
+}
+/* header */
+header .navbar-brand img {
+    max-height: 45px;
+}
+.menu-list-wrapper {
+    height: calc(85vh - 150px);
+}
+.hamburger-logo img {
+    max-height: 45px;
+    width: auto;
+}
+.hamburger-menu-simple .menu-item-list .nav-link {
+    font-size: 60px;
+    line-height: 50px;
+}
+.header-icon .header-social-icon a {
+    padding-left: 25px;
+}
+header .navbar-brand {
+    padding: 50px 0;
+}
+header .container-fluid {
+    padding: 0;
+}
+/* text color */
+.text-white-linear span {
+    background: #FFFFFF;
+    background: linear-gradient(to bottom, #FFFFFF 30%, #000000 110%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* mt minus */
+.mt-minus-50px {
+    margin-top: -50px;
+}
+/* portfolio filter */
+.portfolio-filter li:hover a, .portfolio-filter li:focus a, .portfolio-filter li.active a {
+    color: var(--white);
+}
+/* btn */
+.btn {
+    font-weight: 400;
+    font-family: var(--primary-font);
+}
+.btn.btn-extra-large {
+    font-size: 18px;
+    text-transform: none;
+    letter-spacing: 0;
+}
+.btn.btn-switch-text.btn-extra-large > span {
+    padding: 12px 30px;
+}
+.btn.btn-large {
+    font-size: 16px;
+    text-transform: none;
+    letter-spacing: 0;
+}
+.btn.btn-switch-text.btn-large > span {
+    padding: 12px 30px;
+}
+.btn.btn-transparent-dark-gray {
+    color: var(--white); 
+    border-color:var(--woodsmoke-gray) ;
+}
+/* accordion-style-02  */
+.accordion-style-02 .accordion-item .accordion-body {
+    padding: 0 25px 25px 0;
+}
+.bg-gradient-dark-transparent {
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(7%, #141622), to(transparent));
+    background: linear-gradient(to top, #000000 10%, transparent 100%);
+}
+/* team style */
+.team-style-08 figure figcaption .social-icon a {
+    background-color: var(--base-color);
+}
+.team-style-08 figure figcaption .social-icon a:hover {
+    color: var(--dark-gray);
+}
+footer ul li {
+    margin-bottom: 0px;
+    line-height: 30px;
+}
+footer .footer-logo img {
+    max-height: 60px;
+}
+footer .nav-link {
+    padding: 0 1rem;
+}
+@media only screen and (max-width: 991px) {
+    .header-transparent[data-header-hover=dark] {
+        background-color: transparent !important;
+    }
+    header .navbar-brand {
+        padding: 22px 0;
+    }
+    .menu-list-wrapper {
+        height: calc(85vh - 60px);
+    }
+    .hamburger-menu-simple .menu-item-list .nav-link {
+        font-size: 40px;
+        line-height: 34px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .accordion-style-02 .accordion-item .accordion-body {
+        padding: 0 0 25px 0; 
+    }
+}

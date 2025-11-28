@@ -1,0 +1,13 @@
+@include respond-to('tablet') {
+    #map {
+        height: 450px;
+    }
+}
+@include respond-to('phone-portrait') {
+    #map {
+        height: 420px;
+    }
+    .infowindow {
+        padding: 20px 20px 20px 20px !important;
+    }
+}

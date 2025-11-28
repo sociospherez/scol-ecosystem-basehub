@@ -1,0 +1,185 @@
+/* ===================================
+    Crafto - Hosting
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* variable */
+:root {      
+    --alt-font: 'Inter', sans-serif;
+    --primary-font: 'Inter', sans-serif;
+    --base-color: #152bca;
+    --dark-gray: #181b31;
+    --green: #0fc978;
+    --medium-gray: #6e7982;
+}
+/* reset */
+::-webkit-input-placeholder {
+    color: #6e7982 !important;
+    text-overflow: ellipsis; 
+}
+::-moz-placeholder {
+    color: #6e7982 !important;
+    text-overflow: ellipsis;
+    opacity: 1; 
+}
+:-ms-input-placeholder {
+    color: #6e7982 !important;
+    text-overflow: ellipsis;
+    opacity: 1; 
+}
+body{
+    line-height: 30px;
+}
+/* header */
+.header-icon .icon > a {
+    font-size: 15px;
+}
+header .navbar-brand img {
+    max-height: 32px;
+}
+.sticky .header-transparent .header-button .btn {
+    background-color: var(--dark-gray);
+    color: var(--white);
+}
+.sticky .header-transparent .header-button .btn:hover {
+    border-color: var(--dark-gray);
+}
+.navbar .navbar-nav .nav-link {
+    font-size: 17px;
+}
+/* bg background color */
+.bg-midnight-dark-blue {
+    background-color: #191d3c;
+}
+.bg-dark-blue {
+    background-color: #0d1229; 
+}
+.bg-arsenic-grey {
+    background-color: #3c414a !important; 
+}
+.bg-transparent-white-light {
+    background-color: rgba(255, 255, 255, .1) !important;
+}
+/* btn */
+.btn { 
+    text-transform: initial;
+    letter-spacing: 0px;
+}
+.btn i,
+.btn.btn-hover-animation-switch .btn-icon {
+    margin-left: 6px;
+}
+/* button type */  
+.btn.btn-switch-text.btn-extra-large > span {
+    font-size: 17px; 
+    padding: 16px 36px;
+}
+.btn.btn-switch-text.btn-large > span {
+    font-size:15px;
+    padding: 14px 34px;
+}
+.btn.btn-switch-text.btn-medium > span {
+    font-size: 14px;
+    padding: 12px 28px;
+}
+.btn.btn-switch-text.btn-small > span {
+    font-size: 13px;
+    padding: 8px 20px;
+}
+.btn.btn-switch-text.btn-very-small > span {
+    font-size: 12px;
+    padding: 6px 20px;
+}
+.btn.btn-link {
+    padding: 0 0 2px;
+}
+.btn-yellow {
+    background-color: var(--yellow);
+    color: var(--dark-gray);
+}
+.btn-yellow:hover { 
+    background-color: transparent;
+    border-color: var(--yellow);
+    color: var(--yellow); 
+}
+.btn.btn-box-shadow.btn-yellow:hover {
+    background-color: var(--yellow) !important;
+    color: var(--dark-gray) !important;
+}
+.btn-green {
+    background-color: var(--green);
+    color: var(--white);
+}
+.btn-green:hover { 
+    background-color: var(--white);
+    border-color: var(--white);
+    color: var(--dark-gray); 
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 25px;
+}
+/* page title */
+.page-title-extra-small h2 {
+    font-size: 3.25rem;
+    line-height: 3.425rem;
+}
+/* checkbox */
+.form-check-input:checked {
+    background-color: var(--base-color) !important;
+    border-color: var(--base-color) !important;
+}
+.form-check-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+/* footer */
+footer {
+    padding-top: 100px;
+}
+footer .footer-logo img {
+    max-height: 32px;
+}
+.footer-dark a:hover {
+    color: var(--white);
+}
+footer ul li {
+    margin-bottom: 0;
+}
+/*  subcribe style 02  */
+.newsletter-style-02 .btn i {
+    top: -1px;
+}
+.newsletter-style-02 input {
+    font-size: 14px;
+}
+
+/* media query responsive */
+@media (max-width: 991px) {
+    [data-mobile-nav-style=full-screen-menu] .navbar-full-screen-menu-inner {
+        background-image: url(../../images/demo-hosting-mobile-menu-bg.jpg);
+        background-position: center center;
+        background-size: cover;
+    }
+}
+@media (max-width: 1199px) {
+    .btn.btn-switch-text.btn-small > span {
+        padding: 6px 18px;
+    }
+    footer {
+        padding-top: 80px;
+    }
+    .btn.btn-switch-text.btn-extra-large > span { 
+        padding: 16px 30px;
+    }
+    .btn.btn-switch-text.btn-large > span { 
+        padding: 14px 30px;
+    }
+}
+@media (max-width: 767px) {
+    footer {
+        padding-top: 50px;
+    }
+    .newsletter-style-02 .btn i {
+        top: 0;
+    }
+}

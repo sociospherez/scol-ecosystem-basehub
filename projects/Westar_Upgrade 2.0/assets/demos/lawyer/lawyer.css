@@ -1,0 +1,284 @@
+/* ===================================
+    Crafto - Lawyer
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+/* variable */
+:root {     
+    --base-color: #b98e44;  
+    --dark-gray: #152833;
+    --medium-gray: #898d95;
+    --very-light-gray: #f6f3ef;
+    --alt-font: 'Playfair Display', serif;
+    --primary-font: 'DM Sans', sans-serif;
+}  
+body {
+    font-size: 17px;
+    line-height: 32px;
+}
+/* custom cursor */
+.custom-cursor .circle-cursor-inner {
+    background-color: var(--base-color);
+    width: 10px;
+    height: 10px;
+}
+.custom-cursor .circle-cursor-inner.cursor-link-hover {
+    background-color: var(--base-color);
+}
+.custom-cursor .circle-cursor-outer {
+    border: 1px solid transparent;
+}
+/* header */
+header .navbar-brand img {
+    max-height: 36px;
+}
+header .left-nav .navbar-nav:before {
+    background-color: var(--white);
+    opacity: 0.2; 
+    transform: translate(-28px, 0px);
+    -webkit-transform: translate(-28px, 0px);
+    transition: 0s;
+}
+header.sticky .left-nav .navbar-nav:before {
+    transform: translate(-28px, 0px);
+    -webkit-transform: translate(-28px, 0px);
+}
+.navbar .navbar-nav .nav-link { 
+    font-size: 18px;
+    font-weight: 400; 
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li a {
+    border-bottom: 1px solid #f6f3ef;
+    padding: 16px 20px;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--dark-gray);
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li:hover img {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(502%) contrast(502%);
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li a:hover,
+.navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li.active:hover > a{
+    background-color: var(--base-color);
+    color: var(--white);
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li.active > a {
+    color: var(--medium-gray);
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon .dropdown-menu {
+    width: 330px;
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon .dropdown-menu li a {
+    color: var(--dark-gray);
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon .dropdown-menu li a p {
+    line-height: 22px;
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon .dropdown-menu li a img {
+    width: 65px;
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon .dropdown-menu li.active > a,
+.navbar .navbar-nav .dropdown.dropdown-with-icon .dropdown-menu li a:hover {
+    color: var(--medium-gray);
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li a img {
+    width: 40px;
+    margin-right: 10px;
+}
+/* pagination */
+.pagination-style-01 .page-item.active .page-link,
+.pagination-style-01 .page-item .page-link:hover {
+    background: var(--dark-gray);
+    color: var(--white);
+}
+.pagination-style-01 .page-item:first-child .page-link,
+.pagination-style-01 .page-item:last-child .page-link {
+    background: transparent;
+    box-shadow: none !important;
+}
+.pagination-style-01 .page-item:first-child .page-link:hover,
+.pagination-style-01 .page-item:last-child .page-link:hover {
+    color: var(--dark-gray);
+}
+/* input */
+.input-small, .textarea-small {
+    font-size: 14px;
+}
+/* bg color */
+.bg-blue-whale {
+    background-color: #152833;
+}
+.bg-blue-licorice {
+    background-color: #374b57;
+}
+/* bg gradient transparent */
+.bg-gradient-dark-transparent {
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(7%, #0a171e), to(transparent));
+    background: linear-gradient(to top, #0a171e 7%, transparent 70%);
+}
+/* btn */
+.btn.btn-blue-whale {
+    background-color:#152833; 
+    color: var(--white);
+}
+.btn.btn-blue-whale:hover {
+    background-color: transparent;
+    border-color: #152833;
+    color: #152833;
+}
+.btn {
+    font-family: var(--primary-font);
+    font-weight:500;
+    text-transform: inherit;
+    letter-spacing: 0px;
+}
+.btn.btn-link {
+    padding: 0 0 2px; 
+}
+.btn.btn-rounded.btn-extra-large {
+    padding: 18px 66px 18px 40px;
+    font-size: 17px;
+}
+.btn.btn-rounded.btn-large {
+    padding: 16px 55px 16px 38px;
+    font-size: 16px;
+}
+.btn.btn-large {
+    font-size: 15px;
+}
+/* number pagination style 01 */
+.swiper-number-pagination-style-01 .swiper-number .swiper-pagination-bullet {
+    font-size: 14px;
+}
+.process-step-style-02:hover .process-step-icon .number {
+    color: var(--white);
+}
+/* page title */
+.page-title-large h1 {
+    font-size: 4rem;
+    line-height: 3.9rem;
+}
+/* process step style 03 */
+.process-step-style-03:hover .process-step-icon-box .progress-image {
+    -webkit-transform: scale(1.3); 
+    transform: scale(1.3);
+}
+/* social icon style 02 */
+.social-icon-style-02 .small-icon li {
+    margin: 0;
+}
+/* opacity */
+.opacity-05 {
+    opacity: 0.05;
+}
+/* top right bottom left */
+.top-minus-35px {
+    top: -35px;
+}
+.left-minus-35px {
+    left: -35px;
+}
+.bottom-minus-35px {
+    bottom: -35px;
+}
+/* footer */
+footer .footer-logo img {
+    max-height: 36px;
+}
+.footer-dark {
+    color: #768086;
+}
+.footer-dark p, .footer-dark a {
+    color: #768086;
+}
+.is-touchable .cursor-page-inner {
+    display: none !important;
+}
+/* media query responsive */
+@media (max-width: 1400px) {
+    .xl-min-h-270px {
+        min-height: 270px !important;
+    }
+}
+@media (max-width: 1300px) {
+    .navbar .navbar-nav .nav-link {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+@media (max-width: 1199px) {
+    header .left-nav .navbar-nav:before {
+        transform: translate(-10px, 0px);
+        -webkit-transform: translate(-10px, 0px);
+    }
+    header.sticky .left-nav .navbar-nav:before {
+        transform: translate(-10px, 0px);
+        -webkit-transform: translate(-10px, 0px);
+    }
+    .elements-social .large-icon li {
+        margin: 0 5px;
+    }
+    footer .nav-link {
+        padding-left: .6rem;
+        padding-right: .6rem;
+    }
+    .navbar .navbar-nav .nav-link {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+@media (max-width: 1024px) {
+    .navbar .navbar-nav .nav-link {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+@media (max-width: 991px) {
+    header .widget-text {
+        color: var(--dark-gray);
+    }
+    header .widget-text i {
+        color: var(--white);
+    }
+    .md-bottom-minus-15px {
+        bottom: -15px;
+    }
+    .elements-social.social-icon-style-04 .large-icon a {
+        font-size: 21px;
+        width: 50px;
+        height: 50px;
+    }
+    .navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li a {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li a:hover,
+    .navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li:hover img{
+        background-color: transparent;
+        color: var(--dark-gray);
+        filter: inherit;
+    }
+    .navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li a:hover,
+    .navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li.active:hover > a {
+        background-color: transparent;
+        color: var(--medium-gray);        
+    }
+}
+@media (max-width: 767px) {
+    .sm-top-minus-25px {
+        top: -25px;
+    }
+    .process-step-style-02 .progress-step-separator,
+    .process-step-style-03 .progress-step-separator,
+    .process-step-style-04 .progress-step-separator {
+        display: block;
+    }
+}
+@media (max-width: 575px) {
+    .process-step-style-02 .progress-step-separator,
+    .process-step-style-03 .progress-step-separator,
+    .process-step-style-04 .progress-step-separator {
+        display: none;
+    }
+}

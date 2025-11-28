@@ -1,0 +1,124 @@
+/* ===================================
+    Crafto - Wedding invitation
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* variable */
+:root {     
+    --base-color: #e93172; 
+    --dark-gray:#2d2928;
+    --light-medium-gray:#75726f; 
+    --extra-medium-gray: #d2cbc3;
+    --very-light-gray:#f5f2ef;
+    --medium-gray: #e7dcd3;
+    --primary-font: 'Sen', sans-serif;
+    --alt-font: 'Bebas Neue', sans-serif;
+}
+body {
+    font-size: 17px;
+    line-height: 30px;
+    color:var(--light-medium-gray);
+}
+/* header */
+header .navbar-brand img {
+    max-height: 32px;
+}
+.navbar .navbar-nav .nav-link {
+    font-size: 20px;
+}
+/* text gradient color */
+.text-gradient-cerise-salmon-red {
+    background: #e30050;
+    background: linear-gradient(135deg, #e30050 30%, #ff7423 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.text-gradient-salmon-red-cerise {
+    background: #ff7423;
+    background: linear-gradient(45deg, #ff7423 30%, #e30050 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* bg color */
+.bg-gradient-porcelain-grey { 
+    background-image: linear-gradient(to bottom, #e6e3e2, #e6e3e2, #e7e4e3, #f5f2ef, #f5f2ef);
+}
+/* text outline color */
+.text-outline-color-westar-grey {
+    -webkit-text-stroke-color: #d2cac3;
+}
+/* social icon style 09 */
+.medium-icon li {
+    margin: 0 5px;
+}
+.social-icon-style-09 ul li a {
+    border-color:#e3e1df;
+}
+.medium-icon a {
+    font-size: 20px;
+    width: 60px;
+    height: 60px;
+}
+.countdown-style-04 .countdown-box .number {
+    color: var(--base-color); 
+    font-weight: normal;
+    font-size: 4.375rem;
+    line-height:2.813rem;
+}
+.countdown-style-04 .countdown-box span {
+    color: var(--light-medium-gray);
+    text-transform: inherit;
+    line-height: 20px;
+    font-size: 15px;
+}
+.countdown-style-04 .countdown-box:before {
+    color: var(--dark-gray); 
+    opacity: 1;
+}
+.countdown-style-04 .countdown-box {
+    width: 100px;
+}
+.btn {
+    font-family: var(--primary-font);
+    text-transform: none
+}
+footer {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+input, select, textarea, .form-control, .form-select {
+    color: var(--dark-gray);
+}
+input:focus, select:focus, textarea:focus, .form-control:focus {
+    color: var(--dark-gray);
+}
+.form-select {
+    color: var(--light-medium-gray);
+    &:focus {
+        color: var(--light-medium-gray);
+    }
+}
+::-webkit-input-placeholder { color: var(--light-medium-gray) !important; text-overflow: ellipsis; }
+::-moz-placeholder { color: var(--light-medium-gray) !important; text-overflow: ellipsis; opacity:1; }
+:-ms-input-placeholder { color: var(--light-medium-gray) !important; text-overflow: ellipsis; opacity:1; }
+@media (min-width: 992px) {
+    .order-inherit {
+        order: inherit !important;
+    }
+}
+@media (max-width: 1199px) {
+    .medium-icon a {
+        width: 50px;
+        height: 50px;
+    }
+}
+@media (max-width: 767px) {
+    .sliding-box .sliding-box-item {
+        width: 100% !important;
+    }
+}
+@media (max-width: 575px){
+    .xs-mb-50px {
+        margin-bottom: 50px !important; }
+}

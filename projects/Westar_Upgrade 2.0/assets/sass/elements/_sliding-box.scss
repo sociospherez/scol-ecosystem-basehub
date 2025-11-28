@@ -1,0 +1,169 @@
+/* Sliding box zoom effect */ 
+@keyframes scale-effect {
+    0% {
+        @include prefix(transform, scale(0.9), webkit);
+    }
+    to {
+        @include prefix(transform, scale(1), webkit);
+    }
+}
+@-webkit-keyframes scale-effect {
+    0% {
+        @include prefix(transform, scale(0.9), webkit);
+    }
+    to {
+        @include prefix(transform, scale(1), webkit);
+    }
+}
+
+/* Sliding box fade effect */ 
+@keyframes fade {
+    0% {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fade {
+    0% {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Sliding box right effect */ 
+@keyframes slide-right {
+    0% {
+        @include prefix(transform, translateX(-25px), webkit);
+    }
+    to {
+        @include prefix(transform, translateX(0), webkit);
+    }
+}
+@-webkit-keyframes slide-right {
+    0% {
+        @include prefix(transform, translateX(-25px), webkit);
+    }
+    to {
+        @include prefix(transform, translateX(0), webkit);
+    }
+}
+
+/* Sliding box */ 
+.sliding-box {
+    * {
+        will-change: transform;
+    }
+    .sliding-box-item {        
+        margin-left: 15px;
+        margin-right: 15px;
+        float: left;
+        overflow: hidden;
+        position: relative;        
+        @include prefix(transition, width 0.7s, webkit);   
+        .sliding-box-content {
+            top: 0;
+            height: 100%;
+            position: absolute;
+        }
+    }
+}
+
+/* Sliding box style 01 */ 
+.sliding-box-style-01 {
+    .sliding-box-item {
+        .sliding-box-content {
+            &:after {
+                content: '';
+                right: 100%;
+                top: 50%;
+                height: 0;
+                width: 0;
+                opacity: 0;
+                z-index: 9;
+                margin-top: -10px;
+                position: absolute;
+                border: solid transparent;
+                border-right-color: var(--white);
+                border-width: 12px;
+                pointer-events: none;
+                @include prefix(transition, all 0.2s linear, webkit);
+            }
+        }
+        &.active, &:hover {
+            .sliding-box-content {
+                &:after {
+                    opacity: 1;
+                }
+            }            
+        }
+    }
+}
+
+/* Sliding box style 02 */ 
+.sliding-box-style-02 {
+    .sliding-box-item {
+        .sliding-box-img {
+            border-radius: 4px;
+            @include prefix(transition, all 0.2s linear, webkit);
+        }
+        &.active {
+            .sliding-box-img {
+                border-radius: 4px 0 0 4px;
+            }
+            .sliding-box-content {
+                border-radius: 0 4px 4px 0;
+            }
+            .content-hover {
+                animation: fade 1s;
+            }
+        }
+    }
+}
+
+/* Sliding box style 03 */ 
+.sliding-box-style-03 {
+    .overlay {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        z-index: 1;
+        @include prefix(transition, all 0.3s linear, webkit);
+    }
+    .overlay-contnet {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+        @include prefix(transition, all 0.4s linear, webkit);
+    }
+    .number {
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+    .sliding-box-content {
+        &:after {
+            display: none;
+        }
+    }
+    &.active {
+        .overlay {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .overlay-contnet {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}

@@ -1,0 +1,133 @@
+/* ===================================
+    Crafto - Cryptocurrency
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+/* variable */
+:root {      
+    --alt-font: "Plus Jakarta Sans", sans-serif;
+    --primary-font: "Plus Jakarta Sans", sans-serif;
+    --base-color: #97e14d;
+    --dark-gray: #101a1d;
+    --medium-gray: rgba(255, 255, 255, 0.5);
+    --extra-medium-gray: #223035;
+    --light-gray: #19272b;
+    --very-light-gray: #38464a;
+    --red: #f62424;
+    --green: #1fcb4f;
+}
+/* reset */
+body {
+    font-size: 17px;
+}
+/* header */
+.header-button .btn.btn-base-color:hover,
+.header-button .btn.btn-base-color {
+    background-color: rgba(151, 225, 77, 0.2);
+    border-color: var(--base-color);
+    color: var(--white) !important;
+}
+.header-button .btn.btn-base-color:hover {
+    color: var(--white) !important;
+}
+header.sticky.sticky-active .header-reverse.header-dark.glass-effect {
+    background-color: rgba(13, 21, 23, .6) !important;
+}
+header .navbar-brand img {
+    max-height: 35px;
+}
+.navbar .navbar-nav .nav-link {
+    font-size: 17px;
+}
+/* highlight separator */
+.highlight-separator[data-shadow-animation] span {
+    bottom: -5px;
+    z-index: -1;
+    height: 100%;
+}
+/* button */
+.btn.btn-base-color:hover,
+.btn.btn-base-color {
+    color: var(--black) !important;
+}
+.btn.btn-transparent-base-color:active, .btn.btn-transparent-base-color:hover {
+    background-color: transparent;
+    border-color: var(--base-color);
+    color: var(--base-color);
+}
+.btn {
+    font-weight: 700;
+    border-width: 1px;
+    letter-spacing: 0px;
+}
+/* transparent background color */
+.bg-medium-gray-transparent {
+    background-color: rgba(34, 48, 53, 0.6);
+}
+.bg-gradient-dark-transparent {
+    background-image: linear-gradient(to top,#203034 12% ,#1B282C 100%);
+}
+.bg-gradient-gray-light-dark-transparent {
+    background-image: linear-gradient(to right,#38464a 27% ,transparent 150%);
+}
+.bg-gradient-black-bottom-transparent {
+    background: linear-gradient(to top,#0D1517 100%,#0D1517 0%)
+}
+/* border color */
+.border-color-very-light-gray {
+    border-color: rgba(56, 70, 74, 0.4) !important;
+}
+.border-color-green {
+    border-color: #1fcb4f !important;
+}
+/* review style 04 */
+.review-star-icon i {
+    color: var(--base-color);
+}
+/* feature box style */
+.feature-box.feature-box-left-icon-middle .feature-box-icon {
+    margin-right: 18px;
+}
+/* footer */
+footer {
+    font-size: 16px;
+    line-height: 28px;
+    padding-top: 90px;
+}
+footer .footer-logo img {
+    max-height: 74px;
+}
+footer .input-small {
+    font-size: 15px;
+}
+footer ul li {
+    margin-bottom: 0px;
+}
+.scroll-progress.scroll-simple {
+    left: 50px;
+    right: auto;
+}
+/* newsletter style 02  */
+.newsletter-style-02 input {
+    padding-right: 100px !important; 
+}
+
+.theme-demos .theme-demos-main {
+    background-color: var(--white);
+}
+
+@media (max-width: 1399px) {
+    header .container-fluid {
+        padding-left: 45px; 
+        padding-right: 45px; 
+    }
+}
+@media (max-width: 1199px) {
+    .crypto-data-scroll {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    .crypto-data-min-width {
+        min-width: 1160px;
+    }
+}    

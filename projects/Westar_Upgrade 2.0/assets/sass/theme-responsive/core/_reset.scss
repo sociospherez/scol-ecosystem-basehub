@@ -1,0 +1,104 @@
+/* Bootstrap overwrite css */
+@media (min-width: 1400px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1220px;
+    }
+}
+@media (min-width: 992px){
+    .row.g-lg-0 {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .row.g-lg-0>* {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+@include respond-to('desktop') {
+    section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+        &.big-section {
+            padding-top: 120px;
+            padding-bottom: 120px;
+        }
+        &.extra-big-section { 
+            padding-top: 160px;
+            padding-bottom: 160px;
+        }
+    }
+}
+@include respond-to('tablet') {
+    html {
+        font-size: 14px;
+    }
+    section {
+        padding-top: 75px;
+        padding-bottom: 75px;
+        &.half-section {
+            padding-top: 50px;
+            padding-bottom: 50px;   
+        }
+        &.big-section {
+            padding-top: 95px;
+            padding-bottom: 95px;
+        }
+        &.extra-big-section { 
+            padding-top: 110px;
+            padding-bottom: 110px;;
+        }
+    }
+    .row.md-gutter-very-small {
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+    .row.md-gutter-very-small>* {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    .row.md-gutter-small {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .row.md-gutter-small>* {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+@include respond-to('phone-landscape') {
+    html {
+        font-size: 12px;
+    }
+    section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        &.half-section {
+            padding-top: 40px;
+            padding-bottom: 40px; 
+        }
+        &.big-section {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        &.extra-big-section { 
+            padding-top: 50px;
+            padding-bottom: 50px;
+        } 
+    }
+    .row.sm-gutter-very-small {
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+    .row.sm-gutter-very-small>* {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    .row.sm-gutter-small {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .row.sm-gutter-small>* {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}

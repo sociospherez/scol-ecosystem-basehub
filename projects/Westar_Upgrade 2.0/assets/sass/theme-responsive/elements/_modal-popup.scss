@@ -1,0 +1,31 @@
+@include respond-to('laptop') {
+    button.mfp-close,
+    .mfp-image-holder button.mfp-close,
+    .mfp-iframe-holder button.mfp-close,
+    .subscribe-popup .mfp-close,
+    .subscribe-popup .mfp-close:active,
+        .mfp-gallery button.mfp-close,
+        .mfp-iframe-holder ~ button.mfp-close,
+        button.mfp-close:active{
+        right: 10px;
+        top: 10px;
+    }
+}
+@include respond-to('tablet') {
+    .mfp-container {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+@include respond-to('phone-landscape') {
+    .mfp-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .mfp-arrow-right {
+        right: 10px;        
+    }
+    .mfp-arrow-left {
+        left: 10px;        
+    }
+}

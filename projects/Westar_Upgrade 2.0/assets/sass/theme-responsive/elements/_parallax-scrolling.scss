@@ -1,0 +1,14 @@
+@include respond-to('laptop') {
+    [data-parallax-background-ratio], 
+    .fix-background {
+        background-attachment: inherit !important;
+        background-position: center !important;
+    } 
+}
+.is-touchable {
+    [data-parallax-background-ratio] {
+        background-attachment: inherit !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+    }
+}

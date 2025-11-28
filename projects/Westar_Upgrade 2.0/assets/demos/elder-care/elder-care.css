@@ -1,0 +1,160 @@
+/* ===================================
+    Crafto - Elder care 
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+/* variable */
+:root {      
+    --alt-font: 'Rufina', serif;
+    --primary-font: 'Manrope', sans-serif;
+    --base-color: #dd1652;
+    --dark-gray: #0e2a62;
+    --medium-gray: #5f6b82;
+    --aluminium-grey: rgba(255, 255, 255, 0.5);
+    --very-light-gray: rgba(235, 239, 246, 0.4);
+}
+body {
+    font-size: 17px;
+    line-height: 28px;
+}
+/* header */
+header .navbar-brand img {
+    max-height: 42px;
+}
+.navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li a,
+.navbar .navbar-nav .nav-link {
+    font-weight: 600;
+    font-size: 17px;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 25px;
+}
+/* button */
+.btn {
+    font-weight: 600;
+    font-family: var(--primary-font);
+    letter-spacing: normal;
+    text-transform: none;
+}
+.btn.btn-switch-text.btn-extra-large > span {
+    padding: 18px 34px;
+}
+.btn.btn-switch-text.btn-large > span {
+    padding: 16px 32px;
+}
+.btn.btn-large {
+    font-size: 17px;
+}
+.btn.btn-switch-text.btn-medium > span {
+    padding: 13px 26px;
+}
+.btn.btn-transparent-blue-light {
+    border-color: rgba(14, 42, 48, 0.20);
+    color: var(--dark-gray);
+}
+.btn.btn-transparent-blue-light:hover {
+    background-color: var(--dark-gray);
+    border-color: var(--dark-gray);
+    color: var(--white);
+}
+/* bg background color */
+.bg-light-blue-gray {
+    background-color: #ebeff6;
+}
+/* Gradient background color */
+.bg-gradient-blue-transparent-first {
+    background: linear-gradient(to top, rgb(235, 239, 246, 1) 10%, rgba(235, 239, 246, 0) 100%);
+}
+.bg-gradient-blue-transparent-second {
+    background: linear-gradient(to bottom, rgb(235, 239, 246, 1) 10%, rgba(235, 239, 246, 0) 100%);
+}
+.bg-gradient-white-bottom-transparent {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(271deg, rgba(0, 0, 0, 0) 0%, rgb(255, 255, 255) 60%);
+}
+/* Border color */
+.border-color-extra-medium-gray {
+    border-color: rgba(14, 42, 98, 0.2) !important;
+}
+/* Video icons */
+.video-icon-extra-large .video-icon {
+    width: 170px;
+    height: 170px;
+    font-size: 16px;
+}
+/* Page title style */
+.page-title-double-large h1 {
+    font-size: 4.375rem;
+    line-height: 4.375rem;
+}
+.down-section {
+    bottom: 30px;
+}
+/* left */
+.left-25 {
+    left: 25%;
+}
+/* footer */
+footer .footer-logo img {
+    max-height: 47px;
+}
+.footer-dark a:hover {
+    color: var(--white);
+    opacity: 1;
+}
+.footer-dark .newsletter-style-02 input::placeholder {
+    color: var(--white) !important;
+    opacity: 0.5; /* Firefox */
+}
+.footer-dark .newsletter-style-02 input:-ms-input-placeholder {
+    color: var(--white) !important;
+}
+.footer-dark .newsletter-style-02 input::-ms-input-placeholder {
+    color: var(--white) !important;
+}
+footer ul li {
+    margin-bottom: 2px;
+}
+
+@media (max-width: 1600px) {
+    .navbar .navbar-nav .nav-link {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+@media (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1345px;
+    }
+}
+@media (max-width: 1400px) {
+    .navbar .navbar-nav .nav-link {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+@media (max-width: 1199px) {
+    .video-icon-extra-large .video-icon {
+        width: 140px;
+        height: 140px;
+    }
+    .extra-small-screen {
+        height: 300px !important;
+    }
+    .navbar>.container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .navbar .navbar-nav .nav-link {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+@media (max-width: 991px) {
+    .video-icon-extra-large .video-icon {
+        width: 120px;
+        height: 120px;
+    }
+}

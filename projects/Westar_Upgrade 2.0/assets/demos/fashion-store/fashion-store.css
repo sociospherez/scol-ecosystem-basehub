@@ -1,0 +1,214 @@
+/* ===================================
+    Crafto - Fashion store
+====================================== */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&display=swap');
+/* variable */
+:root {     
+    --base-color: #fee300; 
+    --alt-font: 'Outfit', sans-serif;
+    --primary-font: 'Figtree', sans-serif;
+    --medium-gray: #828282;
+}
+/* reset */
+body {
+    font-size: 17px;
+    line-height: 32px; 
+}
+a:hover {
+    color: var(--dark-gray);
+}
+.input-small, .textarea-small, .select-small {
+    font-size: 14px;
+}
+.input-small {
+    padding: 9px 15px;
+}
+/* header */
+header .navbar-brand img {
+    max-height: 34px;
+}
+header .navbar-brand {
+    padding: 22px 0;
+}
+.navbar.center-logo .navbar-nav .nav-link {
+    padding: 29px 20px;
+    font-size: 19px;
+}
+.header-icon .icon > a {
+    padding-left: 20px;
+}
+.header-icon .icon .header-language > a, .header-icon .icon .header-cart > a {
+    padding-left: 18px;
+}
+.header-cart-icon .cart-count {
+    color: var(--dark-gray);
+}
+header .widget {
+    font-size: 17px;
+    display: inline-block;
+}
+.navbar .navbar-nav .submenu-content ul .sub-title {
+    font-size: 17px;
+    margin-bottom: 3px;
+}
+.navbar .navbar-nav .dropdown .dropdown-menu a {
+    font-size: 16px;
+    padding-bottom: 3px;
+    font-weight: 300;
+    border-color: transparent;
+}
+.header-cart-icon .header-cart .cart-item-list {
+    border-radius: 0;
+}
+.header-cart-icon .header-cart .cart-item-list .cart-item .product-detail a {
+    font-size: 16px;
+    line-height: 28px;
+}
+.header-cart-icon .cart-count {
+    background-color: var(--dark-gray);
+}
+.navbar.center-logo .navbar-left, .navbar.center-logo .navbar-right {
+    width: 35%
+}
+/* bg color */
+.bg-nero-grey, .bg-nero-grey:focus {
+    background-color: #1B1B1B;
+}
+/* min-width */
+.min-w-150px {
+    min-width: 150px;
+}
+/* btn */
+.btn.btn-large { 
+    padding: 15px 30px;
+}
+.btn {
+    text-transform: inherit;
+}
+.btn.btn-dark-gray {
+    font-weight: 400;
+}
+.btn.btn-extra-large {
+    font-size: 19px;
+    padding: 20px 38px;
+}
+.btn.btn-large {
+    font-size: 18px;
+    padding: 15px 30px;
+}
+.btn.btn-medium {
+    font-size: 16px;
+    padding: 13px 26px;
+}
+.btn.btn-small {
+    font-size: 16px;
+    padding: 10px 20px;
+}
+.btn.btn-very-small {
+    font-size: 14px;
+    padding: 9px 20px;
+}
+.btn.btn-link {
+    padding: 0 0 2px;
+}
+/* page title */
+.page-title-extra-large h1 {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+}
+/* top bottom left right class */
+.left-15 {
+    left: 15%;
+}
+/* interactive banner */
+.interactive-banner-style-09 .image-content:hover .content-arrow {
+    opacity: 1;
+}
+/* tab style 04 */
+.tab-style-04 .nav-tabs .nav-item .nav-link {
+    line-height: 50px;
+}
+/* progress bar 02 */
+.progress-bar-style-02 .progress {
+    height: 10px; 
+}
+/* footer */
+.footer-dark, .footer-dark p, .footer-dark a {
+    color: var(--medium-gray); 
+}
+footer .footer-logo img {
+    max-height: 34px;
+}
+footer .nav-link {
+    color: var(--white);
+    padding: 0 20px;
+}
+footer ul li {
+    margin-bottom: 0;
+}
+footer .elements-social.social-icon-style-02 li {
+    margin: 0 14px 0 0;
+}
+/* tab style 07 */
+.tab-style-07 .nav-tabs .nav-item .nav-link {
+    padding: 20px 30px;
+}
+.tab-style-07 .nav-tabs .nav-item .nav-link.active span,
+.tab-style-07 .nav-tabs .nav-item .nav-link:hover span {
+    color: var(--dark-gray);
+}
+/* tooltip */
+.tooltip.show {
+    opacity: 1;
+}
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before, .bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: var(--dark-gray);
+    top: -2px;
+}
+.tooltip .tooltip-inner {
+    background-color: var(--dark-gray);
+    border-radius: 3px;
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    font-weight: 500;
+}
+/* media query responsive */
+@media (max-width: 1399px) {
+    .sticky-wrap.shadow-in { left: 25px; }
+    .center-logo .navbar-nav .nav-link, header.sticky .center-logo .navbar-nav .nav-link {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+}
+@media (max-width: 1250px){
+    .sticky-wrap.shadow-in { left: 10px; }
+}
+@media (max-width: 991px) {
+    .tab-style-07 .nav-tabs .nav-item .nav-link { padding: 20px; }
+    .navbar.center-logo .navbar-left, .navbar.center-logo .navbar-right { width: 100%; }
+    .navbar .navbar-nav .dropdown .dropdown-menu a, .navbar .navbar-nav .dropdown .dropdown-menu li.sub-title, .navbar-modern-inner .navbar-nav .dropdown .dropdown-menu li.sub-title, .navbar-full-screen-menu-inner .navbar-nav .dropdown .dropdown-menu li.sub-title { line-height: normal; }
+    .header-icon .icon > a, .header-icon .icon .header-language > a, .header-icon .icon .header-cart > a { padding-left: 12px; }
+    footer .nav-link { padding: 0 12px; }
+    .tab-style-04 .nav-tabs .nav-item { padding: 0 16px; }
+}
+@media (max-width: 767px) {
+    .tab-style-04 .nav-tabs .nav-item .nav-link { line-height: 35px; }
+    .swiper-number-pagination-progress-vertical .swiper-pagination-wrapper { right: 15px;}
+    .btn.btn-large { font-size: 17px; padding: 13px 25px; }
+}
+@media (min-width: 1301px) and (max-width: 1399px) {
+    .navbar.center-logo .navbar-nav .nav-link, header.sticky .center-logo .navbar-nav .nav-link { padding-left: 13px; padding-right: 13px; font-size: 18px; }
+}
+@media (min-width: 1200px) and (max-width: 1300px) {
+    .navbar.center-logo .navbar-nav .nav-link, header.sticky .center-logo .navbar-nav .nav-link { padding-left: 11px; padding-right: 11px; font-size: 17px; }
+    .header-icon .icon > a { font-size: 16px; padding-left: 13px; }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .header-icon .icon > a { font-size: 16px; padding-left: 10px; }
+    .header-icon .icon .header-language > a, .header-icon .icon .header-cart > a { padding-left: 10px; font-size: 16px; }
+    .navbar.center-logo .navbar-nav .nav-link, header.sticky .center-logo .navbar-nav .nav-link { padding-left: 14px; padding-right: 14px; font-size: 17px; }
+    .btn.btn-switch-text.btn-large>span { padding: 16px 28px; }
+}

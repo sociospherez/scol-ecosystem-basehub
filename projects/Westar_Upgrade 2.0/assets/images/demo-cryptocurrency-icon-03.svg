@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="259.2785"
+   height="259.27847"
+   viewBox="0 0 259.2785 259.27848"
+   fill="none"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="demo-cryptocurrency-icon-03.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.4895073"
+     inkscape:cx="149.71393"
+     inkscape:cy="116.48147"
+     inkscape:window-width="1280"
+     inkscape:window-height="650"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs2">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter11"
+       x="-0.14819622"
+       y="-0.14819622"
+       width="1.2963924"
+       height="1.2963924">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="12.349685"
+         id="feGaussianBlur11" />
+    </filter>
+  </defs>
+  <g
+     id="g11"
+     transform="translate(-3.6723059,-12.647127)">
+    <path
+       d="m 133.31154,242.28637 c 55.22852,0 100.00001,-44.77149 100.00001,-100 0,-55.228518 -44.77149,-99.999999 -100.00001,-99.999999 -55.228512,0 -99.99999,44.771481 -99.99999,99.999999 0,55.22851 44.771478,100 99.99999,100 z"
+       fill="#3cc8c8"
+       id="path1"
+       style="opacity:0.888889;mix-blend-mode:normal;fill:#2dddda;fill-opacity:0.794366;fill-rule:evenodd;stroke:none;stroke-width:0;stroke-dasharray:none;filter:url(#filter11)"
+       sodipodi:nodetypes="sssss" />
+    <image
+       width="100"
+       height="107.91367"
+       preserveAspectRatio="none"
+       xlink:href="images/image1.png"
+       id="image1"
+       x="83.311546"
+       y="88.329521"
+       style="opacity:1;mix-blend-mode:normal;fill:none;fill-opacity:0.320388;fill-rule:evenodd" />
+  </g>
+</svg>

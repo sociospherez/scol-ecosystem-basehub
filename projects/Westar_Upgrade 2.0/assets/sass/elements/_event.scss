@@ -1,0 +1,189 @@
+/* Event style 02 */ 
+.time-table {
+    display: -webkit-box; 
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal; 
+    flex-flow: row nowrap;
+    -webkit-box-align: stretch; 
+    align-items: stretch;
+    -webkit-box-flex: 1; 
+    flex: 1 0;
+    +.time-table {
+        .time-table-box {
+            border-top-width: 0 !important;
+        }
+    }
+}
+.time-table-box {
+    -webkit-box-align: stretch; 
+    align-items: stretch;
+    text-align: center; 
+    flex-basis: 12.5%;
+    padding: 30px 10px; 
+    position: relative; 
+    display: -webkit-box;  
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal; 
+    flex-direction: column;
+    -webkit-box-pack: center; 
+    justify-content: center;
+    min-height: 100px;
+    .inner-box {
+        display: -webkit-box; 
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal; 
+        flex-direction: column;
+        -webkit-box-pack: center; 
+        justify-content: center;
+        -webkit-box-flex: 1; 
+        flex: 1 auto;
+        z-index: 9;
+        > div {
+            line-height: initial;
+            margin-top: 7px;
+        }
+    }
+    +.time-table-box {
+        border-left-width: 0 !important;
+        &.name-box {
+            &:before {
+                position: absolute;
+                content: "";
+                transition: opacity .3s;
+                opacity: 0;
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: var(--base-color);
+            }
+            &:hover {
+                .inner-box { 
+                    span, div {
+                        color: var(--white);
+                    }
+                }
+                &:before {
+                    opacity: 1;
+                }
+                .hover-detail {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &.day {
+        padding: 15px 10px;
+        min-height: 1px;
+    }
+    .hover-detail {
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        padding: 25px 30px;
+        border-radius: 6px;
+        width: 250px;
+        z-index: 111;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        @include box-shadow(0 0 60px rgba(0,0,0,.14)); 
+        @include prefix(transition, 0.05s, webkit);
+        &:after {
+            content: '';
+            top: -21px;
+            left: 50%;
+            height: 0;
+            width: 0;
+            z-index: 9;
+            margin-left: -14px;
+            position: absolute;
+            pointer-events: none;
+            border: solid transparent;
+            border-width: 11px;
+            border-bottom-color: var(--white);
+        }
+        &.hover-detail-left {
+            left: auto;
+            right: 0;
+            -webkit-transform: none;
+            -ms-transform: none;
+            transform: none;
+            &:after {
+                right: 60px;
+                left: auto;
+            }
+        }
+        &.hover-detail-top {
+            top: auto;
+            bottom: 100%;
+            &:after {
+                top: auto;
+                bottom: -21px;
+                border-top-color: var(--white);
+                border-bottom-color: transparent;
+            }
+        }
+    }
+}    
+.name-box {
+    span {  
+        line-height: 26px;
+        transition: 0.2s;
+    }
+    div {
+        line-height: 26px;
+        transition: 0.2s;
+    }
+}  
+
+/* Event style 03 */ 
+.event-style-03 {
+    .nav-tabs {
+        border-radius: 6px 6px 0 0px;
+        .nav-link {
+            color: var(--white);
+            line-height: normal; 
+            padding: 17px 15px 20px;
+            border: 0;
+            border-radius: 0;
+            &.active, &.show, &:hover {
+                color: var(--dark-gray);
+                background-color: var(--white);
+            }
+        }
+        > li {
+            &.nav-item {
+                padding: 0;
+                width: 100%;
+            }
+            &.nav-item:not(:last-child) {
+                border-right: 1px solid rgba(0,0,0,0.1);
+            }
+        }
+    }
+    .accordion {
+        .accordion-title {
+            .event-time {
+                min-width: 354px;
+                i {
+                    position: static;
+                    @include prefix(transform, none, webkit);
+                }
+            }
+        }
+        .trainer-box {
+            flex: 0 0 auto;
+            width: 270px;
+            margin-right: 85px;
+            margin-top: 15px;
+        }
+    }
+}
