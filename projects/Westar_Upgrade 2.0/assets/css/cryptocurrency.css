@@ -179,7 +179,7 @@ footer ul li {
 
 .services-pagination .swiper-pagination-bullet-active {
     background-color: var(--westar-gold);
-    transform: scale(1.3);
+    transform: scale(1.9);
 }
 
 /* Slight fade/slide feel on icons when they enter (paired with data-anime) */
@@ -189,4 +189,29 @@ footer ul li {
 
 .service-card:hover img {
     transform: translateY(-2px);
+}
+
+/* Make all service cards a consistent height */
+.services-slider .swiper-slide {
+    height: auto;
+    display: flex;
+}
+
+.services-slider .icon-with-text-style-04 {
+    width: 100%;
+}
+
+.services-slider .service-card {
+    height: 100%;
+    min-height: 340px; /* tweak up/down until happy */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.service-card .feature-box-icon img {
+    max-width: 64px;
+    max-height: 64px;
+    width: auto;
+    height: auto;
 }
