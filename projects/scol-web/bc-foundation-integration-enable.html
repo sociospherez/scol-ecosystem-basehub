@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Central Foundation + Integration Enablement</title>
+  <link rel="stylesheet" href="https://westarkapital.com/globalassets/branding.css" />
+  <style>
+    :root {
+      --bg: #070b16;
+      --bg-soft: #0d1424;
+      --panel: rgba(255,255,255,0.075);
+      --panel-strong: rgba(255,255,255,0.12);
+      --border: rgba(255,255,255,0.16);
+      --text: #f5f7fb;
+      --muted: #aeb8cc;
+      --accent: #75e6d1;
+      --accent-2: #9b8cff;
+      --gold: #ffd28a;
+      --shadow: 0 24px 80px rgba(0,0,0,0.35);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(117,230,209,0.22), transparent 32%),
+        radial-gradient(circle at 86% 18%, rgba(155,140,255,0.20), transparent 28%),
+        linear-gradient(135deg, #050814 0%, #0b1020 46%, #10172a 100%);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+    }
+
+    .orb {
+      position: fixed;
+      width: 360px;
+      height: 360px;
+      border-radius: 999px;
+      filter: blur(50px);
+      opacity: 0.28;
+      pointer-events: none;
+      animation: drift 16s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+    .orb.one { left: -120px; top: 120px; background: var(--accent); }
+    .orb.two { right: -100px; bottom: 80px; background: var(--accent-2); animation-delay: -4s; }
+
+    @keyframes drift {
+      from { transform: translate3d(0,0,0) scale(1); }
+      to { transform: translate3d(60px,-40px,0) scale(1.15); }
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      position: sticky;
+      top: 14px;
+      z-index: 10;
+      margin: 14px auto 0;
+      backdrop-filter: blur(18px);
+      background: rgba(8,12,24,0.66);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      box-shadow: 0 18px 55px rgba(0,0,0,0.25);
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 30px rgba(117,230,209,0.35);
+    }
+    nav { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      transition: 180ms ease;
+    }
+    nav a:hover { background: rgba(255,255,255,0.08); color: var(--text); }
+
+    .hero {
+      padding: 96px 0 72px;
+      min-height: 78vh;
+      display: grid;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.075);
+      border-radius: 999px;
+      padding: 8px 13px;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+    .pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 8px rgba(117,230,209,0.12);
+    }
+    h1 {
+      max-width: 950px;
+      font-size: clamp(44px, 7vw, 92px);
+      line-height: 0.93;
+      letter-spacing: -0.075em;
+      margin: 0;
+    }
+    .hero p {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 22px);
+      line-height: 1.6;
+      margin: 28px 0 0;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #071018;
+      background: linear-gradient(135deg, var(--accent), #d8fff7);
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 18px 48px rgba(117,230,209,0.22);
+    }
+    .btn.secondary {
+      color: var(--text);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    section { padding: 44px 0; }
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 20px;
+    }
+    .section-title h2 {
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      margin: 0;
+    }
+    .section-title p {
+      max-width: 450px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .grid { display: grid; gap: 16px; }
+    .grid.three { grid-template-columns: repeat(3, 1fr); }
+    .grid.two { grid-template-columns: repeat(2, 1fr); }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: auto -30% -55% 20%;
+      height: 160px;
+      background: radial-gradient(circle, rgba(117,230,209,0.18), transparent 70%);
+      pointer-events: none;
+    }
+    .card h3 { margin: 0 0 10px; font-size: 21px; letter-spacing: -0.03em; }
+    .card p, .card li { color: var(--muted); line-height: 1.6; }
+    .card ul { margin: 14px 0 0; padding-left: 18px; }
+    .tag {
+      display: inline-flex;
+      font-size: 12px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 14px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .step {
+      min-height: 190px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.105), rgba(255,255,255,0.055));
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 22px;
+    }
+    .num {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      margin-bottom: 34px;
+    }
+    .step h3 { margin: 0 0 8px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.55; }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .list-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 14px;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+    }
+    .list-row:first-child { border-top: 0; }
+    .list-row strong { color: var(--text); }
+    .list-row span { color: var(--muted); line-height: 1.55; }
+
+    .closing {
+      margin: 56px 0 80px;
+      padding: 34px;
+      border-radius: 34px;
+      background: linear-gradient(135deg, rgba(117,230,209,0.16), rgba(155,140,255,0.12));
+      border: 1px solid var(--border);
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .closing h2 { margin: 0 auto 14px; max-width: 860px; font-size: clamp(30px,4vw,54px); letter-spacing: -0.055em; line-height: 1; }
+    .closing p { color: var(--muted); max-width: 760px; margin: 0 auto; line-height: 1.7; }
+
+    footer {
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding: 24px 0 44px;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 820px) {
+      header { align-items: flex-start; border-radius: 24px; flex-direction: column; }
+      nav { justify-content: flex-start; }
+      .hero { padding-top: 64px; min-height: auto; }
+      .section-title { display: block; }
+      .section-title p { margin-top: 14px; }
+      .grid.three, .grid.two, .flow, .matrix { grid-template-columns: 1fr; }
+      .list-row { grid-template-columns: 1fr; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+
+  <main class="page">
+    <header>
+      <div class="brand"><span class="brand-mark"></span><span>SimCoLabs · BC Enablement</span></div>
+      <nav aria-label="Page navigation">
+        <a href="#context">Context</a>
+        <a href="#kickoff">Kickoff</a>
+        <a href="#resources">Resources</a>
+        <a href="#dependencies">Dependencies</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="top">
+      <div>
+        <div class="eyebrow"><span class="pulse"></span> Strategic kickoff / Business Central foundation</div>
+        <h1>Set the foundation before adding complexity.</h1>
+        <p>
+          A simple, practical discussion to understand current Business Central progress, available resources,
+          operational priorities, and the key dependencies around HR, communication, integrations and future enablement.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#kickoff">View kickoff shape →</a>
+          <a class="btn secondary" href="#resources">Resource model</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="context">
+      <div class="section-title">
+        <h2>Why this conversation matters.</h2>
+        <p>Not a heavy transformation workshop. A controlled starting point to understand what exists, what is needed, and what should be addressed first.</p>
+      </div>
+      <div class="grid three">
+        <article class="card">
+          <span class="tag">01 · Current state</span>
+          <h3>Understand the setup</h3>
+          <p>Review Business Central progress, existing configuration, current vendors, internal ownership and any open delivery concerns.</p>
+        </article>
+        <article class="card">
+          <span class="tag">02 · Practical need</span>
+          <h3>Clarify the ask</h3>
+          <p>Identify whether support is needed for configuration, delivery coordination, integrations, HR workflows or operational support.</p>
+        </article>
+        <article class="card">
+          <span class="tag">03 · Next step</span>
+          <h3>Shape the right model</h3>
+          <p>Keep the delivery structure lean, with the right mix of functional, coordination and technical support only where needed.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="kickoff">
+      <div class="section-title">
+        <h2>What kickoff looks like.</h2>
+        <p>A lightweight session designed to create clarity before assigning people, budget or delivery activity.</p>
+      </div>
+      <div class="flow">
+        <div class="step">
+          <div class="num">01</div>
+          <h3>Current landscape</h3>
+          <p>What has already been set up, what is pending, and where delivery feels unclear.</p>
+        </div>
+        <div class="step">
+          <div class="num">02</div>
+          <h3>Business priorities</h3>
+          <p>Which operational areas matter first: HR, finance, approvals, contact centre, users or reporting.</p>
+        </div>
+        <div class="step">
+          <div class="num">03</div>
+          <h3>Dependencies</h3>
+          <p>What systems, data, people, decisions or integrations need to line up before moving forward.</p>
+        </div>
+        <div class="step">
+          <div class="num">04</div>
+          <h3>Delivery shape</h3>
+          <p>Agree whether a functional consultant is enough, or whether coordination and technical input are needed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources">
+      <div class="section-title">
+        <h2>Simple resource model.</h2>
+        <p>The aim is not to create a large team. It is to place the right capability around the right problem.</p>
+      </div>
+      <div class="grid three">
+        <article class="card">
+          <span class="tag">Functional</span>
+          <h3>BC Functional Consultant</h3>
+          <ul>
+            <li>Maps business process</li>
+            <li>Configures Business Central</li>
+            <li>Supports HR/finance workflow alignment</li>
+            <li>Can coordinate smaller delivery activities</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="tag">Coordination</span>
+          <h3>Delivery Lead</h3>
+          <ul>
+            <li>Keeps priorities aligned</li>
+            <li>Tracks actions and dependencies</li>
+            <li>Supports business communication</li>
+            <li>Reduces delivery drift</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="tag">As needed</span>
+          <h3>Technical Support</h3>
+          <ul>
+            <li>Integrations and APIs</li>
+            <li>Customisation support</li>
+            <li>Automation workflows</li>
+            <li>System connectivity</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="dependencies">
+      <div class="section-title">
+        <h2>HR cannot sit in isolation.</h2>
+        <p>Human capital setup in Business Central needs to be understood alongside the wider operating model.</p>
+      </div>
+      <div class="matrix">
+        <div class="card">
+          <span class="tag">Connected operating view</span>
+          <h3>Likely dependency areas</h3>
+          <div class="list-row"><strong>Payroll</strong><span>UAE localisation, compliance, deductions, allowances and approval flow.</span></div>
+          <div class="list-row"><strong>Finance</strong><span>Cost centres, approvals, reporting, expenses and employee-related postings.</span></div>
+          <div class="list-row"><strong>Identity</strong><span>Joiners, movers, leavers, permissions and access governance.</span></div>
+          <div class="list-row"><strong>Contact Centre</strong><span>Staff routing, IVR/ICD flows, communication ownership and service visibility.</span></div>
+          <div class="list-row"><strong>Reporting</strong><span>Operational dashboards, management visibility and decision support.</span></div>
+        </div>
+        <div class="card">
+          <span class="tag">Experience lens</span>
+          <h3>Relevant prior pattern</h3>
+          <p>
+            Similar Microsoft ecosystem work has required aligning operational workflows, onboarding/offboarding,
+            access governance, support processes, reporting, vendor coordination and integration points before scaling wider automation.
+          </p>
+          <p>
+            The same principle applies here: stabilise the foundation, then scale into automation, Copilot, AI assistants and continuous improvement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="closing">
+      <h2>The goal is not just to set up Business Central.</h2>
+      <p>
+        The goal is to create a connected operating foundation that supports people, process, finance,
+        communication and future automation — without overwhelming the business at kickoff.
+      </p>
+    </div>
+
+    <footer>
+      <span>Business Central Foundation + Integration Enablement</span>
+      <span>Zeeshan Abbasi · SimCoLabs</span>
+    </footer>
+  </main>
+</body>
+</html>
