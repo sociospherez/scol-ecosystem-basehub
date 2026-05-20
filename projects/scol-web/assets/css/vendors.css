@@ -12810,7 +12810,7 @@ img.mfp-img {
     Swiper
     Version: 11.0.5
     Plugin URL: https://swiperjs.com
-    License: Copyright 2014-2023 Vladimir Kharlampidi | Released under the MIT License 
+    License: Copyright 2014-2023 Vladimir Kharlampidi | Released under the MIT License
 !*/
 /* FONT_START */
 @font-face {
@@ -13667,9 +13667,9 @@ button.swiper-pagination-bullet {
     Plugin URL: http://manos.malihu.gr/jquery-custom-content-scroller
     License: Copyright Manos Malihutsakis | Released under the MIT license
 !*/
-/* 
+/*
 ------------------------------------------------------------------------------------------------------------------------
-1. BASIC STYLE  
+1. BASIC STYLE
 ------------------------------------------------------------------------------------------------------------------------
 */
 .mCustomScrollbar {
@@ -13697,9 +13697,9 @@ button.swiper-pagination-bullet {
   height: auto;
 }
 
-/* 
+/*
 ------------------------------------------------------------------------------------------------------------------------
-2. VERTICAL SCROLLBAR 
+2. VERTICAL SCROLLBAR
 y-axis
 ------------------------------------------------------------------------------------------------------------------------
 */
@@ -13805,9 +13805,9 @@ y-axis
   bottom: 0;
 }
 
-/* 
+/*
 ------------------------------------------------------------------------------------------------------------------------
-3. HORIZONTAL SCROLLBAR 
+3. HORIZONTAL SCROLLBAR
 x-axis
 ------------------------------------------------------------------------------------------------------------------------
 */
@@ -13889,10 +13889,10 @@ x-axis
   right: 0;
 }
 
-/* 
+/*
 ------------------------------------------------------------------------------------------------------------------------
-4. VERTICAL AND HORIZONTAL SCROLLBARS 
-yx-axis 
+4. VERTICAL AND HORIZONTAL SCROLLBARS
+yx-axis
 ------------------------------------------------------------------------------------------------------------------------
 */
 .mCSB_container_wrapper {
@@ -13968,9 +13968,9 @@ yx-axis
   margin-bottom: 0;
 }
 
-/* 
+/*
 ------------------------------------------------------------------------------------------------------------------------
-5. TRANSITIONS  
+5. TRANSITIONS
 ------------------------------------------------------------------------------------------------------------------------
 */
 .mCSB_scrollTools,
@@ -13995,14 +13995,14 @@ yx-axis
   transition: width 0.2s ease-out 0.2s, height 0.2s ease-out 0.2s, margin-left 0.2s ease-out 0.2s, margin-right 0.2s ease-out 0.2s, margin-top 0.2s ease-out 0.2s, margin-bottom 0.2s ease-out 0.2s, opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
-/* 
+/*
 ------------------------------------------------------------------------------------------------------------------------
-6. SCROLLBAR COLORS, OPACITY AND BACKGROUNDS  
+6. SCROLLBAR COLORS, OPACITY AND BACKGROUNDS
 ------------------------------------------------------------------------------------------------------------------------
 */
-/* 
+/*
 ----------------------------------------
-6.1 THEMES 
+6.1 THEMES
 ----------------------------------------
 */
 /* default theme ("light") */
@@ -14072,8 +14072,8 @@ yx-axis
 
 .mCSB_scrollTools .mCSB_buttonUp {
   background-position: 0 0;
-  /* 
-  sprites locations 
+  /*
+  sprites locations
   light: 0 0, -16px 0, -32px 0, -48px 0, 0 -72px, -16px -72px, -32px -72px
   dark: -80px 0, -96px 0, -112px 0, -128px 0, -80px -72px, -96px -72px, -112px -72px
   */
@@ -14081,7 +14081,7 @@ yx-axis
 
 .mCSB_scrollTools .mCSB_buttonDown {
   background-position: 0 -20px;
-  /* 
+  /*
   sprites locations
   light: 0 -20px, -16px -20px, -32px -20px, -48px -20px, 0 -92px, -16px -92px, -32px -92px
   dark: -80px -20px, -96px -20px, -112px -20px, -128px -20px, -80px -92px, -96px -92px, -112 -92px
@@ -14090,8 +14090,8 @@ yx-axis
 
 .mCSB_scrollTools .mCSB_buttonLeft {
   background-position: 0 -40px;
-  /* 
-  sprites locations 
+  /*
+  sprites locations
   light: 0 -40px, -20px -40px, -40px -40px, -60px -40px, 0 -112px, -20px -112px, -40px -112px
   dark: -80px -40px, -100px -40px, -120px -40px, -140px -40px, -80px -112px, -100px -112px, -120px -112px
   */
@@ -14099,8 +14099,8 @@ yx-axis
 
 .mCSB_scrollTools .mCSB_buttonRight {
   background-position: 0 -56px;
-  /* 
-  sprites locations 
+  /*
+  sprites locations
   light: 0 -56px, -20px -56px, -40px -56px, -60px -56px, 0 -128px, -20px -128px, -40px -128px
   dark: -80px -56px, -100px -56px, -120px -56px, -140px -56px, -80px -128px, -100px -128px, -120px -128px
   */
