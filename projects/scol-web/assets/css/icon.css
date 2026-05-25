@@ -22968,6 +22968,7 @@ readers do not read off random characters that represent icons */
 
 .bi-check-circle-fill::before {
   content: "\f26a";
+
 }
 
 .bi-check-circle::before {
