@@ -1,0 +1,15 @@
+{
+  "name": "BC Portfolio Dashboard",
+  "dataColors": [
+    "#0078D4",
+    "#00B7C3",
+    "#107C10",
+    "#FFB900",
+    "#D83B01",
+    "#A4262C",
+    "#5C2D91"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#1B1A19",
+  "tableAccent": "#0078D4"
+}
